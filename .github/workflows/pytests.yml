@@ -23,14 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Ejecutar tests con pytest
-      run: |
-        pytest --maxfail=3 --disable-warnings -v
-
+    #Ejecutar test cases
     #Configuracion de Allure
     - name: Ejecutar tests con pytest y generar reporte Allure
       run: |
-        pytest --alluredir=allure-results
+        pytest --maxfail=3 --disable-warnings -v --alluredir=reports/allure-results
 
     - name: Subir reporte Allure como artifact
       uses: actions/upload-artifact@v4
