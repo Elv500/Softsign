@@ -18,6 +18,13 @@ jobs:
       with:
         python-version: '3.13'
 
+    - name: Establecer variable BASE_URL
+      run: echo "BASE_URL=https://demo.sylius.com/api/v2" >> $GITHUB_ENV
+
+    #Tambien se puede con Github Secret:
+    # - name: Establecer BASE_URL desde secreto
+    #   run: echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
+
     - name: Instalar dependencias
       run: |
         python -m pip install --upgrade pip
