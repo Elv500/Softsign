@@ -12,18 +12,19 @@ def test_TC13_Admin_Customer_Group_Verificar_código_de_respuesta_201_Created(au
     url = f"{BASE_URL}/admin/customer-groups"
 
     payload ={
-        "code": "Test_Codes2",
+        "code": "Test_Codes3",
         "name": "Prueba"
     }
-
+    # Validacion del codigo de respuesta de la API
     response = requests.post(url, json=payload, headers=auth_headers)
     assert response.status_code == 201
 
 
 
-
+    # Validando el esquema de entrada
+    # El esquema de entrada debe coincidir con el payload enviado
+    # y debe contener los campos "code" y "name"
     input_schema = {
-        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
             "code": {
@@ -45,10 +46,9 @@ def test_TC13_Admin_Customer_Group_Verificar_código_de_respuesta_201_Created(au
 
 
 
-
+    # Validando el esquema de salida
     #validando schema
     output_schema = {
-        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
             "@context": {
