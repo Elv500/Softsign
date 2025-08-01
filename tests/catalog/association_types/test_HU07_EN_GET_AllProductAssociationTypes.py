@@ -58,3 +58,19 @@ def test_TC84_Validar_page_limite_inferior_exitoso(auth_headers):
     AssertionAssociationTypes.assert_association_types_list_schema(
         response_data)
     AssertionAssociationTypes.assert_response_has_items(response_data)
+
+
+@pytest.mark.regression
+@pytest.mark.association_types
+def test_TC85_Validar_page_valor_alfabetico_error(auth_headers):
+    url = ProductAssociationEndpoints.get_list(page="a")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_400(response)
+    AssertionAssociationTypes.assert_error_schema(response_data)
+    AssertionAssociationTypes.assert_error_message(
+        response_data,
+        expected_message="Page should not be less than 1"
+    )

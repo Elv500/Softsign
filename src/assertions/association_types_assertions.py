@@ -12,6 +12,12 @@ class AssertionAssociationTypes:
         return AssertionSchemas().validate_json_schema(response, "association_types_list.json", AssertionAssociationTypes.MODULE)
 
     @staticmethod
+    def assert_error_schema(response):
+        """Valida que la respuesta de error cumpla con el esquema JSON esperado"""
+        AssertionSchemas().validate_json_schema(
+            response, "error_response.json", AssertionAssociationTypes.MODULE)
+
+    @staticmethod
     def assert_response_has_items(response_data):
         """Valida que haya items en la respuesta"""
         assert response_data["hydra:totalItems"] > 0, "No hay items en la respuesta"
@@ -43,3 +49,9 @@ class AssertionAssociationTypes:
         """Valida que la cantidad total de items no exceda el límite esperado"""
         assert response_data["hydra:totalItems"] <= expected_limit, \
             f"La cantidad total de items ({response_data['hydra:totalItems']}) excede el límite esperado ({expected_limit})"
+
+    @staticmethod
+    def assert_error_message(response_data, expected_message):
+        """Valida que el mensaje de error coincida con el esperado"""
+        assert response_data["hydra:description"] == expected_message, \
+            f"El mensaje de error no coincide. Esperado: '{expected_message}', Recibido: '{response_data['hydra:description']}'"

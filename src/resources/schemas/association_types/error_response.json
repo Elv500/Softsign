@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "string"
+        },
+        "@id": {
+            "type": "string"
+        },
+        "@type": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "detail": {
+            "type": "string"
+        },
+        "status": {
+            "type": "integer"
+        },
+        "type": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "hydra:description": {
+            "type": "string"
+        },
+        "hydra:title": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "@context",
+        "@id",
+        "@type",
+        "title",
+        "detail",
+        "status",
+        "type",
+        "description",
+        "hydra:description",
+        "hydra:title"
+    ]
+}
