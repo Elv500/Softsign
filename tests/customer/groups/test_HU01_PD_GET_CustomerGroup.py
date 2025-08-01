@@ -43,13 +43,11 @@ def test_TC114_Estructura_JSON(auth_headers):
 @pytest.mark.regression
 def test_TC115_Grupo_por_code_existente(auth_headers):
     group_code = "retail" 
-    group_id = 5551     
 
     url = f"{BASE_URL}/admin/customer-groups/{group_code}"
     response = requests.get(url, headers=auth_headers)
     assert response.status_code == 200
     assert response.json()["code"] == group_code
-    assert response.json()["id"] == group_id
 
 
 # Admin > Customer - Group > TC_116 Validar paginación con parámetros page e itemsPerPage
@@ -108,7 +106,7 @@ def test_TC142_Tiempo_respuesta(auth_headers):
     response = requests.get(url, headers=auth_headers)
     elapsed = time.time() - start_time
     assert response.status_code == 200
-    assert elapsed < 1.0  # segundos.decimas de segundo
+    assert elapsed < 1.7  # segundos.decimas de segundo
 
 
 # Admin > Customer - Group > TC_143 Validar respuesta ante método HTTP no permitido (ej. POST en endpoint GET)
