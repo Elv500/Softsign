@@ -31,3 +31,15 @@ class AssertionAssociationTypes:
         for field, (expected_type, message) in type_validations.items():
             assert isinstance(member[field], expected_type), \
                 f"El campo '{field}' {message}"
+
+    @staticmethod
+    def assert_items_per_page_limit(members, expected_limit):
+        """Valida que la cantidad de items no exceda el límite por página """
+        assert len(members) <= expected_limit, \
+            f"La cantidad de items ({len(members)}) excede el límite por página ({expected_limit})"
+
+    @staticmethod
+    def assert_total_items_limit(response_data, expected_limit):
+        """Valida que la cantidad total de items no exceda el límite esperado"""
+        assert response_data["hydra:totalItems"] <= expected_limit, \
+            f"La cantidad total de items ({response_data['hydra:totalItems']}) excede el límite esperado ({expected_limit})"
