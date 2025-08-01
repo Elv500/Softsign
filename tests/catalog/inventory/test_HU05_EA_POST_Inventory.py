@@ -7,10 +7,10 @@ from src.routes.request import SyliusRequest
 from src.data.inventory import generate_inventory_source_data
 
 @pytest.mark.smoke
-def test_TC27_Crear_una_fuente_de_inventario_con_datos_validos(auth_headers):
-    
+def test_TC27_Crear_una_fuente_de_inventario_con_datos_validos(setup_add_inventory):
+    headers, created_inventories = setup_add_inventory
     data = generate_inventory_source_data()
-    response = SyliusRequest.post(EndpointInventory.inventory(), auth_headers, data)
+    response = SyliusRequest.post(EndpointInventory.inventory(), headers, data)
     AssertionInventory.assert_inventory_add_input_schema(data)
     AssertionStatusCode.assert_status_code_201(response)
     AssertionInventory.assert_inventory_add_output_schema(response.json())
