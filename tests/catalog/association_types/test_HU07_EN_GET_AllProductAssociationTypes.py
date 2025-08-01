@@ -44,3 +44,17 @@ def test_TC83_Obtener_tipos_de_asociacion_paginados_exitoso(auth_headers):
     )
     for member in response_data["hydra:member"]:
         AssertionAssociationTypes.assert_data_types(member)
+
+
+@pytest.mark.regression
+@pytest.mark.association_types
+def test_TC84_Validar_page_limite_inferior_exitoso(auth_headers):
+    url = ProductAssociationEndpoints.get_list(page="1")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_types_list_schema(
+        response_data)
+    AssertionAssociationTypes.assert_response_has_items(response_data)
