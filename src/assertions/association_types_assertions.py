@@ -94,3 +94,13 @@ class AssertionAssociationTypes:
         for item in member_list:
             assert item["code"] == expected_code, \
                 f"Se encontró un code diferente al buscado. Esperado: {expected_code}, Encontrado: {item['code']}"
+
+    @staticmethod
+    def assert_name_contains_search(member_list, search_text):
+        """Valida que todos los elementos en la lista contengan el texto buscado en su nombre"""
+        assert len(member_list) > 0, "La lista de resultados está vacía"
+
+        for item in member_list:
+            name = item["name"]
+            assert search_text.lower() in name.lower(), \
+                f"El nombre '{name}' no contiene el texto buscado '{search_text}'"

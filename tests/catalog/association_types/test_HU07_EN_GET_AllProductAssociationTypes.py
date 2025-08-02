@@ -225,3 +225,21 @@ def test_TC95_Buscar_code_invalido_lista_vacia(auth_headers):
     AssertionAssociationTypes.assert_association_types_list_schema(
         response_data)
     AssertionAssociationTypes.assert_empty_response(response_data)
+
+
+@pytest.mark.regression
+@pytest.mark.association_types
+@pytest.mark.actual
+def test_TC96_Buscar_nombre_valido_exitoso(auth_headers):
+    url = ProductAssociationEndpoints.get_list(
+        translations_name="Similar")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_types_list_schema(
+        response_data)
+    AssertionAssociationTypes.assert_response_has_items(response_data)
+    AssertionAssociationTypes.assert_name_contains_search(
+        response_data["hydra:member"], "Similar")
