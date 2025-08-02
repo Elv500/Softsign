@@ -259,7 +259,6 @@ def test_TC97_Buscar_nombre_invalido_lista_vacia(auth_headers):
 
 
 @pytest.mark.regression
-@pytest.mark.actual
 @pytest.mark.association_types
 def test_TC98_Validar_autenticacion_invalida_error_401(invalid_headers):
     url = ProductAssociationEndpoints.get_list()
@@ -269,3 +268,22 @@ def test_TC98_Validar_autenticacion_invalida_error_401(invalid_headers):
 
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAssociationTypes.assert_invalid_jwt_error(response_data)
+
+
+@pytest.mark.regression
+@pytest.mark.association_types
+def test_TC99_Verificar_combinacion_parametros_exitoso(auth_headers):
+    url = ProductAssociationEndpoints.get_list(
+        page=1, items_per_page=20, order="desc")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_types_list_schema(
+        response_data)
+    AssertionAssociationTypes.assert_response_has_items(response_data)
+    AssertionAssociationTypes.assert_items_per_page_limit(
+        response_data["hydra:member"], 20)
+    AssertionAssociationTypes.assert_list_ordered_by_code(
+        response_data["hydra:member"], "desc")
