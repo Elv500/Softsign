@@ -3,6 +3,8 @@ import requests
 import pytest
 import time
 
+from src.assertions.customergroup_assertions import AssertionCustomerGroup
+from src.assertions.status_code_assertions import AssertionStatusCode
 from utils.config import BASE_URL
 
 
@@ -13,29 +15,8 @@ from utils.config import BASE_URL
 def test_TC114_Estructura_JSON(auth_headers):
     url = f"{BASE_URL}/admin/customer-groups"
     response = requests.get(url, headers=auth_headers)
-    assert response.status_code == 200
-
-    schema = {
-        "type": "object",
-        "required": ["hydra:member"],
-        "properties": {
-            "hydra:member": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "id": {"type": "integer"},
-                        "code": {"type": "string"},
-                        "name": {"type": "string"}
-                    },
-                    "required": ["id", "code", "name"]
-                }
-            }
-        }
-    }
-
-    jsonschema.validate(instance=response.json(), schema=schema)
-
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionCustomerGroup.assert_customer_group_get_output_schema(response.json())
 
 # Admin > Customer - Group > TC_115 Validar respuesta con un "code" de grupo ya existente
 @pytest.mark.smoke
@@ -46,7 +27,7 @@ def test_TC115_Grupo_por_code_existente(auth_headers):
 
     url = f"{BASE_URL}/admin/customer-groups/{group_code}"
     response = requests.get(url, headers=auth_headers)
-    assert response.status_code == 200
+    AssertionStatusCode.assert_status_code_200(response)
     assert response.json()["code"] == group_code
 
 
@@ -58,7 +39,7 @@ def test_TC115_Grupo_por_code_existente(auth_headers):
 def test_TC116_Paginacion(auth_headers):
     url = f"{BASE_URL}/admin/customer-groups?page=1&itemsPerPage=2"
     response = requests.get(url, headers=auth_headers)
-    assert response.status_code == 200
+    AssertionStatusCode.assert_status_code_200(response)
     assert isinstance(response.json().get("hydra:member", []), list)
 
 
@@ -71,7 +52,7 @@ def test_TC116_Paginacion(auth_headers):
 def test_TC118_Sin_token():
     url = f"{BASE_URL}/admin/customer-groups"
     response = requests.get(url)
-    assert response.status_code == 401
+    AssertionStatusCode.assert_status_code_401(response)
 
 
 # Admin > Customer - Group > TC_119 Verificar acceso con token inválido
@@ -83,7 +64,8 @@ def test_TC119_Token_invalido():
     url = f"{BASE_URL}/admin/customer-groups"
     headers = {"Authorization": "Bearer token_invalido"}
     response = requests.get(url, headers=headers)
-    assert response.status_code in [401, 403]
+    AssertionStatusCode.assert_status_code_401(response)
+
 
 
 # Admin > Customer - Group > TC_141 Validar que la respuesta contenga una lista (array) no vacía si existen registros
@@ -105,7 +87,7 @@ def test_TC142_Tiempo_respuesta(auth_headers):
     start_time = time.time()
     response = requests.get(url, headers=auth_headers)
     elapsed = time.time() - start_time
-    assert response.status_code == 200
+    AssertionStatusCode.assert_status_code_200(response)
     assert elapsed < 1.7  # segundos.decimas de segundo
 
 
@@ -117,7 +99,8 @@ def test_TC142_Tiempo_respuesta(auth_headers):
 def test_TC143_Metodo_no_permitido(auth_headers):
     url = f"{BASE_URL}/admin/customer-groups"
     response = requests.post(url, headers=auth_headers)
-    assert response.status_code in [405, 415]
+    AssertionStatusCode.assert_status_code_415(response)
+
 
 
 # Admin > Customer - Group > TC_144 Verificar que no se repitan id, code en los grupos
@@ -167,7 +150,7 @@ def test_TC147_Paginacion_fuera_de_rango(auth_headers):
     url = f"{BASE_URL}/admin/customer-groups?page=9999"
     response = requests.get(url, headers=auth_headers)
     data = response.json()
-    assert response.status_code == 200
+    AssertionStatusCode.assert_status_code_200(response)
     assert isinstance(data.get("hydra:member", []), list)
 
 
