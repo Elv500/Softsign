@@ -1,0 +1,43 @@
+{
+      "type": "object",
+      "properties": {
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@context",
+        "@id",
+        "@type",
+        "id",
+        "code",
+        "name",
+        "description",
+        "createdAt",
+        "updatedAt"
+      ]
+}

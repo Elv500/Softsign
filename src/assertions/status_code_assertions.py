@@ -41,3 +41,11 @@ class AssertionStatusCode:
     @staticmethod
     def assert_status_code_500(response):
         assert response.status_code == 500
+
+    @staticmethod
+    def assert_status_code_422(response):
+        assert response.status_code == 422
+
+    @staticmethod
+    def assert_status_code_400_or_422(response):
+        assert response.status_code in [400, 422], f"Expected 400 or 422, got {response.status_code}"
