@@ -85,3 +85,12 @@ class AssertionAssociationTypes:
             f"Se esperaba 0 items pero se encontraron {response_data['hydra:totalItems']}"
         assert len(response_data["hydra:member"]) == 0, \
             f"Se esperaba una lista vacía pero se encontraron {len(response_data['hydra:member'])} elementos"
+
+    @staticmethod
+    def assert_code_matches_search(member_list, expected_code):
+        """Valida que todos los elementos en la lista tengan el código buscado"""
+        assert len(member_list) > 0, "La lista de resultados está vacía"
+
+        for item in member_list:
+            assert item["code"] == expected_code, \
+                f"Se encontró un code diferente al buscado. Esperado: {expected_code}, Encontrado: {item['code']}"
