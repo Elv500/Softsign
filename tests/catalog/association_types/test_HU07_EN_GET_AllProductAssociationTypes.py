@@ -136,10 +136,11 @@ def test_TC89_Validar_itemsPerPage_valor_alfabetico_error(auth_headers):
         expected_message="Items per page should not be less than 0"
     )
 
+
 @pytest.mark.regression
 @pytest.mark.association_types
-def test_TC90_Validar_itemsPerPage_caracteres_especiales_error(auth_headers):
-    url = ProductAssociationEndpoints.get_list(items_per_page="@#")
+def test_TC90_Validar_itemsPerPage_alfabetico_error(auth_headers):
+    url = ProductAssociationEndpoints.get_list(items_per_page="abc")
 
     response = requests.get(url, headers=auth_headers)
     response_data = response.json()
