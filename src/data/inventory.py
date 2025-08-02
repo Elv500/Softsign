@@ -1,5 +1,4 @@
 from faker import Faker
-import json
 
 fake = Faker()
 

@@ -7,22 +7,24 @@ class SyliusRequest:
         return response
 
     @staticmethod
-    def post(url, headers, payloads=None):
+    def post(url, headers=None, payload=None):
+        if headers is None:
+            headers = {}
         headers = headers.copy()
         headers.update({'Content-Type': 'application/json'})
-        response = requests.post(url, headers=headers, json=payloads)
+        response = requests.post(url, headers=headers, json=payload)
         return response
 
     @staticmethod
-    def put(url, headers, payloads=None):
+    def put(url, headers, payload=None):
         headers = headers.copy()
         headers.update({'Content-Type': 'application/json'})
-        response = requests.put(url, headers=headers, json=payloads)
+        response = requests.put(url, headers=headers, json=payload)
         return response
 
     @staticmethod
-    def delete(url, headers, payloads=None):
+    def delete(url, headers, payload=None):
         headers = headers.copy()
         headers.update({'Content-Type': 'application/json'})
-        response = requests.delete(url, headers=headers, json=payloads)
+        response = requests.delete(url, headers=headers, json=payload)
         return response

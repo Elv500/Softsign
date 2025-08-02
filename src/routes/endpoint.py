@@ -3,7 +3,7 @@ from utils.config import BASE_URL
 
 class Endpoint(Enum):
     
-    LOGIN = "/administrators/token"
+    LOGIN = "/admin/administrators/token"
     
     BASE_INVENTORY = "/admin/inventory-sources"
     BASE_INVENTORY_CODE = "/admin/inventory-sources/{code}"
