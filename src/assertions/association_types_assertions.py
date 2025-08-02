@@ -55,3 +55,9 @@ class AssertionAssociationTypes:
         """Valida que el mensaje de error coincida con el esperado"""
         assert response_data["hydra:description"] == expected_message, \
             f"El mensaje de error no coincide. Esperado: '{expected_message}', Recibido: '{response_data['hydra:description']}'"
+
+    @staticmethod
+    def assert_member_count(hydra_member, expected_count):
+        actual_count = len(hydra_member)
+        assert actual_count == expected_count, \
+            f"La cantidad de elementos no coincide. Esperado: {expected_count}, Actual: {actual_count}"

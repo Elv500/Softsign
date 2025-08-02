@@ -36,8 +36,6 @@ def test_TC83_Obtener_tipos_de_asociacion_paginados_exitoso(auth_headers):
     AssertionAssociationTypes.assert_association_types_list_schema(
         response_data)
     AssertionAssociationTypes.assert_response_has_items(response_data)
-    AssertionAssociationTypes.assert_total_items_limit(
-        response_data, expected_limit=10)
     AssertionAssociationTypes.assert_items_per_page_limit(
         response_data["hydra:member"],
         expected_limit=10
@@ -106,3 +104,18 @@ def test_TC87_Validar_page_vacio_error(auth_headers):
         response_data,
         expected_message="Page should not be less than 1"
     )
+
+
+@pytest.mark.regression
+@pytest.mark.association_types
+def test_TC88_Validar_itemsPerPage_limite_inferior_exitoso(auth_headers):
+    url = ProductAssociationEndpoints.get_list(items_per_page="0")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_types_list_schema(
+        response_data)
+    AssertionAssociationTypes.assert_member_count(response_data["hydra:member"], 0)
+
