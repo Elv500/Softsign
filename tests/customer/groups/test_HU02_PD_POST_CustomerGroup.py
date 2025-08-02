@@ -1,85 +1,27 @@
+import jsonschema
 import requests
 import pytest
-import jsonschema
-import json
+import time
+from faker import Faker
+
+
+from src.assertions.customergroup_assertions import AssertionCustomerGroup
+from src.assertions.status_code_assertions import AssertionStatusCode
 from utils.config import BASE_URL
+from src.data.customer_group import generate_customer_group_source_data
 
 
-def test_TC13_Admin_Customer_Group_Verificar_código_de_respuesta_201_Created(auth_headers):
-    """
-    Validar que la API permita crear un Customer Group cuando se envían datos válidos devolviendo el codigo 201 POST.
-    """
+
+# Admin > Customer - Group > TC_114 Verificar estructura del JSON devuelto
+@pytest.mark.functional
+@pytest.mark.smoke
+@pytest.mark.regression
+def test_TC114_Estructura_JSON(auth_headers):
     url = f"{BASE_URL}/admin/customer-groups"
-
-    payload ={
-        "code": "Test_Codes3",
-        "name": "Prueba"
-    }
-    # Validacion del codigo de respuesta de la API
-    response = requests.post(url, json=payload, headers=auth_headers)
-    assert response.status_code == 201
+    data = generate_customer_group_source_data()
+    print("Generated Customer Group Data:", data)
+    response = requests.post(url, json=data, headers=auth_headers)
+    AssertionStatusCode.assert_status_code_201(response)
+    AssertionCustomerGroup.assert_customer_group_post_output_schema(response.json())
 
 
-
-    # Validando el esquema de entrada
-    # El esquema de entrada debe coincidir con el payload enviado
-    # y debe contener los campos "code" y "name"
-    input_schema = {
-        "type": "object",
-        "properties": {
-            "code": {
-            "type": "string"
-            },
-            "name": {
-            "type": "string"
-            }
-        },
-        "required": [
-            "code",
-            "name"
-        ]
-    }
-    try:
-        jsonschema.validate(response.json(), input_schema)
-    except jsonschema.ValidationError as err:
-        pytest.fail("Response is not valid: {}".format(err))
-
-
-
-    # Validando el esquema de salida
-    #validando schema
-    output_schema = {
-        "type": "object",
-        "properties": {
-            "@context": {
-            "type": "string"
-            },
-            "@id": {
-            "type": "string"
-            },
-            "@type": {
-            "type": "string"
-            },
-            "id": {
-            "type": "integer"
-            },
-            "code": {
-            "type": "string"
-            },
-            "name": {
-            "type": "string"
-            }
-        },
-        "required": [
-            "@context",
-            "@id",
-            "@type",
-            "id",
-            "code",
-            "name"
-        ]
-    }
-    try:
-        jsonschema.validate(response.json(), output_schema)
-    except jsonschema.ValidationError as err:
-        pytest.fail("Response is not valid: {}".format(err))
