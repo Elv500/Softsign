@@ -287,3 +287,20 @@ def test_TC99_Verificar_combinacion_parametros_exitoso(auth_headers):
         response_data["hydra:member"], 20)
     AssertionAssociationTypes.assert_list_ordered_by_code(
         response_data["hydra:member"], "desc")
+
+
+@pytest.mark.regression
+@pytest.mark.association_types
+@pytest.mark.actual
+def test_TC101_Validar_page_negativo_orden_valido_error(auth_headers):
+    url = ProductAssociationEndpoints.get_list(page=-1, order="asc")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_400(response)
+    AssertionAssociationTypes.assert_error_schema(response_data)
+    AssertionAssociationTypes.assert_error_message(
+        response_data,
+        expected_message="Page should not be less than 1"
+    )
