@@ -151,3 +151,18 @@ def test_TC90_Validar_itemsPerPage_alfabetico_error(auth_headers):
         response_data,
         expected_message="Items per page should not be less than 0"
     )
+
+
+@pytest.mark.regression
+@pytest.mark.association_types
+def test_TC91_Validar_orden_ascendente_code_exitoso(auth_headers):
+    url = ProductAssociationEndpoints.get_list(items_per_page=20, order="asc")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_types_list_schema(
+        response_data)
+    AssertionAssociationTypes.assert_list_ordered_by_code(
+        response_data["hydra:member"], "asc")

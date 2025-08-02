@@ -61,3 +61,20 @@ class AssertionAssociationTypes:
         actual_count = len(hydra_member)
         assert actual_count == expected_count, \
             f"La cantidad de elementos no coincide. Esperado: {expected_count}, Actual: {actual_count}"
+
+    @staticmethod
+    def assert_list_ordered_by_code(member_list, order="asc"):
+        """
+        Valida que la lista esté ordenada por el campo code sin distinguir entre mayúsculas y minúsculas
+        """
+        assert len(member_list) > 0, "La lista está vacía, no se puede validar el orden"
+
+        codes = [item["code"] for item in member_list]
+        
+        sorted_codes = sorted(codes, 
+                            key=str.lower,  
+                            reverse=(order == "desc"))
+        
+        assert codes == sorted_codes, \
+            f"La lista no está ordenada {order}endentemente por code. " \
+            f"Orden actual: {codes}, Orden esperado: {sorted_codes}"
