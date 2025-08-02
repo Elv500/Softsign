@@ -10,7 +10,7 @@ from src.routes.request import SyliusRequest
 @pytest.mark.regression
 def test_TC23_Obtener_lista_completa_de_fuentes_de_inventario(auth_headers):
     response = SyliusRequest.get(EndpointInventory.inventory(),auth_headers)
-    
+
     logging.info("Estatus code: %s", response.status_code)
     logging.debug("Response: %s", response.json())
     logging.error("Logging de error!!!")
