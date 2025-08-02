@@ -38,12 +38,12 @@ def test_TC59_Auth_fallido_con_crendenciales_vacias():
     response = SyliusRequest.post(Endpoint.login(), payload=payload)
     AssertionStatusCode.assert_status_code_400(response)
 
-def test_TC60_Auth_fallido_con_email_vacia():
+def test_TC151_Auth_fallido_con_email_vacia():
     payload = Auth().get_empty_email_payload()
     response = SyliusRequest.post(Endpoint.login(), payload=payload)
     AssertionStatusCode.assert_status_code_400(response)
 
-def test_TC61_Auth_fallido_con_password_vacia():
+def test_TC152_Auth_fallido_con_password_vacia():
     payload = Auth().get_empty_password_payload()
     response = SyliusRequest.post(Endpoint.login(), payload=payload)
     AssertionStatusCode.assert_status_code_400(response)
