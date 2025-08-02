@@ -246,7 +246,6 @@ def test_TC96_Buscar_nombre_valido_exitoso(auth_headers):
 
 @pytest.mark.regression
 @pytest.mark.association_types
-@pytest.mark.actual
 def test_TC97_Buscar_nombre_invalido_lista_vacia(auth_headers):
     url = ProductAssociationEndpoints.get_list(translations_name="xyzabc123")
 
@@ -257,3 +256,16 @@ def test_TC97_Buscar_nombre_invalido_lista_vacia(auth_headers):
     AssertionAssociationTypes.assert_association_types_list_schema(
         response_data)
     AssertionAssociationTypes.assert_empty_response(response_data)
+
+
+@pytest.mark.regression
+@pytest.mark.actual
+@pytest.mark.association_types
+def test_TC98_Validar_autenticacion_invalida_error_401(invalid_headers):
+    url = ProductAssociationEndpoints.get_list()
+
+    response = requests.get(url, headers=invalid_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_401(response)
+    AssertionAssociationTypes.assert_invalid_jwt_error(response_data)

@@ -104,3 +104,11 @@ class AssertionAssociationTypes:
             name = item["name"]
             assert search_text.lower() in name.lower(), \
                 f"El nombre '{name}' no contiene el texto buscado '{search_text}'"
+
+    @staticmethod
+    def assert_invalid_jwt_error(response_data):
+        """Valida que la respuesta contenga el mensaje de error JWT inválido"""
+        assert response_data["code"] == 401, \
+            f"Se esperaba código 401 pero se recibió {response_data['code']}"
+        assert response_data["message"] == "Invalid JWT Token", \
+            f"Se esperaba mensaje 'Invalid JWT Token' pero se recibió '{response_data['message']}'"
