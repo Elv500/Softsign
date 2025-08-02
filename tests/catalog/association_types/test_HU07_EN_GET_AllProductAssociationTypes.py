@@ -181,3 +181,17 @@ def test_TC92_Validar_orden_descendente_code_exitoso(auth_headers):
         response_data)
     AssertionAssociationTypes.assert_list_ordered_by_code(
         response_data["hydra:member"], "desc")
+
+
+@pytest.mark.regression
+@pytest.mark.association_types
+def test_TC93_Validar_orden_invalido_exitoso(auth_headers):
+    url = ProductAssociationEndpoints.get_list(code="random")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_types_list_schema(
+        response_data)
+    AssertionAssociationTypes.assert_empty_response(response_data)

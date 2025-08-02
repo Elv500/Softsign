@@ -64,17 +64,24 @@ class AssertionAssociationTypes:
 
     @staticmethod
     def assert_list_ordered_by_code(member_list, order="asc"):
-        """
-        Valida que la lista esté ordenada por el campo code sin distinguir entre mayúsculas y minúsculas
-        """
-        assert len(member_list) > 0, "La lista está vacía, no se puede validar el orden"
+        """Valida que la lista esté ordenada por el campo code sin distinguir entre mayúsculas y minúsculas"""
+        assert len(
+            member_list) > 0, "La lista está vacía, no se puede validar el orden"
 
         codes = [item["code"] for item in member_list]
-        
-        sorted_codes = sorted(codes, 
-                            key=str.lower,  
-                            reverse=(order == "desc"))
-        
+
+        sorted_codes = sorted(codes,
+                              key=str.lower,
+                              reverse=(order == "desc"))
+
         assert codes == sorted_codes, \
             f"La lista no está ordenada {order}endentemente por code. " \
             f"Orden actual: {codes}, Orden esperado: {sorted_codes}"
+
+    @staticmethod
+    def assert_empty_response(response_data):
+        """Valida que la respuesta esté vacía"""
+        assert response_data["hydra:totalItems"] == 0, \
+            f"Se esperaba 0 items pero se encontraron {response_data['hydra:totalItems']}"
+        assert len(response_data["hydra:member"]) == 0, \
+            f"Se esperaba una lista vacía pero se encontraron {len(response_data['hydra:member'])} elementos"
