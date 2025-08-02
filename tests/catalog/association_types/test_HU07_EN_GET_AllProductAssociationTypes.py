@@ -156,7 +156,7 @@ def test_TC90_Validar_itemsPerPage_alfabetico_error(auth_headers):
 @pytest.mark.regression
 @pytest.mark.association_types
 def test_TC91_Validar_orden_ascendente_code_exitoso(auth_headers):
-    url = ProductAssociationEndpoints.get_list(items_per_page=20, order="asc")
+    url = ProductAssociationEndpoints.get_list(order="asc")
 
     response = requests.get(url, headers=auth_headers)
     response_data = response.json()
@@ -186,7 +186,7 @@ def test_TC92_Validar_orden_descendente_code_exitoso(auth_headers):
 @pytest.mark.regression
 @pytest.mark.association_types
 def test_TC93_Validar_orden_invalido_exitoso(auth_headers):
-    url = ProductAssociationEndpoints.get_list(code="random")
+    url = ProductAssociationEndpoints.get_list(order="up")
 
     response = requests.get(url, headers=auth_headers)
     response_data = response.json()
@@ -194,12 +194,11 @@ def test_TC93_Validar_orden_invalido_exitoso(auth_headers):
     AssertionStatusCode.assert_status_code_200(response)
     AssertionAssociationTypes.assert_association_types_list_schema(
         response_data)
-    AssertionAssociationTypes.assert_empty_response(response_data)
+    AssertionAssociationTypes.assert_response_has_items(response_data)
 
 
 @pytest.mark.regression
 @pytest.mark.association_types
-@pytest.mark.actual
 def test_TC94_Buscar_code_valido_exitoso(auth_headers):
     url = ProductAssociationEndpoints.get_list(code="similar_products")
 
@@ -212,3 +211,17 @@ def test_TC94_Buscar_code_valido_exitoso(auth_headers):
     AssertionAssociationTypes.assert_response_has_items(response_data)
     AssertionAssociationTypes.assert_code_matches_search(
         response_data["hydra:member"], "similar_products")
+
+
+@pytest.mark.regression
+@pytest.mark.association_types
+def test_TC95_Buscar_code_invalido_lista_vacia(auth_headers):
+    url = ProductAssociationEndpoints.get_list(code="random")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_types_list_schema(
+        response_data)
+    AssertionAssociationTypes.assert_empty_response(response_data)
