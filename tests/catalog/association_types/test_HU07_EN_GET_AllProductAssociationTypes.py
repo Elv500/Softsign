@@ -291,7 +291,6 @@ def test_TC99_Verificar_combinacion_parametros_exitoso(auth_headers):
 
 @pytest.mark.regression
 @pytest.mark.association_types
-@pytest.mark.actual
 def test_TC101_Validar_page_negativo_orden_valido_error(auth_headers):
     url = ProductAssociationEndpoints.get_list(page=-1, order="asc")
 
