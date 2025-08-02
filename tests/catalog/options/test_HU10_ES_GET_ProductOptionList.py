@@ -6,7 +6,7 @@ from utils.config import BASE_URL
 
 
 @pytest.mark.smoke
-@pytest.mark.funcional
+@pytest.mark.functional
 def test_TC103_Validar_obtencion_exitosa_de_opciones_con_token_valido(auth_headers):
     """
     Verificar que la API devuelva correctamente el listado de todas las opciones de producto disponibles. La respuesta
