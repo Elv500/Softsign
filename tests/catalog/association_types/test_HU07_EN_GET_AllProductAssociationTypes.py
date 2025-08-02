@@ -117,5 +117,21 @@ def test_TC88_Validar_itemsPerPage_limite_inferior_exitoso(auth_headers):
     AssertionStatusCode.assert_status_code_200(response)
     AssertionAssociationTypes.assert_association_types_list_schema(
         response_data)
-    AssertionAssociationTypes.assert_member_count(response_data["hydra:member"], 0)
+    AssertionAssociationTypes.assert_member_count(
+        response_data["hydra:member"], 0)
 
+
+@pytest.mark.regression
+@pytest.mark.association_types
+def test_TC89_Validar_itemsPerPage_valor_alfabetico_error(auth_headers):
+    url = ProductAssociationEndpoints.get_list(items_per_page="a")
+
+    response = requests.get(url, headers=auth_headers)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_400(response)
+    AssertionAssociationTypes.assert_error_schema(response_data)
+    AssertionAssociationTypes.assert_error_message(
+        response_data,
+        expected_message="Items per page should not be less than 0"
+    )
