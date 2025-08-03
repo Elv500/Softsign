@@ -8,4 +8,4 @@ def auth_headers():
     Útil para reutilizar en cualquier test que requiera autenticación.
     """
     token = get_token()
-    return {"Authorization": f"Bearer {token}"}
+    return {'Authorization': f'Bearer {token}'}
