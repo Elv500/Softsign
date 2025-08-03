@@ -18,7 +18,7 @@ def test_TC27_Crear_una_fuente_de_inventario_con_datos_validos(setup_add_invento
     AssertionStatusCode.assert_status_code_201(response)
     AssertionInventory.assert_inventory_add_output_schema(response.json())
 
-    log_request_response(url, headers, response, payload)
+    log_request_response(url, response, headers, payload)
 
     created_inventory = response.json()
     created_inventories.append(created_inventory)
