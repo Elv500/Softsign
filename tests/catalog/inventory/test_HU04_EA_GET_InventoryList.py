@@ -14,4 +14,4 @@ def test_TC23_Obtener_lista_completa_de_fuentes_de_inventario(auth_headers):
     response = SyliusRequest.get(url, auth_headers)
     AssertionStatusCode.assert_status_code_200(response)
     AssertionInventory.assert_inventory_list_schema(response.json())
-    log_request_response(url, auth_headers, response)
+    log_request_response(url, response, auth_headers)

@@ -5,6 +5,7 @@ from src.routes.request import SyliusRequest
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.resources.autentifications.autentificacion import Auth
 from src.assertions.login_assertions import AssertionLogin
+from utils.logger_helpers import log_request_response
 
 @pytest.mark.login
 @pytest.mark.smoke
@@ -12,7 +13,11 @@ from src.assertions.login_assertions import AssertionLogin
 @pytest.mark.functional
 def test_TC55_Auth_exitoso_con_credenciales_validas():
     payload = Auth().get_valid_login_payload()
-    response = SyliusRequest.post(Endpoint.login(), payload=payload)
+    url = Endpoint.login()
+    response = SyliusRequest.post(url, payload=payload)
+    
+    log_request_response(url, response, payload=payload)
+
     AssertionLogin.assert_login_input_schema(payload)
     AssertionStatusCode.assert_status_code_200(response)
     AssertionLogin.assert_login_output_schema(response.json())

@@ -1,7 +1,7 @@
 import logging
 import json
 
-def log_request_response(url, headers, response, payload=None):
+def log_request_response(url, response, headers=None, payload=None):
     """
     INFO:  IP Address o dominio
     DEBUG: Request URL + Headers
@@ -11,8 +11,12 @@ def log_request_response(url, headers, response, payload=None):
     """
     logging.info("IP ADDRESS OR DOMAIN: %s", url.split("/")[2])
     logging.debug("REQUEST URL: %s", url)
-    logging.debug("REQUEST HEADERS: %s", json.dumps(headers, indent=4, ensure_ascii=False))
-    if payload is not None:
-        logging.debug("PAYLOAD REQUEST: %s", json.dumps(payload, indent=4, ensure_ascii=False))
     logging.info("STATUS CODE: %s", response.status_code)
-    logging.debug("RESPONSE: %s", json.dumps(response.json(), indent=4, ensure_ascii=False))
+    
+    if headers:
+        logging.debug("REQUEST HEADERS:\n%s", json.dumps(headers, indent=4, ensure_ascii=False))
+
+    if payload:
+        logging.debug("PAYLOAD REQUEST:\n%s", json.dumps(payload, indent=4, ensure_ascii=False))
+  
+    logging.debug("RESPONSE:\n%s", json.dumps(response.json(), indent=4, ensure_ascii=False))
