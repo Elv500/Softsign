@@ -1,0 +1,31 @@
+{
+        "type": "object",
+        "properties": {
+            "@context": {
+            "type": "string"
+            },
+            "@id": {
+            "type": "string"
+            },
+            "@type": {
+            "type": "string"
+            },
+            "id": {
+            "type": "integer"
+            },
+            "code": {
+            "type": "string"
+            },
+            "name": {
+            "type": "string"
+            }
+        },
+        "required": [
+            "@context",
+            "@id",
+            "@type",
+            "id",
+            "code",
+            "name"
+        ]
+    }
