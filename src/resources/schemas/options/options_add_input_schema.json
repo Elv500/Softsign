@@ -1,0 +1,143 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "required": [
+        "code",
+        "position",
+        "translations",
+        "values"
+    ],
+    "properties": {
+        "code": {
+            "type": "string"
+        },
+        "position": {
+            "type": "integer"
+        },
+        "values": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "translations"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "translations": {
+                        "type": "object",
+                        "required": [
+                            "additionalProp1",
+                            "additionalProp2",
+                            "additionalProp3"
+                        ],
+                        "properties": {
+                            "additionalProp1": {
+                                "type": "object",
+                                "required": [
+                                    "locale",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "value": {
+                                        "type": "string"
+                                    },
+                                    "locale": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "additionalProp2": {
+                                "type": "object",
+                                "required": [
+                                    "locale",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "value": {
+                                        "type": "string"
+                                    },
+                                    "locale": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "additionalProp3": {
+                                "type": "object",
+                                "required": [
+                                    "locale",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "value": {
+                                        "type": "string"
+                                    },
+                                    "locale": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "translations": {
+            "type": "object",
+            "required": [
+                "additionalProp1",
+                "additionalProp2",
+                "additionalProp3"
+            ],
+            "properties": {
+                "additionalProp1": {
+                    "type": "object",
+                    "required": [
+                        "locale",
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "locale": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "additionalProp2": {
+                    "type": "object",
+                    "required": [
+                        "locale",
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "locale": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "additionalProp3": {
+                    "type": "object",
+                    "required": [
+                        "locale",
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "locale": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
