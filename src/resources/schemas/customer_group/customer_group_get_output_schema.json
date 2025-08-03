@@ -1,0 +1,22 @@
+{
+        "type": "object",
+        "required": ["hydra:member"],
+        "properties": {
+            "hydra:member": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {"type": "integer"},
+                        "code": {"type": "string"},
+                        "name": {"type": "string"}
+                    },
+                    "required": ["id", "code", "name"]
+                }
+            }
+        }
+    }
+
+
+    
+
