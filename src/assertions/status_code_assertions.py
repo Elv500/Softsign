@@ -13,7 +13,7 @@ class AssertionStatusCode:
     @staticmethod
     def assert_status_code_201(response):
         assert response.status_code == 201
-
+        
     @staticmethod
     def assert_status_code_204(response):
         assert response.status_code == 204
