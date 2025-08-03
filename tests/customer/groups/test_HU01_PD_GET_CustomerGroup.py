@@ -8,7 +8,7 @@ from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
 
 # Admin > Customer - Group > TC_114 Verificar estructura del JSON devuelto
-@pytest.mark.funcional
+@pytest.mark.functional
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_TC114_verificar_estructura_json_devuelto(auth_headers):
@@ -29,10 +29,10 @@ def test_TC115_validar_respuesta_con_code_grupo_existente(auth_headers):
 
 
 # Admin > Customer - Group > TC_116 Validar paginación con parámetros page e itemsPerPage
-@pytest.mark.funcional
+@pytest.mark.functional
 @pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.limites
+@pytest.mark.boundary
 def test_TC116_validar_paginacion_con_parametros_page_itemsPerPage(auth_headers):
     # Usando el nuevo método con parámetros
     response = SyliusRequest.get(EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=2), auth_headers)
@@ -44,7 +44,7 @@ def test_TC116_validar_paginacion_con_parametros_page_itemsPerPage(auth_headers)
 # Admin > Customer - Group > TC_118 Verificar acceso sin token (esperado: 401 Unauthorized)
 @pytest.mark.smoke
 @pytest.mark.negative
-@pytest.mark.seguridad
+@pytest.mark.segurity
 @pytest.mark.regression
 def test_TC118_verificar_acceso_sin_token_401_unauthorized():
     response = SyliusRequest.get(EndpointCustomerGroup.customer_group(), {})
@@ -54,7 +54,7 @@ def test_TC118_verificar_acceso_sin_token_401_unauthorized():
 # Admin > Customer - Group > TC_119 Verificar acceso con token inválido
 @pytest.mark.smoke
 @pytest.mark.negative
-@pytest.mark.seguridad
+@pytest.mark.segurity
 @pytest.mark.regression
 def test_TC119_verificar_acceso_con_token_invalido():
     invalid_headers = {"Authorization": "Bearer token_invalido"}
@@ -115,7 +115,7 @@ def test_TC144_verificar_no_se_repitan_id_code_en_grupos(auth_headers):
 # Admin > Customer - Group > TC_145 Verificar que los campos code y name no sean nulos o vacíos
 @pytest.mark.smoke
 @pytest.mark.negative
-@pytest.mark.usabilidad
+@pytest.mark.usability
 @pytest.mark.regression
 def test_TC145_verificar_campos_code_name_no_nulos_ni_vacios(auth_headers):
     response = SyliusRequest.get(EndpointCustomerGroup.customer_group(), auth_headers)
@@ -125,7 +125,7 @@ def test_TC145_verificar_campos_code_name_no_nulos_ni_vacios(auth_headers):
 
 # Admin > Customer - Group > TC_146 Validar encabezados de respuesta HTTP (Content-Type, Cache-Control, etc.)
 @pytest.mark.smoke
-@pytest.mark.seguridad
+@pytest.mark.segurity
 @pytest.mark.regression
 def test_TC146_validar_encabezados_respuesta_http_content_type_cache_control(auth_headers):
     response = SyliusRequest.get(EndpointCustomerGroup.customer_group(), auth_headers)
@@ -137,7 +137,7 @@ def test_TC146_validar_encabezados_respuesta_http_content_type_cache_control(aut
 # Admin > Customer - Group > TC_147 Verificar comportamiento con parámetros de paginación fuera de rango (ej. page=9999)
 @pytest.mark.smoke
 @pytest.mark.negative
-@pytest.mark.limites
+@pytest.mark.boundary
 @pytest.mark.regression
 def test_TC147_verificar_comportamiento_parametros_paginacion_fuera_rango(auth_headers):
     response = SyliusRequest.get(EndpointCustomerGroup.customer_group_with_params(page=9999), auth_headers)
@@ -149,7 +149,7 @@ def test_TC147_verificar_comportamiento_parametros_paginacion_fuera_rango(auth_h
 # Admin > Customer - Group > TC_148 Verificar limite de caracteres maximo en code de 255 caracteres
 @pytest.mark.smoke
 @pytest.mark.negative
-@pytest.mark.limites
+@pytest.mark.boundary
 @pytest.mark.regression
 def test_TC148_verificar_limite_caracteres_maximo_code_255_caracteres(auth_headers):
     response = SyliusRequest.get(EndpointCustomerGroup.customer_group(), auth_headers)
