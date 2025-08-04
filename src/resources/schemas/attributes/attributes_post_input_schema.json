@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "translations": {
+      "type": "object",
+      "properties": {
+        "en_US": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "en_US"
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "maxCharacters": {
+          "type": "integer"
+        },
+        "minCharacters": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "maxCharacters",
+        "minCharacters"
+      ]
+    },
+    "storageType": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "type",
+    "translations",
+    "configuration",
+    "storageType"
+  ]
+}
