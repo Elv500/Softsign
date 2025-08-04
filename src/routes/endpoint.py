@@ -14,6 +14,9 @@ class Endpoint(Enum):
     BASE_ATTRIBUTES = "/admin/product-attributes"
     BASE_ATTRIBUTES_CODE = "/admin/product-attributes/{code}"
 
+    BASE_OPTIONS = "/admin/product-options"
+    BASE_OPTIONS_CODE = "/admin/product-options/{code}"
+
     @classmethod
     def login(cls):
         return f"{BASE_URL}{cls.LOGIN.value}"

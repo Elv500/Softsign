@@ -1,0 +1,55 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "required": [
+        "code",
+        "createdAt",
+        "name",
+        "position",
+        "translations",
+        "updatedAt",
+        "values"
+    ],
+    "properties": {
+        "code": {
+            "type": "string"
+        },
+        "position": {
+            "type": "integer"
+        },
+        "values": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "createdAt": {
+            "type": "string"
+        },
+        "updatedAt": {
+            "type": "string"
+        },
+        "translations": {
+            "type": "object",
+            "required": [
+                "en_US"
+            ],
+            "properties": {
+                "en_US": {
+                    "type": "object",
+                    "required": [
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "name": {
+            "type": "string"
+        }
+    }
+}
