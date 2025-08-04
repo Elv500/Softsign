@@ -1,17 +1,20 @@
 import requests
 import pytest
+from utils.logger_helpers import log_request_response
 
 from src.assertions.taxCategory_assertions import AssertionTaxCategory
 from src.assertions.status_code_assertions import AssertionStatusCode
-from utils.config import BASE_URL
+from src.routes.endpoint_tax_category import EndpointTaxCategory
+from src.routes.request import SyliusRequest
 
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_TC36_Ver_listado_de_categorías_de_impuestos_exitosamente(auth_headers):
-    url=f"{BASE_URL}/admin/tax-categories"
-    response = requests.get(url, headers=auth_headers)
+    url= EndpointTaxCategory.tax_category()
+    response = SyliusRequest.get(url, auth_headers)
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxCategory.assert_tax_category_list_schema(response.json())
+    log_request_response(url, response, auth_headers)
 
 
 @pytest.mark.functional

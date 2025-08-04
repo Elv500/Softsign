@@ -15,7 +15,6 @@ class Endpoint(Enum):
     BASE_TAX_CATEGORY = "/admin/tax-categories"
     BASE_TAX_CATEGORY_CODE = "/admin/tax-categories/{code}"
 
-
     BASE_OPTIONS = "/admin/product-options"
     BASE_OPTIONS_CODE = "/admin/product-options/{code}"
 
