@@ -113,3 +113,5 @@ def test_TCXX_creacion_sin_nombre_categoria(auth_headers):
     data.pop("name", None)  # Eliminar el campo 'name'
     response = TaxCategoryCall.create(auth_headers, data)
     AssertionStatusCode.assert_status_code_400_or_422(response)
+
+
