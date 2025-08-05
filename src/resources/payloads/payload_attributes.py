@@ -11,9 +11,8 @@ class PayloadAttributes:
             "name": data.get("name"),
             "translations": {
                 "en_US": {
-                    "name": fake.word().capitalize()
+                    "name": data.get("name", fake.word().capitalize())
                 }
             }
         }
         return json.dumps(payload, indent=4)
-
