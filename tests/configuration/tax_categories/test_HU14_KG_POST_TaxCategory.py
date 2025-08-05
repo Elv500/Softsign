@@ -222,7 +222,7 @@ espacios en blanco, saltos de línea u otros caracteres invisibles. Sylius debe 
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.negative
-@pytest.mark.xfail(reason="known issue La app permite espacios vacios BUG", run=False)
+@pytest.mark.xfail(reason="known issue La app permite espacios vacios BUG", run=True)
 @pytest.mark.parametrize("invalid_name", [
     "   ",
     "\n",

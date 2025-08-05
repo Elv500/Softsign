@@ -167,7 +167,7 @@ def test_TC182_verificar_paginacion_fuera_rango(auth_headers):
 # Admin > Customer - Group > TC_183 Verificar paginación con itemsPerPage = 0
 @pytest.mark.boundary
 @pytest.mark.regression
-@pytest.mark.xfail(reason="Knwon issue BugId: CG-01 La apliacion permite que se devuelva 0 items por pagina", run=False)
+@pytest.mark.xfail(reason="Knwon issue BugId: CG-01 La apliacion permite que se devuelva 0 items por pagina", run=True)
 def test_TC183_verificar_paginacion_items_cero(auth_headers):
     items_per_page = 0
     logger.info(f"=== TC_183: Iniciando test de paginación con itemsPerPage={items_per_page} ===")

@@ -18,8 +18,11 @@ jobs:
       with:
         python-version: '3.13'
 
-    - name: Establecer BASE_URL
-      run: echo "BASE_URL=https://demo.sylius.com/api/v2" >> $GITHUB_ENV
+    - name: Establecer variables de entorno
+      run: |
+        echo "BASE_URL=https://demo.sylius.com/api/v2" >> $GITHUB_ENV
+        echo "ADMIN_USERNAME=sylius@example.com" >> $GITHUB_ENV
+        echo "ADMIN_PASSWORD=sylius" >> $GITHUB_ENV
 
     - name: Instalar dependencias
       run: |
