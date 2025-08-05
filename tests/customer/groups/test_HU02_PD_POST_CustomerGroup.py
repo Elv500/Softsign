@@ -1,26 +1,39 @@
-import jsonschema
+import logging
 import pytest
 import time
-from faker import Faker
 
 from src.assertions.customergroup_assertions import AssertionCustomerGroup
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
 from src.data.customer_group import generate_customer_group_source_data
+from utils.logger_helpers import log_request_response
+
+logger = logging.getLogger(__name__)
 
 
 # Admin > Customer - Group > TC_153 Crear grupo de clientes con datos válidos
 @pytest.mark.functional
 @pytest.mark.smoke
 @pytest.mark.regression
-def test_TC153_crear_grupo_clientes_datos_validos(auth_headers):
+def test_TC153_crear_grupo_clientes_datos_validos(setup_customer_group_cleanup):
     """Verificar que se puede crear un grupo de clientes con datos válidos"""
+    auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
+    logger.info("=== TC_153: Iniciando test para crear grupo de clientes con datos válidos ===")
+    
     data = generate_customer_group_source_data()
     print("Generated Customer Group Data:", data)
-    response = SyliusRequest.post(EndpointCustomerGroup.customer_group(), auth_headers, data)
+    
+    endpoint = EndpointCustomerGroup.customer_group()
+    response = SyliusRequest.post(endpoint, auth_headers, data)
+    
+    log_request_response(endpoint, response, headers=auth_headers, payload=data)
+    
     AssertionStatusCode.assert_status_code_201(response)
     AssertionCustomerGroup.assert_customer_group_post_output_schema(response.json())
+    
+    customer_group_code = response.json()["code"]
+    add_group_for_cleanup(customer_group_code)
     
     assert response.json()["code"] == data["code"]
     assert response.json()["name"] == data["name"]
@@ -30,25 +43,48 @@ def test_TC153_crear_grupo_clientes_datos_validos(auth_headers):
 @pytest.mark.functional
 @pytest.mark.smoke
 @pytest.mark.regression
-def test_TC154_verificar_estructura_json_respuesta_creacion(auth_headers):
+def test_TC154_verificar_estructura_json_respuesta_creacion(setup_customer_group_cleanup):
     """Verificar que la respuesta tiene la estructura JSON correcta"""
+    auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
+    logger.info("=== TC_154: Iniciando test para verificar estructura JSON de respuesta al crear ===")
+    
     data = generate_customer_group_source_data()
-    response = SyliusRequest.post(EndpointCustomerGroup.customer_group(), auth_headers, data)
+    endpoint = EndpointCustomerGroup.customer_group()
+    response = SyliusRequest.post(endpoint, auth_headers, data)
+    
+    log_request_response(endpoint, response, headers=auth_headers, payload=data)
+    
     AssertionStatusCode.assert_status_code_201(response)
     AssertionCustomerGroup.assert_customer_group_post_output_schema(response.json())
+    
+    customer_group_code = response.json()["code"]
+    add_group_for_cleanup(customer_group_code)
 
 
 # Admin > Customer - Group > TC_155 Verificar que no permita crear grupo con código duplicado
 @pytest.mark.negative
 @pytest.mark.regression
-def test_TC155_crear_grupo_codigo_duplicado(auth_headers):
+def test_TC155_crear_grupo_codigo_duplicado(setup_customer_group_cleanup):
+    auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
+    logger.info("=== TC_155: Iniciando test para verificar código duplicado ===")
+    
     data1 = generate_customer_group_source_data()
-    response1 = SyliusRequest.post(EndpointCustomerGroup.customer_group(), auth_headers, data1)
+    endpoint = EndpointCustomerGroup.customer_group()
+    response1 = SyliusRequest.post(endpoint, auth_headers, data1)
+    
+    log_request_response(endpoint, response1, headers=auth_headers, payload=data1)
+    
     AssertionStatusCode.assert_status_code_201(response1)
     
+    customer_group_code = response1.json()["code"]
+    add_group_for_cleanup(customer_group_code)
+    
     data2 = generate_customer_group_source_data()
-    data2["code"] = data1["code"]  # Usar el mismo código
-    response2 = SyliusRequest.post(EndpointCustomerGroup.customer_group(), auth_headers, data2)
+    data2["code"] = data1["code"]  # el mismo código
+    response2 = SyliusRequest.post(endpoint, auth_headers, data2)
+    
+    log_request_response(endpoint, response2, headers=auth_headers, payload=data2)
+    
     AssertionStatusCode.assert_status_code_422(response2)
 
 
@@ -58,7 +94,7 @@ def test_TC155_crear_grupo_codigo_duplicado(auth_headers):
 @pytest.mark.regression
 def test_TC156_crear_grupo_sin_campo_code(auth_headers):
     data = generate_customer_group_source_data()
-    del data["code"]  # Eliminar campo obligatorio
+    del data["code"] #eliminar code que es obligatorio de la data que nos genera
     response = SyliusRequest.post(EndpointCustomerGroup.customer_group(), auth_headers, data)
     AssertionStatusCode.assert_status_code_422(response)
 
@@ -74,7 +110,7 @@ def test_TC157_crear_grupo_sin_campo_name(auth_headers):
     AssertionStatusCode.assert_status_code_422(response)
 
 
-# Admin > Customer - Group > TC_158 Verificar que no pemrita crear grupo con código vacío
+# Admin > Customer - Group > TC_158 Verificar que no permita crear grupo con código vacío
 @pytest.mark.negative
 @pytest.mark.boundary
 @pytest.mark.regression
@@ -85,7 +121,7 @@ def test_TC158_crear_grupo_codigo_vacio(auth_headers):
     AssertionStatusCode.assert_status_code_422(response)
 
 
-# Admin > Customer - Group > TC_159 Verificar que no pemrita crear grupo con nombre vacío
+# Admin > Customer - Group > TC_159 Verificar que no permita crear grupo con nombre vacío
 @pytest.mark.negative
 @pytest.mark.boundary
 @pytest.mark.regression
@@ -133,11 +169,21 @@ def test_TC162_crear_grupo_caracteres_especiales_codigo(auth_headers):
 @pytest.mark.functional
 @pytest.mark.boundary
 @pytest.mark.regression
-def test_TC163_crear_grupo_caracteres_especiales_nombre(auth_headers):
+def test_TC163_crear_grupo_caracteres_especiales_nombre(setup_customer_group_cleanup):
+    auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
+    logger.info("=== TC_163: Iniciando test para crear grupo con caracteres especiales en nombre ===")
+    
     data = generate_customer_group_source_data()
     data["name"] = "Test Pablo ñáéíóú-Co_123$@$@#"
-    response = SyliusRequest.post(EndpointCustomerGroup.customer_group(), auth_headers, data)
+    endpoint = EndpointCustomerGroup.customer_group()
+    response = SyliusRequest.post(endpoint, auth_headers, data)
+    
+    log_request_response(endpoint, response, headers=auth_headers, payload=data)
+    
     AssertionStatusCode.assert_status_code_201(response)
+    
+    customer_group_code = response.json()["code"]
+    add_group_for_cleanup(customer_group_code)
 
 
 # Admin > Customer - Group > TC_164 Verificar que no permita crear grupo sin token de autenticación
@@ -192,31 +238,52 @@ def test_TC167_crear_grupo_content_type_incorrecto(auth_headers):
     AssertionStatusCode.assert_status_code_415(response)
 
 
-# Admin > Customer - Group > TC_168 Verificar que el tiemps de respuesta al crear sea menor a 3 segundos
+# Admin > Customer - Group > TC_168 Verificar que el tiempo de respuesta al crear sea menor a 3 segundos
 @pytest.mark.functional
 @pytest.mark.performance
 @pytest.mark.regression
-def test_TC168_verificar_tiempo_respuesta_creacion(auth_headers):
+def test_TC168_verificar_tiempo_respuesta_creacion(setup_customer_group_cleanup):
+    auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
+    logger.info("=== TC_168: Iniciando test de tiempo de respuesta para creación ===")
+    
     data = generate_customer_group_source_data()
     start_time = time.time()
-    response = SyliusRequest.post(EndpointCustomerGroup.customer_group(), auth_headers, data)
+    endpoint = EndpointCustomerGroup.customer_group()
+    response = SyliusRequest.post(endpoint, auth_headers, data)
     elapsed = time.time() - start_time
+    
+    log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
     assert elapsed < 3.0
+    
+    customer_group_code = response.json()["code"]
+    add_group_for_cleanup(customer_group_code)
 
 
 # Admin > Customer - Group > TC_169 Verificar que permita crear múltiples grupos simultáneamente
 @pytest.mark.functional
 @pytest.mark.stress
 @pytest.mark.regression
-def test_TC169_crear_multiples_grupos_simultaneos(auth_headers):
+def test_TC169_crear_multiples_grupos_simultaneos(setup_customer_group_cleanup):
+    auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
+    logger.info("=== TC_169: Iniciando test para crear múltiples grupos simultáneamente ===")
+    
     responses = []
+    endpoint = EndpointCustomerGroup.customer_group()
+    
     for i in range(3):
         data = generate_customer_group_source_data()
-        response = SyliusRequest.post(EndpointCustomerGroup.customer_group(), auth_headers, data)
+        response = SyliusRequest.post(endpoint, auth_headers, data)
+        
+        log_request_response(endpoint, response, headers=auth_headers, payload=data)
+        
         responses.append(response)
         AssertionStatusCode.assert_status_code_201(response)
+        
+        customer_group_code = response.json()["code"]
+        add_group_for_cleanup(customer_group_code)
+        
     codes = [resp.json()["code"] for resp in responses]
     assert len(codes) == len(set(codes))
 

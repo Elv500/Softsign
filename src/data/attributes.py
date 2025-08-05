@@ -12,8 +12,8 @@ def generate_attributes_source_data():
     unique_id = str(uuid.uuid4())[:8]  #
 
     attributes_data = {
-        "code": f"test_{timestamp}_{unique_id}",  # Código único garantizado
-        "type": "text",  # O el tipo que necesites (text, select, boolean, etc.)
+        "code": f"test_{timestamp}_{unique_id}",
+        "type": "text",
         "translations": {
             "en_US": {
                 "name": f"{fake.company()} - {fake.catch_phrase()}"
@@ -21,6 +21,3 @@ def generate_attributes_source_data():
         }
     }
     return attributes_data
-
-
-
