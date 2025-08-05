@@ -20,11 +20,10 @@ def test_TC120_crear_tipo_asociacion_code_y_translations_en_US_name_validos_exit
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
-    AssertionStatusCode.assert_status_code_201(response)
-    AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
-
     log_request_response(url, response, headers, payload)
 
+    AssertionStatusCode.assert_status_code_201(response)
+    AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
     AssertionAssociationTypes.assert_code_matches(response_data, payload['code'])
     AssertionAssociationTypes.assert_translation_name_matches(response_data, "en_US",
                                                               payload['translations']['en_US']['name'])
@@ -41,10 +40,10 @@ def test_TC121_crear_tipo_asociacion_multiples_traducciones_validas_en_US_es_ES_
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
+
     AssertionStatusCode.assert_status_code_201(response)
     AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
-
-    log_request_response(url, response, headers, payload)
     AssertionAssociationTypes.assert_code_matches(response_data, payload['code'])
     AssertionAssociationTypes.assert_translation_name_matches(response_data, "en_US",
                                                               payload['translations']['en_US']['name'])
@@ -55,7 +54,8 @@ def test_TC121_crear_tipo_asociacion_multiples_traducciones_validas_en_US_es_ES_
     created_inventories.append(payload['code'])
 
 
-@pytest.mark.actual
+@pytest.mark.functional
+@pytest.mark.regression
 def test_TC122_validar_creacion_code_2_caracteres_exitoso(teardown_association_types):
     headers, created_inventories = teardown_association_types
     payload = generate_association_types_source_data(code="ab")
@@ -64,11 +64,28 @@ def test_TC122_validar_creacion_code_2_caracteres_exitoso(teardown_association_t
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
-    AssertionStatusCode.assert_status_code_201(response)
-    AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
-
     log_request_response(url, response, headers, payload)
 
+    AssertionStatusCode.assert_status_code_201(response)
+    AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
     AssertionAssociationTypes.assert_code_matches(response_data, payload['code'])
     created_inventories.append(payload['code'])
 
+
+@pytest.mark.functional
+@pytest.mark.regression
+def test_TC123_validar_creacion_code_255_caracteres_exitoso(teardown_association_types):
+    headers, created_inventories = teardown_association_types
+    code_255_chars = "a" * 255
+    payload = generate_association_types_source_data(code=code_255_chars)
+    url = EndpointAssociationTypes.association_types()
+    AssertionAssociationTypes.assert_association_type_add_input_schema(payload)
+
+    response = SyliusRequest.post(url, headers, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers, payload)
+
+    AssertionStatusCode.assert_status_code_201(response)
+    AssertionAssociationTypes.assert_association_type_add_output_schema(response_data)
+    AssertionAssociationTypes.assert_code_matches(response_data, payload['code'])
+    created_inventories.append(payload['code'])
