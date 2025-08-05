@@ -16,7 +16,6 @@ class EndpointAssociationTypes:
     def code(cls, association_code):
         return cls.build_url_association_types_code(Endpoint.BASE_ASSOCIATION_TYPES_CODE.value, association_code)
 
-
     @staticmethod
     def build_url_association_types_list(base, page=1, items_per_page=10, order="asc", translations_name="", code=""):
         url = (
