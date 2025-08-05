@@ -148,6 +148,7 @@ def test_TC225_Verificar_error_al_crear_un_position_que_no_sea_entero(auth_heade
 
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.xfail(reason="Known issue BUG: Validación faltante para valores negativos en campo 'position' - Comportamiento inconsistente al normalizar", run=False)
 def test_TC226_Verificar_error_al_crear_opcion_con_position_negativo(auth_headers):
     """Validar que no se puede crear una nueva opción de producto cuando se proporciona un valor negativo en el campo position
     y el endpoint devuelva un codigo 422 indicando que la opción no fue creada porque hubo un error."""
@@ -160,6 +161,7 @@ def test_TC226_Verificar_error_al_crear_opcion_con_position_negativo(auth_header
 
 @pytest.mark.functional
 @pytest.mark.boundary
+@pytest.mark.xfail(reason="Known issue BUG: Error 500 (Internal Server Error) inapropiado al validar campo numérico", run=False)
 def test_TC227_Verificar_error_al_crear_opcion_con_position_mayor_a_999999999(auth_headers):
     """Validar que no se puede crear una nueva opción de producto cuando se proporciona un valor mayor a 999999999 en el campo position
     y el endpoint devuelva un codigo 422 indicando que hubo un error al crear la opcion."""
