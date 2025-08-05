@@ -1,0 +1,1564 @@
+{
+	"info": {
+		"_postman_id": "47f7478d-a6b8-4d1c-8fec-34656a111d42",
+		"name": "SYLIUS (SoftSign)",
+		"description": "Colección de endpoints de la Aplicación Sylius\n\n- Admin\n    \n- Client\n    \n- Inventory\n    \n- Country",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34124549",
+		"_collection_link": "https://cloudy-flare-38922.postman.co/workspace/My-Workspace~2bf63581-dbac-4229-8019-7a0b9298cf55/collection/34124549-47f7478d-a6b8-4d1c-8fec-34656a111d42?action=share&source=collection_link&creator=34124549"
+	},
+	"item": [
+		{
+			"name": "Admin (Elvis)",
+			"item": [
+				{
+					"name": "Token Admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"token_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"api@example.com\",\r\n  \"password\": \"sylius-api\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/administrators/token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"administrators",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Colección para la sección de Administradores\n\n- Obtener Token de auntenticación"
+		},
+		{
+			"name": "Client (Elvis)",
+			"item": [
+				{
+					"name": "Token Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"token_client\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"fashion@example.com\",\r\n  \"password\": \"sylius\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/shop/customers/token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"shop",
+								"customers",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Colección para la sección de Clientes\n\n- Obtener Token de auntenticación"
+		},
+		{
+			"name": "Inventory (Elvis)",
+			"item": [
+				{
+					"name": "Inventory Sources",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/inventory-sources",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"inventory-sources"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "order[id]",
+									"value": "asc",
+									"disabled": true
+								},
+								{
+									"key": "itemsPerPage",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inventory Source",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/inventory-sources/hamburg_wasrehouses",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"inventory-sources",
+								"hamburg_wasrehouses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inventory Source",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": {\r\n        \"countryCode\": \"MW\",\r\n        \"street\": \"95521 Christopher Course\",\r\n        \"city\": \"Allisonport\",\r\n        \"postcode\": \"113134\"\r\n    },\r\n    \"code\": \"asda\",\r\n    \"name\": \"Miller, Jackson and Clark\",\r\n    \"priority\": 10,\r\n    \"channels\": [\r\n        \"/api/v2/admin/channels/HOME_WEB\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/inventory-sources",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"inventory-sources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inventory Source",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": {\r\n    \"countryCode\": \"string\",\r\n    \"street\": \"string\",\r\n    \"city\": \"string\",\r\n    \"postcode\": \"string\"\r\n  },\r\n  \"name\": \"string\",\r\n  \"priority\": 0,\r\n  \"channels\": [\r\n    \"https://example.com/\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/inventory-sources/hamburg_warehouse",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"inventory-sources",
+								"hamburg_warehouse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inventory Source",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/inventory-sources/Rt606fu",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"inventory-sources",
+								"Rt606fu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inventory Source Addresses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/inventory-source-addresses",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"inventory-source-addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inventory Source Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/inventory-source-addresses/{id}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"inventory-source-addresses",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Colección para el sub-módulo Catalog > Inventory\n\n- Todos los métodos de Origen de Inventarios"
+		},
+		{
+			"name": "Country (Elvis)",
+			"item": [
+				{
+					"name": "Countries",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/countries/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"countries",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Country",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/countries/US",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"countries",
+								"US"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Colección para la sección de Países\n\n- Obtener lista de países"
+		},
+		{
+			"name": "Channel (Elvis)",
+			"item": [
+				{
+					"name": "Channels",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/channels",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"channels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Channel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/channels/HOME_WEB",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"channels",
+								"HOME_WEB"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Association Types (Edwin)",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/ld+json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en_US"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-association-types?page=1&itemsPerPage=10&order[code]=LOLLL&translations.name=lol&code=BWr",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-association-types"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "itemsPerPage",
+									"value": "10"
+								},
+								{
+									"key": "order[code]",
+									"value": "LOLLL"
+								},
+								{
+									"key": "translations.name",
+									"value": "lol"
+								},
+								{
+									"key": "code",
+									"value": "BWr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/ld+json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en_US"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/ld+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"MtJHPlPVc8LsrLQdZSTD-3NrEBA_BWr_N2j\",\n  \"translations\": {\n    \"en_US\": {\n      \"name\": \"lolito\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-association-types",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-association-types"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attributes (Liliana)",
+			"item": [
+				{
+					"name": "Obtener lista de atributos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-attributes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-attributes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar un atributo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TU_TOKEN",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/ld+json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/ld+json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"@context\": \"/api/v2/contexts/ProductAttribute\",\n  \"@id\": \"/api/v2/admin/product-attributes/05\",\n  \"@type\": \"ProductAttribute\",\n  \"code\": \"10\",\n  \"type\": \"text\",\n  \"configuration\": {\n    \"maxLength\": 23,\n    \"minCharacters\": 3\n\n  },\n  \"storageType\": \"text\",\n  \"position\": 1,\n  \"translatable\": true,\n  \"translations\": {\n    \"en_US\": {\n      \"@id\": \"/api/v2/admin/product-attributes/05/translations/en_US\",\n      \"@type\": \"ProductAttributeTranslation\",\n      \"name\": \"Color\"\n    }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-attributes/05",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-attributes",
+								"05"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT https://demo.sylius.com/api/v2/admin/product-attributes/01 \\\n  -H \"Authorization: Bearer TU_TOKEN_DE_ADMIN\" \\\n  -H \"Content-Type: application/ld+json\" \\\n  -d '{\n    \"code\": \"01\",\n    \"type\": \"text\",\n    \"translations\": {\n      \"en_US\": {\n        \"name\": \"Primary Color\"\n      },\n      \"es_BO\": {\n        \"name\": \"Color Primario\"\n      }\n    },\n    \"configuration\": {\n      \"maxCharacters\": 50\n    },\n    \"storageType\": \"text\"\n  }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un atributo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-attributes/color",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-attributes",
+								"color"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un atributo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-attributes/color",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-attributes",
+								"color"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear un atributo",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TU_TOKEN_DE_ADMIN",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/ld+json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer{{sylius_token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"05\",\n    \"type\": \"text\",\n    \"translations\": {\n      \"en_US\": {\n        \"name\": \"Material\"\n      }\n    },\n    \"configuration\": {\n      \"maxCharacters\": 255,\n      \"minCharacters\": 3\n    },\n    \"storageType\": \"text\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-attributes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-attributes"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST https://demo.sylius.com/api/v2/admin/product-attributes \\\n  -H \"Authorization: Bearer TU_TOKEN_DE_ADMIN\" \\\n  -H \"Content-Type: application/ld+json\" \\\n  -d '{\n    \"code\": \"material\",\n    \"type\": \"text\",\n    \"translations\": {\n      \"en_US\": {\n        \"name\": \"Material\"\n      }\n    },\n    \"configuration\": {\n      \"maxCharacters\": 255,\n      \"minCharacters\": 3\n    },\n    \"storageType\": \"text\"\n  }'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer Group (Pablo)",
+			"item": [
+				{
+					"name": "token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"token_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"api@example.com\",\n  \"password\": \"sylius-api\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/administrators/token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"administrators",
+								"token"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'https://demo.sylius.com/api/v2/admin/administrators/token' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"email\": \"api@example.com\",\n  \"password\": \"sylius-api\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "https://demo.sylius.com/api/v2/admin/customer-groups/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/ld+json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/ld+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/customer-groups/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"customer-groups",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'PUT' \\\n  'https://demo.sylius.com/api/v2/admin/customer-groups/1' \\\n  -H 'accept: application/ld+json' \\\n  -H 'Content-Type: application/ld+json' \\\n  -d '{\n  \"name\": \"string\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "https://demo.sylius.com/api/v2/admin/customer-groups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/ld+json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/ld+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"K-gEPiZETnBkj9q7krbgW9nHU-H0KRt8GXNSL_1W_FzTck8aKf91D8-3PiDsH5RxLFh3bBdR1SRb-vEgSFVA0KGncTCh3\",\n  \"name\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/customer-groups",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"customer-groups"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'https://demo.sylius.com/api/v2/admin/customer-groups' \\\n  -H 'accept: application/ld+json' \\\n  -H 'Content-Type: application/ld+json' \\\n  -d '{\n  \"code\": \"K-gEPiZETnBkj9q7krbgW9nHU-H0KRt8GXNSL_1W_FzTck8aKf91D8-3PiDsH5RxLFh3bBdR1SRb-vEgSFVA0KGncTCh3\",\n  \"name\": \"string\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTM1NTIwNzEsImV4cCI6MTc1MzU1NTY3MSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.JcNzsi4UBZcBr7YJhvRX6YcU-S9o1mlZU8vuh08R842thYpoKhIFHWiIeZUbDOUJx2NMppOBWPM0wS-z_hQIZOuyrHOez3_HDxnBrUIVKuyVgbR_TVmaBEPRxUy8BIYiVWP_5-6776xcAyZN_64b2i5ngJyMyln_3dejX3M7xvaa75R9RfQAh6-sEr6D2aNhP3n5rsgcrXyMKqBHWNX2e-Cu7xPEbzzhW1hQZuowJMUqeQkNDPJDM0ov71v2P5lF1sY8Z5RZ8rk_3666QK_Pz33L_hW0Jti8aBfi1SgUoxU5GkfkU7cYC8iM9co3BeMHsV8i6EbeYszJjnxIGY1G7Ds_dqSGuujbDXizH89dIHJId1KNBjAAswn-CUAq5RimTUqj5nuzJGoWqZqj1cmnL1K99KwLnvGzBj58PB1kccB0yW7oyvg2DoTDe7zODJzXP5Xm9o2nXBA5IBReaDWk_uSSvD3Un1Ql5vvnlC0dwlivbkWbgyFuf2UDFQBlS1WKnwYKFsU3Utr3fzZ9OpMkLoqB4s0LzX7joXzNFZ3SDQFacAtm71iyu5S5KXXFpdGlhZNl8lCmgm-4JoQoYsrYNff3CPWei1kYri50gcjUaWSV2NTwulOgIU9ofFerpiJR2PuJtHuVmXLM8XLnuyfEf6QpxmMq5oKARWjSmarZYSQ",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/customer-groups?page=1&itemsPerPage=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"customer-groups"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "itemsPerPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Options (Erika)",
+			"item": [
+				{
+					"name": "Get data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-options",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-options"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Post data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-options",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-options"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Update data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-options",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-options"
+							]
+						},
+						"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful DELETE request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v2/admin/product-options",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"product-options"
+							]
+						},
+						"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tax Categories (Kevin)",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "TAX Category",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/admin/tax-categories",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"admin",
+										"tax-categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tax  por ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/ld+json"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v2/admin/tax-categories/clothing",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"admin",
+										"tax-categories",
+										"clothing"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'GET' \\\n  'https://demo.sylius.com/api/v2/admin/tax-categories/12341234' \\\n  -H 'accept: application/ld+json'"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "tax category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/ld+json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/ld+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"234f-dsfsdf\",\n  \"name\": \"Camisetas\",\n  \"description\": \"Ventas de Camisetas\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/admin/tax-categories",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"admin",
+										"tax-categories"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'POST' \\\n  'https://demo.sylius.com/api/v2/admin/tax-categories' \\\n  -H 'accept: application/ld+json' \\\n  -H 'Content-Type: application/ld+json' \\\n  -d '{\n  \"code\": \"3wYHVOkrqf4y-FIqnYZYd-JSTHsQYCId6U3NzGjA3Gu\",\n  \"name\": \"string\",\n  \"description\": \"string\"\n}'"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "borrar Tax",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v2/admin/tax-categories/{code}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"admin",
+										"tax-categories",
+										"{code}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Tax",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en_US"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v2/admin/tax-categories/dsdfsd-123343",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"admin",
+										"tax-categories",
+										"dsdfsd-123343"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'DELETE' \\\n  'https://demo.sylius.com/api/v2/admin/tax-categories/234f-dsfsdf' \\\n  -H 'accept: */*' \\\n  -H 'Accept-Language: en_US'"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Put",
+					"item": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://demo.sylius.com",
+			"type": "string"
+		},
+		{
+			"key": "token_admin",
+			"value": ""
+		},
+		{
+			"key": "token_client",
+			"value": ""
+		}
+	]
+}
