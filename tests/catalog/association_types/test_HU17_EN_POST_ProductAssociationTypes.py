@@ -124,3 +124,16 @@ def test_TC125_validar_error_code_supera_255_caracteres(auth_headers):
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
     AssertionAssociationTypes.assert_violation_message(response_data,
                                                        "Association type code must not be longer than 255 characters.")
+
+
+@pytest.mark.regression
+@pytest.mark.negative
+def test_TC126_validar_error_code_caracteres_invalidos(auth_headers):
+    headers = auth_headers
+    payload = generate_association_types_source_data(code=123)
+    url = EndpointAssociationTypes.association_types()
+
+    response = SyliusRequest.post(url, headers, payload)
+    log_request_response(url, response, headers, payload)
+
+    AssertionStatusCode.assert_status_code_400(response)
