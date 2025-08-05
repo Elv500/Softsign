@@ -41,3 +41,16 @@ class AssertionAssociationTypes:
         actual_name = response_data["translations"][locale]["name"]
         assert actual_name == expected_name, \
             f"El nombre en '{locale}' no coincide. Esperado: '{expected_name}', Recibido: '{actual_name}'"
+
+    @staticmethod
+    def assert_violation_message(response_data, expected_message):
+        assert "violations" in response_data, "No se encontró el campo 'violations' en la respuesta"
+
+        message_found = False
+
+        for violation in response_data.get("violations", []):
+            if violation.get("message") == expected_message:
+                message_found = True
+                break
+
+        assert message_found, f"No se encontró ninguna violación con el mensaje: '{expected_message}'"

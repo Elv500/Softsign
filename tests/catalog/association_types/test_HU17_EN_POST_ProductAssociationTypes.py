@@ -89,3 +89,21 @@ def test_TC123_validar_creacion_code_255_caracteres_exitoso(teardown_association
     AssertionAssociationTypes.assert_association_type_add_output_schema(response_data)
     AssertionAssociationTypes.assert_code_matches(response_data, payload['code'])
     created_inventories.append(payload['code'])
+
+
+@pytest.mark.regression
+@pytest.mark.negative
+@pytest.mark.actual
+def test_TC124_validar_error_code_1_caracter(auth_headers):
+    headers = auth_headers
+    payload = generate_association_types_source_data(code="a")
+    url = EndpointAssociationTypes.association_types()
+
+    response = SyliusRequest.post(url, headers, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers, payload)
+
+    AssertionStatusCode.assert_status_code_422(response)
+    AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
+    AssertionAssociationTypes.assert_violation_message(response_data,
+                                                       "Association type code must be at least 2 characters long.")

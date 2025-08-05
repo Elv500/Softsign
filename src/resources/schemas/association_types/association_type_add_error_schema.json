@@ -15,27 +15,25 @@
     },
     "violations": {
       "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "propertyPath": {
-              "type": "string"
-            },
-            "message": {
-              "type": "string"
-            },
-            "code": {
-              "type": "string"
-            }
+      "items": {
+        "type": "object",
+        "properties": {
+          "propertyPath": {
+            "type": "string"
           },
-          "required": [
-            "propertyPath",
-            "message",
-            "code"
-          ]
-        }
-      ]
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "propertyPath",
+          "message",
+          "code"
+        ]
+      }
     },
     "detail": {
       "type": "string"
