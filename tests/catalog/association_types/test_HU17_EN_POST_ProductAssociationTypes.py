@@ -181,7 +181,6 @@ def test_TC128_validar_error_falta_campo_code(auth_headers):
 
 @pytest.mark.regression
 @pytest.mark.negative
-@pytest.mark.actual
 def test_TC129_validar_error_falta_campo_translations(auth_headers):
     headers = auth_headers
     payload = generate_association_types_source_data()
@@ -197,3 +196,20 @@ def test_TC129_validar_error_falta_campo_translations(auth_headers):
     AssertionAssociationTypes.assert_violation_message(response_data,
                                                        "Please enter association type name.")
 
+
+@pytest.mark.regression
+@pytest.mark.negative
+def test_TC130_validar_error_translations_vacio(auth_headers):
+    headers = auth_headers
+    payload = generate_association_types_source_data(en_US_name="")
+    payload['translations'] = {"en_US": {"name": ""}}
+    url = EndpointAssociationTypes.association_types()
+
+    response = SyliusRequest.post(url, headers, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers, payload)
+
+    AssertionStatusCode.assert_status_code_422(response)
+    AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
+    AssertionAssociationTypes.assert_violation_message(response_data,
+                                                       "Please enter association type name.")
