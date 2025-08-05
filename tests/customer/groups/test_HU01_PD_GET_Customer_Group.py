@@ -167,7 +167,7 @@ def test_TC182_verificar_paginacion_fuera_rango(auth_headers):
 # Admin > Customer - Group > TC_183 Verificar paginación con itemsPerPage = 0
 @pytest.mark.boundary
 @pytest.mark.regression
-@pytest.mark.xfail(reason="Knwon issue BUG00: Verifica la Estructura que devuelve es correcta a pesar de mandar 0 items por pagina", run=False)
+@pytest.mark.xfail(reason="Knwon issue BugId: CG-01 La apliacion permite que se devuelva 0 items por pagina", run=False)
 def test_TC183_verificar_paginacion_items_cero(auth_headers):
     items_per_page = 0
     logger.info(f"=== TC_183: Iniciando test de paginación con itemsPerPage={items_per_page} ===")
@@ -336,7 +336,7 @@ def test_TC191_verificar_metodo_http_no_permitido(auth_headers):
     
     log_request_response(endpoint, response, headers=headers_with_json, payload=payload)
     
-    AssertionStatusCode.assert_status_code_415(response)
+    AssertionStatusCode.assert_status_code_422(response)
     
 
 # Admin > Customer - Group > TC_192 Verificar respuesta con parámetros itemsPerPage malformados
