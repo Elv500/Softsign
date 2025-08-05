@@ -25,7 +25,7 @@
             "type": "integer"
         },
         "address": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "code": {
             "type": "string"
