@@ -1,5 +1,3 @@
-import json
-
 import pytest
 
 from src.assertions.association_types_assertions import AssertionAssociationTypes
@@ -239,6 +237,23 @@ def test_TC131_crear_tipo_asociacion_solo_una_traduccion_en_US_exitoso(teardown_
 @pytest.mark.negative
 def test_TC132_enviar_solicitud_sin_token_autenticacion():
     headers = {}
+    payload = generate_association_types_source_data()
+    url = EndpointAssociationTypes.association_types()
+
+    response = SyliusRequest.post(url, headers, payload)
+    log_request_response(url, response, headers, payload)
+
+    AssertionStatusCode.assert_status_code_401(response)
+
+
+@pytest.mark.regression
+@pytest.mark.security
+@pytest.mark.negative
+def test_TC133_enviar_solicitud_token_invalido():
+    headers = {
+        "Authorization": "Bearer invalid_token_123456789",
+        "Content-Type": "application/json"
+    }
     payload = generate_association_types_source_data()
     url = EndpointAssociationTypes.association_types()
 
