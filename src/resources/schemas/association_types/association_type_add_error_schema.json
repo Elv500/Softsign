@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string"
+    },
+    "@id": {
+      "type": "string"
+    },
+    "@type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "integer"
+    },
+    "violations": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "propertyPath": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "propertyPath",
+            "message",
+            "code"
+          ]
+        }
+      ]
+    },
+    "detail": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "hydra:description": {
+      "type": "string"
+    },
+    "hydra:title": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "status",
+    "violations",
+    "detail",
+    "description",
+    "type",
+    "title",
+    "hydra:description",
+    "hydra:title"
+  ]
+}

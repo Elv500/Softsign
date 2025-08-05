@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "translations": {
+      "type": "object",
+      "properties": {
+        "en_US": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        },
+        "es_ES": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      },
+      "patternProperties": {
+        "^[a-z]{2}_[A-Z]{2}$": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "en_US"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "code",
+    "translations"
+  ]
+}
