@@ -213,3 +213,22 @@ def test_TC130_validar_error_translations_vacio(auth_headers):
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
     AssertionAssociationTypes.assert_violation_message(response_data,
                                                        "Please enter association type name.")
+
+
+@pytest.mark.regression
+@pytest.mark.positive
+def test_TC131_crear_tipo_asociacion_solo_una_traduccion_en_US_exitoso(teardown_association_types):
+    headers, created_inventories = teardown_association_types
+    payload = generate_association_types_source_data(en_US_name="prueba")
+    url = EndpointAssociationTypes.association_types()
+    AssertionAssociationTypes.assert_association_type_add_input_schema(payload)
+
+    response = SyliusRequest.post(url, headers, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers, payload)
+
+    AssertionStatusCode.assert_status_code_201(response)
+    AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
+    AssertionAssociationTypes.assert_translation_name_matches(response_data, "en_US",
+                                                              payload['translations']['en_US']['name'])
+    created_inventories.append(payload['code'])
