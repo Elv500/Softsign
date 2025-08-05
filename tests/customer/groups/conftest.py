@@ -18,11 +18,11 @@ def setup_add_customer_group(auth_headers):
         if 'code' in customer_group:
             try:
                 CustomerGroupCall().delete(auth_headers, customer_group['code'])
-                print(f"✅ Customer group eliminado: {customer_group['code']}")
+                print(f" Customer group eliminado: {customer_group['code']}")
             except Exception as e:
-                print(f"⚠️ Error al eliminar customer group {customer_group['code']}: {e}")
+                print(f" Error al eliminar customer group {customer_group['code']}: {e}")
         else:
-            print(f"❌ El customer group no tiene 'code': {customer_group}")
+            print(f" El customer group no tiene 'code': {customer_group}")
 
 
 @pytest.fixture(scope="function")  
@@ -44,6 +44,6 @@ def setup_customer_group_cleanup(auth_headers):
     for group_code in groups_to_cleanup:
         try:
             CustomerGroupCall().delete(auth_headers, group_code)
-            print(f"✅ Customer group limpiado: {group_code}")
+            print(f" Customer group limpiado: {group_code}")
         except Exception as e:
-            print(f"⚠️ Error durante cleanup de {group_code}: {e}")
+            print(f" Error durante cleanup de {group_code}: {e}")
