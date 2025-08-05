@@ -93,7 +93,6 @@ def test_TC123_validar_creacion_code_255_caracteres_exitoso(teardown_association
 
 @pytest.mark.regression
 @pytest.mark.negative
-@pytest.mark.actual
 def test_TC124_validar_error_code_1_caracter(auth_headers):
     headers = auth_headers
     payload = generate_association_types_source_data(code="a")
