@@ -159,3 +159,21 @@ def test_TC127_validar_error_code_ya_existe(teardown_association_types):
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
     AssertionAssociationTypes.assert_violation_message(response_data,
                                                        "The association type with given code already exists.")
+
+
+@pytest.mark.regression
+@pytest.mark.negative
+def test_TC128_validar_error_falta_campo_code(auth_headers):
+    headers = auth_headers
+    payload = generate_association_types_source_data()
+    del payload['code']
+    url = EndpointAssociationTypes.association_types()
+
+    response = SyliusRequest.post(url, headers, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers, payload)
+
+    AssertionStatusCode.assert_status_code_422(response)
+    AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
+    AssertionAssociationTypes.assert_violation_message(response_data,
+                                                       "Please enter association type code.")
