@@ -1,4 +1,3 @@
-import jsonschema
 import logging
 import pytest
 import time
