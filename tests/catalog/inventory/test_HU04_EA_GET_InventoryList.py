@@ -187,7 +187,7 @@ def test_TC211_pagina_negativa_items_validos(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 @pytest.mark.security
-@pytest.mark.xfail(reason="Knwon issue BUG01: El param page puede ser decimal rompiendo la URL", run=True)
+@pytest.mark.xfail(reason="Knwon issue BUG212: El param page puede ser decimal rompiendo la URL", run=True)
 def test_TC212_pagina_decimal_items_validos(auth_headers):
     params = {
         'page': 1.5,
@@ -273,7 +273,7 @@ def test_TC216_items_negativo_pagina_valida(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 @pytest.mark.security
-@pytest.mark.xfail(reason="Knwon issue BUG02: El param itemsPerPage puede ser decimal rompiendo la URL", run=True)
+@pytest.mark.xfail(reason="Knwon issue BUG217: El param itemsPerPage puede ser decimal rompiendo la URL", run=True)
 def test_TC217_items_decimal_pagina_valida(auth_headers):
     params = {
         'page': 1,
@@ -288,7 +288,7 @@ def test_TC217_items_decimal_pagina_valida(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 @pytest.mark.security
-@pytest.mark.xfail(reason="Knwon issue BUG03: El param itemsPerPage puede ser string rompiendo la URL", run=True)
+@pytest.mark.xfail(reason="Knwon issue BUG218: El param itemsPerPage puede ser string rompiendo la URL", run=True)
 def test_TC218_items_string_pagina_valida(auth_headers):
     params = {
         'page': 1,
@@ -303,7 +303,7 @@ def test_TC218_items_string_pagina_valida(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 @pytest.mark.security
-@pytest.mark.xfail(reason="Knwon issue BUG04: El param itemsPerPage puede ser vacio rompiendo la URL", run=True)
+@pytest.mark.xfail(reason="Knwon issue BUG219: El param itemsPerPage puede ser vacio rompiendo la URL", run=True)
 def test_TC219_items_vacio_pagina_valida(auth_headers):
     params = {
         'page': 1,

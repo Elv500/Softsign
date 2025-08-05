@@ -159,7 +159,7 @@ def test_TC254_crear_inventory_con_name_vacio(setup_add_inventory):
 
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.xfail(reason="Knwon issue BUG01: Permite ingresar un valor negativo", run=True)
+@pytest.mark.xfail(reason="Knwon issue BUG255: Permite ingresar un valor negativo", run=True)
 def test_TC255_crear_inventory_con_prioridad_negativa(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -334,7 +334,7 @@ def test_TC265_crear_inventory_con_code_y_name_longitud_maxima(setup_add_invento
 @pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.xfail(reason="Knwon issue BUG01: El backend responde 500 en lugar de validar longitud de 'name'", run=True)
+@pytest.mark.xfail(reason="Knwon issue BUG266: El backend responde 500 en lugar de validar longitud de 'name'", run=True)
 def test_TC266_crear_inventory_con_name_extremadamente_largo(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -347,7 +347,7 @@ def test_TC266_crear_inventory_con_name_extremadamente_largo(setup_add_inventory
 @pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.xfail(reason="Knwon issue BUG01: El backend responde 500 en lugar de validar longitud de 'code'", run=True)
+@pytest.mark.xfail(reason="Knwon issue BUG266: El backend responde 500 en lugar de validar longitud de 'code'", run=True)
 def test_TC267_crear_inventory_con_code_extremadamente_largo(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = generate_inventory_source_data()
