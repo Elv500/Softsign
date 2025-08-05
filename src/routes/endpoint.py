@@ -12,6 +12,9 @@ class Endpoint(Enum):
     BASE_CUSTOMER_GROUP = "/admin/customer-groups"
     BASE_CUSTOMER_GROUP_CODE = "/admin/customer-groups/{code}"
 
+    BASE_TAX_CATEGORY = "/admin/tax-categories"
+    BASE_TAX_CATEGORY_CODE = "/admin/tax-categories/{code}"
+
     BASE_ATTRIBUTES = "/admin/product-attributes"
     BASE_ATTRIBUTES_CODE = "/admin/product-attributes/{code}"
 

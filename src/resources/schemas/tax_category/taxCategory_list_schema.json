@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "hydra:member"
+  ],
+  "properties": {
+    "@context": { "type": "string" },
+    "@id": { "type": "string" },
+    "@type": { "type": "string" },
+    "hydra:member": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "@id",
+          "@type",
+          "id",
+          "code",
+          "name",
+          "description",
+          "createdAt",
+          "updatedAt"
+        ],
+        "properties": {
+          "@id": { "type": "string" },
+          "@type": { "type": "string" },
+          "id": { "type": "integer" },
+          "code": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "createdAt": { "type": "string" },
+          "updatedAt": { "type": "string" }
+        }
+      }
+    }
+  }
+}
