@@ -137,3 +137,25 @@ def test_TC126_validar_error_code_caracteres_invalidos(auth_headers):
     log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_400(response)
+
+
+@pytest.mark.regression
+@pytest.mark.negative
+def test_TC127_validar_error_code_ya_existe(teardown_association_types):
+    headers, created_inventories = teardown_association_types
+    payload = generate_association_types_source_data()
+    url = EndpointAssociationTypes.association_types()
+
+    response = SyliusRequest.post(url, headers, payload)
+    log_request_response(url, response, headers, payload)
+    AssertionStatusCode.assert_status_code_201(response)
+    created_inventories.append(payload['code'])
+
+    response = SyliusRequest.post(url, headers, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers, payload)
+
+    AssertionStatusCode.assert_status_code_422(response)
+    AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
+    AssertionAssociationTypes.assert_violation_message(response_data,
+                                                       "The association type with given code already exists.")
