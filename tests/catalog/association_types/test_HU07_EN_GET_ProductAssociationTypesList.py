@@ -8,8 +8,8 @@ from utils.logger_helpers import log_request_response
 
 
 @pytest.mark.smoke
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC82_Obtener_todos_los_tipos_de_asociacion_de_producto_exitoso(auth_headers):
     url = EndpointAssociationTypes.list()
     response = SyliusRequest.get(url, auth_headers)
@@ -25,8 +25,8 @@ def test_TC82_Obtener_todos_los_tipos_de_asociacion_de_producto_exitoso(auth_hea
 
 
 @pytest.mark.smoke
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC83_Obtener_tipos_de_asociacion_paginados_exitoso(auth_headers):
     url = EndpointAssociationTypes.list(page="1", items_per_page="10")
 
@@ -46,8 +46,9 @@ def test_TC83_Obtener_tipos_de_asociacion_paginados_exitoso(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.boundary
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC84_Validar_page_limite_inferior_exitoso(auth_headers):
     url = EndpointAssociationTypes.list(page="1")
 
@@ -61,8 +62,8 @@ def test_TC84_Validar_page_limite_inferior_exitoso(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.negative
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC85_Validar_page_valor_alfabetico_error(auth_headers):
     url = EndpointAssociationTypes.list(page="a")
 
@@ -78,8 +79,8 @@ def test_TC85_Validar_page_valor_alfabetico_error(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.negative
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC86_Validar_page_caracteres_especiales_error(auth_headers):
     url = EndpointAssociationTypes.list(page="!@#")
 
@@ -95,8 +96,8 @@ def test_TC86_Validar_page_caracteres_especiales_error(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.negative
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC87_Validar_page_vacio_error(auth_headers):
     url = EndpointAssociationTypes.list(page="")
 
@@ -112,8 +113,9 @@ def test_TC87_Validar_page_vacio_error(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.boundary
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC88_Validar_itemsPerPage_limite_inferior_exitoso(auth_headers):
     url = EndpointAssociationTypes.list(items_per_page="0")
 
@@ -128,8 +130,8 @@ def test_TC88_Validar_itemsPerPage_limite_inferior_exitoso(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.negative
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC89_Validar_itemsPerPage_negativo_error(auth_headers):
     url = EndpointAssociationTypes.list(items_per_page=-1)
     response = SyliusRequest.get(url, auth_headers)
@@ -139,13 +141,13 @@ def test_TC89_Validar_itemsPerPage_negativo_error(auth_headers):
     AssertionAssociationTypes.assert_error_schema(response_data)
     AssertionAssociationTypes.assert_error_message(
         response_data,
-        expected_message="Items per page should not be less than 0"
+        expected_message="Limit should not be less than 0"
     )
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.negative
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC90_Validar_itemsPerPage_alfabetico_error(auth_headers):
     url = EndpointAssociationTypes.list(items_per_page="a")
 
@@ -156,13 +158,13 @@ def test_TC90_Validar_itemsPerPage_alfabetico_error(auth_headers):
     AssertionAssociationTypes.assert_error_schema(response_data)
     AssertionAssociationTypes.assert_error_message(
         response_data,
-        expected_message="Items per page should not be less than 0"
+        expected_message="Limit should not be less than 0"
     )
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC91_Validar_orden_ascendente_code_exitoso(auth_headers):
     url = EndpointAssociationTypes.list(order="asc")
 
@@ -177,8 +179,8 @@ def test_TC91_Validar_orden_ascendente_code_exitoso(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC92_Validar_orden_descendente_code_exitoso(auth_headers):
     url = EndpointAssociationTypes.list(order="desc")
 
@@ -193,8 +195,8 @@ def test_TC92_Validar_orden_descendente_code_exitoso(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC93_Validar_orden_invalido_exitoso(auth_headers):
     url = EndpointAssociationTypes.list(order="up")
 
@@ -208,8 +210,8 @@ def test_TC93_Validar_orden_invalido_exitoso(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC94_Buscar_code_valido_exitoso(auth_headers):
     url = EndpointAssociationTypes.list(code="similar_products")
 
@@ -225,8 +227,8 @@ def test_TC94_Buscar_code_valido_exitoso(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC95_Buscar_code_invalido_lista_vacia(auth_headers):
     url = EndpointAssociationTypes.list(code="xyzabc123")
 
@@ -240,8 +242,8 @@ def test_TC95_Buscar_code_invalido_lista_vacia(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC96_Buscar_nombre_valido_exitoso(auth_headers):
     url = EndpointAssociationTypes.list(translations_name="Similar")
 
@@ -257,8 +259,8 @@ def test_TC96_Buscar_nombre_valido_exitoso(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC97_Buscar_nombre_invalido_lista_vacia(auth_headers):
     url = EndpointAssociationTypes.list(translations_name="nombre_invalido")
 
@@ -272,8 +274,9 @@ def test_TC97_Buscar_nombre_invalido_lista_vacia(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.segurity
+@pytest.mark.negative
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC98_Validar_autenticacion_invalida_error_401():
     invalid_token = "invalid.token.123"
     invalid_headers = {"Authorization": f"Bearer {invalid_token}"}
@@ -287,8 +290,8 @@ def test_TC98_Validar_autenticacion_invalida_error_401():
     log_request_response(url, response, invalid_headers)
 
 
+@pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC99_Verificar_combinacion_parametros_exitoso(auth_headers):
     url = EndpointAssociationTypes.list(
         page=1, items_per_page=20, order="desc")
@@ -307,8 +310,8 @@ def test_TC99_Verificar_combinacion_parametros_exitoso(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
+@pytest.mark.negative
 @pytest.mark.regression
-@pytest.mark.association_types
 def test_TC101_Validar_page_negativo_orden_valido_error(auth_headers):
     url = EndpointAssociationTypes.list(page=-1, order="asc")
 
