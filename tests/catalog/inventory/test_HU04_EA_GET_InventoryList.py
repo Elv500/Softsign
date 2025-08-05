@@ -28,14 +28,15 @@ def test_TC23_lista_completa_fuentes_inventarioo(auth_headers):
         assert item["name"].strip() != ""
         assert item["priority"] >= 0
         assert len(item["channels"]) > 0
-        assert all(c.strip() != "" for c in item["channels"])
+        assert all(channel.strip() != "" for channel in item["channels"])
     log_request_response(url, response, auth_headers)
 
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.regression
-def test_TC25_fuente_inventario_por_id_existente(auth_headers):
-    url = EndpointInventory.code("hamburg_warehouse")
+def test_TC25_fuente_inventario_por_code_existente(auth_headers):
+    code = "hamburg_warehouse"
+    url = EndpointInventory.code(code)
     response = SyliusRequest.get(url, auth_headers)
     AssertionStatusCode.assert_status_code_200(response)
     response_json = response.json()
@@ -44,7 +45,7 @@ def test_TC25_fuente_inventario_por_id_existente(auth_headers):
     assert response_json["@id"].strip() != ""
     assert response_json["@type"].strip() != ""
     assert response_json["id"] > 0
-    assert response_json["code"].strip() != ""
+    assert response_json["code"] == code
     assert response_json["name"].strip() != ""
     assert response_json["priority"] >= 0
     assert isinstance(response_json["channels"], list)
@@ -55,8 +56,9 @@ def test_TC25_fuente_inventario_por_id_existente(auth_headers):
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
-def test_TC24_fuente_inventario_id_inexistente(auth_headers):
-    url = EndpointInventory.code("code_inexistente")
+def test_TC24_fuente_inventario_code_inexistente(auth_headers):
+    code = "code_inexistente"
+    url = EndpointInventory.code(code)
     response = SyliusRequest.get(url, auth_headers)
     AssertionStatusCode.assert_status_code_404(response)
     response_json = response.json()
