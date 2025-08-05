@@ -231,6 +231,7 @@ espacios en blanco, saltos de línea u otros caracteres invisibles. Sylius debe 
     "\t",
     " \t \n "
 ])
+
 def test_TC221_tax_category_name_whitespace_only(setup_add_tax_category, invalid_name):
 
     auth_headers, created_tax_categories = setup_add_tax_category
