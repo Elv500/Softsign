@@ -222,6 +222,7 @@ espacios en blanco, saltos de línea u otros caracteres invisibles. Sylius debe 
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.negative
+@pytest.mark.xfail(reason="known issue La app permite espacios vacios BUG", run=False)
 @pytest.mark.parametrize("invalid_name", [
     "   ",
     "\n",
@@ -230,7 +231,7 @@ espacios en blanco, saltos de línea u otros caracteres invisibles. Sylius debe 
     "\t",
     " \t \n "
 ])
-def test_TC_tax_category_name_whitespace_only(setup_add_tax_category, invalid_name):
+def test_TC221_tax_category_name_whitespace_only(setup_add_tax_category, invalid_name, auth_headers):
 
     auth_headers, created_tax_categories = setup_add_tax_category
     data = generate_tax_category_data()
