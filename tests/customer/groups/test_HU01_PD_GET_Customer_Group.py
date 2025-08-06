@@ -1,5 +1,6 @@
 import logging
 import pytest
+import requests
 import time
 
 from src.assertions.customergroup_assertions import AssertionCustomerGroup
@@ -18,15 +19,12 @@ logger = logging.getLogger(__name__)
 @pytest.mark.regression
 def test_TC176_obtener_lista_grupos_clientes_exitoso(auth_headers):
     logger.info("=== TC_176: Iniciando test para obtener lista de grupos de clientes ===")
-    
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.get(endpoint, auth_headers)
-    
-    log_request_response(endpoint, response, headers=auth_headers)
-    
+    response = SyliusRequest.get(endpoint, auth_headers)    
     AssertionStatusCode.assert_status_code_200(response)
     AssertionCustomerGroup.assert_customer_group_get_output_schema(response.json())
-    
+    log_request_response(endpoint, response, headers=auth_headers)
+
 
 # Admin > Customer - Group > TC_177 Verificar estructura del JSON devuelto
 @pytest.mark.functional
@@ -39,19 +37,14 @@ def test_TC177_verificar_estructura_json_respuesta(auth_headers):
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
-    
+        
     data = response.json()
-    logger.info(f"Estructura JSON - Keys: {list(data.keys())}")
-    logger.info(f"Cantidad de elementos en hydra:member: {len(data.get('hydra:member', []))}")
-    logger.info(f"Total items: {data.get('hydra:totalItems', 'N/A')}")
-    
     AssertionStatusCode.assert_status_code_200(response)
-    
     assert "hydra:member" in data
     assert "hydra:totalItems" in data
     assert isinstance(data["hydra:member"], list)
     assert isinstance(data["hydra:totalItems"], int)
-    
+
 
 # Admin > Customer - Group > TC_178 Verificar que se puede obtener un grupo específico usando un código existente
 @pytest.mark.functional
@@ -65,10 +58,10 @@ def test_TC178_obtener_grupo_por_codigo_existente(auth_headers):
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
-    
+        
     AssertionStatusCode.assert_status_code_200(response)
     assert response.json()["code"] == group_code
-    
+
 
 # Admin > Customer - Group > TC_179 Verificar campos obligatorios en cada grupo (id, code, name)
 @pytest.mark.functional
@@ -80,22 +73,18 @@ def test_TC179_verificar_campos_obligatorios_cada_grupo(auth_headers):
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
-    
+        
     AssertionStatusCode.assert_status_code_200(response)
     
     grupos = response.json().get("hydra:member", [])
-    logger.info(f"Cantidad de grupos a verificar: {len(grupos)}")
     assert len(grupos) > 0, "Debe existir al menos un grupo"
     
-    for i, grupo in enumerate(grupos):
-        logger.debug(f"Verificando grupo {i+1}: ID={grupo.get('id')}, Code={grupo.get('code')}")
-        assert "id" in grupo
-        assert "code" in grupo
-        assert "name" in grupo
-        assert grupo["id"] is not None
-        assert grupo["code"] is not None
-        assert grupo["name"] is not None
-    
+    # Verificar que cada grupo tenga los campos obligatorios
+    for grupo in grupos:
+        assert "id" in grupo, f"Campo 'id' faltante en grupo: {grupo}"
+        assert "code" in grupo, f"Campo 'code' faltante en grupo: {grupo}"
+        assert "name" in grupo, f"Campo 'name' faltante en grupo: {grupo}"
+
 
 # Admin > Customer - Group > TC_180 Verificar que los campos code y name no sean nulos o vacíos
 @pytest.mark.functional
@@ -107,17 +96,16 @@ def test_TC180_verificar_campos_no_vacios(auth_headers):
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
-    
+        
     AssertionStatusCode.assert_status_code_200(response)
-    
     grupos = response.json().get("hydra:member", [])
-    logger.info(f"Verificando {len(grupos)} grupos para campos no vacíos")
     
-    for i, grupo in enumerate(grupos):
-        logger.debug(f"Grupo {i+1}: code='{grupo['code']}', name='{grupo['name']}'")
-        assert grupo["code"].strip() != "", f"El código no debe estar vacío para grupo {grupo['id']}"
-        assert grupo["name"].strip() != "", f"El nombre no debe estar vacío para grupo {grupo['id']}"
-    
+    # Verificar que cada grupo tenga campos no vacíos
+    for grupo in grupos:
+        assert grupo.get("code") is not None, f"Campo 'code' es nulo en grupo: {grupo}"
+        assert grupo.get("name") is not None, f"Campo 'name' es nulo en grupo: {grupo}"
+        assert grupo.get("code") != "", f"Campo 'code' está vacío en grupo: {grupo}"
+        assert grupo.get("name") != "", f"Campo 'name' está vacío en grupo: {grupo}"
 
 # Admin > Customer - Group > TC_181 Validar paginación básica con page y itemsPerPage
 @pytest.mark.functional
@@ -130,17 +118,14 @@ def test_TC181_validar_paginacion_basica(auth_headers):
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
-    
+        
     AssertionStatusCode.assert_status_code_200(response)
     
     data = response.json()
     member_count = len(data["hydra:member"])
-    logger.info(f"Elementos recibidos: {member_count}, Límite solicitado: {items_per_page}")
-    logger.info(f"Total items disponibles: {data.get('hydra:totalItems', 'N/A')}")
-    
+
     assert isinstance(data.get("hydra:member", []), list)
     assert member_count <= items_per_page
-    
 
 # Admin > Customer - Group > TC_182 Verificar paginación con página fuera de rango (ej. page=9999)
 @pytest.mark.boundary
@@ -153,21 +138,14 @@ def test_TC182_verificar_paginacion_fuera_rango(auth_headers):
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
-    
+        
     AssertionStatusCode.assert_status_code_200(response)
-    
-    data = response.json()
-    member_count = len(data.get("hydra:member", []))
-    logger.info(f"Elementos recibidos en página fuera de rango: {member_count}")
-    logger.info(f"Total items disponibles: {data.get('hydra:totalItems', 'N/A')}")
-    
-    assert isinstance(data.get("hydra:member", []), list)
-    
+
 
 # Admin > Customer - Group > TC_183 Verificar paginación con itemsPerPage = 0
 @pytest.mark.boundary
 @pytest.mark.regression
-@pytest.mark.xfail(reason="Knwon issue BugId: CG-01 La apliacion permite que se devuelva 0 items por pagina", run=True)
+@pytest.mark.xfail(reason="Known issue BugId: CG-01 La aplicacion permite que se devuelva 0 items por pagina", run=True)
 def test_TC183_verificar_paginacion_items_cero(auth_headers):
     items_per_page = 0
     logger.info(f"=== TC_183: Iniciando test de paginación con itemsPerPage={items_per_page} ===")
@@ -209,14 +187,7 @@ def test_TC185_verificar_paginacion_limite_maximo(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_200(response)
-    
-    data = response.json()
-    member_count = len(data["hydra:member"])
-    logger.info(f"Elementos recibidos: {member_count}, Límite solicitado: {items_per_page}")
-    logger.info(f"Total items disponibles: {data.get('hydra:totalItems', 'N/A')}")
-    
-    assert member_count <= items_per_page
-    
+
 
 # Admin > Customer - Group > TC_186 Verificar que no permita el acceso sin token de autenticación
 @pytest.mark.security
@@ -240,7 +211,6 @@ def test_TC186_verificar_acceso_sin_token():
 def test_TC187_verificar_acceso_token_invalido():
     invalid_token = "token_invalido_12345"
     logger.info("=== TC_187: Iniciando test de seguridad - token inválido ===")
-    logger.info(f"Token usado: {invalid_token[:20]}...")
     
     invalid_headers = {"Authorization": f"Bearer {invalid_token}"}
     endpoint = EndpointCustomerGroup.customer_group()
@@ -257,7 +227,6 @@ def test_TC187_verificar_acceso_token_invalido():
 @pytest.mark.regression
 def test_TC188_verificar_acceso_token_expirado():
     logger.info("=== TC_188: Iniciando test de seguridad - token expirado ===")
-    logger.info("Usando token JWT con fecha de expiración pasada")
     
     expired_headers = {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.ey"
                        "JpYXQiOjE3NTQyMzQzODksImV4cCI6MTc1NDIzNzk4OSwicm9sZXMiOlsiUk9MRV"
@@ -289,7 +258,6 @@ def test_TC188_verificar_acceso_token_expirado():
 def test_TC189_verificar_header_authorization_mal_formado():
     malformed_auth = "InvalidFormat token123"
     logger.info("=== TC_189: Iniciando test de seguridad - header Authorization malformado ===")
-    logger.info(f"Header malformado usado: {malformed_auth}")
     
     malformed_headers = {"Authorization": malformed_auth}
     endpoint = EndpointCustomerGroup.customer_group()
@@ -320,17 +288,12 @@ def test_TC190_obtener_grupo_codigo_inexistente(auth_headers):
 @pytest.mark.regression
 def test_TC191_verificar_metodo_http_no_permitido(auth_headers):
     logger.info("=== TC_191: Iniciando test de método HTTP no permitido (POST) ===")
-    logger.info("Enviando POST request a endpoint GET")
     
-    import requests
     headers_with_json = auth_headers.copy()
     headers_with_json['Content-Type'] = 'application/json'
     
     endpoint = EndpointCustomerGroup.customer_group()
     payload = {"test": "data"}
-    
-    logger.info(f"Headers enviados: Content-Type: application/json + Authorization")
-    logger.info(f"Body JSON: {payload}")
     
     response = requests.post(endpoint, headers=headers_with_json, json=payload)
     
@@ -346,7 +309,6 @@ def test_TC192_verificar_parametros_itemsPerPage_malformados(auth_headers):
     malformed_param = "xyz"
     logger.info(f"=== TC_192: Iniciando test con itemsPerPage malformado: {malformed_param} ===")
     
-    import requests
     endpoint = EndpointCustomerGroup.customer_group() + f"?page=1&itemsPerPage={malformed_param}"
     response = requests.get(endpoint, headers=auth_headers)
     
@@ -362,7 +324,6 @@ def test_TC193_verificar_parametros_page_malformados(auth_headers):
     malformed_param = "asd"
     logger.info(f"=== TC_193: Iniciando test con page malformado: {malformed_param} ===")
     
-    import requests
     endpoint = EndpointCustomerGroup.customer_group() + f"?page={malformed_param}&itemsPerPage=10"
     response = requests.get(endpoint, headers=auth_headers)
     
@@ -385,14 +346,10 @@ def test_TC194_verificar_unicidad_ids_codigos(auth_headers):
     AssertionStatusCode.assert_status_code_200(response)
     
     grupos = response.json().get("hydra:member", [])
-    logger.info(f"Verificando unicidad en {len(grupos)} grupos")
     
     ids = [g["id"] for g in grupos]
     codes = [g["code"] for g in grupos]
-    
-    logger.info(f"IDs encontrados: {len(ids)}, IDs únicos: {len(set(ids))}")
-    logger.info(f"Códigos encontrados: {len(codes)}, Códigos únicos: {len(set(codes))}")
-    
+        
     assert len(ids) == len(set(ids)), "Los IDs deben ser únicos"
     assert len(codes) == len(set(codes)), "Los códigos deben ser únicos"
     
@@ -414,9 +371,6 @@ def test_TC195_verificar_formato_datos_campos(auth_headers):
     logger.info(f"Verificando formato de datos en {len(grupos)} grupos")
     
     for i, grupo in enumerate(grupos):
-        logger.debug(f"Grupo {i+1}: ID={grupo['id']} (tipo: {type(grupo['id'])})")
-        logger.debug(f"Grupo {i+1}: Code='{grupo['code']}' (tipo: {type(grupo['code'])}, longitud: {len(grupo['code'])})")
-        logger.debug(f"Grupo {i+1}: Name='{grupo['name']}' (tipo: {type(grupo['name'])}, longitud: {len(grupo['name'])})")
         
         assert isinstance(grupo["id"], int)
         assert grupo["id"] > 0
@@ -429,7 +383,7 @@ def test_TC195_verificar_formato_datos_campos(auth_headers):
     
 
 # Admin > Customer - Group > TC_196 Verificar límites de longitud de campos
-    # Precondicion tener datos de prueba con campos largos o ejecutrar el test de POST primero
+# Precondición: tener datos de prueba con campos largos o ejecutar el test de POST primero
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC196_verificar_limites_longitud_campos(auth_headers):
@@ -443,7 +397,6 @@ def test_TC196_verificar_limites_longitud_campos(auth_headers):
     AssertionStatusCode.assert_status_code_200(response)
     
     grupos = response.json().get("hydra:member", [])
-    logger.info(f"Verificando límites de longitud en {len(grupos)} grupos")
     
     max_code_length = 0
     max_name_length = 0
@@ -456,21 +409,16 @@ def test_TC196_verificar_limites_longitud_campos(auth_headers):
             max_code_length = code_length
         if name_length > max_name_length:
             max_name_length = name_length
-            
-        logger.debug(f"Grupo {i+1}: Code length={code_length}, Name length={name_length}")
-        
+                    
         assert code_length <= 255, f"Código muy largo: {grupo['code']}"
         assert name_length <= 255, f"Nombre muy largo: {grupo['name']}"
     
-    logger.info(f"Longitud máxima de código encontrada: {max_code_length}")
-    logger.info(f"Longitud máxima de nombre encontrada: {max_name_length}")
 
 # Admin > Customer - Group > TC_197 Verificar tiempo de respuesta aceptable (2 seg)
 @pytest.mark.performance
 @pytest.mark.regression
 def test_TC197_verificar_tiempo_respuesta(auth_headers):
     logger.info("=== TC_197: Iniciando test de performance - tiempo de respuesta ===")
-    logger.info("Límite de tiempo esperado: 2.0 segundos")
     
     endpoint = EndpointCustomerGroup.customer_group()
     
@@ -479,10 +427,7 @@ def test_TC197_verificar_tiempo_respuesta(auth_headers):
     elapsed = time.time() - start_time
     
     log_request_response(endpoint, response, headers=auth_headers)
-    
-    logger.info(f"Tiempo de respuesta: {elapsed:.3f} segundos")
-    logger.info(f"Tamaño de respuesta: {len(response.content)} bytes")
-    
+        
     AssertionStatusCode.assert_status_code_200(response)
     assert elapsed < 2.0, f"Tiempo de respuesta muy alto: {elapsed:.2f}s"
     
@@ -500,11 +445,7 @@ def test_TC198_verificar_headers_respuesta(auth_headers):
     
     AssertionStatusCode.assert_status_code_200(response)
     
-    headers = response.headers
-    logger.info(f"Headers de respuesta recibidos: {dict(headers)}")
-    
-    content_type = headers.get("Content-Type", "")
-    logger.info(f"Content-Type: {content_type}")
-    
+    headers = response.headers    
+    content_type = headers.get("Content-Type", "")    
     assert content_type.startswith("application/ld+json"), f"Content-Type incorrecto: {content_type}"
     
