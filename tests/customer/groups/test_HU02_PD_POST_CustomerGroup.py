@@ -12,6 +12,33 @@ from utils.logger_helpers import log_request_response
 
 logger = logging.getLogger(__name__)
 
+# Variable global para controlar delay entre tests
+_last_request_time = 0
+
+def safe_api_call(func, *args, **kwargs):
+    """
+    Wrapper para hacer llamadas seguras a la API con delay automático
+    para evitar rate limiting y timeouts en tests POST
+    """
+    global _last_request_time
+    current_time = time.time()
+    
+    # Asegurar al menos 0.3 segundos entre llamadas consecutivas (menos que GET)
+    time_since_last = current_time - _last_request_time
+    if time_since_last < 0.3:
+        sleep_time = 0.3 - time_since_last
+        logger.debug(f"Esperando {sleep_time:.2f}s para evitar rate limiting...")
+        time.sleep(sleep_time)
+    
+    try:
+        result = func(*args, **kwargs)
+        _last_request_time = time.time()
+        return result
+    except Exception as e:
+        logger.warning(f"Error en llamada API: {e}")
+        _last_request_time = time.time()
+        raise
+
 
 # Admin > Customer - Group > TC_153 Crear grupo de clientes con datos válidos
 @pytest.mark.functional
@@ -26,7 +53,7 @@ def test_TC153_crear_grupo_clientes_datos_validos(setup_customer_group_cleanup):
     print("Generated Customer Group Data:", data)
     
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -51,7 +78,7 @@ def test_TC154_verificar_estructura_json_respuesta_creacion(setup_customer_group
     
     data = generate_customer_group_source_data()
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -71,7 +98,7 @@ def test_TC155_crear_grupo_codigo_duplicado(setup_customer_group_cleanup):
     
     data1 = generate_customer_group_source_data()
     endpoint = EndpointCustomerGroup.customer_group()
-    response1 = SyliusRequest.post(endpoint, auth_headers, data1)
+    response1 = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data1)
     
     log_request_response(endpoint, response1, headers=auth_headers, payload=data1)
     
@@ -82,7 +109,7 @@ def test_TC155_crear_grupo_codigo_duplicado(setup_customer_group_cleanup):
     
     data2 = generate_customer_group_source_data()
     data2["code"] = data1["code"]  # el mismo código
-    response2 = SyliusRequest.post(endpoint, auth_headers, data2)
+    response2 = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data2)
     
     log_request_response(endpoint, response2, headers=auth_headers, payload=data2)
     
@@ -99,7 +126,7 @@ def test_TC156_crear_grupo_sin_campo_code(auth_headers):
     data = generate_customer_group_source_data()
     del data["code"] #eliminar code que es obligatorio de la data que nos genera
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -116,7 +143,7 @@ def test_TC157_crear_grupo_sin_campo_name(auth_headers):
     data = generate_customer_group_source_data()
     del data["name"]  # Eliminar campo obligatorio
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -133,7 +160,7 @@ def test_TC158_crear_grupo_codigo_vacio(auth_headers):
     data = generate_customer_group_source_data()
     data["code"] = ""
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -150,7 +177,7 @@ def test_TC159_crear_grupo_nombre_vacio(auth_headers):
     data = generate_customer_group_source_data()
     data["name"] = ""
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -167,7 +194,7 @@ def test_TC160_crear_grupo_codigo_muy_largo(auth_headers):
     data = generate_customer_group_source_data()
     data["code"] = "a" * 256
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -184,7 +211,7 @@ def test_TC161_crear_grupo_nombre_muy_largo(auth_headers):
     data = generate_customer_group_source_data()
     data["name"] = "a" * 256
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -201,7 +228,7 @@ def test_TC162_crear_grupo_caracteres_especiales_codigo(auth_headers):
     data = generate_customer_group_source_data()
     data["code"] = "test*code/123^!.special"
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -219,7 +246,7 @@ def test_TC163_crear_grupo_caracteres_especiales_nombre(setup_customer_group_cle
     data = generate_customer_group_source_data()
     data["name"] = "Test Pablo ñáéíóú-Co_123$@$@#"
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -238,7 +265,7 @@ def test_TC164_crear_grupo_sin_token():
     
     data = generate_customer_group_source_data()
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, {}, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, {}, data)
     
     log_request_response(endpoint, response, headers={}, payload=data)
     
@@ -255,7 +282,7 @@ def test_TC165_crear_grupo_token_invalido():
     data = generate_customer_group_source_data()
     invalid_headers = {"Authorization": "Bearer token_invalido"}
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, invalid_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, invalid_headers, data)
     
     log_request_response(endpoint, response, headers=invalid_headers, payload=data)
     
@@ -309,13 +336,13 @@ def test_TC168_verificar_tiempo_respuesta_creacion(setup_customer_group_cleanup)
     data = generate_customer_group_source_data()
     start_time = time.time()
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     elapsed = time.time() - start_time
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
-    assert elapsed < 3.0
+    assert elapsed < 3.0, f"Tiempo de respuesta muy alto: {elapsed:.2f}s"
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
@@ -334,7 +361,7 @@ def test_TC169_crear_multiples_grupos_simultaneos(setup_customer_group_cleanup):
     
     for i in range(3):
         data = generate_customer_group_source_data()
-        response = SyliusRequest.post(endpoint, auth_headers, data)
+        response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
         
         log_request_response(endpoint, response, headers=auth_headers, payload=data)
         
@@ -345,7 +372,7 @@ def test_TC169_crear_multiples_grupos_simultaneos(setup_customer_group_cleanup):
         add_group_for_cleanup(customer_group_code)
         
     codes = [resp.json()["code"] for resp in responses]
-    assert len(codes) == len(set(codes))
+    assert len(codes) == len(set(codes)), "Todos los códigos deben ser únicos"
 
 
 # Admin > Customer - Group > TC_170 Verificar que permita crear grupo con código en límite superior (255 chars)
@@ -358,7 +385,8 @@ def test_TC170_crear_grupo_codigo_limite_superior(setup_customer_group_cleanup):
     data = generate_customer_group_source_data()
     data["code"] = "a" * 255
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -378,7 +406,8 @@ def test_TC171_crear_grupo_nombre_limite_superior(setup_customer_group_cleanup):
     data = generate_customer_group_source_data()
     data["name"] = "a" * 255
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -397,7 +426,8 @@ def test_TC172_verificar_headers_respuesta_creacion(setup_customer_group_cleanup
     
     data = generate_customer_group_source_data()
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -421,7 +451,7 @@ def test_TC173_crear_grupo_codigo_minimo(setup_customer_group_cleanup):
     data = generate_customer_group_source_data()
     data["code"] = "a"
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -441,7 +471,7 @@ def test_TC174_crear_grupo_nombre_minimo(setup_customer_group_cleanup):
     data = generate_customer_group_source_data()
     data["name"] = "Ab"  # La app pide minimo 2 caracteres
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
@@ -462,7 +492,7 @@ def test_TC175_crear_grupo_valores_null(auth_headers):
         "name": None
     }
     endpoint = EndpointCustomerGroup.customer_group()
-    response = SyliusRequest.post(endpoint, auth_headers, data)
+    response = safe_api_call(SyliusRequest.post, endpoint, auth_headers, data)
     
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     

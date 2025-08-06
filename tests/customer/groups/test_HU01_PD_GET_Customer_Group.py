@@ -12,6 +12,33 @@ from utils.logger_helpers import log_request_response
 # Configurar logger
 logger = logging.getLogger(__name__)
 
+# Variable global para controlar delay entre tests
+_last_request_time = 0
+
+def safe_api_call(func, *args, **kwargs):
+    """
+    Wrapper para hacer llamadas seguras a la API con delay automático
+    para evitar rate limiting y timeouts
+    """
+    global _last_request_time
+    current_time = time.time()
+    
+    # Asegurar al menos 0.5 segundos entre llamadas consecutivas
+    time_since_last = current_time - _last_request_time
+    if time_since_last < 0.5:
+        sleep_time = 0.5 - time_since_last
+        logger.debug(f"Esperando {sleep_time:.2f}s para evitar rate limiting...")
+        time.sleep(sleep_time)
+    
+    try:
+        result = func(*args, **kwargs)
+        _last_request_time = time.time()
+        return result
+    except Exception as e:
+        logger.warning(f"Error en llamada API: {e}")
+        _last_request_time = time.time()
+        raise
+
 
 # Admin > Customer - Group > TC_176 Verificar que se puede obtener la lista de grupos de clientes codigo 200
 @pytest.mark.functional
@@ -36,7 +63,7 @@ def test_TC177_verificar_estructura_json_respuesta(auth_headers):
     
     # Optimización: Solo necesita verificar estructura, 1 item es suficiente
     endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=1)
-    response = SyliusRequest.get(endpoint, auth_headers)
+    response = safe_api_call(SyliusRequest.get, endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
         
@@ -57,7 +84,7 @@ def test_TC178_obtener_grupo_por_codigo_existente(auth_headers):
     logger.info(f"=== TC_178: Iniciando test para obtener grupo específico: {group_code} ===")
     
     endpoint = EndpointCustomerGroup.code(group_code)
-    response = SyliusRequest.get(endpoint, auth_headers)
+    response = safe_api_call(SyliusRequest.get, endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
         
