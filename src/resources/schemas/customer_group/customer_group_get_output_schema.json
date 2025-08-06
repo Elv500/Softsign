@@ -1,22 +1,110 @@
 {
-        "type": "object",
-        "required": ["hydra:member"],
-        "properties": {
-            "hydra:member": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "id": {"type": "integer"},
-                        "code": {"type": "string"},
-                        "name": {"type": "string"}
+    "type": "object",
+    "required": ["@context", "@id", "@type", "hydra:totalItems", "hydra:member"],
+    "properties": {
+        "@context": {
+            "type": "string"
+        },
+        "@id": {
+            "type": "string"
+        },
+        "@type": {
+            "type": "string",
+            "enum": ["hydra:Collection"]
+        },
+        "hydra:totalItems": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "hydra:member": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["@id", "@type", "id", "code", "name"],
+                "properties": {
+                    "@id": {
+                        "type": "string"
                     },
-                    "required": ["id", "code", "name"]
+                    "@type": {
+                        "type": "string",
+                        "enum": ["CustomerGroup"]
+                    },
+                    "id": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "code": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "hydra:view": {
+            "type": "object",
+            "properties": {
+                "@id": {
+                    "type": "string"
+                },
+                "@type": {
+                    "type": "string",
+                    "enum": ["hydra:PartialCollectionView"]
+                },
+                "hydra:first": {
+                    "type": "string"
+                },
+                "hydra:last": {
+                    "type": "string"
+                },
+                "hydra:next": {
+                    "type": "string"
+                },
+                "hydra:previous": {
+                    "type": "string"
+                }
+            }
+        },
+        "hydra:search": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "enum": ["hydra:IriTemplate"]
+                },
+                "hydra:template": {
+                    "type": "string"
+                },
+                "hydra:variableRepresentation": {
+                    "type": "string"
+                },
+                "hydra:mapping": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string",
+                                "enum": ["IriTemplateMapping"]
+                            },
+                            "variable": {
+                                "type": "string"
+                            },
+                            "property": {
+                                "type": "string"
+                            },
+                            "required": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
                 }
             }
         }
-    }
-
-
-    
-
+    },
+    "additionalProperties": false
+}
