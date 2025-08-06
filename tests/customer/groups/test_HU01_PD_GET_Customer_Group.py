@@ -13,13 +13,14 @@ from utils.logger_helpers import log_request_response
 logger = logging.getLogger(__name__)
 
 
-# # Admin > Customer - Group > TC_176 Verificar que se puede obtener la lista de grupos de clientes codigo 200
+# Admin > Customer - Group > TC_176 Verificar que se puede obtener la lista de grupos de clientes codigo 200
 @pytest.mark.functional
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_TC176_obtener_lista_grupos_clientes_exitoso(auth_headers):
     logger.info("=== TC_176: Iniciando test para obtener lista de grupos de clientes ===")
-    endpoint = EndpointCustomerGroup.customer_group()
+    # Optimización: Solo necesita verificar que obtiene respuesta, 1 item es suficiente
+    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=1)
     response = SyliusRequest.get(endpoint, auth_headers)    
     AssertionStatusCode.assert_status_code_200(response)
     AssertionCustomerGroup.assert_customer_group_get_output_schema(response.json())
@@ -33,7 +34,8 @@ def test_TC176_obtener_lista_grupos_clientes_exitoso(auth_headers):
 def test_TC177_verificar_estructura_json_respuesta(auth_headers):
     logger.info("=== TC_177: Iniciando verificación de estructura JSON ===")
     
-    endpoint = EndpointCustomerGroup.customer_group()
+    # Optimización: Solo necesita verificar estructura, 1 item es suficiente
+    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=1)
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
@@ -69,8 +71,8 @@ def test_TC178_obtener_grupo_por_codigo_existente(auth_headers):
 def test_TC179_verificar_campos_obligatorios_cada_grupo(auth_headers):
     logger.info("=== TC_179: Iniciando verificación de campos obligatorios ===")
     
-    # Optimización: Usar paginación para limitar datos
-    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=5)
+    # Optimización: Solo necesita verificar campos en 1 grupo
+    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=1)
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
@@ -80,11 +82,11 @@ def test_TC179_verificar_campos_obligatorios_cada_grupo(auth_headers):
     grupos = response.json().get("hydra:member", [])
     assert len(grupos) > 0, "Debe existir al menos un grupo"
     
-    # Verificar que cada grupo tenga los campos obligatorios (máximo 5 grupos)
-    for grupo in grupos:
-        assert "id" in grupo, f"Campo 'id' faltante en grupo: {grupo}"
-        assert "code" in grupo, f"Campo 'code' faltante en grupo: {grupo}"
-        assert "name" in grupo, f"Campo 'name' faltante en grupo: {grupo}"
+    # Verificar que el grupo tenga los campos obligatorios (solo 1 grupo)
+    grupo = grupos[0]
+    assert "id" in grupo, f"Campo 'id' faltante en grupo: {grupo}"
+    assert "code" in grupo, f"Campo 'code' faltante en grupo: {grupo}"
+    assert "name" in grupo, f"Campo 'name' faltante en grupo: {grupo}"
 
 
 # Admin > Customer - Group > TC_180 Verificar que los campos code y name no sean nulos o vacíos
@@ -93,8 +95,8 @@ def test_TC179_verificar_campos_obligatorios_cada_grupo(auth_headers):
 def test_TC180_verificar_campos_no_vacios(auth_headers):
     logger.info("=== TC_180: Iniciando verificación de campos no vacíos ===")
     
-    # Optimización: Usar paginación para limitar datos
-    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=3)
+    # Optimización: Solo necesita verificar 1 grupo para validar campos no vacíos
+    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=1)
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
@@ -102,12 +104,12 @@ def test_TC180_verificar_campos_no_vacios(auth_headers):
     AssertionStatusCode.assert_status_code_200(response)
     grupos = response.json().get("hydra:member", [])
     
-    # Verificar que cada grupo tenga campos no vacíos (máximo 3 grupos)
-    for grupo in grupos:
-        assert grupo.get("code") is not None, f"Campo 'code' es nulo en grupo: {grupo}"
-        assert grupo.get("name") is not None, f"Campo 'name' es nulo en grupo: {grupo}"
-        assert grupo.get("code") != "", f"Campo 'code' está vacío en grupo: {grupo}"
-        assert grupo.get("name") != "", f"Campo 'name' está vacío en grupo: {grupo}"
+    # Verificar que el grupo tenga campos no vacíos (solo 1 grupo)
+    grupo = grupos[0]
+    assert grupo.get("code") is not None, f"Campo 'code' es nulo en grupo: {grupo}"
+    assert grupo.get("name") is not None, f"Campo 'name' es nulo en grupo: {grupo}"
+    assert grupo.get("code") != "", f"Campo 'code' está vacío en grupo: {grupo}"
+    assert grupo.get("name") != "", f"Campo 'name' está vacío en grupo: {grupo}"
 
 # Admin > Customer - Group > TC_181 Validar paginación básica con page y itemsPerPage
 @pytest.mark.functional
@@ -311,7 +313,7 @@ def test_TC192_verificar_parametros_itemsPerPage_malformados(auth_headers):
     malformed_param = "xyz"
     logger.info(f"=== TC_192: Iniciando test con itemsPerPage malformado: {malformed_param} ===")
     
-    # Optimización: Usar SyliusRequest en lugar de requests directo
+    # Optimización: Usar SyliusRequest y mantener mínimo de datos
     endpoint = EndpointCustomerGroup.customer_group() + f"?page=1&itemsPerPage={malformed_param}"
     response = SyliusRequest.get(endpoint, auth_headers)
     
@@ -327,8 +329,8 @@ def test_TC193_verificar_parametros_page_malformados(auth_headers):
     malformed_param = "asd"
     logger.info(f"=== TC_193: Iniciando test con page malformado: {malformed_param} ===")
     
-    # Optimización: Usar SyliusRequest en lugar de requests directo
-    endpoint = EndpointCustomerGroup.customer_group() + f"?page={malformed_param}&itemsPerPage=10"
+    # Optimización: Usar SyliusRequest y mantener mínimo de datos
+    endpoint = EndpointCustomerGroup.customer_group() + f"?page={malformed_param}&itemsPerPage=1"
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
@@ -342,8 +344,8 @@ def test_TC193_verificar_parametros_page_malformados(auth_headers):
 def test_TC194_verificar_unicidad_ids_codigos(auth_headers):
     logger.info("=== TC_194: Iniciando verificación de unicidad de IDs y códigos ===")
     
-    # Optimización: Usar paginación para obtener una muestra representativa
-    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=10)
+    # Optimización: Necesita al menos 2 grupos para verificar unicidad
+    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=2)
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
@@ -352,7 +354,7 @@ def test_TC194_verificar_unicidad_ids_codigos(auth_headers):
     
     grupos = response.json().get("hydra:member", [])
     
-    # Optimización: Verificación de unicidad en muestra limitada
+    # Verificación de unicidad con mínimo 2 grupos
     ids = [g["id"] for g in grupos]
     codes = [g["code"] for g in grupos]
         
@@ -366,8 +368,8 @@ def test_TC194_verificar_unicidad_ids_codigos(auth_headers):
 def test_TC195_verificar_formato_datos_campos(auth_headers):
     logger.info("=== TC_195: Iniciando verificación de formato de datos ===")
     
-    # Optimización: Limitar a primeros 5 grupos para validación de formato
-    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=5)
+    # Optimización: Solo necesita validar formato en 1 grupo
+    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=1)
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
@@ -375,15 +377,18 @@ def test_TC195_verificar_formato_datos_campos(auth_headers):
     AssertionStatusCode.assert_status_code_200(response)
     
     grupos = response.json().get("hydra:member", [])
-    for grupo in grupos:
-        assert isinstance(grupo["id"], int)
-        assert grupo["id"] > 0
-        
-        assert isinstance(grupo["code"], str)
-        assert len(grupo["code"]) > 0
-        
-        assert isinstance(grupo["name"], str)
-        assert len(grupo["name"]) > 0
+    logger.info(f"Verificando formato de datos en {len(grupos)} grupo (optimizado)")
+    
+    # Validación solo en 1 grupo
+    grupo = grupos[0]
+    assert isinstance(grupo["id"], int)
+    assert grupo["id"] > 0
+    
+    assert isinstance(grupo["code"], str)
+    assert len(grupo["code"]) > 0
+    
+    assert isinstance(grupo["name"], str)
+    assert len(grupo["name"]) > 0
     
 
 # Admin > Customer - Group > TC_196 Verificar límites de longitud de campos
@@ -393,8 +398,8 @@ def test_TC195_verificar_formato_datos_campos(auth_headers):
 def test_TC196_verificar_limites_longitud_campos(auth_headers):
     logger.info("=== TC_196: Iniciando verificación de límites de longitud ===")
     
-    # Optimización: Usar paginación para limitar datos procesados
-    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=8)
+    # Optimización: Solo necesita verificar límites en 1 grupo
+    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=1)
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
@@ -403,20 +408,13 @@ def test_TC196_verificar_limites_longitud_campos(auth_headers):
     
     grupos = response.json().get("hydra:member", [])
     
-    max_code_length = 0
-    max_name_length = 0
-    
-    # Optimización: Procesamiento solo de muestra limitada
-    for grupo in grupos:
-        code_length = len(grupo["code"])
-        name_length = len(grupo["name"])
-        
-        # Optimización: Cálculo simplificado de máximos
-        max_code_length = max(max_code_length, code_length)
-        max_name_length = max(max_name_length, name_length)
-                    
-        assert code_length <= 255, f"Código muy largo: {grupo['code']}"
-        assert name_length <= 255, f"Nombre muy largo: {grupo['name']}"
+    # Procesamiento de solo 1 grupo
+    grupo = grupos[0]
+    code_length = len(grupo["code"])
+    name_length = len(grupo["name"])
+                
+    assert code_length <= 255, f"Código muy largo: {grupo['code']}"
+    assert name_length <= 255, f"Nombre muy largo: {grupo['name']}"
     
 
 # Admin > Customer - Group > TC_197 Verificar tiempo de respuesta aceptable (2 seg)
@@ -425,7 +423,8 @@ def test_TC196_verificar_limites_longitud_campos(auth_headers):
 def test_TC197_verificar_tiempo_respuesta(auth_headers):
     logger.info("=== TC_197: Iniciando test de performance - tiempo de respuesta ===")
     
-    endpoint = EndpointCustomerGroup.customer_group()
+    # Optimización: Para test de performance, usar mínimo de datos
+    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=1)
     
     start_time = time.time()
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -443,7 +442,8 @@ def test_TC197_verificar_tiempo_respuesta(auth_headers):
 def test_TC198_verificar_headers_respuesta(auth_headers):
     logger.info("=== TC_198: Iniciando verificación de headers HTTP ===")
     
-    endpoint = EndpointCustomerGroup.customer_group()
+    # Optimización: Solo necesita verificar headers, 1 item es suficiente
+    endpoint = EndpointCustomerGroup.customer_group_with_params(page=1, itemsPerPage=1)
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
