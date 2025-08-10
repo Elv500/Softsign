@@ -16,3 +16,11 @@ class AssertionCustomerGroup:
     @staticmethod
     def assert_customer_group_post_output_schema(payload):
         return AssertionSchemas().validate_json_schema(payload, "customer_group_post_output_schema.json", AssertionCustomerGroup.MODULE)
+    
+    @staticmethod
+    def assert_customer_group_put_input_schema(payload):
+        return AssertionSchemas().validate_json_schema(payload, "customer_group_put_input_schema.json", AssertionCustomerGroup.MODULE)
+    
+    @staticmethod
+    def assert_customer_group_put_output_schema(payload):
+        return AssertionSchemas().validate_json_schema(payload, "customer_group_put_output_schema.json", AssertionCustomerGroup.MODULE)

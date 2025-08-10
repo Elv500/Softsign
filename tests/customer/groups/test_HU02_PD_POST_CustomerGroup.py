@@ -17,7 +17,6 @@ logger = logging.getLogger(__name__)
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_TC153_crear_grupo_clientes_datos_validos(setup_customer_group_cleanup):
-    """Verificar que se puede crear un grupo de clientes con datos válidos"""
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     logger.info("=== TC_153: Iniciando test para crear grupo de clientes con datos válidos ===")
     
@@ -43,7 +42,6 @@ def test_TC153_crear_grupo_clientes_datos_validos(setup_customer_group_cleanup):
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_TC154_verificar_estructura_json_respuesta_creacion(setup_customer_group_cleanup):
-    """Verificar que la respuesta tiene la estructura JSON correcta"""
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     logger.info("=== TC_154: Iniciando test para verificar estructura JSON de respuesta al crear ===")
     
@@ -79,7 +77,7 @@ def test_TC155_crear_grupo_codigo_duplicado(setup_customer_group_cleanup):
     add_group_for_cleanup(customer_group_code)
     
     data2 = generate_customer_group_source_data()
-    data2["code"] = data1["code"]  # el mismo código
+    data2["code"] = data1["code"]
     response2 = SyliusRequest.post(endpoint, auth_headers, data2)
     
     log_request_response(endpoint, response2, headers=auth_headers, payload=data2)
@@ -95,7 +93,7 @@ def test_TC156_crear_grupo_sin_campo_code(auth_headers):
     logger.info("=== TC_156: Iniciando test para crear grupo sin campo code ===")
     
     data = generate_customer_group_source_data()
-    del data["code"] #eliminar code que es obligatorio de la data que nos genera
+    del data["code"]
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.post(endpoint, auth_headers, data)
     
@@ -112,7 +110,7 @@ def test_TC157_crear_grupo_sin_campo_name(auth_headers):
     logger.info("=== TC_157: Iniciando test para crear grupo sin campo name ===")
     
     data = generate_customer_group_source_data()
-    del data["name"]  # Eliminar campo obligatorio
+    del data["name"]
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.post(endpoint, auth_headers, data)
     
@@ -272,7 +270,7 @@ def test_TC166_crear_grupo_json_malformado(auth_headers):
     response = requests.post(
         endpoint,
         headers={**auth_headers, 'Content-Type': 'application/json'},
-        data='{"code": "test", "name": invalid_json}'  # json inválido
+        data='{"code": "test", "name": invalid_json}'
     )
     
     log_request_response(endpoint, response, headers={**auth_headers, 'Content-Type': 'application/json'})
