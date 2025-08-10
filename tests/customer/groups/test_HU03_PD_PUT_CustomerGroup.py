@@ -18,7 +18,6 @@ logger = logging.getLogger(__name__)
 @pytest.mark.regression
 def test_TC271_actualizar_grupo_clientes_datos_validos(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_271: Iniciando test para actualizar grupo de clientes con datos válidos ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -52,7 +51,6 @@ def test_TC271_actualizar_grupo_clientes_datos_validos(setup_customer_group_clea
 @pytest.mark.regression
 def test_TC272_verificar_estructura_json_respuesta_actualizacion(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_272: Iniciando test para verificar estructura JSON de respuesta al actualizar ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -81,7 +79,6 @@ def test_TC272_verificar_estructura_json_respuesta_actualizacion(setup_customer_
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC273_actualizar_grupo_codigo_inexistente(auth_headers):
-    logger.info("=== TC_273: Iniciando test para actualizar grupo con código inexistente ===")
     
     codigo_inexistente = "grupo_inexistente_12345"
     data = generate_customer_group_source_data()
@@ -100,7 +97,6 @@ def test_TC273_actualizar_grupo_codigo_inexistente(auth_headers):
 @pytest.mark.regression
 def test_TC274_actualizar_grupo_sin_campo_name(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_274: Iniciando test para actualizar grupo sin campo name ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -123,7 +119,6 @@ def test_TC274_actualizar_grupo_sin_campo_name(setup_customer_group_cleanup):
 @pytest.mark.regression
 def test_TC275_actualizar_grupo_campo_code_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_275: Iniciando test para verificar que el campo code en el body es ignorado ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -155,7 +150,6 @@ def test_TC275_actualizar_grupo_campo_code_ignorado(setup_customer_group_cleanup
 @pytest.mark.regression
 def test_TC276_actualizar_grupo_code_vacio_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_276: Iniciando test para verificar que code vacío en body es ignorado ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -187,7 +181,6 @@ def test_TC276_actualizar_grupo_code_vacio_ignorado(setup_customer_group_cleanup
 @pytest.mark.regression
 def test_TC277_actualizar_grupo_code_caracteres_especiales_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_277: Iniciando test para verificar que code con caracteres especiales en body es ignorado ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -219,7 +212,6 @@ def test_TC277_actualizar_grupo_code_caracteres_especiales_ignorado(setup_custom
 @pytest.mark.regression
 def test_TC278_actualizar_grupo_code_muy_largo_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_278: Iniciando test para verificar que code muy largo en body es ignorado ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -250,7 +242,6 @@ def test_TC278_actualizar_grupo_code_muy_largo_ignorado(setup_customer_group_cle
 @pytest.mark.regression
 def test_TC279_actualizar_grupo_code_existente_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_279: Iniciando test para verificar que code existente de otro grupo en body es ignorado ===")
     
     data1 = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -289,7 +280,6 @@ def test_TC279_actualizar_grupo_code_existente_ignorado(setup_customer_group_cle
 @pytest.mark.regression
 def test_TC280_actualizar_grupo_code_null_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_280: Iniciando test para verificar que code null en body es ignorado ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -321,7 +311,6 @@ def test_TC280_actualizar_grupo_code_null_ignorado(setup_customer_group_cleanup)
 @pytest.mark.regression
 def test_TC281_actualizar_grupo_nombre_vacio(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_281: Iniciando test para actualizar grupo con nombre vacío ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -348,7 +337,6 @@ def test_TC281_actualizar_grupo_nombre_vacio(setup_customer_group_cleanup):
 @pytest.mark.regression
 def test_TC282_actualizar_grupo_nombre_muy_largo(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_282: Iniciando test para actualizar grupo con nombre muy largo ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -375,7 +363,6 @@ def test_TC282_actualizar_grupo_nombre_muy_largo(setup_customer_group_cleanup):
 @pytest.mark.regression
 def test_TC283_actualizar_grupo_nombre_caracteres_especiales(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_283: Iniciando test para actualizar grupo con caracteres especiales en nombre ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -402,7 +389,6 @@ def test_TC283_actualizar_grupo_nombre_caracteres_especiales(setup_customer_grou
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC284_actualizar_grupo_sin_token():
-    logger.info("=== TC_284: Iniciando test para actualizar grupo sin token de autenticación ===")
     
     codigo_existente = "retail"
     data = {
@@ -421,7 +407,6 @@ def test_TC284_actualizar_grupo_sin_token():
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC285_actualizar_grupo_token_invalido():
-    logger.info("=== TC_285: Iniciando test para actualizar grupo con token inválido ===")
     
     codigo_existente = "retail"
     data = {
@@ -441,7 +426,6 @@ def test_TC285_actualizar_grupo_token_invalido():
 @pytest.mark.regression
 def test_TC286_actualizar_grupo_json_malformado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_286: Iniciando test para actualizar grupo con JSON malformado ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -469,7 +453,6 @@ def test_TC286_actualizar_grupo_json_malformado(setup_customer_group_cleanup):
 @pytest.mark.regression
 def test_TC287_actualizar_grupo_content_type_incorrecto(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_287: Iniciando test para actualizar grupo con Content-Type incorrecto ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -504,7 +487,6 @@ def test_TC287_actualizar_grupo_content_type_incorrecto(setup_customer_group_cle
 @pytest.mark.regression
 def test_TC288_verificar_tiempo_respuesta_actualizacion(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_288: Iniciando test de tiempo de respuesta para actualización ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -534,7 +516,6 @@ def test_TC288_verificar_tiempo_respuesta_actualizacion(setup_customer_group_cle
 @pytest.mark.regression
 def test_TC289_actualizar_grupo_nombre_limite_superior(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_289: Iniciando test para actualizar grupo con nombre en límite superior ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -561,7 +542,6 @@ def test_TC289_actualizar_grupo_nombre_limite_superior(setup_customer_group_clea
 @pytest.mark.regression
 def test_TC290_verificar_headers_respuesta_actualizacion(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_290: Iniciando test para verificar headers de respuesta ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -592,7 +572,6 @@ def test_TC290_verificar_headers_respuesta_actualizacion(setup_customer_group_cl
 @pytest.mark.regression
 def test_TC291_actualizar_grupo_nombre_minimo(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_291: Iniciando test para actualizar grupo con nombre mínimo ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -619,7 +598,6 @@ def test_TC291_actualizar_grupo_nombre_minimo(setup_customer_group_cleanup):
 @pytest.mark.regression
 def test_TC292_actualizar_grupo_valores_null(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_292: Iniciando test para actualizar grupo con valores null ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()

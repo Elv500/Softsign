@@ -17,7 +17,6 @@ logger = logging.getLogger(__name__)
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_TC293_eliminar_grupo_clientes_existente(auth_headers):
-    logger.info("=== TC_293: Iniciando test para eliminar grupo de clientes existente ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -38,7 +37,6 @@ def test_TC293_eliminar_grupo_clientes_existente(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC294_eliminar_grupo_codigo_inexistente(auth_headers):
-    logger.info("=== TC_294: Iniciando test para eliminar grupo con código inexistente ===")
     
     codigo_inexistente = "grupo_inexistente_12345"
     endpoint = EndpointCustomerGroup.code(codigo_inexistente)
@@ -54,7 +52,6 @@ def test_TC294_eliminar_grupo_codigo_inexistente(auth_headers):
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC295_eliminar_grupo_sin_token():
-    logger.info("=== TC_295: Iniciando test para eliminar grupo sin token de autenticación ===")
     
     codigo_existente = "retail"
     endpoint = EndpointCustomerGroup.code(codigo_existente)
@@ -70,7 +67,6 @@ def test_TC295_eliminar_grupo_sin_token():
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC296_eliminar_grupo_token_invalido():
-    logger.info("=== TC_296: Iniciando test para eliminar grupo con token inválido ===")
     
     codigo_existente = "retail"
     invalid_headers = {"Authorization": "Bearer token_invalido"}
@@ -87,7 +83,6 @@ def test_TC296_eliminar_grupo_token_invalido():
 @pytest.mark.performance
 @pytest.mark.regression
 def test_TC297_verificar_tiempo_respuesta_eliminacion(auth_headers):
-    logger.info("=== TC_297: Iniciando test de tiempo de respuesta para eliminación ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -111,7 +106,6 @@ def test_TC297_verificar_tiempo_respuesta_eliminacion(auth_headers):
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC298_verificar_headers_respuesta_eliminacion(auth_headers):
-    logger.info("=== TC_298: Iniciando test para verificar headers de respuesta al eliminar ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -135,7 +129,6 @@ def test_TC298_verificar_headers_respuesta_eliminacion(auth_headers):
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC299_verificar_grupo_eliminado_no_existe(auth_headers):
-    logger.info("=== TC_299: Iniciando test para verificar que grupo eliminado no existe ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -160,7 +153,6 @@ def test_TC299_verificar_grupo_eliminado_no_existe(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC300_eliminar_mismo_grupo_dos_veces(auth_headers):
-    logger.info("=== TC_300: Iniciando test para eliminar el mismo grupo dos veces ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -185,7 +177,6 @@ def test_TC300_eliminar_mismo_grupo_dos_veces(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC301_eliminar_grupo_codigo_caracteres_especiales(auth_headers):
-    logger.info("=== TC_301: Iniciando test para eliminar grupo con caracteres especiales en el nombre ===")
     
     initial_data = generate_customer_group_source_data()
     initial_data["name"] = "Test Group - Caracteres Especiales ñáéíóú-123_$@%&"
@@ -209,7 +200,6 @@ def test_TC301_eliminar_grupo_codigo_caracteres_especiales(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC302_eliminar_grupo_codigo_muy_largo(auth_headers):
-    logger.info("=== TC_302: Iniciando test para eliminar grupo con código muy largo ===")
     
     codigo_muy_largo = "a" * 260 #el limite es 255
     endpoint = EndpointCustomerGroup.code(codigo_muy_largo)
@@ -225,7 +215,6 @@ def test_TC302_eliminar_grupo_codigo_muy_largo(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC303_eliminar_grupo_codigo_vacio(auth_headers):
-    logger.info("=== TC_303: Iniciando test para eliminar grupo con código vacío ===")
     
     codigo_vacio = ""
     endpoint = EndpointCustomerGroup.code(codigo_vacio)
@@ -241,7 +230,6 @@ def test_TC303_eliminar_grupo_codigo_vacio(auth_headers):
 @pytest.mark.stress
 @pytest.mark.regression
 def test_TC304_eliminacion_concurrente_mismo_grupo(auth_headers):
-    logger.info("=== TC_304: Iniciando test para eliminación concurrente del mismo grupo ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -280,7 +268,6 @@ def test_TC304_eliminacion_concurrente_mismo_grupo(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC305_eliminar_grupo_metodos_http_incorrectos(auth_headers):
-    logger.info("=== TC_305: Iniciando test para eliminar grupo con métodos HTTP incorrectos ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -307,7 +294,6 @@ def test_TC305_eliminar_grupo_metodos_http_incorrectos(auth_headers):
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC306_no_eliminar_grupo_sistema(auth_headers):
-    logger.info("=== TC_306: Iniciando test para verificar que no se puede eliminar grupo del sistema ===")
     
     codigo_sistema = "retail"
     endpoint = EndpointCustomerGroup.code(codigo_sistema)
@@ -323,7 +309,6 @@ def test_TC306_no_eliminar_grupo_sistema(auth_headers):
 @pytest.mark.stress
 @pytest.mark.regression
 def test_TC307_eliminar_multiples_grupos_secuencialmente(auth_headers):
-    logger.info("=== TC_307: Iniciando test para eliminar múltiples grupos secuencialmente ===")
     
     created_groups = []
     
@@ -348,7 +333,6 @@ def test_TC307_eliminar_multiples_grupos_secuencialmente(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC308_eliminar_grupo_codigo_unicode(auth_headers):
-    logger.info("=== TC_308: Iniciando test para eliminar grupo con caracteres Unicode en código ===")
     
     codigo_unicode = "grupo_测试_ñáéíóú"
     endpoint = EndpointCustomerGroup.code(codigo_unicode)
@@ -363,7 +347,6 @@ def test_TC308_eliminar_grupo_codigo_unicode(auth_headers):
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC309_eliminar_grupo_content_type_incorrecto(auth_headers):
-    logger.info("=== TC_309: Iniciando test para eliminar grupo con Content-Type incorrecto ===")
     
     initial_data = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
@@ -388,7 +371,6 @@ def test_TC309_eliminar_grupo_content_type_incorrecto(auth_headers):
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC310_eliminar_grupo_no_afecta_otros_recursos(auth_headers):
-    logger.info("=== TC_310: Iniciando test para verificar que eliminación no afecte otros recursos ===")
     
     data1 = generate_customer_group_source_data()
     create_endpoint = EndpointCustomerGroup.customer_group()
