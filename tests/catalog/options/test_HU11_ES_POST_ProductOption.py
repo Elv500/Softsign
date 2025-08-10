@@ -12,14 +12,17 @@ from utils.logger_helpers import log_request_response
 
 @pytest.mark.functional
 @pytest.mark.smoke
-def test_TC108_Verificar_creacion_de_opción_exitosamente_con_datos_válidos(auth_headers):
+def test_TC108_Verificar_creacion_de_opción_exitosamente_con_datos_válidos(auth_headers, setup_add_options):
     """Validar que se puede crear una nueva opción de producto cuando se proporcionan datos válidos y el endpoint
     devuelva un codigo 201 indicando que la opción fue creada correctamente."""
+    auth_headers, created_options = setup_add_options
+    # Generar datos de prueba para la opción
     payload = generate_options_source_data()
     response = SyliusRequest.post(EndpointOptions.options(), auth_headers, payload)
     log_request_response(EndpointOptions.options(), response, auth_headers, payload)
     AssertionStatusCode.assert_status_code_201(response)
     AssertionOptions.assert_options_add_output_schema(response.json())
+    created_options.append(response.json())
 
 @pytest.mark.functional
 @pytest.mark.smoke
@@ -73,13 +76,15 @@ def test_TC111_Verificar_error_422_al_crear_opcion_sin_el_campo_obligatorio_name
 
 @pytest.mark.functional
 @pytest.mark.negative
-def test_TC112_Verificar_error_422_al_crear_opcion_con_codigo_existente(auth_headers):
+def test_TC112_Verificar_error_422_al_crear_opcion_con_codigo_existente(auth_headers, setup_add_options):
     """Validar que no se puede crear una nueva opción de producto cuando se proporciona un código ya existente
     y el endpoint devuelva un codigo 422 indicando que la opción no fue creada porque hubo un error."""
+    auth_headers, created_options = setup_add_options
     payload = generate_options_source_data()
     response = SyliusRequest.post(EndpointOptions.options(), auth_headers, payload)
     log_request_response(EndpointOptions.options(), response, auth_headers, payload)
     AssertionStatusCode.assert_status_code_201(response)
+    created_options.append(response.json())
     # Intentar crear la misma opción nuevamente
     response_duplicate = SyliusRequest.post(EndpointOptions.options(), auth_headers, payload)
     log_request_response(EndpointOptions.options(), response_duplicate, auth_headers, payload)
@@ -208,13 +213,14 @@ def test_TC230_Verificar_creacion_de_opcion_con_idioma_no_soportado(auth_headers
 
 @pytest.mark.functional
 @pytest.mark.smoke
-def test_TC231_Verificar_creacion_de_opcion_con_values(auth_headers):
+def test_TC231_Verificar_creacion_de_opcion_con_values(auth_headers, setup_add_options):
     """Validar que se puede crear una nueva opción de producto con valores y el endpoint
     devuelva un codigo 201 indicando que la opción fue creada correctamente."""
+    auth_headers, created_options = setup_add_options
     payload = generate_options_source_data_with_values()
     response = SyliusRequest.post(EndpointOptions.options(), auth_headers, payload)
     log_request_response(EndpointOptions.options(), response, auth_headers, payload)
     AssertionStatusCode.assert_status_code_201(response)
     AssertionOptions.assert_options_add_output_schema(response.json())
-
+    created_options.append(response.json())
 
