@@ -71,5 +71,3 @@ def test_TC334_e2e_customer_group(auth_headers):
     
     log_request_response(get_endpoint, verify_delete_response, headers=auth_headers)
     AssertionStatusCode.assert_status_code_404(verify_delete_response)
-
-

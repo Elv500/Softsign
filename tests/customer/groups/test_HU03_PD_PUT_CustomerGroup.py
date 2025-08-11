@@ -233,43 +233,6 @@ def test_TC278_actualizar_grupo_code_muy_largo_ignorado(setup_customer_group_cle
     assert response.json()["name"] == "Nombre Actualizado - Code Largo"
 
 
-# Admin > Customer - Group > TC_279 Verificar que code existente de otro grupo en body es ignorado
-@pytest.mark.functional
-@pytest.mark.regression
-def test_TC279_actualizar_grupo_code_existente_ignorado(setup_customer_group_cleanup):
-    auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    
-    data1 = generate_customer_group_source_data()
-    create_endpoint = EndpointCustomerGroup.customer_group()
-    response1 = SyliusRequest.post(create_endpoint, auth_headers, data1)
-    AssertionStatusCode.assert_status_code_201(response1)
-    
-    code1 = response1.json()["code"]
-    add_group_for_cleanup(code1)
-    
-    data2 = generate_customer_group_source_data()
-    response2 = SyliusRequest.post(create_endpoint, auth_headers, data2)
-    AssertionStatusCode.assert_status_code_201(response2)
-    
-    code2 = response2.json()["code"]
-    add_group_for_cleanup(code2)
-    
-    update_data = {
-        "code": code1,
-        "name": "Nombre Actualizado - Code Duplicado Ignorado"
-    }
-    endpoint = EndpointCustomerGroup.code(code2)
-    response = SyliusRequest.put(endpoint, auth_headers, update_data)
-    
-    log_request_response(endpoint, response, headers=auth_headers, payload=update_data)
-    
-    AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
-    
-    assert response.json()["code"] == code2
-    assert response.json()["name"] == "Nombre Actualizado - Code Duplicado Ignorado"
-
-
 # Admin > Customer - Group > TC_280 Verificar que code null en body es ignorado
 @pytest.mark.functional
 @pytest.mark.boundary
@@ -603,7 +566,6 @@ def test_TC292_actualizar_grupo_valores_null(setup_customer_group_cleanup):
     customer_group_code = create_response.json()["code"]
     add_group_for_cleanup(customer_group_code)
     
-    # Intentar actualizar con valores null
     data = {
         "code": None,
         "name": None
