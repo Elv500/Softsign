@@ -1,4 +1,3 @@
-import logging
 import pytest
 import time
 
@@ -8,8 +7,6 @@ from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
 from src.data.customer_group import generate_customer_group_source_data
 from utils.logger_helpers import log_request_response
-
-logger = logging.getLogger(__name__)
 
 
 # Admin > Customer - Group > TC_293 Eliminar grupo de clientes existente

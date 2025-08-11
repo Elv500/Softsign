@@ -1,4 +1,3 @@
-import logging
 import pytest
 import time
 
@@ -7,10 +6,6 @@ from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
 from utils.logger_helpers import log_request_response
-
-# Configurar logger
-logger = logging.getLogger(__name__)
-
 
 # Admin > Customer - Group > TC_176 Verificar que se puede obtener la lista de grupos de clientes codigo 200
 @pytest.mark.functional
