@@ -1,3 +1,5 @@
+import uuid
+
 from faker import Faker
 import json
 import uuid
@@ -21,3 +23,4 @@ def generate_attributes_source_data():
         }
     }
     return attributes_data
+
