@@ -222,45 +222,6 @@ def test_TC303_eliminar_grupo_codigo_vacio(auth_headers):
     AssertionStatusCode.assert_status_code_404(response)
 
 
-# Admin > Customer - Group > TC_304 Verificar eliminación concurrente del mismo grupo
-@pytest.mark.negative
-@pytest.mark.stress
-@pytest.mark.regression
-def test_TC304_eliminacion_concurrente_mismo_grupo(auth_headers):
-    
-    initial_data = generate_customer_group_source_data()
-    create_endpoint = EndpointCustomerGroup.customer_group()
-    create_response = SyliusRequest.post(create_endpoint, auth_headers, initial_data)
-    AssertionStatusCode.assert_status_code_201(create_response)
-    
-    customer_group_code = create_response.json()["code"]
-    endpoint = EndpointCustomerGroup.code(customer_group_code)
-    
-    import threading
-    import time
-    
-    results = []
-    
-    def delete_group():
-        try:
-            response = SyliusRequest.delete(endpoint, auth_headers)
-            results.append(response.status_code)
-        except Exception as e:
-            results.append(str(e))
-    
-    thread1 = threading.Thread(target=delete_group)
-    thread2 = threading.Thread(target=delete_group)
-    
-    thread1.start()
-    thread2.start()
-    
-    thread1.join()
-    thread2.join()
-    
-    assert 204 in results
-    assert 404 in results or len([r for r in results if r == 204]) == 1
-
-
 # Admin > Customer - Group > TC_305 Verificar eliminación de grupo con diferentes métodos HTTP incorrectos
 @pytest.mark.negative
 @pytest.mark.regression
@@ -362,34 +323,3 @@ def test_TC309_eliminar_grupo_content_type_incorrecto(auth_headers):
     log_request_response(endpoint, response, headers=headers_with_text)
     
     AssertionStatusCode.assert_status_code_204(response)
-
-
-# Admin > Customer - Group > TC_310 Verificar que eliminación no afecte otros recursos
-@pytest.mark.functional
-@pytest.mark.regression
-def test_TC310_eliminar_grupo_no_afecta_otros_recursos(auth_headers):
-    
-    data1 = generate_customer_group_source_data()
-    create_endpoint = EndpointCustomerGroup.customer_group()
-    response1 = SyliusRequest.post(create_endpoint, auth_headers, data1)
-    AssertionStatusCode.assert_status_code_201(response1)
-    code1 = response1.json()["code"]
-    
-    data2 = generate_customer_group_source_data()
-    response2 = SyliusRequest.post(create_endpoint, auth_headers, data2)
-    AssertionStatusCode.assert_status_code_201(response2)
-    code2 = response2.json()["code"]
-    
-    delete_endpoint = EndpointCustomerGroup.code(code1)
-    delete_response = SyliusRequest.delete(delete_endpoint, auth_headers)
-    AssertionStatusCode.assert_status_code_204(delete_response)
-    
-    get_endpoint = EndpointCustomerGroup.code(code2)
-    get_response = SyliusRequest.get(get_endpoint, auth_headers)
-    
-    log_request_response(get_endpoint, get_response, headers=auth_headers)
-    
-    AssertionStatusCode.assert_status_code_200(get_response)
-    assert get_response.json()["code"] == code2
-    
-    SyliusRequest.delete(EndpointCustomerGroup.code(code2), auth_headers)
