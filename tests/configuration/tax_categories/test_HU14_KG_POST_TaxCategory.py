@@ -186,7 +186,7 @@ No debe permitir crear una categoría con nombre menor a 2 caracteres (Sylius de
     "",    # vacío
     "A",   # un solo carácter
 ])
-def test_TC255_tax_category_name_min_length(setup_add_tax_category, invalid_name):
+def test_TC255_tax_category_nombre_minimo_length(setup_add_tax_category, invalid_name):
 
     auth_headers, created_tax_categories = setup_add_tax_category
     data = generate_tax_category_data()
@@ -204,7 +204,7 @@ Sylius debe responder con un código de estado HTTP 422.
 @pytest.mark.functional
 @pytest.mark.smoke
 @pytest.mark.negative
-def test_TC220_tax_category_name_exceeds_max_length(setup_add_tax_category):
+def test_TC220_tax_category_nombre_exedente_maximo_length(setup_add_tax_category):
     auth_headers, created_tax_categories = setup_add_tax_category
     data = generate_tax_category_data()
     data["name"] = "A" * 256  # 256 caracteres
@@ -231,8 +231,7 @@ espacios en blanco, saltos de línea u otros caracteres invisibles. Sylius debe 
     "\t",
     " \t \n "
 ])
-
-def test_TC221_tax_category_name_whitespace_only(setup_add_tax_category, invalid_name):
+def test_TC221_tax_category_nombre_espacio_en_blanco(setup_add_tax_category, invalid_name):
 
     auth_headers, created_tax_categories = setup_add_tax_category
     data = generate_tax_category_data()
