@@ -16,9 +16,7 @@ logger = logging.getLogger(__name__)
 @pytest.mark.functional
 @pytest.mark.smoke
 @pytest.mark.regression
-def test_TC176_obtener_lista_grupos_clientes_exitoso(auth_headers):
-    logger.info("=== TC_176: Iniciando test para obtener lista de grupos de clientes ===")
-    
+def test_TC176_obtener_lista_grupos_clientes_exitoso(auth_headers):    
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.get(endpoint, auth_headers)
     
@@ -33,7 +31,6 @@ def test_TC176_obtener_lista_grupos_clientes_exitoso(auth_headers):
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_TC177_verificar_estructura_json_respuesta(auth_headers):
-    logger.info("=== TC_177: Iniciando verificación de estructura JSON ===")
     
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -56,7 +53,6 @@ def test_TC177_verificar_estructura_json_respuesta(auth_headers):
 @pytest.mark.regression
 def test_TC178_obtener_grupo_por_codigo_existente(auth_headers):
     group_code = "retail"
-    logger.info(f"=== TC_178: Iniciando test para obtener grupo específico: {group_code} ===")
     
     endpoint = EndpointCustomerGroup.code(group_code)
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -71,7 +67,6 @@ def test_TC178_obtener_grupo_por_codigo_existente(auth_headers):
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC179_verificar_campos_obligatorios_cada_grupo(auth_headers):
-    logger.info("=== TC_179: Iniciando verificación de campos obligatorios ===")
     
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -96,7 +91,6 @@ def test_TC179_verificar_campos_obligatorios_cada_grupo(auth_headers):
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC180_verificar_campos_no_vacios(auth_headers):
-    logger.info("=== TC_180: Iniciando verificación de campos no vacíos ===")
     
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -117,7 +111,6 @@ def test_TC180_verificar_campos_no_vacios(auth_headers):
 @pytest.mark.regression
 def test_TC181_validar_paginacion_basica(auth_headers):
     page, items_per_page = 1, 2
-    logger.info(f"=== TC_181: Iniciando test de paginación básica (page={page}, itemsPerPage={items_per_page}) ===")
     
     endpoint = EndpointCustomerGroup.customer_group_with_params(page=page, itemsPerPage=items_per_page)
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -138,7 +131,6 @@ def test_TC181_validar_paginacion_basica(auth_headers):
 @pytest.mark.regression
 def test_TC182_verificar_paginacion_fuera_rango(auth_headers):
     page_out_of_range = 9999
-    logger.info(f"=== TC_182: Iniciando test de paginación fuera de rango (page={page_out_of_range}) ===")
     
     endpoint = EndpointCustomerGroup.customer_group_with_params(page=page_out_of_range)
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -159,7 +151,6 @@ def test_TC182_verificar_paginacion_fuera_rango(auth_headers):
 @pytest.mark.xfail(reason="Knwon issue BugId: CG-01 La apliacion permite que se devuelva 0 items por pagina", run=True)
 def test_TC183_verificar_paginacion_items_cero(auth_headers):
     items_per_page = 0
-    logger.info(f"=== TC_183: Iniciando test de paginación con itemsPerPage={items_per_page} ===")
     
     endpoint = EndpointCustomerGroup.customer_group_with_params(itemsPerPage=items_per_page)
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -175,7 +166,6 @@ def test_TC183_verificar_paginacion_items_cero(auth_headers):
 @pytest.mark.regression
 def test_TC184_verificar_paginacion_valores_negativos(auth_headers):
     page, items_per_page = -1, -1
-    logger.info(f"=== TC_184: Iniciando test con valores negativos (page={page}, itemsPerPage={items_per_page}) ===")
     
     endpoint = EndpointCustomerGroup.customer_group_with_params(page=page, itemsPerPage=items_per_page)
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -190,7 +180,6 @@ def test_TC184_verificar_paginacion_valores_negativos(auth_headers):
 @pytest.mark.regression
 def test_TC185_verificar_paginacion_limite_maximo(auth_headers):
     items_per_page = 1000
-    logger.info(f"=== TC_185: Iniciando test con límite máximo (itemsPerPage={items_per_page}) ===")
     
     endpoint = EndpointCustomerGroup.customer_group_with_params(itemsPerPage=items_per_page)
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -210,7 +199,6 @@ def test_TC185_verificar_paginacion_limite_maximo(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC186_verificar_acceso_sin_token():
-    logger.info("=== TC_186: Iniciando test de seguridad - acceso sin token ===")
     
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.get(endpoint, {})
@@ -226,7 +214,6 @@ def test_TC186_verificar_acceso_sin_token():
 @pytest.mark.regression
 def test_TC187_verificar_acceso_token_invalido():
     invalid_token = "token_invalido_12345"
-    logger.info("=== TC_187: Iniciando test de seguridad - token inválido ===")
     
     invalid_headers = {"Authorization": f"Bearer {invalid_token}"}
     endpoint = EndpointCustomerGroup.customer_group()
@@ -242,7 +229,6 @@ def test_TC187_verificar_acceso_token_invalido():
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC188_verificar_acceso_token_expirado():
-    logger.info("=== TC_188: Iniciando test de seguridad - token expirado ===")
     
     expired_headers = {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.ey"
                        "JpYXQiOjE3NTQyMzQzODksImV4cCI6MTc1NDIzNzk4OSwicm9sZXMiOlsiUk9MRV"
@@ -273,7 +259,6 @@ def test_TC188_verificar_acceso_token_expirado():
 @pytest.mark.regression
 def test_TC189_verificar_header_authorization_mal_formado():
     malformed_auth = "InvalidFormat token123"
-    logger.info("=== TC_189: Iniciando test de seguridad - header Authorization malformado ===")
     
     malformed_headers = {"Authorization": malformed_auth}
     endpoint = EndpointCustomerGroup.customer_group()
@@ -289,7 +274,6 @@ def test_TC189_verificar_header_authorization_mal_formado():
 @pytest.mark.regression
 def test_TC190_obtener_grupo_codigo_inexistente(auth_headers):
     codigo_inexistente = "grupo_que_no_existe_12345"
-    logger.info(f"=== TC_190: Iniciando test con código inexistente: {codigo_inexistente} ===")
     
     endpoint = EndpointCustomerGroup.code(codigo_inexistente)
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -303,7 +287,6 @@ def test_TC190_obtener_grupo_codigo_inexistente(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC191_verificar_metodo_http_no_permitido(auth_headers):
-    logger.info("=== TC_191: Iniciando test de método HTTP no permitido (POST) ===")
     
     import requests
     headers_with_json = auth_headers.copy()
@@ -324,7 +307,6 @@ def test_TC191_verificar_metodo_http_no_permitido(auth_headers):
 @pytest.mark.regression
 def test_TC192_verificar_parametros_itemsPerPage_malformados(auth_headers):
     malformed_param = "xyz"
-    logger.info(f"=== TC_192: Iniciando test con itemsPerPage malformado: {malformed_param} ===")
     
     import requests
     endpoint = EndpointCustomerGroup.customer_group() + f"?page=1&itemsPerPage={malformed_param}"
@@ -340,7 +322,6 @@ def test_TC192_verificar_parametros_itemsPerPage_malformados(auth_headers):
 @pytest.mark.regression
 def test_TC193_verificar_parametros_page_malformados(auth_headers):
     malformed_param = "asd"
-    logger.info(f"=== TC_193: Iniciando test con page malformado: {malformed_param} ===")
     
     import requests
     endpoint = EndpointCustomerGroup.customer_group() + f"?page={malformed_param}&itemsPerPage=10"
@@ -355,7 +336,6 @@ def test_TC193_verificar_parametros_page_malformados(auth_headers):
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC194_verificar_unicidad_ids_codigos(auth_headers):
-    logger.info("=== TC_194: Iniciando verificación de unicidad de IDs y códigos ===")
     
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -377,7 +357,6 @@ def test_TC194_verificar_unicidad_ids_codigos(auth_headers):
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC195_verificar_formato_datos_campos(auth_headers):
-    logger.info("=== TC_195: Iniciando verificación de formato de datos ===")
     
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -404,7 +383,6 @@ def test_TC195_verificar_formato_datos_campos(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC196_verificar_limites_longitud_campos(auth_headers):
-    logger.info("=== TC_196: Iniciando verificación de límites de longitud ===")
     
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -434,7 +412,6 @@ def test_TC196_verificar_limites_longitud_campos(auth_headers):
 @pytest.mark.performance
 @pytest.mark.regression
 def test_TC197_verificar_tiempo_respuesta(auth_headers):
-    logger.info("=== TC_197: Iniciando test de performance - tiempo de respuesta ===")
     
     endpoint = EndpointCustomerGroup.customer_group()
     
@@ -452,7 +429,6 @@ def test_TC197_verificar_tiempo_respuesta(auth_headers):
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC198_verificar_headers_respuesta(auth_headers):
-    logger.info("=== TC_198: Iniciando verificación de headers HTTP ===")
     
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.get(endpoint, auth_headers)

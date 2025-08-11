@@ -17,9 +17,7 @@ logger = logging.getLogger(__name__)
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_TC153_crear_grupo_clientes_datos_validos(setup_customer_group_cleanup):
-    """Verificar que se puede crear un grupo de clientes con datos válidos"""
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_153: Iniciando test para crear grupo de clientes con datos válidos ===")
     
     data = generate_customer_group_source_data()
     
@@ -43,9 +41,7 @@ def test_TC153_crear_grupo_clientes_datos_validos(setup_customer_group_cleanup):
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_TC154_verificar_estructura_json_respuesta_creacion(setup_customer_group_cleanup):
-    """Verificar que la respuesta tiene la estructura JSON correcta"""
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_154: Iniciando test para verificar estructura JSON de respuesta al crear ===")
     
     data = generate_customer_group_source_data()
     endpoint = EndpointCustomerGroup.customer_group()
@@ -65,7 +61,6 @@ def test_TC154_verificar_estructura_json_respuesta_creacion(setup_customer_group
 @pytest.mark.regression
 def test_TC155_crear_grupo_codigo_duplicado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_155: Iniciando test para verificar código duplicado ===")
     
     data1 = generate_customer_group_source_data()
     endpoint = EndpointCustomerGroup.customer_group()
@@ -79,7 +74,7 @@ def test_TC155_crear_grupo_codigo_duplicado(setup_customer_group_cleanup):
     add_group_for_cleanup(customer_group_code)
     
     data2 = generate_customer_group_source_data()
-    data2["code"] = data1["code"]  # el mismo código
+    data2["code"] = data1["code"]
     response2 = SyliusRequest.post(endpoint, auth_headers, data2)
     
     log_request_response(endpoint, response2, headers=auth_headers, payload=data2)
@@ -92,10 +87,9 @@ def test_TC155_crear_grupo_codigo_duplicado(setup_customer_group_cleanup):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC156_crear_grupo_sin_campo_code(auth_headers):
-    logger.info("=== TC_156: Iniciando test para crear grupo sin campo code ===")
     
     data = generate_customer_group_source_data()
-    del data["code"] #eliminar code que es obligatorio de la data que nos genera
+    del data["code"]
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.post(endpoint, auth_headers, data)
     
@@ -109,10 +103,9 @@ def test_TC156_crear_grupo_sin_campo_code(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC157_crear_grupo_sin_campo_name(auth_headers):
-    logger.info("=== TC_157: Iniciando test para crear grupo sin campo name ===")
     
     data = generate_customer_group_source_data()
-    del data["name"]  # Eliminar campo obligatorio
+    del data["name"]
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.post(endpoint, auth_headers, data)
     
@@ -126,7 +119,6 @@ def test_TC157_crear_grupo_sin_campo_name(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC158_crear_grupo_codigo_vacio(auth_headers):
-    logger.info("=== TC_158: Iniciando test para crear grupo con código vacío ===")
     
     data = generate_customer_group_source_data()
     data["code"] = ""
@@ -143,7 +135,6 @@ def test_TC158_crear_grupo_codigo_vacio(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC159_crear_grupo_nombre_vacio(auth_headers):
-    logger.info("=== TC_159: Iniciando test para crear grupo con nombre vacío ===")
     
     data = generate_customer_group_source_data()
     data["name"] = ""
@@ -160,7 +151,6 @@ def test_TC159_crear_grupo_nombre_vacio(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC160_crear_grupo_codigo_muy_largo(auth_headers):
-    logger.info("=== TC_160: Iniciando test para crear grupo con código muy largo ===")
     
     data = generate_customer_group_source_data()
     data["code"] = "a" * 256
@@ -177,7 +167,6 @@ def test_TC160_crear_grupo_codigo_muy_largo(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC161_crear_grupo_nombre_muy_largo(auth_headers):
-    logger.info("=== TC_161: Iniciando test para crear grupo con nombre muy largo ===")
     
     data = generate_customer_group_source_data()
     data["name"] = "a" * 256
@@ -194,7 +183,6 @@ def test_TC161_crear_grupo_nombre_muy_largo(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC162_crear_grupo_caracteres_especiales_codigo(auth_headers):
-    logger.info("=== TC_162: Iniciando test para crear grupo con caracteres especiales en código ===")
     
     data = generate_customer_group_source_data()
     data["code"] = "test*code/123^!.special"
@@ -212,7 +200,6 @@ def test_TC162_crear_grupo_caracteres_especiales_codigo(auth_headers):
 @pytest.mark.regression
 def test_TC163_crear_grupo_caracteres_especiales_nombre(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_163: Iniciando test para crear grupo con caracteres especiales en nombre ===")
     
     data = generate_customer_group_source_data()
     data["name"] = "Test Pablo ñáéíóú-Co_123$@$@#"
@@ -232,7 +219,6 @@ def test_TC163_crear_grupo_caracteres_especiales_nombre(setup_customer_group_cle
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC164_crear_grupo_sin_token():
-    logger.info("=== TC_164: Iniciando test para crear grupo sin token de autenticación ===")
     
     data = generate_customer_group_source_data()
     endpoint = EndpointCustomerGroup.customer_group()
@@ -248,7 +234,6 @@ def test_TC164_crear_grupo_sin_token():
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC165_crear_grupo_token_invalido():
-    logger.info("=== TC_165: Iniciando test para crear grupo con token inválido ===")
     
     data = generate_customer_group_source_data()
     invalid_headers = {"Authorization": "Bearer token_invalido"}
@@ -264,7 +249,6 @@ def test_TC165_crear_grupo_token_invalido():
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC166_crear_grupo_json_malformado(auth_headers):
-    logger.info("=== TC_166: Iniciando test para crear grupo con JSON malformado ===")
     
     import requests
     endpoint = EndpointCustomerGroup.customer_group()
@@ -272,7 +256,7 @@ def test_TC166_crear_grupo_json_malformado(auth_headers):
     response = requests.post(
         endpoint,
         headers={**auth_headers, 'Content-Type': 'application/json'},
-        data='{"code": "test", "name": invalid_json}'  # json inválido
+        data='{"code": "test", "name": invalid_json}'
     )
     
     log_request_response(endpoint, response, headers={**auth_headers, 'Content-Type': 'application/json'})
@@ -284,7 +268,6 @@ def test_TC166_crear_grupo_json_malformado(auth_headers):
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC167_crear_grupo_content_type_incorrecto(auth_headers):
-    logger.info("=== TC_167: Iniciando test para crear grupo con Content-Type incorrecto ===")
     
     import requests
     data = generate_customer_group_source_data()
@@ -309,7 +292,6 @@ def test_TC167_crear_grupo_content_type_incorrecto(auth_headers):
 @pytest.mark.regression
 def test_TC168_verificar_tiempo_respuesta_creacion(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_168: Iniciando test de tiempo de respuesta para creación ===")
     
     data = generate_customer_group_source_data()
     start_time = time.time()
@@ -332,7 +314,6 @@ def test_TC168_verificar_tiempo_respuesta_creacion(setup_customer_group_cleanup)
 @pytest.mark.regression
 def test_TC169_crear_multiples_grupos_simultaneos(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_169: Iniciando test para crear múltiples grupos simultáneamente ===")
     
     responses = []
     endpoint = EndpointCustomerGroup.customer_group()
@@ -358,7 +339,6 @@ def test_TC169_crear_multiples_grupos_simultaneos(setup_customer_group_cleanup):
 @pytest.mark.regression
 def test_TC170_crear_grupo_codigo_limite_superior(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_170: Iniciando test para crear grupo con código en límite superior ===")
     
     data = generate_customer_group_source_data()
     data["code"] = "a" * 255
@@ -378,7 +358,6 @@ def test_TC170_crear_grupo_codigo_limite_superior(setup_customer_group_cleanup):
 @pytest.mark.regression
 def test_TC171_crear_grupo_nombre_limite_superior(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_171: Iniciando test para crear grupo con nombre en límite superior ===")
     
     data = generate_customer_group_source_data()
     data["name"] = "a" * 255
@@ -398,7 +377,6 @@ def test_TC171_crear_grupo_nombre_limite_superior(setup_customer_group_cleanup):
 @pytest.mark.regression
 def test_TC172_verificar_headers_respuesta_creacion(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_172: Iniciando test para verificar headers de respuesta ===")
     
     data = generate_customer_group_source_data()
     endpoint = EndpointCustomerGroup.customer_group()
@@ -421,7 +399,6 @@ def test_TC172_verificar_headers_respuesta_creacion(setup_customer_group_cleanup
 @pytest.mark.regression
 def test_TC173_crear_grupo_codigo_minimo(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_173: Iniciando test para crear grupo con código mínimo ===")
     
     data = generate_customer_group_source_data()
     data["code"] = "a"
@@ -441,7 +418,6 @@ def test_TC173_crear_grupo_codigo_minimo(setup_customer_group_cleanup):
 @pytest.mark.regression
 def test_TC174_crear_grupo_nombre_minimo(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    logger.info("=== TC_174: Iniciando test para crear grupo con nombre mínimo ===")
     
     data = generate_customer_group_source_data()
     data["name"] = "Ab"  #La app pide minimo 2 caracteres
@@ -461,7 +437,6 @@ def test_TC174_crear_grupo_nombre_minimo(setup_customer_group_cleanup):
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC175_crear_grupo_valores_null(auth_headers):
-    logger.info("=== TC_175: Iniciando test para crear grupo con valores null ===")
     
     data = {
         "code": None,
