@@ -1,6 +1,4 @@
-import logging
 import pytest
-import time
 
 from src.assertions.customergroup_assertions import AssertionCustomerGroup
 from src.assertions.status_code_assertions import AssertionStatusCode
@@ -8,9 +6,6 @@ from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
 from src.data.customer_group import generate_customer_group_source_data
 from utils.logger_helpers import log_request_response
-
-logger = logging.getLogger(__name__)
-
 
 # Admin > Customer - Group > TC_334 E2E: Flujo completo CRUD de grupo de clientes
 @pytest.mark.e2e
