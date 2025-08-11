@@ -17,4 +17,4 @@ class PayloadInventory:
             "channels": data.get("channels", [])
         }
 
-        return json.dumps(payload, indent=4)
+        return payload

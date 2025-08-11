@@ -1,6 +1,3 @@
-#Agregar las assersiones para las esquemas que se encuentran en schemas .json
-
-import pytest
 from src.assertions.schema_assertions import AssertionSchemas
 
 class AssertionInventory:
