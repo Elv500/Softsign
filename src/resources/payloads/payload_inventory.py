@@ -1,15 +1,14 @@
-import json
-
 class PayloadInventory:
 
     @staticmethod
     def build_payload_add_inventory(data):
+        address = data.get("address", {})
         payload = {
             "address": {
-                "countryCode": data.get("countryCode"),
-                "street": data.get("street"),
-                "city": data.get("city"),
-                "postcode": data.get("postcode")
+                "countryCode": address.get("countryCode"),
+                "street": address.get("street"),
+                "city": address.get("city"),
+                "postcode": address.get("postcode")
             },
             "code": data.get("code"),
             "name": data.get("name"),

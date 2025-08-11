@@ -27,3 +27,12 @@ def setup_add_inventory(auth_headers):
             InventoryCall().delete(auth_headers, inventory['code'])
         else:
             print(f"La fuente de inventario no tiene 'code': {inventory}")
+
+@pytest.fixture(scope="class")
+def setup_edit_inventory(auth_headers):
+    payload_inventory = PayloadInventory.build_payload_add_inventory(generate_inventory_source_data())
+    inventory = InventoryCall.create(auth_headers, payload_inventory)
+
+    yield auth_headers, inventory
+
+    InventoryCall.delete(auth_headers, inventory["code"])

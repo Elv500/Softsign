@@ -14,7 +14,12 @@ def log_request_response(url, response, headers=None, payload=None):
     logging.info("STATUS CODE: %s", response.status_code)
     
     if headers:
-        logging.debug("REQUEST HEADERS:\n%s", json.dumps(headers, indent=4, ensure_ascii=False))
+        try:
+            headers_dict = dict(headers)
+        except Exception:
+            headers_dict = headers
+        logging.debug("REQUEST HEADERS:\n%s", json.dumps(headers_dict, indent=4, ensure_ascii=False))
+
 
     if payload:
         logging.debug("PAYLOAD REQUEST:\n%s", json.dumps(payload, indent=4, ensure_ascii=False))
