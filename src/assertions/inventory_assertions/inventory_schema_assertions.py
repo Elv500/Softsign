@@ -19,3 +19,11 @@ class AssertionInventory:
     @staticmethod
     def assert_inventory_code_schema(response):
         return AssertionSchemas().validate_json_schema(response, "inventory_code_schema.json", AssertionInventory.MODULE)
+    
+    @staticmethod
+    def assert_inventory_edit_input_schema(payload):
+        return AssertionSchemas().validate_json_schema(payload, "inventory_edit_input_schema.json", AssertionInventory.MODULE)
+    
+    @staticmethod
+    def assert_inventory_edit_output_schema(response):
+        return AssertionSchemas().validate_json_schema(response, "inventory_edit_output_schema.json", AssertionInventory.MODULE)
