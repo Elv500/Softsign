@@ -54,10 +54,10 @@ def test_TC80_eliminar_TaxCategory_sin_token():
 
 
 
-# Admin > Configuration > Tax Category - TC_03 Validar respuesta sin cuerpo en eliminación exitosa
+# Admin > Configuration > Tax Category -  Validar respuesta sin cuerpo en eliminación exitosa
 @pytest.mark.functional
 @pytest.mark.regression
-def test_eliminar_TaxCategory_respuesta_sin_cuerpo(auth_headers):
+def test_TC78_eliminar_TaxCategory_respuesta_sin_cuerpo(auth_headers):
     initial_data = generate_tax_category_data()
     create_endpoint = EndpointTaxCategory.tax_category()
     create_response = SyliusRequest.post(create_endpoint, auth_headers, initial_data)
@@ -74,10 +74,10 @@ def test_eliminar_TaxCategory_respuesta_sin_cuerpo(auth_headers):
 
 
 
-# Admin > Configuration > Tax Category - TC_04 Validar requerimiento de autenticación para eliminar categoría
+# Admin > Configuration > Tax Category - Validar requerimiento de autenticación para eliminar categoría
 @pytest.mark.functional
 @pytest.mark.regression
-def test_requerimiento_autenticacion_eliminar_TaxCategory():
+def test_TC79_requerimiento_autenticacion_eliminar_TaxCategory():
     fake_code = "TAX-AUTH-REQ-12345"
     invalid_headers = {"AUTHORIZATION": "Bearer TOKEN_invalido"}
     endpoint = EndpointTaxCategory.code(fake_code)
