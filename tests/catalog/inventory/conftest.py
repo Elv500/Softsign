@@ -1,7 +1,21 @@
 import pytest
+import json
 
 from src.resources.call_request.inventory_call import InventoryCall
+from src.resources.payloads.payload_inventory import PayloadInventory
+from src.data.inventory import generate_inventory_source_data
 
+@pytest.fixture(scope="module")
+def setup_teardown_view_inventory(auth_headers):
+    payload_inventory1 = PayloadInventory.build_payload_add_inventory(generate_inventory_source_data())
+    payload_inventory2 = PayloadInventory.build_payload_add_inventory(generate_inventory_source_data())
+    inventory1 = InventoryCall.create(auth_headers, payload_inventory1)
+    inventory2 = InventoryCall.create(auth_headers, payload_inventory2)
+
+    yield auth_headers, inventory1, inventory2
+
+    InventoryCall().delete(auth_headers, inventory1['code'])
+    InventoryCall().delete(auth_headers, inventory2['code'])
 
 @pytest.fixture(scope="function")
 def setup_add_inventory(auth_headers):
