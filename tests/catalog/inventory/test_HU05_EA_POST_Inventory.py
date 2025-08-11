@@ -26,6 +26,7 @@ def test_TC27_crear_inventory_con_todos_los_campos_validos(setup_add_inventory):
     log_request_response(url, response, headers, payload)
     created_inventories.append(response_json)
 
+
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.functional
@@ -43,6 +44,7 @@ def test_TC28_crear_inventory_con_campos_requeridos(setup_add_inventory):
     log_request_response(url, response, headers, payload)
     created_inventories.append(response_json)
 
+
 @pytest.mark.regression
 @pytest.mark.functional
 def test_TC29_crear_inventory_con_prioridad_cero(setup_add_inventory):
@@ -58,6 +60,7 @@ def test_TC29_crear_inventory_con_prioridad_cero(setup_add_inventory):
     assert response_json["priority"] == 0
     log_request_response(url, response, headers, payload)
     created_inventories.append(response_json)
+
 
 @pytest.mark.smoke
 @pytest.mark.regression
@@ -78,6 +81,7 @@ def test_TC30_crear_inventory_con_code_duplicado(setup_add_inventory):
     response_json = response2.json()
     AssertionInventoryErrors.assert_inventory_error_request(response_json, 422, "code: Code has to be unique")
 
+
 @pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.negative
@@ -91,6 +95,7 @@ def test_TC31_crear_inventory_sin_campo_code(setup_add_inventory):
     response_json = response.json()
     AssertionInventoryErrors.assert_inventory_error_request(response_json, 422, "code: Code cannot be blank")
     log_request_response(url, response, headers, payload)
+
 
 @pytest.mark.smoke
 @pytest.mark.regression
@@ -107,6 +112,7 @@ def test_TC252_crear_inventory_sin_campo_name(setup_add_inventory):
     AssertionInventoryErrors.assert_inventory_error_request(response_json, 422, "name: Name cannot be blank")
     log_request_response(url, response, headers, payload)
 
+
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.functional
@@ -122,6 +128,7 @@ def test_TC253_crear_inventory_con_code_vacio(setup_add_inventory):
     AssertionInventoryErrors.assert_inventory_error_request(response_json, 422, "code: Code cannot be blank")
     log_request_response(url, response, headers, payload)
 
+
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.functional
@@ -136,6 +143,7 @@ def test_TC254_crear_inventory_con_name_vacio(setup_add_inventory):
     response_json = response.json()
     AssertionInventoryErrors.assert_inventory_error_request(response_json, 422, "name: Name cannot be blank")
     log_request_response(url, response, headers, payload)
+
 
 @pytest.mark.functional
 @pytest.mark.negative
@@ -164,42 +172,6 @@ def test_TC256_crear_inventory_con_priority_como_texto(setup_add_inventory):
     AssertionStatusCode.assert_status_code_400(response)
     response_json = response.json()
     AssertionInventoryErrors.assert_inventory_error_request(response_json, 400, 'The type of the "priority" attribute must be "int", "string" given.')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @pytest.mark.functional
@@ -254,6 +226,7 @@ def test_TC259_crear_inventory_sin_address(setup_add_inventory):
     assert response_json["address"] is None
     created_inventories.append(response_json)
 
+
 @pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.negative
@@ -273,6 +246,7 @@ def test_TC260_crear_inventory_sin_country_code_en_address(setup_add_inventory):
     assert response_json["address"] != ""
     created_inventories.append(response_json)
 
+
 @pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.negative
@@ -288,6 +262,7 @@ def test_TC261_crear_inventory_con_country_code_invalido(setup_add_inventory):
     AssertionStatusCode.assert_status_code_422(response)
     response_json = response.json()
     AssertionInventoryErrors.assert_inventory_error_request(response_json, 422, 'address.countryCode: This value is not a valid country.')
+
 
 @pytest.mark.functional
 @pytest.mark.negative
@@ -320,6 +295,7 @@ def test_TC263_crear_inventory_sin_channels(setup_add_inventory):
     assert len(response_json["channels"]) == 0
     created_inventories.append(response_json)
 
+
 @pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.negative
@@ -336,6 +312,7 @@ def test_TC264_crear_inventory_con_channels_invalidos(setup_add_inventory):
     response_json = response.json()
     assert response_json["status"] == 400
     assert "Item not found for" in response_json["detail"]
+
 
 @pytest.mark.smoke
 @pytest.mark.regression
@@ -354,6 +331,7 @@ def test_TC265_crear_inventory_con_code_y_name_longitud_maxima(setup_add_invento
     AssertionInventoryCreate.assert_inventory_response(payload, response_json, required_only=True)
     created_inventories.append(response_json)
 
+
 @pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.negative
@@ -368,6 +346,7 @@ def test_TC266_crear_inventory_con_name_extremadamente_largo(setup_add_inventory
     log_request_response(url, response, headers, payload)
     AssertionStatusCode.assert_status_code_422(response)
 
+
 @pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.negative
@@ -381,6 +360,7 @@ def test_TC267_crear_inventory_con_code_extremadamente_largo(setup_add_inventory
     response = SyliusRequest.post(url, headers, payload)
     log_request_response(url, response, headers, payload)
     AssertionStatusCode.assert_status_code_422(response)
+
 
 @pytest.mark.smoke
 @pytest.mark.regression
