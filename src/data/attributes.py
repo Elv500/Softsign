@@ -7,20 +7,21 @@ import time
 
 fake = Faker()
 
-
-def generate_attributes_source_data():
-    # Generar un código único combinando timestamp y uuid
-    timestamp = str(int(time.time()))[-6:]
-    unique_id = str(uuid.uuid4())[:8]  #
-
-    attributes_data = {
-        "code": f"test_{timestamp}_{unique_id}",
+def generate_attributes_source_data(required_only=False):
+    code = fake.unique.slug()
+    name = fake.unique.company()
+    payload = {
+        "code": code,
         "type": "text",
         "translations": {
             "en_US": {
-                "name": f"{fake.company()} - {fake.catch_phrase()}"
+                "name": name
             }
-        }
+        },
+        "configuration": {
+            "maxCharacters": fake.random_int(min=10, max=200),
+            "minCharacters": fake.random_int(min=1, max=10)
+        },
+        "storageType": "text"
     }
-    return attributes_data
-
+    return payload
