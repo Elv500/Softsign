@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "@context": { "type": "string" },
+    "@id": { "type": "string" },
+    "@type": { "type": "string" },
+    "code": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "minLength": 1 },
+    "storageType": { "type": "string", "minLength": 1 },
+    "translatable": { "type": "boolean" },
+    "position": { "type": "integer" },
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "minCharacters": { "type": ["integer", "null"] },
+        "maxCharacters": { "type": ["integer", "null"] }
+      },
+      "required": ["minCharacters", "maxCharacters"]
+    },
+    "translations": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 255
+            }
+          },
+          "required": ["name"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "code",
+    "type",
+    "storageType",
+    "translatable",
+    "position",
+    "configuration",
+    "translations"
+  ],
+  "additionalProperties": false
+}
