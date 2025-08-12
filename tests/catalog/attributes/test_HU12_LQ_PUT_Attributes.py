@@ -11,7 +11,7 @@ from tests.catalog.attributes.conftest import setup_attributes_cleanup
 from utils.logger_helpers import log_request_response
 
 
-# Admin> Catalog> Attributes> TC_47: No se debe permitir actualizar un atributo inexistente.
+#Admin> Catalog> Attributes TC_47: No se debe permitir actualizar si el atributo no existe.
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC47_Verificar_que_no_permitar_actualizar_un_atributo_inexistente(auth_headers):
@@ -22,7 +22,7 @@ def test_TC47_Verificar_que_no_permitar_actualizar_un_atributo_inexistente(auth_
     AssertionStatusCode.assert_status_code_404(put_response)
 
 
-# Admin> Catalog> Attributes> TC_48: No se debe permitir actualizar un atributo sin token.
+#Admin> Catalog> Attributes TC_48: No se debe permitir actualizar un atributo sin token.
 @pytest.mark.negative
 @pytest.mark.security
 @pytest.mark.smoke
@@ -34,7 +34,7 @@ def test_TC48_Verificar_que_no_se_permita_actualizar_atributo_sin_token():
     AssertionStatusCode.assert_status_code_401(put_response)
 
 
-# Admin> Catalog> Attributes> TC_233: No se debe permitir actualizar un atributo con datos invalidos.
+#Admin> Catalog> Attributes TC_233: No se debe actualizar el atributo con data invalida.
 @pytest.mark.negative
 @pytest.mark.smok
 def test_TC233_Verificar_que_no_se_actualice_atributo_con_datos_invalidos(auth_headers):
