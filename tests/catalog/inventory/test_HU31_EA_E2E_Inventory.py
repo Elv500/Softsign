@@ -14,8 +14,11 @@ def test_TC355_a_TC360_End_To_End_Inventory(setup_e2e_inventory):
     #TC-355: Admin > Inventory - Autenticarse con credenciales válidas y obtener token.
     headers, created_inventories = setup_e2e_inventory
     
+    #Limites - Si el modulo tiene muchos elementos se pone un limite de muestra (<=2)
+    params = {"itemsPerPage": 2}
+
     #TC-356: Admin > Inventory - Listar inventarios con autenticación válida.
-    url = EndpointInventory.inventory()
+    url = EndpointInventory.inventory_with_params(**params)
     responseGet = SyliusRequest.get(url, headers)
     log_request_response(url, responseGet, headers)
     
