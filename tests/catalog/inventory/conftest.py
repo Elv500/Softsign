@@ -42,3 +42,16 @@ def setup_create_inventory(auth_headers):
     payload_inventory = PayloadInventory.build_payload_add_inventory(generate_inventory_source_data())
     inventory = InventoryCall.create(auth_headers, payload_inventory)
     yield auth_headers, inventory
+
+@pytest.fixture(scope='module')
+def setup_e2e_inventory(auth_headers):
+    created_inventories = []
+
+    yield auth_headers, created_inventories
+
+    for inventory in created_inventories:
+        if 'code' in inventory:
+            try:
+                InventoryCall().delete(auth_headers, inventory['code'])
+            except Exception as e:
+                print(f"[Cleanup] Error al eliminar inventario {inventory.get('code')}: {e}")
