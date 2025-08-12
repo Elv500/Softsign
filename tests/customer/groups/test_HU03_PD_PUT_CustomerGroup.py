@@ -394,15 +394,17 @@ def test_TC286_actualizar_grupo_json_malformado(setup_customer_group_cleanup):
     customer_group_code = create_response.json()["code"]
     add_group_for_cleanup(customer_group_code)
     
-    import requests
     endpoint = EndpointCustomerGroup.code(customer_group_code)
+    headers_with_json = {**auth_headers, 'Content-Type': 'application/json'}
+    # Para JSON malformado necesitamos usar requests directamente
+    import requests
     response = requests.put(
         endpoint,
-        headers={**auth_headers, 'Content-Type': 'application/json'},
+        headers=headers_with_json,
         data='{"name": invalid_json}'
     )
     
-    log_request_response(endpoint, response, headers={**auth_headers, 'Content-Type': 'application/json'})
+    log_request_response(endpoint, response, headers=headers_with_json)
     
     AssertionStatusCode.assert_status_code_400(response)
 
@@ -421,7 +423,6 @@ def test_TC287_actualizar_grupo_content_type_incorrecto(setup_customer_group_cle
     customer_group_code = create_response.json()["code"]
     add_group_for_cleanup(customer_group_code)
     
-    import requests
     data = {
         "name": "Nombre Actualizado"
     }
@@ -429,6 +430,8 @@ def test_TC287_actualizar_grupo_content_type_incorrecto(setup_customer_group_cle
     headers_with_text['Content-Type'] = 'text/plain'
     endpoint = EndpointCustomerGroup.code(customer_group_code)
     
+    # Para content-type incorrecto necesitamos usar requests directamente
+    import requests
     response = requests.put(
         endpoint,
         headers=headers_with_text,

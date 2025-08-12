@@ -283,14 +283,13 @@ def test_TC190_obtener_grupo_codigo_inexistente(auth_headers):
 @pytest.mark.regression
 def test_TC191_verificar_metodo_http_no_permitido(auth_headers):
     
-    import requests
     headers_with_json = auth_headers.copy()
     headers_with_json['Content-Type'] = 'application/json'
     
     endpoint = EndpointCustomerGroup.customer_group()
     payload = {"test": "data"}
     
-    response = requests.post(endpoint, headers=headers_with_json, json=payload)
+    response = SyliusRequest.post(endpoint, headers_with_json, payload)
     
     log_request_response(endpoint, response, headers=headers_with_json, payload=payload)
     
@@ -303,9 +302,8 @@ def test_TC191_verificar_metodo_http_no_permitido(auth_headers):
 def test_TC192_verificar_parametros_itemsPerPage_malformados(auth_headers):
     malformed_param = "xyz"
     
-    import requests
     endpoint = EndpointCustomerGroup.customer_group() + f"?page=1&itemsPerPage={malformed_param}"
-    response = requests.get(endpoint, headers=auth_headers)
+    response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
     
@@ -318,9 +316,8 @@ def test_TC192_verificar_parametros_itemsPerPage_malformados(auth_headers):
 def test_TC193_verificar_parametros_page_malformados(auth_headers):
     malformed_param = "asd"
     
-    import requests
     endpoint = EndpointCustomerGroup.customer_group() + f"?page={malformed_param}&itemsPerPage=10"
-    response = requests.get(endpoint, headers=auth_headers)
+    response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
     

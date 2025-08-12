@@ -235,11 +235,10 @@ def test_TC305_eliminar_grupo_metodos_http_incorrectos(auth_headers):
     customer_group_code = create_response.json()["code"]
     endpoint = EndpointCustomerGroup.code(customer_group_code)
     
-    import requests
-    post_response = requests.post(endpoint, headers=auth_headers)
+    post_response = SyliusRequest.post(endpoint, auth_headers, {})
     log_request_response(endpoint, post_response, headers=auth_headers)
     
-    put_response = requests.put(endpoint, headers=auth_headers, json={})
+    put_response = SyliusRequest.put(endpoint, auth_headers, {})
     log_request_response(endpoint, put_response, headers=auth_headers)
     assert put_response.status_code != 204
     
@@ -313,12 +312,11 @@ def test_TC309_eliminar_grupo_content_type_incorrecto(auth_headers):
     
     customer_group_code = create_response.json()["code"]
     
-    import requests
     headers_with_text = auth_headers.copy()
     headers_with_text['Content-Type'] = 'text/plain'
     
     endpoint = EndpointCustomerGroup.code(customer_group_code)
-    response = requests.delete(endpoint, headers=headers_with_text)
+    response = SyliusRequest.delete(endpoint, headers_with_text)
     
     log_request_response(endpoint, response, headers=headers_with_text)
     
