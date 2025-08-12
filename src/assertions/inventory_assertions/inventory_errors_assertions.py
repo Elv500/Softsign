@@ -22,3 +22,10 @@ class AssertionInventoryErrors:
             assert response_json["detail"] == detail, "Error detail no coincide"
         except AssertionError as e:
             pytest.fail(f"Mensajes de error del request erroneos: {e}")
+
+    @staticmethod
+    def assert_response_time_less_than(elapsed_time, max_time_seconds):
+        try:
+            assert elapsed_time < max_time_seconds, f"Tiempo de respuesta {elapsed_time:.2f}s excede el máximo permitido de {max_time_seconds}s"
+        except AssertionError as e:
+            pytest.fail(f"Fallo en tiempo de respuesta: {e}")
