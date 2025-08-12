@@ -36,3 +36,9 @@ def setup_edit_inventory(auth_headers):
     yield auth_headers, inventory
 
     InventoryCall.delete(auth_headers, inventory["code"])
+
+@pytest.fixture(scope="function")
+def setup_create_inventory(auth_headers):
+    payload_inventory = PayloadInventory.build_payload_add_inventory(generate_inventory_source_data())
+    inventory = InventoryCall.create(auth_headers, payload_inventory)
+    yield auth_headers, inventory
