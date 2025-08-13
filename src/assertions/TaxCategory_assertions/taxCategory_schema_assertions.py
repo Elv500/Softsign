@@ -17,3 +17,14 @@ class AssertionTaxCategory:
     def assert_tax_category_output_schema(payload):
         return AssertionSchemas().validate_json_schema(payload, "taxCategory_add_output_schema.json", AssertionTaxCategory.MODULE)
 
+    @staticmethod
+    def assert_tax_category_code_schema(response):
+        return AssertionSchemas().validate_json_schema(response, "taxCategory_code_schema.json", AssertionTaxCategory.MODULE)
+
+    @staticmethod
+    def assert_tax_category_edit_input_schema(payload):
+        return AssertionSchemas().validate_json_schema(payload, "taxCategory_edit_input_schema.json", AssertionTaxCategory.MODULE)
+
+    @staticmethod
+    def assert_tax_category_edit_output_schema(response):
+        return AssertionSchemas().validate_json_schema(response, "taxCategory_edit_output_schema.json", AssertionTaxCategory.MODULE)

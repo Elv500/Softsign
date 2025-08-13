@@ -1,14 +1,11 @@
-import logging
 import pytest
 import time
 import threading
 
 from src.routes.request import SyliusRequest
-from src.assertions.taxCategory_assertions import AssertionTaxCategory
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.data.taxCategory import generate_tax_category_data
 from src.routes.endpoint_tax_category import EndpointTaxCategory
-from src.resources.call_request.taxCategory_call import TaxCategoryCall
 from utils.logger_helpers import log_request_response
 
 
@@ -177,7 +174,7 @@ def test_TC340_eliminar_TaxCategory_doble_eliminacion(auth_headers):
 # Admin > Configuration > Tax Category - Verificar eliminación de múltiples grupos secuencialmente
 @pytest.mark.functional
 @pytest.mark.regression
-def test__TC341eliminar_multiples_TaxCategory_secuencialmente(auth_headers):
+def test_TC341_eliminar_multiples_TaxCategory_secuencialmente(auth_headers):
 
     tax_categories = []
     for i in range(3):
@@ -240,7 +237,8 @@ def test_TC342_eliminar_TaxCategory_concurrente(auth_headers):
 # Admin > Configuration > Tax Category - TC_10 Verificar que la eliminación de un tax category no impacta otros existentes
 @pytest.mark.functional
 @pytest.mark.regression
-def test_TC343_eliminar_TaxCategory_no_impacta_otros(auth_headers):
+def test_TC343_eliminar_TaxCategory_no_impacta_otros(setup_add_tax_category, auth_headers):
+    headers, created_tax_categories = setup_add_tax_category
     data_1 = generate_tax_category_data(name="CategoriaA")
     data_2 = generate_tax_category_data(name="CategoriaB")
     endpoint_create = EndpointTaxCategory.tax_category()
