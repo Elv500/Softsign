@@ -4,12 +4,12 @@ fake = Faker()
 
 def generate_inventory_source_data(required_only=False):
     inventory_data = {
-        "code": fake.bothify(text='??###'),
+        "code": fake.slug(),
         "name": fake.company()
     }
 
     if not required_only:
-        inventory_data["priority"] = fake.random_int(min=0, max=100)
+        inventory_data["priority"] = fake.random_int(min=0, max=90)
         inventory_data["address"] = {
             "countryCode": fake.country_code(),
             "street": fake.street_address(),
