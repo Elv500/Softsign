@@ -1,6 +1,9 @@
 name: CI - Run API Tests
 
 on:
+  push:
+    branches:
+      - development
   workflow_dispatch:
     inputs:
       branch:
