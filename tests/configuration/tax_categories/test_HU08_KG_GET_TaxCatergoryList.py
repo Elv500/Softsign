@@ -6,7 +6,7 @@ from src.data.taxCategory import generate_tax_category_data
 from src.resources.call_request.taxCategory_call import TaxCategoryCall
 from utils.logger_helpers import log_request_response
 
-from src.assertions.taxCategory_assertions import AssertionTaxCategory
+from src.assertions.TaxCategory_assertions.taxCategory_schema_assertions import AssertionTaxCategory
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_tax_category import EndpointTaxCategory
 from src.routes.request import SyliusRequest

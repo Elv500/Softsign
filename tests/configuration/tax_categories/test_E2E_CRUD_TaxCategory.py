@@ -1,15 +1,11 @@
-import logging
 import pytest
-import time
 
 from src.routes.request import SyliusRequest
-from src.assertions.taxCategory_assertions import AssertionTaxCategory
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.data.taxCategory import generate_tax_category_data
 from src.routes.endpoint_tax_category import EndpointTaxCategory
-from src.resources.call_request.taxCategory_call import TaxCategoryCall
 from utils.logger_helpers import log_request_response
-from utils.config import BASE_URL
+
 
 @pytest.mark.e2e
 def test_full_tax_category_crud_flow(setup_add_tax_category, auth_headers):

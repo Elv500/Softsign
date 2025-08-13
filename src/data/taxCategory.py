@@ -1,44 +1,39 @@
 from faker import Faker
 from uuid import uuid4
-import re
 
 fake = Faker()
 
-def generate_tax_category_data(
-    code=None, name=None, description=None
-):
-    """
-    aqui estamos generando un diccionario de datos validos / aunque permite sobre escribir cualquier campo
-    """
-    data = {
-        "code": code if code is not None else f"TAX-{uuid4().hex[:6]}",
-        "name": name if name is not None else fake.word().capitalize(),
-        "description": description if description is not None else fake.sentence(nb_words=6),
+
+def generate_tax_category_data(required_only=False):
+    tax_category_data = {
+        "code": f"TAX-{uuid4().hex[:6]}",
+        "name": fake.word().capitalize()
     }
-    return data
+
+    if not required_only:
+        tax_category_data["description"] = fake.sentence(nb_words=6)
+
+    # Validar que los campos requeridos no sean None
+    assert tax_category_data["code"] is not None, "El código no puede ser None"
+    assert tax_category_data["name"] is not None, "El nombre no puede ser None"
+
+    return tax_category_data
 
 
-def build_invalid_tax_category_data():
+def create_tax_category_data(code=None, name=None, description=None):
     """
-    Retorna una lista de diccionarios con combinaciones de datos inválidos para casos negativos.
+    Crea un diccionario de Tax Category con valores personalizados o aleatorios.
     """
-    invalid_cases = [
-        # Code muy largo
-        {"code": "A" * 256, "name": "ValidName"},
-        # Code con caracteres no permitidos
-        {"code": "Abc$", "name": "ValidName"},
-        {"code": "TAX#123", "name": "ValidName"},
-        # Name muy corto
-        {"code": "TAX-123", "name": "A"},
-        {"code": "TAX-123", "name": ""},
-        # Name muy largo
-        {"code": "TAX-123", "name": "A" * 256},
-        # Falta code
-        {"name": "ValidName"},
-        # Falta name
-        {"code": "TAX-123"},
-        # Description como null (válido)
-        {"code": "TAX-123", "name": "ValidName", "description": None},
-        # Description muy larga (si hay limitación, agregar aquí)
-    ]
-    return invalid_cases
+    tax_category_data = {
+        "code": code or f"TAX-{uuid4().hex[:6]}",
+        "name": name or fake.word().capitalize(),
+        "description": description
+    }
+
+    # Convierte valores "null" en None
+    tax_category_data = {k: (None if v == "null" else v) for k, v in tax_category_data.items()}
+
+    # Elimina las claves cuyo valor sea None
+    tax_category_data = {k: v for k, v in tax_category_data.items() if v is not None}
+
+    return tax_category_data
