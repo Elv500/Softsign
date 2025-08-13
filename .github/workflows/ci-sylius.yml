@@ -1,4 +1,4 @@
-name: CI - Run API Tests main
+name: CI - Run API Tests
 
 on:
   push:
@@ -6,12 +6,8 @@ on:
       - development
   workflow_dispatch:
     inputs:
-      branch:
-        description: 'Branch a ejecutar'
-        required: true
-        default: 'development'
       marker:
-        description: 'Marker de pytest (-m smoke, -m functional, etc.)'
+        description: 'Marker de pytest: -m <mark>'
         required: false
         default: ''
 
@@ -22,8 +18,6 @@ jobs:
     steps:
     - name: Checkout código
       uses: actions/checkout@v4
-      with:
-        ref: ${{ github.event.inputs.branch }}
 
     - name: Configurar Python
       uses: actions/setup-python@v5
