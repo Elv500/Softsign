@@ -39,7 +39,8 @@ jobs:
       #run: pytest tests/catalog/inventory --maxfail=3 --disable-warnings -v --alluredir=reports/allure-results
 
     # 6. Subir resultados Allure como artifact
-    - name: Subir reporte Allure como artifact
+    - name: Subir reporte aunque haya fallos
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: allure-results
