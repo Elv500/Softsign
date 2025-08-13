@@ -1,44 +1,47 @@
 name: CI - Run API Tests
 
 on:
-  push:
-    branches:
-      - development
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch a ejecutar'
+        required: true
+        default: 'development'
+      marker:
+        description: 'Marker de pytest (-m smoke, -m functional, etc.)'
+        required: false
+        default: ''
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Descargar el código
     - name: Checkout código
       uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.inputs.branch }}
 
-    # 2. Configurar Python
     - name: Configurar Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.13'
 
-    # 3. Inyectar variables sensibles desde Secrets
     - name: Establecer variables de entorno desde secrets
       run: |
         echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
         echo "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" >> $GITHUB_ENV
         echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> $GITHUB_ENV
 
-    # 4. Instalar dependencias
     - name: Instalar dependencias
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # 5. Ejecutar tests y generar resultados Allure
     - name: Ejecutar tests con pytest y generar reporte Allure
-      run: pytest --disable-warnings -v --alluredir=reports/allure-results
-      #run: pytest tests/catalog/inventory --maxfail=3 --disable-warnings -v --alluredir=reports/allure-results
+      run: |
+        pytest --disable-warnings -v ${{ github.event.inputs.marker }} --alluredir=reports/allure-results
 
-    # 6. Subir resultados Allure como artifact
     - name: Subir reporte aunque haya fallos
       if: always()
       uses: actions/upload-artifact@v4
