@@ -35,7 +35,7 @@ jobs:
 
     # 5. Ejecutar tests y generar resultados Allure
     - name: Ejecutar tests con pytest y generar reporte Allure
-      run: pytest --maxfail=3 --disable-warnings -v --alluredir=reports/allure-results
+      run: pytest --disable-warnings -v --alluredir=reports/allure-results
       #run: pytest tests/catalog/inventory --maxfail=3 --disable-warnings -v --alluredir=reports/allure-results
 
     # 6. Subir resultados Allure como artifact
