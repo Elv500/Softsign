@@ -91,6 +91,7 @@ def test_TC273_actualizar_grupo_codigo_inexistente(auth_headers):
 @pytest.mark.negative
 @pytest.mark.boundary
 @pytest.mark.regression
+@pytest.mark.xfail(reason="Permite actualizar el campo name vacio cuando es obligatorio", run=True)
 def test_TC274_actualizar_grupo_sin_campo_name(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     

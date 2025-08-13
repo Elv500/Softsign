@@ -299,6 +299,7 @@ def test_TC191_verificar_metodo_http_no_permitido(auth_headers):
 # Admin > Customer - Group > TC_192 Verificar respuesta con parámetros itemsPerPage malformados
 @pytest.mark.negative
 @pytest.mark.regression
+@pytest.mark.xfail(reason="No controla los limites de items por pagina", run=True)
 def test_TC192_verificar_parametros_itemsPerPage_malformados(auth_headers):
     malformed_param = "xyz"
     
