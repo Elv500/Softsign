@@ -259,7 +259,11 @@ def test_TC221_tax_category_nombre_espacio_en_blanco(setup_add_tax_category, inv
 
 
 
-def test_TC_crear_tax_category_sin_code(auth_headers):
+#TC 418 Admin > Configuration > Tax category - Crear Tax Category sin code
+@pytest.mark.functional
+@pytest.mark.smoke
+@pytest.mark.negative
+def test_TC418_crear_tax_category_sin_code(auth_headers):
     data = generate_tax_category_data()
     data.pop("code", None)
     response = TaxCategoryCall.create(auth_headers, data)
