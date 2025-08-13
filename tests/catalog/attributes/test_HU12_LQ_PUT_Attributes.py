@@ -12,7 +12,7 @@ from utils.logger_helpers import log_request_response
 
 
 #Admin> Catalog> Attributes TC_47: No se debe permitir actualizar si el atributo no existe.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC47_Verificar_que_no_permitar_actualizar_un_atributo_inexistente(auth_headers):
     update_data = generate_attributes_source_data()
@@ -23,7 +23,7 @@ def test_TC47_Verificar_que_no_permitar_actualizar_un_atributo_inexistente(auth_
 
 
 #Admin> Catalog> Attributes TC_48: No se debe permitir actualizar un atributo sin token.
-@pytest.mark.negative
+@pytest.mark.regression
 @pytest.mark.security
 @pytest.mark.smoke
 def test_TC48_Verificar_que_no_se_permita_actualizar_atributo_sin_token():
@@ -35,8 +35,8 @@ def test_TC48_Verificar_que_no_se_permita_actualizar_atributo_sin_token():
 
 
 #Admin> Catalog> Attributes TC_233: No se debe actualizar el atributo con data invalida.
-@pytest.mark.negative
-@pytest.mark.smok
+@pytest.mark.functional
+@pytest.mark.smoke
 def test_TC233_Verificar_que_no_se_actualice_atributo_con_datos_invalidos(auth_headers):
     data = generate_attributes_source_data()
     post_response = SyliusRequest.post(EndpointAttributes.attributes(), auth_headers, data)
@@ -52,7 +52,7 @@ def test_TC233_Verificar_que_no_se_actualice_atributo_con_datos_invalidos(auth_h
 
 
 # Admin> Catalog> Attributes> TC_44: Se permite actualizar un atributo con datos validos.
-@pytest.mark.positive
+@pytest.mark.smoke
 @pytest.mark.functional
 def test_TC44_Verificar_se_actualice_attributo_con_datos_validos(setup_attributes_cleanup):
     auth_headers, add_attributes_for_cleanup = setup_attributes_cleanup
@@ -76,8 +76,8 @@ def test_TC44_Verificar_se_actualice_attributo_con_datos_validos(setup_attribute
 
 
 # Admin> Catalog> Attributes> TC_46: No se debe permitir actualizar un atributo sin el campo name.
-@pytest.mark.negative
-@pytest.mark.Functional
+@pytest.mark.smoke
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC46_Verificar_actualizar_grupo_sin_el_campo_name(setup_attributes_cleanup):
     auth_headers, add_attributes_for_cleanup = setup_attributes_cleanup
@@ -127,7 +127,7 @@ def test_TC249_Verificar_actualizar_atributo_con_caracteres_especiales_en_name(s
 
 
 # Admin> Catalog> Attributes> TC_250: No se permite actualizar un atributo si la autenticacion del token fallo.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC250_Verificar_no_actualizar_attribute_con_token_invalido():
@@ -144,7 +144,7 @@ def test_TC250_Verificar_no_actualizar_attribute_con_token_invalido():
 
 
 # Admin> Catalog> Attributes> TC_251: No se permite actualizar un atributo si el body-json es incorrecto.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC251_Verificar_actualizar_atributo_json_body_incompleto(setup_attributes_cleanup):
     auth_headers, add_attributes_for_cleanup = setup_attributes_cleanup
@@ -169,7 +169,7 @@ def test_TC251_Verificar_actualizar_atributo_json_body_incompleto(setup_attribut
 
 
 # Admin> Catalog> Attributes> TC_354: No see permite actualizar un atributo si el content type es incorrecto.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC354_Verificar_actualizar_atributo_con_content_type_incorrecto(setup_attributes_cleanup):
     auth_headers, add_attributes_for_cleanup = setup_attributes_cleanup

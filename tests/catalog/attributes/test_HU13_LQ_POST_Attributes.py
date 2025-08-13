@@ -41,8 +41,8 @@ def test_TC50_Verificar_la_estructura_json_response_despues_de_crear_atributp(se
 
 
 # Admin> Catalog> Attributes> TC_51: No debe crearse un nuevo atributo sin el campo requerido name.
-@pytest.mark.negative
-@pytest.mark.Functional
+@pytest.mark.smoke
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC51_Verificar_no_crear_atributo_sin_campo_name(auth_headers):
     data = generate_attributes_source_data()
@@ -56,10 +56,9 @@ def test_TC51_Verificar_no_crear_atributo_sin_campo_name(auth_headers):
 
 
 # Admin> Catalog> Attributes> TC_52: No debe crearse un nuevo atributo sin el campo  code.
-@pytest.mark.negative
-@pytest.mark.boundary
+@pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.Functional
+@pytest.mark.functional
 def test_TC52_Verificar_no_crear_atributo_sin_campo_code(auth_headers):
     data = generate_attributes_source_data()
     data["code"] = ""
@@ -71,10 +70,9 @@ def test_TC52_Verificar_no_crear_atributo_sin_campo_code(auth_headers):
 
 
 # Admin> Catalog> Attributes> TC_410: No debe crearse un nuevo atributo con una name mayor a 255 caracteres.
-@pytest.mark.negative
-@pytest.mark.boundary
+@pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.Functional
+@pytest.mark.functional
 def test_TC410_Verificar_no_crear_atributo_con_nombre_mayor_255caracteres(auth_headers):
     data = generate_attributes_source_data()
     data["translations"]["en_US"]["name"] = "a" * 256
@@ -86,7 +84,7 @@ def test_TC410_Verificar_no_crear_atributo_con_nombre_mayor_255caracteres(auth_h
 
 
 # Admin> Catalog> Attributes> TC_411: No debe crearse un nuevo atributo sin token de autenticacion.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC411_Verificar_no_crear_atributo_sin_token_autentication():
@@ -99,7 +97,7 @@ def test_TC411_Verificar_no_crear_atributo_sin_token_autentication():
 
 
 # Admin> Catalog> Attributes> TC_412: No debe crearse un nuevo atributo con token de invalido.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC412_Verificar_no_crear_atributo_con_token_invalido():
@@ -155,7 +153,7 @@ def test_TC414_Verificar_headers_respuesta_despues_de_crear_atributo(setup_attri
 
 
 # Admin> Catalog> Attributes> TC_415: No debe crearse un atributo si el JSON Body es incorrecto.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC415_Verificar_no_crear_atributo_json_incorrecto(auth_headers):
     import requests

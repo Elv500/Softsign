@@ -29,7 +29,7 @@ def test_TC39_Verificar_que_se_obtenga_un_atributo_por_code(auth_headers):
     assert response.json()["code"] == code
 
 #Admin> Catalog> Attributes TC_41: No se debe obtener ningun resultado si se ingreso un code que no existe.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.smoke
 def test_TC41_Verificar_que_no_se_obtenga_un_atributo_code_inexistente(auth_headers):
     code_inexistente = "retail"
@@ -40,7 +40,7 @@ def test_TC41_Verificar_que_no_se_obtenga_un_atributo_code_inexistente(auth_head
 
 
 #Admin> Catalog> Attributes TC_40: No debe obtenerse la lista de atributos si la autenticacion fallo.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.security
 @pytest.mark.smoke
 def test_TC40_Verificar_que_no_se_permita_obtener_la_lista_de_atributos_sin_token():
@@ -89,6 +89,7 @@ def test_TC200_Verificar_el_schema_response_del_metodo_GET(auth_headers):
 
 #Admin> Catalog> Attributes TC_202: Si el type no existe no debe obtenerse la lista de atributos.
 @pytest.mark.smoke
+@pytest.mark.functional
 def test_TC202_Verificar_que_no_se_obtenga_la_lista_atributos_con_type_inexistente(auth_headers):
     type = "type_inexistente"
     url = EndpointAttributes.code(type)
@@ -98,7 +99,7 @@ def test_TC202_Verificar_que_no_se_obtenga_la_lista_atributos_con_type_inexisten
 
 
 #Admin> Catalog> Attributes TC_204: No debe obtenerse la lista de atributos si se genera un token invalido.
-@pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.security
 @pytest.mark.smoke
 def test_TC204_Verificar_que_no_se_obtenga_lista_de_atributos_con_token_invalido():
