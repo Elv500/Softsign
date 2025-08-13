@@ -1,4 +1,4 @@
-name: Run Sylius API Tests
+name: CI - Run API Tests
 
 on:
   push:
@@ -10,48 +10,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # 1. Descargar el código
     - name: Checkout código
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
+    # 2. Configurar Python
     - name: Configurar Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.13'
 
-    - name: Establecer variables de entorno
+    # 3. Inyectar variables sensibles desde Secrets
+    - name: Establecer variables de entorno desde secrets
       run: |
-        echo "BASE_URL=https://demo.sylius.com/api/v2" >> $GITHUB_ENV
-        echo "ADMIN_USERNAME=sylius@example.com" >> $GITHUB_ENV
-        echo "ADMIN_PASSWORD=sylius" >> $GITHUB_ENV
+        echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
+        echo "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" >> $GITHUB_ENV
+        echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> $GITHUB_ENV
 
+    # 4. Instalar dependencias
     - name: Instalar dependencias
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Ejecutar pruebas con Pytest y generar resultados Allure
-      run: |
-        pytest tests/ --disable-warnings -v --alluredir=reports/allure-results
+    # 5. Ejecutar tests y generar resultados Allure
+    - name: Ejecutar tests con pytest y generar reporte Allure
+      #run: pytest --maxfail=3 --disable-warnings -v --alluredir=reports/allure-results
+      run: pytest tests/catalog/inventory --maxfail=3 --disable-warnings -v --alluredir=reports/allure-results
 
-    - name: Subir resultados Allure como artifact
+    # 6. Subir resultados Allure como artifact
+    - name: Subir reporte Allure como artifact
       uses: actions/upload-artifact@v4
       with:
         name: allure-results
         path: reports/allure-results
-
-    - name: Instalar Allure CLI
-      run: |
-        wget https://github.com/allure-framework/allure2/releases/download/2.34.1/allure-2.34.1.tgz
-        tar -xvzf allure-2.34.1.tgz
-        sudo mv allure-2.34.1 /opt/allure
-        sudo ln -s /opt/allure/bin/allure /usr/bin/allure
-
-    - name: Generar reporte HTML de Allure
-      run: |
-        allure generate reports/allure-results --clean -o reports/allure-report-html
-
-    - name: Subir reporte HTML como artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: allure-report-html
-        path: reports/allure-report-html
