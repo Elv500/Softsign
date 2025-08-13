@@ -246,16 +246,17 @@ def test_TC165_crear_grupo_token_invalido():
 @pytest.mark.regression
 def test_TC166_crear_grupo_json_malformado(auth_headers):
     
-    import requests
     endpoint = EndpointCustomerGroup.customer_group()
-    # Enviar JSON malformado directamente
+    headers_with_json = {**auth_headers, 'Content-Type': 'application/json'}
+    # Enviar JSON malformado usando raw data
+    import requests
     response = requests.post(
         endpoint,
-        headers={**auth_headers, 'Content-Type': 'application/json'},
+        headers=headers_with_json,
         data='{"code": "test", "name": invalid_json}'
     )
     
-    log_request_response(endpoint, response, headers={**auth_headers, 'Content-Type': 'application/json'})
+    log_request_response(endpoint, response, headers=headers_with_json)
     
     AssertionStatusCode.assert_status_code_400(response)
 
@@ -265,12 +266,13 @@ def test_TC166_crear_grupo_json_malformado(auth_headers):
 @pytest.mark.regression
 def test_TC167_crear_grupo_content_type_incorrecto(auth_headers):
     
-    import requests
     data = generate_customer_group_source_data()
     headers_with_text = auth_headers.copy()
     headers_with_text['Content-Type'] = 'text/plain'
     endpoint = EndpointCustomerGroup.customer_group()
     
+    # Para content-type incorrecto, necesitamos usar requests directamente
+    import requests
     response = requests.post(
         endpoint,
         headers=headers_with_text,
