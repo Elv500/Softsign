@@ -239,3 +239,26 @@ def test_TC373_enviar_campo_translations_con_tipo_incorrecto(setup_teardown_asso
 
     AssertionStatusCode.assert_status_code_400(response)
     AssertionAssociationTypes.assert_error_schema(response_data)
+
+
+def test_TC374_enviar_body_con_campos_extra_no_soportados_exitoso(setup_teardown_association_types):
+    headers, association_type1, _ = setup_teardown_association_types
+    headers_general = build_auth_headers(headers.copy())
+    url = EndpointAssociationTypes.code(association_type1['code'])
+    en_us_id = association_type1["translations"]["en_US"]["@id"]
+    payload = generate_association_type_translations_data(
+        langs=["en_US"],
+        overrides={"en_US": {"@id": en_us_id}},
+        extra_fields={"test": "new-test"}
+    )
+
+    response = SyliusRequest.put(url, headers_general, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_type_edit_output_schema(response.json())
+    AssertionAssociationTypes.assert_code_matches(response_data, association_type1['code'])
+    AssertionAssociationTypes.assert_translation_name_matches(response_data, "en_US",
+                                                              payload['translations']['en_US']['name'])
+
