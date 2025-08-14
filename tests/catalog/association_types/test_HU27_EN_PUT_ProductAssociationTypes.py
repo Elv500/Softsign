@@ -10,6 +10,7 @@ from utils.logger_helpers import log_request_response
 
 # Catálogo > Association Types - TC_364 Modificar traducción existente en inglés (en_US), pasando el campo `@id` [Exitoso]
 @pytest.mark.smoke
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC364_modificar_traduccion_existente_en_US_pasando_id_exitoso(setup_teardown_association_types):
     headers, association_type1, _ = setup_teardown_association_types
@@ -35,6 +36,7 @@ def test_TC364_modificar_traduccion_existente_en_US_pasando_id_exitoso(setup_tea
 
 # Catálogo > Association Types - TC_365 Agregar traducción nueva en español (es_ES) [Exitoso]
 @pytest.mark.smoke
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC365_agregar_traduccion_nueva_en_es_ES_exitoso(setup_teardown_association_types):
     headers, association_type1, _ = setup_teardown_association_types
@@ -140,6 +142,7 @@ def test_TC368_enviar_body_sin_campo_translations_se_ignora_el_cambio(setup_tear
 
 
 # Catálogo > Association Types - TC_369 Modificar traducción existente sin pasar @id
+@pytest.mark.negative
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC369_modificar_traduccion_existente_sin_pasar_id(setup_teardown_association_types):
@@ -180,10 +183,10 @@ def test_TC370_modificar_recurso_con_code_inexistente(setup_teardown_association
     AssertionAssociationTypes.assert_error_schema(response_data)
 
 
-@pytest.mark.regression
 @pytest.mark.security
-@pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.functional
+@pytest.mark.regression
 def test_TC371_enviar_solicitud_con_token_invalido(setup_teardown_association_types):
     headers, association_type1, _ = setup_teardown_association_types
     headers_general = build_auth_headers(headers.copy())
@@ -226,7 +229,9 @@ def test_TC372_validar_que_campos_no_modificados_permanecen_igual_exitoso(setup_
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response_data)
     AssertionAssociationTypes.assert_code_matches(response_data, association_type1['code'])
 
-
+@pytest.mark.negative
+@pytest.mark.functional
+@pytest.mark.regression
 def test_TC373_enviar_campo_translations_con_tipo_incorrecto(setup_teardown_association_types):
     headers, association_type1, _ = setup_teardown_association_types
     headers_general = build_auth_headers(headers.copy())
@@ -240,7 +245,8 @@ def test_TC373_enviar_campo_translations_con_tipo_incorrecto(setup_teardown_asso
     AssertionStatusCode.assert_status_code_400(response)
     AssertionAssociationTypes.assert_error_schema(response_data)
 
-
+@pytest.mark.functional
+@pytest.mark.regression
 def test_TC374_enviar_body_con_campos_extra_no_soportados_exitoso(setup_teardown_association_types):
     headers, association_type1, _ = setup_teardown_association_types
     headers_general = build_auth_headers(headers.copy())
@@ -306,8 +312,10 @@ def test_TC376_agregar_traduccion_idioma_valido_nombre_vacio(setup_teardown_asso
     AssertionAssociationTypes.assert_error_schema(response_data)
 
 
-@pytest.mark.regression
 @pytest.mark.negative
+@pytest.mark.boundary
+@pytest.mark.functional
+@pytest.mark.regression
 def test_TC377_modificar_traduccion_nombre_muy_largo(setup_teardown_association_types):
     headers, association_type1, _ = setup_teardown_association_types
     headers_general = build_auth_headers(headers.copy())
