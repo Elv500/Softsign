@@ -5,6 +5,7 @@ from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_product_association import EndpointAssociationTypes
 from src.routes.request import SyliusRequest
 from src.data.association_types import generate_association_types_source_data
+from utils.logger_helpers import log_request_response
 
 
 # Catálogo > Association Types - TC_120 Crear tipo de asociación con code y translations.en_US.name válidos [Exitoso]
@@ -18,6 +19,7 @@ def test_TC120_crear_tipo_asociacion_code_y_translations_en_US_name_validos_exit
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_201(response)
     AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
@@ -38,6 +40,7 @@ def test_TC121_crear_tipo_asociacion_multiples_traducciones_validas_en_US_es_ES_
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_201(response)
     AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
@@ -62,6 +65,7 @@ def test_TC122_validar_creacion_code_2_caracteres_exitoso(teardown_association_t
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_201(response)
     AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
@@ -81,6 +85,7 @@ def test_TC123_validar_creacion_code_255_caracteres_exitoso(teardown_association
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_201(response)
     AssertionAssociationTypes.assert_association_type_add_output_schema(response_data)
@@ -98,6 +103,7 @@ def test_TC124_validar_error_code_1_caracter(auth_headers):
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
@@ -116,6 +122,7 @@ def test_TC125_validar_error_code_supera_255_caracteres(auth_headers):
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
@@ -132,6 +139,7 @@ def test_TC126_validar_error_code_caracteres_invalidos(auth_headers):
     url = EndpointAssociationTypes.association_types()
 
     response = SyliusRequest.post(url, headers, payload)
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_400(response)
 
@@ -150,6 +158,7 @@ def test_TC127_validar_error_code_ya_existe(teardown_association_types):
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
@@ -168,6 +177,7 @@ def test_TC128_validar_error_falta_campo_code(auth_headers):
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
@@ -186,6 +196,7 @@ def test_TC129_validar_error_falta_campo_translations(auth_headers):
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
@@ -204,6 +215,7 @@ def test_TC130_validar_error_translations_vacio(auth_headers):
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
@@ -221,6 +233,7 @@ def test_TC131_crear_tipo_asociacion_solo_una_traduccion_en_US_exitoso(teardown_
 
     response = SyliusRequest.post(url, headers, payload)
     response_data = response.json()
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_201(response)
     AssertionAssociationTypes.assert_association_type_add_output_schema(response.json())
@@ -239,6 +252,7 @@ def test_TC132_enviar_solicitud_sin_token_autenticacion():
     url = EndpointAssociationTypes.association_types()
 
     response = SyliusRequest.post(url, headers, payload)
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_401(response)
 
@@ -256,5 +270,6 @@ def test_TC133_enviar_solicitud_token_invalido():
     url = EndpointAssociationTypes.association_types()
 
     response = SyliusRequest.post(url, headers, payload)
+    log_request_response(url, response, headers, payload)
 
     AssertionStatusCode.assert_status_code_401(response)

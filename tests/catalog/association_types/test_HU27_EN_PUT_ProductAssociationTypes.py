@@ -5,6 +5,7 @@ from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_product_association import EndpointAssociationTypes
 from src.routes.request import SyliusRequest
 from src.data.association_types import generate_association_type_translations_data, build_auth_headers
+from utils.logger_helpers import log_request_response
 
 
 # Catálogo > Association Types - TC_364 Modificar traducción existente en inglés (en_US), pasando el campo `@id` [Exitoso]
@@ -23,6 +24,7 @@ def test_TC364_modificar_traduccion_existente_en_US_pasando_id_exitoso(setup_tea
 
     response = SyliusRequest.put(url, headers_general, payload)
     response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
 
     AssertionStatusCode.assert_status_code_200(response)
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response.json())
@@ -47,6 +49,7 @@ def test_TC365_agregar_traduccion_nueva_en_es_ES_exitoso(setup_teardown_associat
 
     response = SyliusRequest.put(url, headers_general, payload)
     response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
 
     AssertionStatusCode.assert_status_code_200(response)
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response.json())
@@ -76,6 +79,7 @@ def test_TC366_modificar_simultaneamente_traducciones_en_US_y_es_ES_exitoso(setu
 
     response = SyliusRequest.put(url, headers_general, payload)
     response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
 
     AssertionStatusCode.assert_status_code_200(response)
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response.json())
@@ -102,6 +106,7 @@ def test_TC367_intentar_modificar_campo_code_en_body_se_ignora_no_cambia(setup_t
 
     response = SyliusRequest.put(url, headers_general, payload)
     response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
 
     AssertionStatusCode.assert_status_code_200(response)
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response.json())
@@ -117,10 +122,11 @@ def test_TC368_enviar_body_sin_campo_translations_se_ignora_el_cambio(setup_tear
     url = EndpointAssociationTypes.code(association_type1['code'])
     response = SyliusRequest.get(url, headers)
     association_type1 = response.json()
-    payload = {"code": "new-code-ignored" }
+    payload = {"code": "new-code-ignored"}
 
     response = SyliusRequest.put(url, headers_general, payload)
     response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
 
     AssertionStatusCode.assert_status_code_200(response)
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response_data)
@@ -128,3 +134,23 @@ def test_TC368_enviar_body_sin_campo_translations_se_ignora_el_cambio(setup_tear
     AssertionAssociationTypes.assert_translation_name_matches(response_data, "en_US",
                                                               association_type1['translations']['en_US']['name'])
 
+
+# Catálogo > Association Types - TC_369 Modificar traducción existente sin pasar @id
+@pytest.mark.functional
+@pytest.mark.regression
+@pytest.mark.actual
+def test_TC369_modificar_traduccion_existente_sin_pasar_id(setup_teardown_association_types):
+    headers, association_type1, _ = setup_teardown_association_types
+    headers_general = build_auth_headers(headers.copy())
+    url = EndpointAssociationTypes.code(association_type1['code'])
+    payload = generate_association_type_translations_data(
+        langs=["en_US"],
+        overrides={"en_US": {"name": "nuevo-nombre-sin-id"}}
+    )
+
+    response = SyliusRequest.put(url, headers_general, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
+
+    AssertionStatusCode.assert_status_code_422(response)
+    AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
