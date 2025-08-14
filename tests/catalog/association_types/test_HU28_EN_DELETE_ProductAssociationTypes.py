@@ -4,11 +4,11 @@ from src.assertions.association_types_assertions import AssertionAssociationType
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_product_association import EndpointAssociationTypes
 from src.routes.request import SyliusRequest
-from src.data.association_types import generate_association_types_source_data
 from utils.logger_helpers import log_request_response
 
 
 @pytest.mark.smoke
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC379_eliminar_tipo_asociacion_existente_por_codigo_exitoso_204(setup_association_types):
     headers, association_type = setup_association_types
@@ -81,6 +81,7 @@ def test_TC383_eliminar_tipo_asociacion_ya_eliminado(setup_association_types):
     AssertionAssociationTypes.assert_error_schema(response_2.json())
 
 
+@pytest.mark.functional
 @pytest.mark.regression
 def test_TC384_enviar_solicitud_sin_header_accept(setup_association_types):
     headers, association_type = setup_association_types
@@ -97,6 +98,7 @@ def test_TC384_enviar_solicitud_sin_header_accept(setup_association_types):
     log_request_response(url, response, headers)
     AssertionStatusCode.assert_status_code_404(response)
     AssertionAssociationTypes.assert_error_schema(response.json())
+
 
 @pytest.mark.negative
 @pytest.mark.regression
