@@ -16,11 +16,23 @@ def test_TC379_eliminar_tipo_asociacion_existente_por_codigo_exitoso_204(setup_a
 
     response = SyliusRequest.delete(url, headers)
     log_request_response(url, response, headers)
-
     AssertionStatusCode.assert_status_code_204(response)
 
     response = SyliusRequest.get(url, headers)
     log_request_response(url, response, headers)
+    AssertionStatusCode.assert_status_code_404(response)
+    AssertionAssociationTypes.assert_error_schema(response.json())
+
+
+@pytest.mark.negative
+@pytest.mark.regression
+def test_TC380_eliminar_tipo_asociacion_codigo_inexistente_error_404(auth_headers):
+    code_inexistente = "codigo-inexistente-123"
+    url = EndpointAssociationTypes.code(code_inexistente)
+
+    response = SyliusRequest.delete(url, auth_headers)
+    log_request_response(url, response, auth_headers)
 
     AssertionStatusCode.assert_status_code_404(response)
     AssertionAssociationTypes.assert_error_schema(response.json())
+
