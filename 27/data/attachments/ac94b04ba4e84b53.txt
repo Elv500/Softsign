@@ -1,0 +1,4 @@
+2025-08-14 05:25:15 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 05:25:15 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-14 05:25:15 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 05:25:16 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/pm-air-kid HTTP/1.1" 204 0

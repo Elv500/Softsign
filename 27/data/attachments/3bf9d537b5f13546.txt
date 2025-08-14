@@ -1,0 +1,2 @@
+2025-08-14 05:25:28 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 05:25:29 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-options/dress_size HTTP/1.1" 200 None

@@ -1,0 +1,25 @@
+2025-08-14 05:25:34 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 05:25:34 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 401 None
+2025-08-14 05:25:34 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 05:25:34 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options
+2025-08-14 05:25:34 - INFO - STATUS CODE: 401
+2025-08-14 05:25:34 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer invalid_token",
+    "Content-Type": "application/json"
+}
+2025-08-14 05:25:34 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755149134_Du01",
+    "position": 2,
+    "translations": {
+        "en_US": {
+            "name": "Brooke Herrera Option"
+        }
+    }
+}
+2025-08-14 05:25:34 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "Invalid JWT Token"
+}
