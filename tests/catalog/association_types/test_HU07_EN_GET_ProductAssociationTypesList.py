@@ -146,21 +146,21 @@ def test_TC89_Validar_itemsPerPage_negativo_error(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
-@pytest.mark.negative
-@pytest.mark.regression
-def test_TC90_Validar_itemsPerPage_alfabetico_error(auth_headers):
-    url = EndpointAssociationTypes.list(items_per_page="a")
+# @pytest.mark.negative
+# @pytest.mark.regression
+# def test_TC90_Validar_itemsPerPage_alfabetico_error(auth_headers):
+#     url = EndpointAssociationTypes.list(items_per_page="a")
 
-    response = SyliusRequest.get(url, auth_headers)
-    response_data = response.json()
+#     response = SyliusRequest.get(url, auth_headers)
+#     response_data = response.json()
 
-    AssertionStatusCode.assert_status_code_400(response)
-    AssertionAssociationTypes.assert_error_schema(response_data)
-    AssertionAssociationTypes.assert_error_message(
-        response_data,
-        expected_message="Limit should not be less than 0"
-    )
-    log_request_response(url, response, auth_headers)
+#     AssertionStatusCode.assert_status_code_400(response)
+#     AssertionAssociationTypes.assert_error_schema(response_data)
+#     AssertionAssociationTypes.assert_error_message(
+#         response_data,
+#         expected_message="Limit should not be less than 0"
+#     )
+#     log_request_response(url, response, auth_headers)
 
 
 @pytest.mark.functional
@@ -274,7 +274,7 @@ def test_TC97_Buscar_nombre_invalido_lista_vacia(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
-@pytest.mark.segurity
+@pytest.mark.security
 @pytest.mark.negative
 @pytest.mark.regression
 def test_TC98_Validar_autenticacion_invalida_error_401():

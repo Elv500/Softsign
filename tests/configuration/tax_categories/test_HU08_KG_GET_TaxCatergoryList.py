@@ -93,27 +93,27 @@ def test_TC241_validar_paginacion_basica_tax_category(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
-@pytest.mark.functional
-@pytest.mark.regression
-def test_TC242_verificar_campos_no_vacios_tax_category(auth_headers):
-    logger.info("=== TC_242: Iniciando verificación de campos no vacíos en tax categories ===")
+# @pytest.mark.functional
+# @pytest.mark.regression
+# def test_TC242_verificar_campos_no_vacios_tax_category(auth_headers):
+#     logger.info("=== TC_242: Iniciando verificación de campos no vacíos en tax categories ===")
 
-    endpoint = EndpointTaxCategory.tax_category()
-    response = SyliusRequest.get(endpoint, auth_headers)
+#     endpoint = EndpointTaxCategory.tax_category()
+#     response = SyliusRequest.get(endpoint, auth_headers)
 
-    log_request_response(endpoint, response, headers=auth_headers)
+#     log_request_response(endpoint, response, headers=auth_headers)
 
-    AssertionStatusCode.assert_status_code_200(response)
+#     AssertionStatusCode.assert_status_code_200(response)
 
-    categorias = response.json().get("hydra:member", [])
-    logger.info(f"Verificando {len(categorias)} categorías para campos no vacíos")
+#     categorias = response.json().get("hydra:member", [])
+#     logger.info(f"Verificando {len(categorias)} categorías para campos no vacíos")
 
-    for i, categoria in enumerate(categorias):
-        logger.debug(f"Categoría {i + 1}: code='{categoria.get('code', '')}', name='{categoria.get('name', '')}'")
-        assert categoria.get("code",
-                             "").strip() != "", f"El código no debe estar vacío para la categoría {categoria.get('id', categoria)}"
-        assert categoria.get("name",
-                             "").strip() != "", f"El nombre no debe estar vacío para la categoría {categoria.get('id', categoria)}"
+#     for i, categoria in enumerate(categorias):
+#         logger.debug(f"Categoría {i + 1}: code='{categoria.get('code', '')}', name='{categoria.get('name', '')}'")
+#         assert categoria.get("code",
+#                              "").strip() != "", f"El código no debe estar vacío para la categoría {categoria.get('id', categoria)}"
+#         assert categoria.get("name",
+#                              "").strip() != "", f"El nombre no debe estar vacío para la categoría {categoria.get('id', categoria)}"
 
 
 

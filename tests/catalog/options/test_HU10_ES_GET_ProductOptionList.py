@@ -58,7 +58,6 @@ def test_TC106_Verificar_que_busqueda_por_codigo_exitoso_sea_exitosa(auth_header
 
 #Verifica que el endpoint de opciones filtre correctamente cuando se busca por un nombre existente, devolviendo correctamente todas las opciones que coincidan con el nombre proporcionado.
 @pytest.mark.functional
-@pytest.mark.positive
 def test_TC107_Verificar_que_busqueda_por_nombre_sea_exitosa(auth_headers):
     name = "Dress size"  # Ejemplo de nombre que existe en el sistema
     endpoint = EndpointOptions.options_with_params(name=name)
