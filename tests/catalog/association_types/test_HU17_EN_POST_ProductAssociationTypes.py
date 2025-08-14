@@ -214,7 +214,6 @@ def test_TC130_validar_error_translations_vacio(auth_headers):
 
 
 @pytest.mark.regression
-@pytest.mark.positive
 def test_TC131_crear_tipo_asociacion_solo_una_traduccion_en_US_exitoso(teardown_association_types):
     headers, created_inventories = teardown_association_types
     payload = generate_association_types_source_data(en_US_name="prueba")

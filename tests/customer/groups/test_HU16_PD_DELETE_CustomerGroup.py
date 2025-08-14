@@ -1,7 +1,9 @@
 import pytest
 import time
 
-from src.assertions.customergroup_assertions import AssertionCustomerGroup
+from src.assertions.customergroup_assertions.customer_group_errors_assertions import AssertionCustomerGroupErrors
+from src.assertions.customergroup_assertions.customer_group_schema_assertions import AssertionCustomerGroup
+from src.assertions.customergroup_assertions.customer_group_performance_assertions import AssertionCustomerGroupPerformance
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
@@ -42,6 +44,7 @@ def test_TC294_eliminar_grupo_codigo_inexistente(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_404(response)
+    AssertionCustomerGroupErrors.assert_not_found_error(response)
 
 
 # Admin > Customer - Group > TC_295 Verificar que no permita eliminar grupo sin token de autenticación
@@ -96,7 +99,9 @@ def test_TC297_verificar_tiempo_respuesta_eliminacion(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_204(response)
-    assert elapsed < 3.0
+    
+    performance_assertions = AssertionCustomerGroupPerformance()
+    performance_assertions.assert_delete_response_time(elapsed)
 
 
 # Admin > Customer - Group > TC_298 Verificar headers de respuesta al eliminar
@@ -118,8 +123,8 @@ def test_TC298_verificar_headers_respuesta_eliminacion(auth_headers):
     
     AssertionStatusCode.assert_status_code_204(response)
     
-    # c verificar que no hay content-type ya que es 204 No Content
-    assert response.content == b"" or len(response.content) == 0
+    performance_assertions = AssertionCustomerGroupPerformance()
+    performance_assertions.assert_delete_empty_response(response)
 
 
 # Admin > Customer - Group > TC_299 Verificar que el grupo eliminado no exista más
@@ -144,6 +149,7 @@ def test_TC299_verificar_grupo_eliminado_no_existe(auth_headers):
     log_request_response(get_endpoint, get_response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_404(get_response)
+    AssertionCustomerGroupErrors.assert_not_found_error(get_response)
 
 
 # Admin > Customer - Group > TC_300 Verificar que no permita eliminar el mismo grupo dos veces
@@ -167,6 +173,7 @@ def test_TC300_eliminar_mismo_grupo_dos_veces(auth_headers):
     log_request_response(endpoint, second_delete_response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_404(second_delete_response)
+    AssertionCustomerGroupErrors.assert_not_found_error(second_delete_response)
 
 
 # Admin > Customer - Group > TC_301 Verificar eliminación de grupo con caracteres especiales en el nombre
@@ -205,6 +212,7 @@ def test_TC302_eliminar_grupo_codigo_muy_largo(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_404(response)
+    AssertionCustomerGroupErrors.assert_not_found_error(response)
 
 
 # Admin > Customer - Group > TC_303 Verificar que no permita eliminar grupo con código vacío
@@ -212,16 +220,15 @@ def test_TC302_eliminar_grupo_codigo_muy_largo(auth_headers):
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC303_eliminar_grupo_codigo_vacio(auth_headers):
-    
+
     codigo_vacio = ""
     endpoint = EndpointCustomerGroup.code(codigo_vacio)
     response = SyliusRequest.delete(endpoint, auth_headers)
-    
+
     log_request_response(endpoint, response, headers=auth_headers)
-    
+
     AssertionStatusCode.assert_status_code_404(response)
-
-
+    # Nota: Este test devuelve HTML en lugar de JSON, por lo que solo validamos el status code
 # Admin > Customer - Group > TC_305 Verificar eliminación de grupo con diferentes métodos HTTP incorrectos
 @pytest.mark.negative
 @pytest.mark.regression
@@ -235,13 +242,12 @@ def test_TC305_eliminar_grupo_metodos_http_incorrectos(auth_headers):
     customer_group_code = create_response.json()["code"]
     endpoint = EndpointCustomerGroup.code(customer_group_code)
     
-    import requests
-    post_response = requests.post(endpoint, headers=auth_headers)
+    post_response = SyliusRequest.post(endpoint, auth_headers, {})
     log_request_response(endpoint, post_response, headers=auth_headers)
     
-    put_response = requests.put(endpoint, headers=auth_headers, json={})
+    put_response = SyliusRequest.put(endpoint, auth_headers, {})
     log_request_response(endpoint, put_response, headers=auth_headers)
-    assert put_response.status_code != 204
+    assert put_response.status_code != 204, "PUT no debería devolver 204"
     
     delete_response = SyliusRequest.delete(endpoint, auth_headers)
     AssertionStatusCode.assert_status_code_204(delete_response)
@@ -252,16 +258,18 @@ def test_TC305_eliminar_grupo_metodos_http_incorrectos(auth_headers):
 @pytest.mark.security
 @pytest.mark.regression
 def test_TC306_no_eliminar_grupo_sistema(auth_headers):
-    
+
     codigo_sistema = "retail"
     endpoint = EndpointCustomerGroup.code(codigo_sistema)
     response = SyliusRequest.delete(endpoint, auth_headers)
-    
+
     log_request_response(endpoint, response, headers=auth_headers)
-    
+
     AssertionStatusCode.assert_status_code_422(response)
-
-
+    # Verificar que contiene el mensaje esperado de "en uso"
+    response_json = response.json()
+    assert "Cannot delete, the customer group is in use" in response_json.get("detail", ""), \
+        "No se encontró el mensaje esperado de grupo en uso"
 # Admin > Customer - Group > TC_307 Verificar eliminación de múltiples grupos secuencialmente
 @pytest.mark.functional
 @pytest.mark.stress
@@ -299,6 +307,7 @@ def test_TC308_eliminar_grupo_codigo_unicode(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_404(response)
+    AssertionCustomerGroupErrors.assert_not_found_error(response)
 
 
 # Admin > Customer - Group > TC_309 Verificar eliminación con Content-Type incorrecto (no debería afectar DELETE)
@@ -313,12 +322,11 @@ def test_TC309_eliminar_grupo_content_type_incorrecto(auth_headers):
     
     customer_group_code = create_response.json()["code"]
     
-    import requests
     headers_with_text = auth_headers.copy()
     headers_with_text['Content-Type'] = 'text/plain'
     
     endpoint = EndpointCustomerGroup.code(customer_group_code)
-    response = requests.delete(endpoint, headers=headers_with_text)
+    response = SyliusRequest.delete(endpoint, headers_with_text)
     
     log_request_response(endpoint, response, headers=headers_with_text)
     

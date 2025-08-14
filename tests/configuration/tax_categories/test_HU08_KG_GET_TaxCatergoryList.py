@@ -94,7 +94,6 @@ def test_TC236_obtener_categoria_por_codigo(setup_add_tax_category, auth_headers
     )
 
 
-
 #TC_242: Iniciando verificación de campos no vacíos en tax categories
 @pytest.mark.functional
 @pytest.mark.negative
@@ -112,7 +111,6 @@ def test_TC242_get_tax_categories_valida_code_y_name_no_vacios(setup_teardown_vi
         if categoria.get("code", "").strip() == "" or categoria.get("name", "").strip() == "":
             ids_con_errores.append(categoria.get("id", categoria))
     assert not ids_con_errores, f"Las siguientes categorías tienen code o name vacío: {ids_con_errores}"
-
 
 
 #TC_240: Iniciando test obteniendo token invalido o sin autenticacion

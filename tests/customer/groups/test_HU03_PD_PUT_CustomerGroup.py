@@ -1,7 +1,10 @@
 import pytest
 import time
 
-from src.assertions.customergroup_assertions import AssertionCustomerGroup
+from src.assertions.customergroup_assertions.customer_group_errors_assertions import AssertionCustomerGroupErrors
+from src.assertions.customergroup_assertions.customer_group_post_content_assertions import AssertionCustomerGroupCreate
+from src.assertions.customergroup_assertions.customer_group_schema_assertions import AssertionCustomerGroup
+from src.assertions.customergroup_assertions.customer_group_performance_assertions import AssertionCustomerGroupPerformance
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
@@ -27,7 +30,7 @@ def test_TC271_actualizar_grupo_clientes_datos_validos(setup_customer_group_clea
         "name": "Updated Customer Group Name"
     }
     
-    AssertionCustomerGroup.assert_customer_group_put_input_schema(update_data)
+    AssertionCustomerGroup.assert_customer_group_edit_input_schema(update_data)
     
     endpoint = EndpointCustomerGroup.code(customer_group_code)
     response = SyliusRequest.put(endpoint, auth_headers, update_data)
@@ -35,10 +38,12 @@ def test_TC271_actualizar_grupo_clientes_datos_validos(setup_customer_group_clea
     log_request_response(endpoint, response, headers=auth_headers, payload=update_data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
     
-    assert response.json()["code"] == customer_group_code
-    assert response.json()["name"] == "Updated Customer Group Name"
+    AssertionCustomerGroupCreate.assert_customer_group_response(
+        {"name": "Updated Customer Group Name", "code": customer_group_code}, 
+        response.json()
+    )
 
 
 # Admin > Customer - Group > TC_272 Verificar estructura del JSON devuelto al actualizar
@@ -60,7 +65,7 @@ def test_TC272_verificar_estructura_json_respuesta_actualizacion(setup_customer_
         "name": "Updated Customer Group Name"
     }
     
-    AssertionCustomerGroup.assert_customer_group_put_input_schema(update_data)
+    AssertionCustomerGroup.assert_customer_group_edit_input_schema(update_data)
     
     endpoint = EndpointCustomerGroup.code(customer_group_code)
     response = SyliusRequest.put(endpoint, auth_headers, update_data)
@@ -68,7 +73,7 @@ def test_TC272_verificar_estructura_json_respuesta_actualizacion(setup_customer_
     log_request_response(endpoint, response, headers=auth_headers, payload=update_data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
 
 
 # Admin > Customer - Group > TC_273 Verificar que no permita actualizar grupo con código inexistente
@@ -91,6 +96,7 @@ def test_TC273_actualizar_grupo_codigo_inexistente(auth_headers):
 @pytest.mark.negative
 @pytest.mark.boundary
 @pytest.mark.regression
+@pytest.mark.xfail(reason="Permite actualizar el campo name vacio cuando es obligatorio", run=True)
 def test_TC274_actualizar_grupo_sin_campo_name(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -134,10 +140,12 @@ def test_TC275_actualizar_grupo_campo_code_ignorado(setup_customer_group_cleanup
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
     
-    assert response.json()["code"] == original_code
-    assert response.json()["name"] == "Nombre Actualizado - Code Ignorado"
+    AssertionCustomerGroupCreate.assert_customer_group_response(
+        {"name": "Nombre Actualizado - Code Ignorado", "code": original_code}, 
+        response.json()
+    )
 
 
 # Admin > Customer - Group > TC_276 Verificar que code vacío en body es ignorado
@@ -165,10 +173,12 @@ def test_TC276_actualizar_grupo_code_vacio_ignorado(setup_customer_group_cleanup
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
     
-    assert response.json()["code"] == original_code
-    assert response.json()["name"] == "Nombre Actualizado - Code Vacío"
+    AssertionCustomerGroupCreate.assert_customer_group_response(
+        {"name": "Nombre Actualizado - Code Vacío", "code": original_code}, 
+        response.json()
+    )
 
 
 # Admin > Customer - Group > TC_277 Verificar que code con caracteres especiales en body es ignorado
@@ -196,10 +206,12 @@ def test_TC277_actualizar_grupo_code_caracteres_especiales_ignorado(setup_custom
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
     
-    assert response.json()["code"] == original_code
-    assert response.json()["name"] == "Nombre Actualizado - Code Especial"
+    AssertionCustomerGroupCreate.assert_customer_group_response(
+        {"name": "Nombre Actualizado - Code Especial", "code": original_code}, 
+        response.json()
+    )
 
 
 # Admin > Customer - Group > TC_278 Verificar que code muy largo en body es ignorado
@@ -227,10 +239,12 @@ def test_TC278_actualizar_grupo_code_muy_largo_ignorado(setup_customer_group_cle
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
     
-    assert response.json()["code"] == original_code
-    assert response.json()["name"] == "Nombre Actualizado - Code Largo"
+    AssertionCustomerGroupCreate.assert_customer_group_response(
+        {"name": "Nombre Actualizado - Code Largo", "code": original_code}, 
+        response.json()
+    )
 
 
 # Admin > Customer - Group > TC_280 Verificar que code null en body es ignorado
@@ -258,10 +272,12 @@ def test_TC280_actualizar_grupo_code_null_ignorado(setup_customer_group_cleanup)
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
     
-    assert response.json()["code"] == original_code
-    assert response.json()["name"] == "Nombre Actualizado - Code Null"
+    AssertionCustomerGroupCreate.assert_customer_group_response(
+        {"name": "Nombre Actualizado - Code Null", "code": original_code}, 
+        response.json()
+    )
 
 
 # Admin > Customer - Group > TC_281 Verificar que no permita actualizar grupo con nombre vacío
@@ -340,7 +356,7 @@ def test_TC283_actualizar_grupo_nombre_caracteres_especiales(setup_customer_grou
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
 
 
 # Admin > Customer - Group > TC_284 Verificar que no permita actualizar grupo sin token de autenticación
@@ -394,15 +410,17 @@ def test_TC286_actualizar_grupo_json_malformado(setup_customer_group_cleanup):
     customer_group_code = create_response.json()["code"]
     add_group_for_cleanup(customer_group_code)
     
-    import requests
     endpoint = EndpointCustomerGroup.code(customer_group_code)
+    headers_with_json = {**auth_headers, 'Content-Type': 'application/json'}
+    # Para JSON malformado necesitamos usar requests directamente
+    import requests
     response = requests.put(
         endpoint,
-        headers={**auth_headers, 'Content-Type': 'application/json'},
+        headers=headers_with_json,
         data='{"name": invalid_json}'
     )
     
-    log_request_response(endpoint, response, headers={**auth_headers, 'Content-Type': 'application/json'})
+    log_request_response(endpoint, response, headers=headers_with_json)
     
     AssertionStatusCode.assert_status_code_400(response)
 
@@ -421,7 +439,6 @@ def test_TC287_actualizar_grupo_content_type_incorrecto(setup_customer_group_cle
     customer_group_code = create_response.json()["code"]
     add_group_for_cleanup(customer_group_code)
     
-    import requests
     data = {
         "name": "Nombre Actualizado"
     }
@@ -429,6 +446,8 @@ def test_TC287_actualizar_grupo_content_type_incorrecto(setup_customer_group_cle
     headers_with_text['Content-Type'] = 'text/plain'
     endpoint = EndpointCustomerGroup.code(customer_group_code)
     
+    # Para content-type incorrecto necesitamos usar requests directamente
+    import requests
     response = requests.put(
         endpoint,
         headers=headers_with_text,
@@ -466,8 +485,10 @@ def test_TC288_verificar_tiempo_respuesta_actualizacion(setup_customer_group_cle
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
-    assert elapsed < 3.0
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
+    
+    performance_assertions = AssertionCustomerGroupPerformance()
+    performance_assertions.assert_update_response_time(elapsed)
 
 
 # Admin > Customer - Group > TC_289 Verificar que permita actualizar grupo con nombre en límite superior (255 chars)
@@ -493,7 +514,7 @@ def test_TC289_actualizar_grupo_nombre_limite_superior(setup_customer_group_clea
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
 
 
 # Admin > Customer - Group > TC_290 Verificar headers de respuesta
@@ -519,11 +540,10 @@ def test_TC290_verificar_headers_respuesta_actualizacion(setup_customer_group_cl
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
     
-    headers = response.headers
-    content_type = headers.get("Content-Type", "")
-    assert content_type.startswith("application/ld+json"), f"Expected JSON-LD content type, got: {content_type}"
+    performance_assertions = AssertionCustomerGroupPerformance()
+    performance_assertions.assert_update_content_type_header(response)
 
 
 # Admin > Customer - Group > TC_291 Verificar que permita actualizar grupo con nombre mínimo
@@ -549,7 +569,7 @@ def test_TC291_actualizar_grupo_nombre_minimo(setup_customer_group_cleanup):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_put_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_edit_output_schema(response.json())
 
 
 # Admin > Customer - Group > TC_292 Verificar que no permita actualizar grupo con valores null

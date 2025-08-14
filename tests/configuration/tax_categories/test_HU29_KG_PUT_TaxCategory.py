@@ -188,7 +188,6 @@ def test_TC399_actualizacion_tax_category_sin_autenticacion(setup_edit_tax_categ
 
 #TC 401 Admin > Configuration> Tax Category - validar que permita actualizar categoria solo un campo sin que afecte a los demas
 @pytest.mark.regression
-@pytest.mark.positive
 def test_TC401_actualizacion_campo_unico_tax_category(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
     url = EndpointTaxCategory.code(tax_category["code"])
