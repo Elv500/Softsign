@@ -59,7 +59,7 @@ def test_TC362_Editar_campos_obligatorios_tax_category(setup_edit_tax_category):
 #TC363 Admin > Configuration> Tax Category - validar que al actualizar categoria no permita guardar campos vacios
 @pytest.mark.regression
 @pytest.mark.negative
-@pytest.mark.xfail(reason="known issue La app permite espacios vacios BUG", run=True)
+@pytest.mark.xfail(reason="known issue La app permite espacios vacios y campos invalidos BUG", run=True)
 @pytest.mark.parametrize("invalid_payload,expected_error,expected_status", [
     ({"name": ""}, "Please enter tax category name.", 422),
     ({"name": "   "}, None, 422), #en este caso deberia de fallar pero manda como bien con 200

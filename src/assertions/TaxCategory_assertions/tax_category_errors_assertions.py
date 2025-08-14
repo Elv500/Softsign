@@ -98,3 +98,4 @@ class AssertionTaxCategoryErrors:
         msg = AssertionTaxCategoryErrors._get_full_message(response_json)
         assert expected_message.lower() in msg, \
             f"El mensaje no indica error esperado. Mensaje: {msg}"
+
