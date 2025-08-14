@@ -154,3 +154,23 @@ def test_TC369_modificar_traduccion_existente_sin_pasar_id(setup_teardown_associ
 
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
+
+@pytest.mark.negative
+@pytest.mark.functional
+@pytest.mark.regression
+def test_TC370_modificar_recurso_con_code_inexistente(setup_teardown_association_types):
+    headers, association_type1, _ = setup_teardown_association_types
+    headers_general = build_auth_headers(headers.copy())
+    url = EndpointAssociationTypes.code("xyz-abc-123")
+    en_us_id = association_type1["translations"]["en_US"]["@id"]
+    payload = generate_association_type_translations_data(
+        langs=["en_US"],
+        overrides={"en_US": {"@id": en_us_id}},
+    )
+
+    response = SyliusRequest.put(url, headers_general, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
+
+    AssertionStatusCode.assert_status_code_404(response)
+    AssertionAssociationTypes.assert_error_schema(response_data)
