@@ -35,15 +35,17 @@ def generate_association_type_translations_data(langs=None, overrides=None, extr
 
     for lang in langs:
         lang_data = overrides.get(lang, {})
+        if "name" in lang_data:
+            name = lang_data["name"]
+        else:
+            name = fake.word()
         translations[lang] = {
             **({"@id": lang_data.get("@id")} if "@id" in lang_data else {}),
-            "name": lang_data.get("name") or fake.word()
+            "name": name
         }
 
     payload = {"translations": translations}
-
     payload.update(extra_fields)
-
     return payload
 
 

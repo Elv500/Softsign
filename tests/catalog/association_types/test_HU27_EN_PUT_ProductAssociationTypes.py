@@ -136,7 +136,7 @@ def test_TC368_enviar_body_sin_campo_translations_se_ignora_el_cambio(setup_tear
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response_data)
     AssertionAssociationTypes.assert_code_matches(response_data, association_type1['code'])
     AssertionAssociationTypes.assert_translation_name_matches(response_data, "en_US",
-                                                              association_type1['translations']['en_US']['name'])
+                                                              payload['translations']['en_US']['name'])
 
 
 # Catálogo > Association Types - TC_369 Modificar traducción existente sin pasar @id
@@ -262,6 +262,7 @@ def test_TC374_enviar_body_con_campos_extra_no_soportados_exitoso(setup_teardown
     AssertionAssociationTypes.assert_translation_name_matches(response_data, "en_US",
                                                               payload['translations']['en_US']['name'])
 
+
 @pytest.mark.regression
 @pytest.mark.negative
 def test_TC375_agregar_traduccion_idioma_no_habilitado_en_canal(setup_teardown_association_types):
@@ -273,6 +274,30 @@ def test_TC375_agregar_traduccion_idioma_no_habilitado_en_canal(setup_teardown_a
     payload = generate_association_type_translations_data(
         langs=["en_US", "it_IT"],
         overrides={"en_US": {"@id": en_us_id}}
+    )
+
+    response = SyliusRequest.put(url, headers_general, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
+
+    AssertionStatusCode.assert_status_code_422(response)
+    AssertionAssociationTypes.assert_error_schema(response_data)
+
+
+@pytest.mark.regression
+@pytest.mark.negative
+def test_TC376_agregar_traduccion_idioma_valido_nombre_vacio(setup_teardown_association_types):
+    headers, association_type1, _ = setup_teardown_association_types
+    headers_general = build_auth_headers(headers.copy())
+    url = EndpointAssociationTypes.code(association_type1['code'])
+    en_us_id = association_type1["translations"]["en_US"]["@id"]
+
+    payload = generate_association_type_translations_data(
+        langs=["en_US", "pt_PT"],
+        overrides={
+            "en_US": {"@id": en_us_id},
+            "pt_PT": {"name": ""}
+        }
     )
 
     response = SyliusRequest.put(url, headers_general, payload)
