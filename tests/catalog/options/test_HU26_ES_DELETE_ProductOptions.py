@@ -78,7 +78,7 @@ def test_tc391_Verificar_error_al_eliminar_opcion_ya_eliminada(auth_headers):
     AssertionStatusCode.assert_status_code_404(response)
 
 #Este test verifica que al intentar eliminar una opción sin autenticación, se recibe un error 401.
-@pytest.mark.functional
+@pytest.mark.security
 @pytest.mark.negative
 def test_tc392_Verificar_error_al_eliminar_opcion_sin_autenticacion():
     code = fake.pystr(min_chars=8, max_chars=12)
@@ -88,7 +88,7 @@ def test_tc392_Verificar_error_al_eliminar_opcion_sin_autenticacion():
     assert response.json()["message"] == "JWT Token not found"
 
 #Este test verifica que al intentar eliminar una opción con un token inválido, se recibe un error 401.
-@pytest.mark.functional
+@pytest.mark.security
 @pytest.mark.negative
 def test_tc393_Verificar_error_al_eliminar_opcion_con_token_invalido():
     code = fake.pystr(min_chars=8, max_chars=12)
@@ -99,7 +99,7 @@ def test_tc393_Verificar_error_al_eliminar_opcion_con_token_invalido():
     assert response.json()["message"] == "Invalid JWT Token"
 
 #Este test verifica que al intentar eliminar una opción con un token expirado, se recibe un error 401.
-@pytest.mark.functional
+@pytest.mark.security
 @pytest.mark.negative
 def test_tc394_Verificar_error_al_eliminar_opcion_con_token_expirado():
     code = fake.pystr(min_chars=8, max_chars=12)
