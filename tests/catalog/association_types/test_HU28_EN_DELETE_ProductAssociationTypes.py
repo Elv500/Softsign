@@ -50,3 +50,32 @@ def test_TC381_enviar_solicitud_sin_token_autorizacion_error_401(setup_associati
     AssertionStatusCode.assert_status_code_401(response)
 
 
+@pytest.mark.security
+@pytest.mark.negative
+@pytest.mark.regression
+def test_TC382_enviar_solicitud_con_token_invalido_error_401(setup_association_types):
+    _, association_type = setup_association_types
+    url = EndpointAssociationTypes.code(association_type['code'])
+    headers = {"Authorization": "Bearer token_invalido_123456"}
+
+    response = SyliusRequest.delete(url, headers)
+    log_request_response(url, response, headers)
+
+    AssertionStatusCode.assert_status_code_401(response)
+    AssertionAssociationTypes.assert_invalid_jwt_error(response.json())
+
+@pytest.mark.functional
+@pytest.mark.regression
+def test_TC383_eliminar_tipo_asociacion_ya_eliminado(setup_association_types):
+    headers, association_type = setup_association_types
+    url = EndpointAssociationTypes.code(association_type['code'])
+
+    response = SyliusRequest.delete(url, headers)
+    log_request_response(url, response, headers)
+    AssertionStatusCode.assert_status_code_204(response)
+
+    response_2 = SyliusRequest.delete(url, headers)
+    log_request_response(url, response_2, headers)
+    AssertionStatusCode.assert_status_code_404(response_2)
+    AssertionAssociationTypes.assert_error_schema(response_2.json())
+
