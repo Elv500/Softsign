@@ -106,3 +106,25 @@ def test_TC367_intentar_modificar_campo_code_en_body_se_ignora_no_cambia(setup_t
     AssertionStatusCode.assert_status_code_200(response)
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response.json())
     AssertionAssociationTypes.assert_code_matches(response_data, association_type1['code'])
+
+
+# Catálogo > Association Types - TC_368 Enviar body sin campo translations (se ignora el cambio)
+@pytest.mark.functional
+@pytest.mark.regression
+def test_TC368_enviar_body_sin_campo_translations_se_ignora_el_cambio(setup_teardown_association_types):
+    headers, association_type1, _ = setup_teardown_association_types
+    headers_general = build_auth_headers(headers.copy())
+    url = EndpointAssociationTypes.code(association_type1['code'])
+    response = SyliusRequest.get(url, headers)
+    association_type1 = response.json()
+    payload = {"code": "new-code-ignored" }
+
+    response = SyliusRequest.put(url, headers_general, payload)
+    response_data = response.json()
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_type_edit_output_schema(response_data)
+    AssertionAssociationTypes.assert_code_matches(response_data, association_type1['code'])
+    AssertionAssociationTypes.assert_translation_name_matches(response_data, "en_US",
+                                                              association_type1['translations']['en_US']['name'])
+
