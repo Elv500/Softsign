@@ -4,11 +4,12 @@ from src.assertions.schema_assertions import AssertionSchemas
 
 class AssertionAssociationTypes:
     MODULE = "association_types"
-    
+
     @staticmethod
     def assert_association_types_list_schema(response):
         """Valida el esquema de la lista de tipos de asociación de productos"""
-        return AssertionSchemas().validate_json_schema(response, "association_types_list.json", AssertionAssociationTypes.MODULE)
+        return AssertionSchemas().validate_json_schema(response, "association_types_list.json",
+                                                       AssertionAssociationTypes.MODULE)
 
     @staticmethod
     def assert_error_schema(response):
@@ -112,6 +113,7 @@ class AssertionAssociationTypes:
         assert response_data["message"] == "Invalid JWT Token", \
             f"Se esperaba mensaje 'Invalid JWT Token' pero se recibió '{response_data['message']}'"
 
+    @staticmethod
     def assert_association_type_add_input_schema(payload):
         """Valida el esquema de entrada para agregar un tipo de asociación"""
         return AssertionSchemas().validate_json_schema(
@@ -160,3 +162,17 @@ class AssertionAssociationTypes:
                 break
 
         assert message_found, f"No se encontró ninguna violación con el mensaje: '{expected_message}'"
+
+    @staticmethod
+    def assert_association_type_edit_input_schema(payload):
+        """Valida el esquema de entrada para editar un tipo de asociación"""
+        return AssertionSchemas().validate_json_schema(
+            payload, "association_type_edit_input_schema.json", AssertionAssociationTypes.MODULE
+        )
+
+    @staticmethod
+    def assert_association_type_edit_output_schema(response):
+        """Valida el esquema de salida al editar un tipo de asociación"""
+        return AssertionSchemas().validate_json_schema(
+            response, "association_type_edit_output_schema.json", AssertionAssociationTypes.MODULE
+        )

@@ -24,3 +24,35 @@ def generate_association_types_source_data(code=None, en_US_name=None, include_e
             "name": fake.word()
         }
     return data
+
+
+def generate_association_type_translations_data(langs=None, overrides=None, extra_fields=None):
+    langs = langs or ["en_US"]
+    overrides = overrides or {}
+    extra_fields = extra_fields or {}
+
+    translations = {}
+
+    for lang in langs:
+        lang_data = overrides.get(lang, {})
+        if "name" in lang_data:
+            name = lang_data["name"]
+        else:
+            name = fake.word()
+        translations[lang] = {
+            **({"@id": lang_data.get("@id")} if "@id" in lang_data else {}),
+            "name": name
+        }
+
+    payload = {"translations": translations}
+    payload.update(extra_fields)
+    return payload
+
+
+def build_auth_headers(headers=None, accept=True, content_type=True):
+    headers = headers or {}
+    if accept:
+        headers["Accept"] = "application/ld+json"
+    if content_type:
+        headers["Content-Type"] = "application/ld+json"
+    return headers
