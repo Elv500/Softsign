@@ -36,3 +36,17 @@ def test_TC380_eliminar_tipo_asociacion_codigo_inexistente_error_404(auth_header
     AssertionStatusCode.assert_status_code_404(response)
     AssertionAssociationTypes.assert_error_schema(response.json())
 
+
+@pytest.mark.security
+@pytest.mark.negative
+@pytest.mark.regression
+def test_TC381_enviar_solicitud_sin_token_autorizacion_error_401(setup_association_types):
+    _, association_type = setup_association_types
+    url = EndpointAssociationTypes.code(association_type['code'])
+
+    response = SyliusRequest.delete(url, headers={})
+    log_request_response(url, response, {})
+
+    AssertionStatusCode.assert_status_code_401(response)
+
+
