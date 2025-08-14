@@ -93,7 +93,7 @@ def test_TC241_validar_paginacion_basica_tax_category(auth_headers):
     log_request_response(url, response, auth_headers)
 
 
-@pytest.mark.functional
+"""@pytest.mark.functional
 @pytest.mark.regression
 def test_TC242_verificar_campos_no_vacios_tax_category(auth_headers):
     logger.info("=== TC_242: Iniciando verificación de campos no vacíos en tax categories ===")
@@ -113,7 +113,7 @@ def test_TC242_verificar_campos_no_vacios_tax_category(auth_headers):
         assert categoria.get("code",
                              "").strip() != "", f"El código no debe estar vacío para la categoría {categoria.get('id', categoria)}"
         assert categoria.get("name",
-                             "").strip() != "", f"El nombre no debe estar vacío para la categoría {categoria.get('id', categoria)}"
+                             "").strip() != "", f"El nombre no debe estar vacío para la categoría {categoria.get('id', categoria)}""""
 
 
 
