@@ -203,6 +203,7 @@ def test_TC371_enviar_solicitud_con_token_invalido(setup_teardown_association_ty
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAssociationTypes.assert_invalid_jwt_error(response_data)
 
+
 @pytest.mark.regression
 @pytest.mark.functional
 def test_TC372_validar_que_campos_no_modificados_permanecen_igual_exitoso(setup_teardown_association_types):
@@ -225,3 +226,16 @@ def test_TC372_validar_que_campos_no_modificados_permanecen_igual_exitoso(setup_
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response_data)
     AssertionAssociationTypes.assert_code_matches(response_data, association_type1['code'])
 
+
+def test_TC373_enviar_campo_translations_con_tipo_incorrecto(setup_teardown_association_types):
+    headers, association_type1, _ = setup_teardown_association_types
+    headers_general = build_auth_headers(headers.copy())
+    url = EndpointAssociationTypes.code(association_type1['code'])
+    payload = {"translations": "xyz"}
+
+    response = SyliusRequest.put(url, headers_general, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
+
+    AssertionStatusCode.assert_status_code_400(response)
+    AssertionAssociationTypes.assert_error_schema(response_data)
