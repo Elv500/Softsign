@@ -26,9 +26,10 @@ def generate_association_types_source_data(code=None, en_US_name=None, include_e
     return data
 
 
-def generate_association_type_translations_data(langs=None, overrides=None):
+def generate_association_type_translations_data(langs=None, overrides=None, extra_fields=None):
     langs = langs or ["en_US"]
     overrides = overrides or {}
+    extra_fields = extra_fields or {}
 
     translations = {}
 
@@ -39,7 +40,11 @@ def generate_association_type_translations_data(langs=None, overrides=None):
             "name": lang_data.get("name") or fake.word()
         }
 
-    return {"translations": translations}
+    payload = {"translations": translations}
+
+    payload.update(extra_fields)
+
+    return payload
 
 
 def build_auth_headers(headers=None, accept=True, content_type=True):
