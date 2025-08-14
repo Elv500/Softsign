@@ -1,0 +1,108 @@
+2025-08-14 04:36:59 - INFO - === TC_234: Iniciando test - Obtener listado de categoria del endpoit get ===
+2025-08-14 04:36:59 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:37:00 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-14 04:37:00 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:37:00 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-14 04:37:00 - INFO - STATUS CODE: 200
+2025-08-14 04:37:00 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDYxOTQsImV4cCI6MTc1NTE0OTc5NCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.QVpJmAUtC_Y5HIbwzPIvZnAeUujpcvmY8EdOZeEUpT2HRsTH7f4zang4F0g1vkl1AOCA9pkA1Yl2upXUaqhXgim8hw12UmFxssfHoJ1WlzkwAafr1nz91jMaITZzWO2Memexjpqd-VauF4iksmmLAbMGDRnn42XskqVQioI6EdqJv3x19To_VYXh7u0Xpo6Pm_M4KK5amy-PsDP2G-MpCi2zew4vcmn3xyZBpsglxA2mh0nSLkpbCi6i0dwXZxPHjmkI53vmnh8R7zTfQBZt-eQFt_0BVgVIYCykJVtOv1cy50iGT3Pzp2BZxqQq02M_MhUDS8s3ztL5nv5IW8xkg2-k-vk_MoqgWovVZhxvNJWEo3He7WLhYV5lQqU73YibSWnKyqmcauE-dBBV9Oy7slzFDIgmVRrFbtK6ooj1TR7p5m78YaOfO24kYW-jE01x1qcgmJQTgQKrSxI7Cs_04y64639Su3G8_tEdpxRaagBscathmiGaklUVu8361fNj-F0WkWJmVQd05aWeQd84dIKBWUwEk5VNiY7wOS8caYxyiYNCouQOOc0k73Bq6L65GSK6UocneDmtpI3GHjjxnxWxG5l-0WpJ5Wmsz2R2sz0FyFcH7snuIeH4CZ6E81TrMdG__EGxFOEfLDG2DziGySsJ2OIVKx5vMWosDKX2FFI"
+}
+2025-08-14 04:37:00 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 7,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 7876,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Est rerum quia sequi vel alias. Et ipsam autem dolorum quia.",
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 7877,
+            "code": "other",
+            "name": "Other",
+            "description": "Est occaecati est quisquam dolor adipisci. Eaque enim sint culpa in praesentium. Aut doloremque sint magnam reiciendis.",
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-69a893",
+            "@type": "TaxCategory",
+            "id": 7893,
+            "code": "TAX-69a893",
+            "name": "Much",
+            "description": "",
+            "createdAt": "2025-08-14 04:25:44",
+            "updatedAt": "2025-08-14 04:25:44"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-00fda0",
+            "@type": "TaxCategory",
+            "id": 7894,
+            "code": "TAX-00fda0",
+            "name": "   ",
+            "description": "Call model last Congress attorney skin.",
+            "createdAt": "2025-08-14 04:25:46",
+            "updatedAt": "2025-08-14 04:25:46"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-aa89d0",
+            "@type": "TaxCategory",
+            "id": 7895,
+            "code": "TAX-aa89d0",
+            "name": "\n\n",
+            "description": "Thought ball matter ever of.",
+            "createdAt": "2025-08-14 04:25:47",
+            "updatedAt": "2025-08-14 04:25:47"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-92d3e2",
+            "@type": "TaxCategory",
+            "id": 7896,
+            "code": "TAX-92d3e2",
+            "name": " \n ",
+            "description": "Family party tend recognize late.",
+            "createdAt": "2025-08-14 04:25:48",
+            "updatedAt": "2025-08-14 04:25:48"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-d5f1b2",
+            "@type": "TaxCategory",
+            "id": 7897,
+            "code": "TAX-d5f1b2",
+            "name": " \t \n ",
+            "description": "Fact character create pretty could close.",
+            "createdAt": "2025-08-14 04:25:49",
+            "updatedAt": "2025-08-14 04:25:49"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}

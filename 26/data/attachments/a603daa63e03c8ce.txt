@@ -1,0 +1,456 @@
+2025-08-14 04:36:57 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:36:58 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-options?page=1&itemsPerPage=10 HTTP/1.1" 200 None
+2025-08-14 04:36:58 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:36:58 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options?page=1&itemsPerPage=10
+2025-08-14 04:36:58 - INFO - STATUS CODE: 200
+2025-08-14 04:36:58 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDYxOTQsImV4cCI6MTc1NTE0OTc5NCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.QVpJmAUtC_Y5HIbwzPIvZnAeUujpcvmY8EdOZeEUpT2HRsTH7f4zang4F0g1vkl1AOCA9pkA1Yl2upXUaqhXgim8hw12UmFxssfHoJ1WlzkwAafr1nz91jMaITZzWO2Memexjpqd-VauF4iksmmLAbMGDRnn42XskqVQioI6EdqJv3x19To_VYXh7u0Xpo6Pm_M4KK5amy-PsDP2G-MpCi2zew4vcmn3xyZBpsglxA2mh0nSLkpbCi6i0dwXZxPHjmkI53vmnh8R7zTfQBZt-eQFt_0BVgVIYCykJVtOv1cy50iGT3Pzp2BZxqQq02M_MhUDS8s3ztL5nv5IW8xkg2-k-vk_MoqgWovVZhxvNJWEo3He7WLhYV5lQqU73YibSWnKyqmcauE-dBBV9Oy7slzFDIgmVRrFbtK6ooj1TR7p5m78YaOfO24kYW-jE01x1qcgmJQTgQKrSxI7Cs_04y64639Su3G8_tEdpxRaagBscathmiGaklUVu8361fNj-F0WkWJmVQd05aWeQd84dIKBWUwEk5VNiY7wOS8caYxyiYNCouQOOc0k73Bq6L65GSK6UocneDmtpI3GHjjxnxWxG5l-0WpJ5Wmsz2R2sz0FyFcH7snuIeH4CZ6E81TrMdG__EGxFOEfLDG2DziGySsJ2OIVKx5vMWosDKX2FFI"
+}
+2025-08-14 04:36:58 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductOption",
+    "@id": "/api/v2/admin/product-options",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 8,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/product-options/t_shirt_size",
+            "@type": "ProductOption",
+            "code": "t_shirt_size",
+            "position": 0,
+            "values": [
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_s",
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_m",
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_l",
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_xl",
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_xxl"
+            ],
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                }
+            },
+            "name": "T-shirt size"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/dress_size",
+            "@type": "ProductOption",
+            "code": "dress_size",
+            "position": 1,
+            "values": [
+                "/api/v2/admin/product-options/dress_size/values/dress_s",
+                "/api/v2/admin/product-options/dress_size/values/dress_m",
+                "/api/v2/admin/product-options/dress_size/values/dress_l",
+                "/api/v2/admin/product-options/dress_size/values/dress_xl",
+                "/api/v2/admin/product-options/dress_size/values/dress_xxl"
+            ],
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                }
+            },
+            "name": "Dress size"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/dress_height",
+            "@type": "ProductOption",
+            "code": "dress_height",
+            "position": 2,
+            "values": [
+                "/api/v2/admin/product-options/dress_height/values/dress_height_petite",
+                "/api/v2/admin/product-options/dress_height/values/dress_height_regular",
+                "/api/v2/admin/product-options/dress_height/values/dress_height_tall"
+            ],
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                }
+            },
+            "name": "Dress height"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/ejemplo8",
+            "@type": "ProductOption",
+            "code": "ejemplo8",
+            "position": 3,
+            "values": [],
+            "createdAt": "2025-08-14 04:12:49",
+            "updatedAt": "2025-08-14 04:13:21",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/ejemplo8/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "cc3"
+                }
+            },
+            "name": "cc3"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/jeans_size",
+            "@type": "ProductOption",
+            "code": "jeans_size",
+            "position": 4,
+            "values": [
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_s",
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_m",
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_l",
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_xl",
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_xxl"
+            ],
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                }
+            },
+            "name": "Jeans size"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/lamp_color",
+            "@type": "ProductOption",
+            "code": "lamp_color",
+            "position": 5,
+            "values": [
+                "/api/v2/admin/product-options/lamp_color/values/lamp_color_red",
+                "/api/v2/admin/product-options/lamp_color/values/lamp_color_black",
+                "/api/v2/admin/product-options/lamp_color/values/lamp_color_white"
+            ],
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                }
+            },
+            "name": "Lamp color"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/mug_color",
+            "@type": "ProductOption",
+            "code": "mug_color",
+            "position": 6,
+            "values": [
+                "/api/v2/admin/product-options/mug_color/values/Mug_color_red",
+                "/api/v2/admin/product-options/mug_color/values/Mug_color_black",
+                "/api/v2/admin/product-options/mug_color/values/Mug_color_white"
+            ],
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                }
+            },
+            "name": "Mug color"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/plant_size",
+            "@type": "ProductOption",
+            "code": "plant_size",
+            "position": 7,
+            "values": [
+                "/api/v2/admin/product-options/plant_size/values/plant_size_small",
+                "/api/v2/admin/product-options/plant_size/values/plant_size_medium",
+                "/api/v2/admin/product-options/plant_size/values/plant_size_big"
+            ],
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                }
+            },
+            "name": "Plant size"
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-options?itemsPerPage=10",
+        "@type": "hydra:PartialCollectionView"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-options{?code,translations.name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "translations.name",
+                "property": "translations.name",
+                "required": false
+            }
+        ]
+    }
+}
