@@ -35,6 +35,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Install Allure CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y allure
+    
     - name: Ejecutar tests con pytest y generar reporte Allure
       run: |
         pytest --disable-warnings -v ${{ github.event.inputs.marker }} --alluredir=reports/allure-results
