@@ -206,14 +206,8 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-<<<<<<< HEAD
-
-#Este archivo es netamente de macOs su funcion es guardar metadatos del explorador de archivos/ esto no se sube es como un cache de Mac
-.DS_Store
-=======
 #Este archivo es netamente de macOs su funcion es guardar metadatos del explorador de archivos/ esto no se sube es como un cache de Mac
 .DS_Store
 
 #Los reportes no se guardaran en el repositorio, irán directo en los artefactos directamente al ejecutar los pipelines CI de Github Actions
-/reports/
->>>>>>> 0d4fbe59eeb097d54d34029f7b3502d08ad73e99
+#/reports/
