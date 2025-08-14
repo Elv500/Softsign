@@ -98,3 +98,14 @@ def test_TC384_enviar_solicitud_sin_header_accept(setup_association_types):
     AssertionStatusCode.assert_status_code_404(response)
     AssertionAssociationTypes.assert_error_schema(response.json())
 
+@pytest.mark.negative
+@pytest.mark.regression
+def test_TC385_eliminar_tipo_asociacion_usando_id_en_vez_de_code_error_404(setup_association_types):
+    headers, association_type = setup_association_types
+    url = EndpointAssociationTypes.code(association_type['id'])
+
+    response = SyliusRequest.delete(url, headers)
+    log_request_response(url, response, headers)
+
+    AssertionStatusCode.assert_status_code_404(response)
+    AssertionAssociationTypes.assert_error_schema(response.json())
