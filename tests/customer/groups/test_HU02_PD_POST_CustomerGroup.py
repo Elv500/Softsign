@@ -17,22 +17,22 @@ from utils.logger_helpers import log_request_response
 @pytest.mark.regression
 def test_TC153_crear_grupo_clientes_datos_validos(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
-    
+
     data = generate_customer_group_source_data()
-    
+
     endpoint = EndpointCustomerGroup.customer_group()
     response = SyliusRequest.post(endpoint, auth_headers, data)
-    
+
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
-    
+
     AssertionStatusCode.assert_status_code_201(response)
-    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
-    
+    AssertionCustomerGroup.assert_customer_group_post_output_schema(response.json())
+
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
-    
-    AssertionCustomerGroupCreate.assert_customer_group_response(data, response.json())
 
+    assert response.json()["code"] == data["code"]
+    assert response.json()["name"] == data["name"]
 
 # Admin > Customer - Group > TC_154 Verificar estructura del JSON devuelto al crear
 @pytest.mark.functional

@@ -1,3 +1,4 @@
+import urllib.parse
 from src.routes.endpoint import Endpoint
 from utils.config import BASE_URL
 
@@ -11,7 +12,7 @@ class EndpointTaxCategory:
     def tax_category_with_params(cls, **params):
         base_url = f"{BASE_URL}{Endpoint.BASE_TAX_CATEGORY.value}"
         if params:
-            query_string = "&".join([f"{key}={value}" for key, value in params.items()])
+            query_string = urllib.parse.urlencode(params)
             return f"{base_url}?{query_string}"
         return base_url
 
