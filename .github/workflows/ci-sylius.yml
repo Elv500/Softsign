@@ -1,9 +1,9 @@
 name: CI - Run API Tests
 
 on:
-  push:
-    branches:
-      - development
+  #push:
+  #  branches:
+  #    - development
   workflow_dispatch:
     inputs:
       marker:
@@ -16,47 +16,52 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout código
-      uses: actions/checkout@v4
+      - name: Checkout código
+        uses: actions/checkout@v4
 
-    - name: Configurar Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.13'
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
 
-    - name: Establecer variables de entorno desde secrets
-      run: |
-        echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
-        echo "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" >> $GITHUB_ENV
-        echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> $GITHUB_ENV
+      - name: Establecer variables de entorno desde secrets
+        run: |
+          echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
+          echo "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" >> $GITHUB_ENV
+          echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> $GITHUB_ENV
 
-    - name: Instalar dependencias
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Install Allure CLI
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y allure
-    
-    - name: Ejecutar tests con pytest y generar reporte Allure
-      run: |
-        pytest --disable-warnings -v ${{ github.event.inputs.marker }} --alluredir=reports/allure-results
+      - name: Ejecutar tests con pytest y generar reporte Allure
+        run: |
+          pytest --disable-warnings -v ${{ github.event.inputs.marker }} --alluredir=reports/allure-results
 
-    - name: Subir reporte aunque haya fallos
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: allure-results
-        path: reports/allure-results
+      # Cargar historial de reportes anteriores (para mantener histórico en Allure)
+      - name: Load test report history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
 
-    - name: Generar reporte HTML de Allure
-      run: allure generate reports/allure-results --clean -o reports/allure-report-html
-    
-    - name: Publicar reporte Allure en GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: reports/allure-report-html
-        publish_branch: gh-pages
+      # Generar reporte HTML usando la acción oficial de Allure
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_results: reports/allure-results
+          allure_history: allure-history
+
+      # Publicar en GitHub Pages
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
