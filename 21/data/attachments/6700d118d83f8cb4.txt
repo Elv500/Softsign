@@ -1,0 +1,304 @@
+2025-08-14 03:55:41 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:41 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-14 03:55:41 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:41 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-14 03:55:41 - INFO - STATUS CODE: 201
+2025-08-14 03:55:41 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:41 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "TAX-cfd170",
+    "name": "Direction",
+    "description": "Consumer stand public leg national picture."
+}
+2025-08-14 03:55:41 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-cfd170",
+    "@type": "TaxCategory",
+    "id": 7874,
+    "code": "TAX-cfd170",
+    "name": "Direction",
+    "description": "Consumer stand public leg national picture.",
+    "createdAt": "2025-08-14 03:55:41",
+    "updatedAt": "2025-08-14 03:55:41"
+}
+2025-08-14 03:55:41 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:42 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-14 03:55:42 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:42 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-14 03:55:42 - INFO - STATUS CODE: 200
+2025-08-14 03:55:42 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:42 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 18,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 7766,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Repellendus enim dolor aut eum ut. Placeat aliquam tenetur et porro voluptatem quia ratione. Quae perferendis ipsam sed. Est ea qui voluptatum cupiditate consectetur suscipit.",
+            "createdAt": "2025-08-14 03:00:51",
+            "updatedAt": "2025-08-14 03:00:51"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 7767,
+            "code": "other",
+            "name": "Other",
+            "description": "Possimus sint reiciendis doloremque illo. Sed aut labore sunt quisquam sed veritatis aut. Qui maiores ut voluptatem quis dicta.",
+            "createdAt": "2025-08-14 03:00:51",
+            "updatedAt": "2025-08-14 03:00:51"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-3fe861",
+            "@type": "TaxCategory",
+            "id": 7774,
+            "code": "TAX-3fe861",
+            "name": "Support",
+            "description": "",
+            "createdAt": "2025-08-14 03:08:04",
+            "updatedAt": "2025-08-14 03:08:04"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-35bc0c",
+            "@type": "TaxCategory",
+            "id": 7775,
+            "code": "TAX-35bc0c",
+            "name": "   ",
+            "description": "Base pass billion marriage among.",
+            "createdAt": "2025-08-14 03:08:07",
+            "updatedAt": "2025-08-14 03:08:07"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-84a653",
+            "@type": "TaxCategory",
+            "id": 7776,
+            "code": "TAX-84a653",
+            "name": "\n\n",
+            "description": "Manage deal people measure simply.",
+            "createdAt": "2025-08-14 03:08:08",
+            "updatedAt": "2025-08-14 03:08:08"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-8ae794",
+            "@type": "TaxCategory",
+            "id": 7777,
+            "code": "TAX-8ae794",
+            "name": " \n ",
+            "description": "Yeah deal must nation report.",
+            "createdAt": "2025-08-14 03:08:08",
+            "updatedAt": "2025-08-14 03:08:08"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-5d49e2",
+            "@type": "TaxCategory",
+            "id": 7778,
+            "code": "TAX-5d49e2",
+            "name": " \t \n ",
+            "description": "Month budget structure Democrat something wind father attack.",
+            "createdAt": "2025-08-14 03:08:09",
+            "updatedAt": "2025-08-14 03:08:09"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-4c24b6",
+            "@type": "TaxCategory",
+            "id": 7807,
+            "code": "TAX-4c24b6",
+            "name": "Development",
+            "description": "",
+            "createdAt": "2025-08-14 03:13:25",
+            "updatedAt": "2025-08-14 03:13:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-e761ef",
+            "@type": "TaxCategory",
+            "id": 7808,
+            "code": "TAX-e761ef",
+            "name": "   ",
+            "description": "Heart director sound help land.",
+            "createdAt": "2025-08-14 03:13:26",
+            "updatedAt": "2025-08-14 03:13:26"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-3ca293",
+            "@type": "TaxCategory",
+            "id": 7809,
+            "code": "TAX-3ca293",
+            "name": "\n\n",
+            "description": "Become determine minute remain night form.",
+            "createdAt": "2025-08-14 03:13:27",
+            "updatedAt": "2025-08-14 03:13:27"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-5a3566",
+            "@type": "TaxCategory",
+            "id": 7810,
+            "code": "TAX-5a3566",
+            "name": " \n ",
+            "description": "Crime land evidence include head business kind.",
+            "createdAt": "2025-08-14 03:13:27",
+            "updatedAt": "2025-08-14 03:13:27"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-a4dbc7",
+            "@type": "TaxCategory",
+            "id": 7811,
+            "code": "TAX-a4dbc7",
+            "name": " \t \n ",
+            "description": "East area meeting door since the.",
+            "createdAt": "2025-08-14 03:13:28",
+            "updatedAt": "2025-08-14 03:13:28"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-1a729a",
+            "@type": "TaxCategory",
+            "id": 7845,
+            "code": "TAX-1a729a",
+            "name": "Less",
+            "description": "",
+            "createdAt": "2025-08-14 03:30:24",
+            "updatedAt": "2025-08-14 03:30:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-2c3351",
+            "@type": "TaxCategory",
+            "id": 7846,
+            "code": "TAX-2c3351",
+            "name": "   ",
+            "description": "Among tough show western either usually deal.",
+            "createdAt": "2025-08-14 03:30:25",
+            "updatedAt": "2025-08-14 03:30:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-2d00f5",
+            "@type": "TaxCategory",
+            "id": 7847,
+            "code": "TAX-2d00f5",
+            "name": "\n\n",
+            "description": "Here western forget sister others big father successful.",
+            "createdAt": "2025-08-14 03:30:25",
+            "updatedAt": "2025-08-14 03:30:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-142b37",
+            "@type": "TaxCategory",
+            "id": 7848,
+            "code": "TAX-142b37",
+            "name": " \n ",
+            "description": "Property drop large list necessary office.",
+            "createdAt": "2025-08-14 03:30:26",
+            "updatedAt": "2025-08-14 03:30:26"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-1281d4",
+            "@type": "TaxCategory",
+            "id": 7849,
+            "code": "TAX-1281d4",
+            "name": " \t \n ",
+            "description": "Right physical floor view per message.",
+            "createdAt": "2025-08-14 03:30:26",
+            "updatedAt": "2025-08-14 03:30:26"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-cfd170",
+            "@type": "TaxCategory",
+            "id": 7874,
+            "code": "TAX-cfd170",
+            "name": "Direction",
+            "description": "Consumer stand public leg national picture.",
+            "createdAt": "2025-08-14 03:55:41",
+            "updatedAt": "2025-08-14 03:55:41"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}
+2025-08-14 03:55:42 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:42 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/tax-categories/TAX-cfd170 HTTP/1.1" 200 None
+2025-08-14 03:55:42 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:42 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-cfd170
+2025-08-14 03:55:42 - INFO - STATUS CODE: 200
+2025-08-14 03:55:42 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:42 - DEBUG - PAYLOAD REQUEST:
+{
+    "name": "IVA Actualizado",
+    "description": "Descripción modificada"
+}
+2025-08-14 03:55:42 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-cfd170",
+    "@type": "TaxCategory",
+    "id": 7874,
+    "code": "TAX-cfd170",
+    "name": "IVA Actualizado",
+    "description": "Descripción modificada",
+    "createdAt": "2025-08-14 03:55:41",
+    "updatedAt": "2025-08-14 03:55:42"
+}
+2025-08-14 03:55:42 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:43 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-cfd170 HTTP/1.1" 204 0
+2025-08-14 03:55:43 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:43 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-cfd170
+2025-08-14 03:55:43 - INFO - STATUS CODE: 204
+2025-08-14 03:55:43 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:43 - DEBUG - RESPONSE: No content (empty body)
+2025-08-14 03:55:43 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:43 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories/TAX-cfd170 HTTP/1.1" 404 None
+2025-08-14 03:55:43 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:43 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-cfd170
+2025-08-14 03:55:43 - INFO - STATUS CODE: 404
+2025-08-14 03:55:43 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:43 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "description": "Not Found",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
+2025-08-14 03:55:43 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:44 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-cfd170 HTTP/1.1" 404 None

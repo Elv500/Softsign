@@ -1,0 +1,82 @@
+2025-08-14 03:55:44 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:44 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 03:55:44 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:44 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-14 03:55:44 - INFO - STATUS CODE: 201
+2025-08-14 03:55:44 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:44 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_143744_0baf1e1b",
+    "@type": "CustomerGroup",
+    "id": 9522,
+    "code": "test_143744_0baf1e1b",
+    "name": "George Group - Upgradable full-range approach"
+}
+2025-08-14 03:55:44 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:45 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/customer-groups/test_143744_0baf1e1b HTTP/1.1" 200 None
+2025-08-14 03:55:45 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:45 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_143744_0baf1e1b
+2025-08-14 03:55:45 - INFO - STATUS CODE: 200
+2025-08-14 03:55:45 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:45 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_143744_0baf1e1b",
+    "@type": "CustomerGroup",
+    "id": 9522,
+    "code": "test_143744_0baf1e1b",
+    "name": "George Group - Upgradable full-range approach"
+}
+2025-08-14 03:55:45 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:45 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/customer-groups/test_143744_0baf1e1b HTTP/1.1" 200 None
+2025-08-14 03:55:45 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:45 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_143744_0baf1e1b
+2025-08-14 03:55:45 - INFO - STATUS CODE: 200
+2025-08-14 03:55:45 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:45 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_143744_0baf1e1b",
+    "@type": "CustomerGroup",
+    "id": 9522,
+    "code": "test_143744_0baf1e1b",
+    "name": "UPDATED - George Group - Upgradable full-range approach - E2E Test"
+}
+2025-08-14 03:55:45 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:45 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/customer-groups/test_143744_0baf1e1b HTTP/1.1" 200 None
+2025-08-14 03:55:45 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:45 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_143744_0baf1e1b
+2025-08-14 03:55:45 - INFO - STATUS CODE: 200
+2025-08-14 03:55:45 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:45 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_143744_0baf1e1b",
+    "@type": "CustomerGroup",
+    "id": 9522,
+    "code": "test_143744_0baf1e1b",
+    "name": "UPDATED - George Group - Upgradable full-range approach - E2E Test"
+}
+2025-08-14 03:55:45 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 03:55:45 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_143744_0baf1e1b HTTP/1.1" 204 0
+2025-08-14 03:55:45 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 03:55:45 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_143744_0baf1e1b
+2025-08-14 03:55:45 - INFO - STATUS CODE: 204
+2025-08-14 03:55:45 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDM3MzYsImV4cCI6MTc1NTE0NzMzNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GCoN82tuT11HJTRdcpRDuwSATaBtPl5Q7hvOmplFDnGxXKxAxw-iwNXgP-zBjyTF4IW-Y0Dyl8UA3HyYVD5vlF_-eKPt4nFd84Refxq-H3AmeDviUgS64Pn8lHCkWl5waSN_cTW9Che62fk4FnK0XpJ_-a0UYhiNkapj4wX_F8gD9eewYbwEx4DbbVuB9fOefBM-EdZazFFoJf5QOrIrwrZ20VMAJYSB2jqpequyz7pzmqJjA1oSdQgmBfShk6eQbc5L7mOGhNfQJneHIeOs1OzLaMYxxdr7_npu4hEul9dE00thLfFfVSjKeUu_SoiBBgbmc2g_TvleP_6hQqzBqbFN9fvcJkWDcG65K7q4KHtbKz1lk0GR8ywr7CusBMYOdwk-D-JVYWpVvKUNvpXztj4gs8TuAu8mTA3XIQGA2Vh_4WhXZGYEoRH4hoyicjSEbORpubaO-iso0tWlXdt9z1pMx3DzwHEHlrwc2XxYd0pRriqD7ZqwUMIhQQ2pMZnH2kdFOkBjo-zXac-mdEsT8z98P3SrjHu0lmFDqjJIq4KP6ZqW8C0b24bIX9rfg0uE8h7WIFfh2iqbc0aeASccqKPmrYpo8p4pQPcvgF-tWe1-6cat2jMlqCW7lik7xhtvtjo_HMr4oe3BbcZYshi0qqPc2RMb0dchQcdH4wuxcZ4"
+}
+2025-08-14 03:55:45 - DEBUG - RESPONSE: No content (empty body)
