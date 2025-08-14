@@ -306,3 +306,25 @@ def test_TC376_agregar_traduccion_idioma_valido_nombre_vacio(setup_teardown_asso
 
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAssociationTypes.assert_error_schema(response_data)
+
+
+@pytest.mark.regression
+@pytest.mark.negative
+def test_TC377_modificar_traduccion_nombre_muy_largo(setup_teardown_association_types):
+    headers, association_type1, _ = setup_teardown_association_types
+    headers_general = build_auth_headers(headers.copy())
+    url = EndpointAssociationTypes.code(association_type1['code'])
+    en_us_id = association_type1["translations"]["en_US"]["@id"]
+    long_name = "a" * 256
+
+    payload = generate_association_type_translations_data(
+        langs=["en_US"],
+        overrides={"en_US": {"@id": en_us_id, "name": long_name}}
+    )
+
+    response = SyliusRequest.put(url, headers_general, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
+
+    AssertionStatusCode.assert_status_code_422(response)
+    AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
