@@ -71,6 +71,7 @@ def test_tc314_Verificar_error_al_actualizar_opción_sin_el_campo_obligatorio_no
 #Este test verifica que al actualizar una opcion con un name con menos de 2 caracteres se recibe un error 422.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.boundary
 def test_tc318_Verificar_error_al_actualizar_opción_con_nombre_menor_a_2_caracteres(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     payload = generate_options_source_data()
@@ -88,6 +89,7 @@ def test_tc318_Verificar_error_al_actualizar_opción_con_nombre_menor_a_2_caract
 #Este test verifica que al actualizar una opción con un name con más de 255 caracteres se recibe un error 422.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.boundary
 def test_tc319_Verificar_error_al_actualizar_opción_con_nombre_mayor_a_255_caracteres(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     payload = generate_options_source_data()
@@ -157,6 +159,7 @@ def test_tc322_Verificar_error_al_actualizar_opción_con_position_de_tipo_negati
 #Este test verifica que al actualizar una opción con un position mayor a 999999999 se recibe un error 400/422.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.boundary
 @pytest.mark.xfail(reason="Known issue BUG: Normalización inconsistente al actualizar 'position' con valores >999,999,999 - Sin validación y comportamiento impredecible", run=True)
 def test_tc323_Verificar_error_al_actualizar_opción_con_position_mayor_a_9999999999(setup_options_cleanup):
     headers, _ = setup_options_cleanup
@@ -174,7 +177,7 @@ def test_tc323_Verificar_error_al_actualizar_opción_con_position_mayor_a_999999
 
 
 #Este test verifica error al intentar actualizar una opción sin autenticación.
-@pytest.mark.functional
+@pytest.mark.security
 @pytest.mark.negative
 def test_tc324_Verificar_error_al_intentar_actualizar_opción_sin_autenticación():
     code = "test_code_inexistente"
@@ -185,7 +188,7 @@ def test_tc324_Verificar_error_al_intentar_actualizar_opción_sin_autenticación
     assert response.json()["message"] == "JWT Token not found"
 
 #Este test verifica error al intentar actualizar una opción con token inválido.
-@pytest.mark.functional
+@pytest.mark.security
 @pytest.mark.negative
 def test_tc325_Verificar_error_al_intentar_actualizar_opción_con_token_inválido():
     code = "test_code_inexistente"
