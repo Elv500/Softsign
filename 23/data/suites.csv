@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Aug 14 04:10:46 GMT 2025","Thu Aug 14 04:10:48 GMT 2025","2143","tests.catalog.attributes","test_HU32_LQ_E2E_Attributes","","","","test_TC416_e2e_attributes",""
+"passed","Thu Aug 14 04:10:54 GMT 2025","Thu Aug 14 04:10:55 GMT 2025","1844","tests.customer.groups","test_HU30_PD_E2E_CustomerGroup","","","","test_TC334_e2e_customer_group",""
+"passed","Thu Aug 14 04:10:51 GMT 2025","Thu Aug 14 04:10:53 GMT 2025","2086","tests.configuration.tax_categories","test_E2E_CRUD_TaxCategory","","","","test_full_tax_category_crud_flow",""
+"passed","Thu Aug 14 04:10:48 GMT 2025","Thu Aug 14 04:10:51 GMT 2025","2639","tests.catalog.inventory","test_HU31_EA_E2E_Inventory","","","","test_TC355_a_TC360_End_To_End_Inventory",""

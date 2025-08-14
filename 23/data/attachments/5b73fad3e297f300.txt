@@ -1,0 +1,154 @@
+2025-08-14 04:10:51 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:10:51 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-14 04:10:51 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:10:51 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-14 04:10:51 - INFO - STATUS CODE: 201
+2025-08-14 04:10:51 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQ2NDYsImV4cCI6MTc1NTE0ODI0Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.ZHZStWGpKCYwyxzJrUgyl5D7M8k0YThjhVnFCaPCVT6343GHVDiCJE-fH5gDCFE6r2ifLcxpuJx1GRRm7B0c92ivfsSpnNfbR8jhjYO9nzWYjnMDFl8ClHYdZ6FAcwDTBK3dXOKgPP8OO0KFZmpGaUP4xg0jDAwYNs70bxPcXjGLsz7e-l7O89sKSaDDCc7tXmiOKvyn6WtcF1PtFOENNtgx6Pk3SDUdOJ6XmECEYF_dePQXT6HLWaMiMZbgU92H2-yn7nqgumk6cyQxQc6v3zqNwu2LEvG59UFaeHpqCnk9LYjcJwOjn09aWC6Y2eAc-dkc2jo_lb-21uZYAYJcGifJr3_ufiCbMdjf13Ant-x77k_1R_6AaPXcKTaVy7jd7O3loaIrb2N5SjiDeL1LtlMpOVD9Z9V0DK6dXHPfFKB8wbu6Tq5kF1aeLj2F0mPNt96JsvzWGXYMTthnVdRPXzwhqCI7Ojrp8QDGGJLEfuSNWdJZA2Ozer3_sPha76nwuM62vEORJChSMfEiTRdVxdAKnMOlGaduECKsdcBFJWKlg-36lx7PhC5_0GC_34E8l0Bo8nPswg5m9tJ0pKuqrpSa5xgzY24DMs5jXINWoy1wZJUbdGcXjUAVdneLjqZf8DB8bNdiF2ruTuDUrREbAged88aWr-3Kr5nGI1MFfFY"
+}
+2025-08-14 04:10:51 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "TAX-b8df95",
+    "name": "Rate",
+    "description": "Understand body senior election guess pretty."
+}
+2025-08-14 04:10:51 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-b8df95",
+    "@type": "TaxCategory",
+    "id": 7882,
+    "code": "TAX-b8df95",
+    "name": "Rate",
+    "description": "Understand body senior election guess pretty.",
+    "createdAt": "2025-08-14 04:10:51",
+    "updatedAt": "2025-08-14 04:10:51"
+}
+2025-08-14 04:10:51 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:10:52 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-14 04:10:52 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:10:52 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-14 04:10:52 - INFO - STATUS CODE: 200
+2025-08-14 04:10:52 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQ2NDYsImV4cCI6MTc1NTE0ODI0Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.ZHZStWGpKCYwyxzJrUgyl5D7M8k0YThjhVnFCaPCVT6343GHVDiCJE-fH5gDCFE6r2ifLcxpuJx1GRRm7B0c92ivfsSpnNfbR8jhjYO9nzWYjnMDFl8ClHYdZ6FAcwDTBK3dXOKgPP8OO0KFZmpGaUP4xg0jDAwYNs70bxPcXjGLsz7e-l7O89sKSaDDCc7tXmiOKvyn6WtcF1PtFOENNtgx6Pk3SDUdOJ6XmECEYF_dePQXT6HLWaMiMZbgU92H2-yn7nqgumk6cyQxQc6v3zqNwu2LEvG59UFaeHpqCnk9LYjcJwOjn09aWC6Y2eAc-dkc2jo_lb-21uZYAYJcGifJr3_ufiCbMdjf13Ant-x77k_1R_6AaPXcKTaVy7jd7O3loaIrb2N5SjiDeL1LtlMpOVD9Z9V0DK6dXHPfFKB8wbu6Tq5kF1aeLj2F0mPNt96JsvzWGXYMTthnVdRPXzwhqCI7Ojrp8QDGGJLEfuSNWdJZA2Ozer3_sPha76nwuM62vEORJChSMfEiTRdVxdAKnMOlGaduECKsdcBFJWKlg-36lx7PhC5_0GC_34E8l0Bo8nPswg5m9tJ0pKuqrpSa5xgzY24DMs5jXINWoy1wZJUbdGcXjUAVdneLjqZf8DB8bNdiF2ruTuDUrREbAged88aWr-3Kr5nGI1MFfFY"
+}
+2025-08-14 04:10:52 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 3,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 7876,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Est rerum quia sequi vel alias. Et ipsam autem dolorum quia.",
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 7877,
+            "code": "other",
+            "name": "Other",
+            "description": "Est occaecati est quisquam dolor adipisci. Eaque enim sint culpa in praesentium. Aut doloremque sint magnam reiciendis.",
+            "createdAt": "2025-08-14 04:00:47",
+            "updatedAt": "2025-08-14 04:00:47"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-b8df95",
+            "@type": "TaxCategory",
+            "id": 7882,
+            "code": "TAX-b8df95",
+            "name": "Rate",
+            "description": "Understand body senior election guess pretty.",
+            "createdAt": "2025-08-14 04:10:51",
+            "updatedAt": "2025-08-14 04:10:51"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}
+2025-08-14 04:10:52 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:10:52 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/tax-categories/TAX-b8df95 HTTP/1.1" 200 None
+2025-08-14 04:10:52 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:10:52 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-b8df95
+2025-08-14 04:10:52 - INFO - STATUS CODE: 200
+2025-08-14 04:10:52 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQ2NDYsImV4cCI6MTc1NTE0ODI0Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.ZHZStWGpKCYwyxzJrUgyl5D7M8k0YThjhVnFCaPCVT6343GHVDiCJE-fH5gDCFE6r2ifLcxpuJx1GRRm7B0c92ivfsSpnNfbR8jhjYO9nzWYjnMDFl8ClHYdZ6FAcwDTBK3dXOKgPP8OO0KFZmpGaUP4xg0jDAwYNs70bxPcXjGLsz7e-l7O89sKSaDDCc7tXmiOKvyn6WtcF1PtFOENNtgx6Pk3SDUdOJ6XmECEYF_dePQXT6HLWaMiMZbgU92H2-yn7nqgumk6cyQxQc6v3zqNwu2LEvG59UFaeHpqCnk9LYjcJwOjn09aWC6Y2eAc-dkc2jo_lb-21uZYAYJcGifJr3_ufiCbMdjf13Ant-x77k_1R_6AaPXcKTaVy7jd7O3loaIrb2N5SjiDeL1LtlMpOVD9Z9V0DK6dXHPfFKB8wbu6Tq5kF1aeLj2F0mPNt96JsvzWGXYMTthnVdRPXzwhqCI7Ojrp8QDGGJLEfuSNWdJZA2Ozer3_sPha76nwuM62vEORJChSMfEiTRdVxdAKnMOlGaduECKsdcBFJWKlg-36lx7PhC5_0GC_34E8l0Bo8nPswg5m9tJ0pKuqrpSa5xgzY24DMs5jXINWoy1wZJUbdGcXjUAVdneLjqZf8DB8bNdiF2ruTuDUrREbAged88aWr-3Kr5nGI1MFfFY"
+}
+2025-08-14 04:10:52 - DEBUG - PAYLOAD REQUEST:
+{
+    "name": "IVA Actualizado",
+    "description": "Descripción modificada"
+}
+2025-08-14 04:10:52 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-b8df95",
+    "@type": "TaxCategory",
+    "id": 7882,
+    "code": "TAX-b8df95",
+    "name": "IVA Actualizado",
+    "description": "Descripción modificada",
+    "createdAt": "2025-08-14 04:10:51",
+    "updatedAt": "2025-08-14 04:10:52"
+}
+2025-08-14 04:10:52 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:10:53 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-b8df95 HTTP/1.1" 204 0
+2025-08-14 04:10:53 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:10:53 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-b8df95
+2025-08-14 04:10:53 - INFO - STATUS CODE: 204
+2025-08-14 04:10:53 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQ2NDYsImV4cCI6MTc1NTE0ODI0Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.ZHZStWGpKCYwyxzJrUgyl5D7M8k0YThjhVnFCaPCVT6343GHVDiCJE-fH5gDCFE6r2ifLcxpuJx1GRRm7B0c92ivfsSpnNfbR8jhjYO9nzWYjnMDFl8ClHYdZ6FAcwDTBK3dXOKgPP8OO0KFZmpGaUP4xg0jDAwYNs70bxPcXjGLsz7e-l7O89sKSaDDCc7tXmiOKvyn6WtcF1PtFOENNtgx6Pk3SDUdOJ6XmECEYF_dePQXT6HLWaMiMZbgU92H2-yn7nqgumk6cyQxQc6v3zqNwu2LEvG59UFaeHpqCnk9LYjcJwOjn09aWC6Y2eAc-dkc2jo_lb-21uZYAYJcGifJr3_ufiCbMdjf13Ant-x77k_1R_6AaPXcKTaVy7jd7O3loaIrb2N5SjiDeL1LtlMpOVD9Z9V0DK6dXHPfFKB8wbu6Tq5kF1aeLj2F0mPNt96JsvzWGXYMTthnVdRPXzwhqCI7Ojrp8QDGGJLEfuSNWdJZA2Ozer3_sPha76nwuM62vEORJChSMfEiTRdVxdAKnMOlGaduECKsdcBFJWKlg-36lx7PhC5_0GC_34E8l0Bo8nPswg5m9tJ0pKuqrpSa5xgzY24DMs5jXINWoy1wZJUbdGcXjUAVdneLjqZf8DB8bNdiF2ruTuDUrREbAged88aWr-3Kr5nGI1MFfFY"
+}
+2025-08-14 04:10:53 - DEBUG - RESPONSE: No content (empty body)
+2025-08-14 04:10:53 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:10:53 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories/TAX-b8df95 HTTP/1.1" 404 None
+2025-08-14 04:10:53 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:10:53 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-b8df95
+2025-08-14 04:10:53 - INFO - STATUS CODE: 404
+2025-08-14 04:10:53 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQ2NDYsImV4cCI6MTc1NTE0ODI0Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.ZHZStWGpKCYwyxzJrUgyl5D7M8k0YThjhVnFCaPCVT6343GHVDiCJE-fH5gDCFE6r2ifLcxpuJx1GRRm7B0c92ivfsSpnNfbR8jhjYO9nzWYjnMDFl8ClHYdZ6FAcwDTBK3dXOKgPP8OO0KFZmpGaUP4xg0jDAwYNs70bxPcXjGLsz7e-l7O89sKSaDDCc7tXmiOKvyn6WtcF1PtFOENNtgx6Pk3SDUdOJ6XmECEYF_dePQXT6HLWaMiMZbgU92H2-yn7nqgumk6cyQxQc6v3zqNwu2LEvG59UFaeHpqCnk9LYjcJwOjn09aWC6Y2eAc-dkc2jo_lb-21uZYAYJcGifJr3_ufiCbMdjf13Ant-x77k_1R_6AaPXcKTaVy7jd7O3loaIrb2N5SjiDeL1LtlMpOVD9Z9V0DK6dXHPfFKB8wbu6Tq5kF1aeLj2F0mPNt96JsvzWGXYMTthnVdRPXzwhqCI7Ojrp8QDGGJLEfuSNWdJZA2Ozer3_sPha76nwuM62vEORJChSMfEiTRdVxdAKnMOlGaduECKsdcBFJWKlg-36lx7PhC5_0GC_34E8l0Bo8nPswg5m9tJ0pKuqrpSa5xgzY24DMs5jXINWoy1wZJUbdGcXjUAVdneLjqZf8DB8bNdiF2ruTuDUrREbAged88aWr-3Kr5nGI1MFfFY"
+}
+2025-08-14 04:10:53 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "description": "Not Found",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
+2025-08-14 04:10:53 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:10:54 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-b8df95 HTTP/1.1" 404 None
