@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Aug 14 04:27:56 GMT 2025","Thu Aug 14 04:27:57 GMT 2025","1549","tests.customer.groups","test_HU02_PD_POST_CustomerGroup","","","","test_TC169_crear_multiples_grupos_simultaneos",""
+"passed","Thu Aug 14 04:27:58 GMT 2025","Thu Aug 14 04:28:02 GMT 2025","3863","tests.customer.groups","test_HU16_PD_DELETE_CustomerGroup","","","","test_TC307_eliminar_multiples_grupos_secuencialmente",""

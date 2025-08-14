@@ -1,0 +1,77 @@
+2025-08-14 04:27:55 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:27:56 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 200 None
+2025-08-14 04:27:56 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:27:56 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 04:27:56 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:27:56 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-14 04:27:56 - INFO - STATUS CODE: 201
+2025-08-14 04:27:56 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDU2NzUsImV4cCI6MTc1NTE0OTI3NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.eTY9ch5DYvUJEnN90Kh20SYwBmgNf1bwMdLaRT1llUuyXiCGvgYBAx688wgC7Fkh03wxFSrYrMZ_Pbzw_n3Ln17ZD4glmH1f0gXTnsTNWE-GQDZQHjnMFbT3HB_R98h7isfkk6Wk7l95Gymxj48-nMWCX72wgtcZkvwoz0O3GMR5AfZXk-bjPgbYx9vjLulakBfybW-lXb3VpRf6322mhhmeJrZa03Gyz1rRBq4WfJp4SAU0w_zn2q3PzvgKQjmfa29iD8gQvV6cGVHro0luX1_ppGePxPND4zCsVq8tTDRReiTdQCdJYjB17k6Nko2eliDlNTa0YEjFMbh9AyQRlznUY90rE-f69BPH_bxgOcOvTpDxNzfAxudB8W-eapDqGewHaJUnxlEtfXM5I53qwLmiWauCOmU6B8rAw-4pQ9m5XqQvlJbo8mcbpn63x4lpsCHxU_4RpOWrBJOyouVyw0G5agsf9Tan7h_eeKqfgjxSJ8e8lKGX1cNnUIv-hWuIWE5IHM6H8LHmM0-y0cUuCIVnOjGLjV8_8qNXjtqRMR3KwZyQKVkVvB7-ssdR9H_9arxpmhpbIuyg7NXpO7AR0IX1hXJ5AhykwB4H2LSSR0g-tPlzL0DY6KQD7oHOJ3Dew6EYI6o6Ci9iWhCrMR9X988X7U4DjMdT6QdpbTvU-kM"
+}
+2025-08-14 04:27:56 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_145676_be7674f0",
+    "name": "Chan, Patel and Mccoy - Virtual even-keeled success"
+}
+2025-08-14 04:27:56 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_145676_be7674f0",
+    "@type": "CustomerGroup",
+    "id": 9559,
+    "code": "test_145676_be7674f0",
+    "name": "Chan, Patel and Mccoy - Virtual even-keeled success"
+}
+2025-08-14 04:27:56 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:27:57 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 04:27:57 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:27:57 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-14 04:27:57 - INFO - STATUS CODE: 201
+2025-08-14 04:27:57 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDU2NzUsImV4cCI6MTc1NTE0OTI3NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.eTY9ch5DYvUJEnN90Kh20SYwBmgNf1bwMdLaRT1llUuyXiCGvgYBAx688wgC7Fkh03wxFSrYrMZ_Pbzw_n3Ln17ZD4glmH1f0gXTnsTNWE-GQDZQHjnMFbT3HB_R98h7isfkk6Wk7l95Gymxj48-nMWCX72wgtcZkvwoz0O3GMR5AfZXk-bjPgbYx9vjLulakBfybW-lXb3VpRf6322mhhmeJrZa03Gyz1rRBq4WfJp4SAU0w_zn2q3PzvgKQjmfa29iD8gQvV6cGVHro0luX1_ppGePxPND4zCsVq8tTDRReiTdQCdJYjB17k6Nko2eliDlNTa0YEjFMbh9AyQRlznUY90rE-f69BPH_bxgOcOvTpDxNzfAxudB8W-eapDqGewHaJUnxlEtfXM5I53qwLmiWauCOmU6B8rAw-4pQ9m5XqQvlJbo8mcbpn63x4lpsCHxU_4RpOWrBJOyouVyw0G5agsf9Tan7h_eeKqfgjxSJ8e8lKGX1cNnUIv-hWuIWE5IHM6H8LHmM0-y0cUuCIVnOjGLjV8_8qNXjtqRMR3KwZyQKVkVvB7-ssdR9H_9arxpmhpbIuyg7NXpO7AR0IX1hXJ5AhykwB4H2LSSR0g-tPlzL0DY6KQD7oHOJ3Dew6EYI6o6Ci9iWhCrMR9X988X7U4DjMdT6QdpbTvU-kM"
+}
+2025-08-14 04:27:57 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_145676_6d6e575f",
+    "name": "Holmes, Roth and Sparks - Devolved bi-directional open system"
+}
+2025-08-14 04:27:57 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_145676_6d6e575f",
+    "@type": "CustomerGroup",
+    "id": 9560,
+    "code": "test_145676_6d6e575f",
+    "name": "Holmes, Roth and Sparks - Devolved bi-directional open system"
+}
+2025-08-14 04:27:57 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:27:57 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 04:27:57 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:27:57 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-14 04:27:57 - INFO - STATUS CODE: 201
+2025-08-14 04:27:57 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDU2NzUsImV4cCI6MTc1NTE0OTI3NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.eTY9ch5DYvUJEnN90Kh20SYwBmgNf1bwMdLaRT1llUuyXiCGvgYBAx688wgC7Fkh03wxFSrYrMZ_Pbzw_n3Ln17ZD4glmH1f0gXTnsTNWE-GQDZQHjnMFbT3HB_R98h7isfkk6Wk7l95Gymxj48-nMWCX72wgtcZkvwoz0O3GMR5AfZXk-bjPgbYx9vjLulakBfybW-lXb3VpRf6322mhhmeJrZa03Gyz1rRBq4WfJp4SAU0w_zn2q3PzvgKQjmfa29iD8gQvV6cGVHro0luX1_ppGePxPND4zCsVq8tTDRReiTdQCdJYjB17k6Nko2eliDlNTa0YEjFMbh9AyQRlznUY90rE-f69BPH_bxgOcOvTpDxNzfAxudB8W-eapDqGewHaJUnxlEtfXM5I53qwLmiWauCOmU6B8rAw-4pQ9m5XqQvlJbo8mcbpn63x4lpsCHxU_4RpOWrBJOyouVyw0G5agsf9Tan7h_eeKqfgjxSJ8e8lKGX1cNnUIv-hWuIWE5IHM6H8LHmM0-y0cUuCIVnOjGLjV8_8qNXjtqRMR3KwZyQKVkVvB7-ssdR9H_9arxpmhpbIuyg7NXpO7AR0IX1hXJ5AhykwB4H2LSSR0g-tPlzL0DY6KQD7oHOJ3Dew6EYI6o6Ci9iWhCrMR9X988X7U4DjMdT6QdpbTvU-kM"
+}
+2025-08-14 04:27:57 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_145677_eca3ce3d",
+    "name": "Bailey-Clark - Assimilated 4thgeneration help-desk"
+}
+2025-08-14 04:27:57 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_145677_eca3ce3d",
+    "@type": "CustomerGroup",
+    "id": 9561,
+    "code": "test_145677_eca3ce3d",
+    "name": "Bailey-Clark - Assimilated 4thgeneration help-desk"
+}
+2025-08-14 04:27:57 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:27:58 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_145676_be7674f0 HTTP/1.1" 204 0
+2025-08-14 04:27:58 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:27:58 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_145676_6d6e575f HTTP/1.1" 204 0
+2025-08-14 04:27:58 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:27:58 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_145677_eca3ce3d HTTP/1.1" 204 0

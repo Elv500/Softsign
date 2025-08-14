@@ -1,0 +1,60 @@
+2025-08-14 04:27:58 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:27:59 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 04:27:59 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:27:59 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 04:27:59 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:28:00 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 04:28:00 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:28:00 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 04:28:00 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:28:00 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 04:28:00 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:28:01 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_145678_b91be411 HTTP/1.1" 204 0
+2025-08-14 04:28:01 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:28:01 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_145678_b91be411
+2025-08-14 04:28:01 - INFO - STATUS CODE: 204
+2025-08-14 04:28:01 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDU2NzUsImV4cCI6MTc1NTE0OTI3NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.eTY9ch5DYvUJEnN90Kh20SYwBmgNf1bwMdLaRT1llUuyXiCGvgYBAx688wgC7Fkh03wxFSrYrMZ_Pbzw_n3Ln17ZD4glmH1f0gXTnsTNWE-GQDZQHjnMFbT3HB_R98h7isfkk6Wk7l95Gymxj48-nMWCX72wgtcZkvwoz0O3GMR5AfZXk-bjPgbYx9vjLulakBfybW-lXb3VpRf6322mhhmeJrZa03Gyz1rRBq4WfJp4SAU0w_zn2q3PzvgKQjmfa29iD8gQvV6cGVHro0luX1_ppGePxPND4zCsVq8tTDRReiTdQCdJYjB17k6Nko2eliDlNTa0YEjFMbh9AyQRlznUY90rE-f69BPH_bxgOcOvTpDxNzfAxudB8W-eapDqGewHaJUnxlEtfXM5I53qwLmiWauCOmU6B8rAw-4pQ9m5XqQvlJbo8mcbpn63x4lpsCHxU_4RpOWrBJOyouVyw0G5agsf9Tan7h_eeKqfgjxSJ8e8lKGX1cNnUIv-hWuIWE5IHM6H8LHmM0-y0cUuCIVnOjGLjV8_8qNXjtqRMR3KwZyQKVkVvB7-ssdR9H_9arxpmhpbIuyg7NXpO7AR0IX1hXJ5AhykwB4H2LSSR0g-tPlzL0DY6KQD7oHOJ3Dew6EYI6o6Ci9iWhCrMR9X988X7U4DjMdT6QdpbTvU-kM"
+}
+2025-08-14 04:28:01 - DEBUG - RESPONSE: No content (empty body)
+2025-08-14 04:28:01 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:28:01 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_145679_ee5380c4 HTTP/1.1" 204 0
+2025-08-14 04:28:01 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:28:01 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_145679_ee5380c4
+2025-08-14 04:28:01 - INFO - STATUS CODE: 204
+2025-08-14 04:28:01 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDU2NzUsImV4cCI6MTc1NTE0OTI3NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.eTY9ch5DYvUJEnN90Kh20SYwBmgNf1bwMdLaRT1llUuyXiCGvgYBAx688wgC7Fkh03wxFSrYrMZ_Pbzw_n3Ln17ZD4glmH1f0gXTnsTNWE-GQDZQHjnMFbT3HB_R98h7isfkk6Wk7l95Gymxj48-nMWCX72wgtcZkvwoz0O3GMR5AfZXk-bjPgbYx9vjLulakBfybW-lXb3VpRf6322mhhmeJrZa03Gyz1rRBq4WfJp4SAU0w_zn2q3PzvgKQjmfa29iD8gQvV6cGVHro0luX1_ppGePxPND4zCsVq8tTDRReiTdQCdJYjB17k6Nko2eliDlNTa0YEjFMbh9AyQRlznUY90rE-f69BPH_bxgOcOvTpDxNzfAxudB8W-eapDqGewHaJUnxlEtfXM5I53qwLmiWauCOmU6B8rAw-4pQ9m5XqQvlJbo8mcbpn63x4lpsCHxU_4RpOWrBJOyouVyw0G5agsf9Tan7h_eeKqfgjxSJ8e8lKGX1cNnUIv-hWuIWE5IHM6H8LHmM0-y0cUuCIVnOjGLjV8_8qNXjtqRMR3KwZyQKVkVvB7-ssdR9H_9arxpmhpbIuyg7NXpO7AR0IX1hXJ5AhykwB4H2LSSR0g-tPlzL0DY6KQD7oHOJ3Dew6EYI6o6Ci9iWhCrMR9X988X7U4DjMdT6QdpbTvU-kM"
+}
+2025-08-14 04:28:01 - DEBUG - RESPONSE: No content (empty body)
+2025-08-14 04:28:01 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:28:02 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_145679_5c905c3e HTTP/1.1" 204 0
+2025-08-14 04:28:02 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:28:02 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_145679_5c905c3e
+2025-08-14 04:28:02 - INFO - STATUS CODE: 204
+2025-08-14 04:28:02 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDU2NzUsImV4cCI6MTc1NTE0OTI3NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.eTY9ch5DYvUJEnN90Kh20SYwBmgNf1bwMdLaRT1llUuyXiCGvgYBAx688wgC7Fkh03wxFSrYrMZ_Pbzw_n3Ln17ZD4glmH1f0gXTnsTNWE-GQDZQHjnMFbT3HB_R98h7isfkk6Wk7l95Gymxj48-nMWCX72wgtcZkvwoz0O3GMR5AfZXk-bjPgbYx9vjLulakBfybW-lXb3VpRf6322mhhmeJrZa03Gyz1rRBq4WfJp4SAU0w_zn2q3PzvgKQjmfa29iD8gQvV6cGVHro0luX1_ppGePxPND4zCsVq8tTDRReiTdQCdJYjB17k6Nko2eliDlNTa0YEjFMbh9AyQRlznUY90rE-f69BPH_bxgOcOvTpDxNzfAxudB8W-eapDqGewHaJUnxlEtfXM5I53qwLmiWauCOmU6B8rAw-4pQ9m5XqQvlJbo8mcbpn63x4lpsCHxU_4RpOWrBJOyouVyw0G5agsf9Tan7h_eeKqfgjxSJ8e8lKGX1cNnUIv-hWuIWE5IHM6H8LHmM0-y0cUuCIVnOjGLjV8_8qNXjtqRMR3KwZyQKVkVvB7-ssdR9H_9arxpmhpbIuyg7NXpO7AR0IX1hXJ5AhykwB4H2LSSR0g-tPlzL0DY6KQD7oHOJ3Dew6EYI6o6Ci9iWhCrMR9X988X7U4DjMdT6QdpbTvU-kM"
+}
+2025-08-14 04:28:02 - DEBUG - RESPONSE: No content (empty body)
+2025-08-14 04:28:02 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:28:02 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_145680_1e707f6d HTTP/1.1" 204 0
+2025-08-14 04:28:02 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:28:02 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_145680_1e707f6d
+2025-08-14 04:28:02 - INFO - STATUS CODE: 204
+2025-08-14 04:28:02 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDU2NzUsImV4cCI6MTc1NTE0OTI3NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.eTY9ch5DYvUJEnN90Kh20SYwBmgNf1bwMdLaRT1llUuyXiCGvgYBAx688wgC7Fkh03wxFSrYrMZ_Pbzw_n3Ln17ZD4glmH1f0gXTnsTNWE-GQDZQHjnMFbT3HB_R98h7isfkk6Wk7l95Gymxj48-nMWCX72wgtcZkvwoz0O3GMR5AfZXk-bjPgbYx9vjLulakBfybW-lXb3VpRf6322mhhmeJrZa03Gyz1rRBq4WfJp4SAU0w_zn2q3PzvgKQjmfa29iD8gQvV6cGVHro0luX1_ppGePxPND4zCsVq8tTDRReiTdQCdJYjB17k6Nko2eliDlNTa0YEjFMbh9AyQRlznUY90rE-f69BPH_bxgOcOvTpDxNzfAxudB8W-eapDqGewHaJUnxlEtfXM5I53qwLmiWauCOmU6B8rAw-4pQ9m5XqQvlJbo8mcbpn63x4lpsCHxU_4RpOWrBJOyouVyw0G5agsf9Tan7h_eeKqfgjxSJ8e8lKGX1cNnUIv-hWuIWE5IHM6H8LHmM0-y0cUuCIVnOjGLjV8_8qNXjtqRMR3KwZyQKVkVvB7-ssdR9H_9arxpmhpbIuyg7NXpO7AR0IX1hXJ5AhykwB4H2LSSR0g-tPlzL0DY6KQD7oHOJ3Dew6EYI6o6Ci9iWhCrMR9X988X7U4DjMdT6QdpbTvU-kM"
+}
+2025-08-14 04:28:02 - DEBUG - RESPONSE: No content (empty body)
+2025-08-14 04:28:02 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:28:02 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_145680_ce6e37b7 HTTP/1.1" 204 0
+2025-08-14 04:28:02 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:28:02 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_145680_ce6e37b7
+2025-08-14 04:28:02 - INFO - STATUS CODE: 204
+2025-08-14 04:28:02 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDU2NzUsImV4cCI6MTc1NTE0OTI3NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.eTY9ch5DYvUJEnN90Kh20SYwBmgNf1bwMdLaRT1llUuyXiCGvgYBAx688wgC7Fkh03wxFSrYrMZ_Pbzw_n3Ln17ZD4glmH1f0gXTnsTNWE-GQDZQHjnMFbT3HB_R98h7isfkk6Wk7l95Gymxj48-nMWCX72wgtcZkvwoz0O3GMR5AfZXk-bjPgbYx9vjLulakBfybW-lXb3VpRf6322mhhmeJrZa03Gyz1rRBq4WfJp4SAU0w_zn2q3PzvgKQjmfa29iD8gQvV6cGVHro0luX1_ppGePxPND4zCsVq8tTDRReiTdQCdJYjB17k6Nko2eliDlNTa0YEjFMbh9AyQRlznUY90rE-f69BPH_bxgOcOvTpDxNzfAxudB8W-eapDqGewHaJUnxlEtfXM5I53qwLmiWauCOmU6B8rAw-4pQ9m5XqQvlJbo8mcbpn63x4lpsCHxU_4RpOWrBJOyouVyw0G5agsf9Tan7h_eeKqfgjxSJ8e8lKGX1cNnUIv-hWuIWE5IHM6H8LHmM0-y0cUuCIVnOjGLjV8_8qNXjtqRMR3KwZyQKVkVvB7-ssdR9H_9arxpmhpbIuyg7NXpO7AR0IX1hXJ5AhykwB4H2LSSR0g-tPlzL0DY6KQD7oHOJ3Dew6EYI6o6Ci9iWhCrMR9X988X7U4DjMdT6QdpbTvU-kM"
+}
+2025-08-14 04:28:02 - DEBUG - RESPONSE: No content (empty body)
