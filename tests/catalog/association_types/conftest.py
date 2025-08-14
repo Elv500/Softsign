@@ -1,5 +1,6 @@
 import pytest
 
+from src.data.association_types import generate_association_types_source_data
 from src.resources.call_request.association_types_call import AssociationTypesCall
 
 
@@ -10,3 +11,12 @@ def teardown_association_types(auth_headers):
 
     for code in created_association_types:
         AssociationTypesCall().delete(auth_headers, code)
+
+
+@pytest.fixture(scope="function")
+def setup_association_types(auth_headers):
+    payload = generate_association_types_source_data()
+    association_type = AssociationTypesCall().create(auth_headers, payload)
+    yield auth_headers, association_type
+    if association_type:
+        AssociationTypesCall().delete(auth_headers, association_type['code'])
