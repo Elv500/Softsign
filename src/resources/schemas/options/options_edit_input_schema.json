@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "code",
+    "position",
+    "translations"
+  ],
+  "properties": {
+    "@context": { "type": "string" },
+    "@id": { "type": "string" },
+    "@type": { "type": "string" },
+    "code": { "type": "string" },
+    "position": { "type": "integer" },
+    "translations": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z]{2}_[A-Z]{2}$": {
+          "type": "object",
+          "required": ["@id", "@type", "name", "locale"],
+          "properties": {
+            "@id": { "type": "string" },
+            "@type": { "type": "string" },
+            "name": { "type": "string" },
+            "locale": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
