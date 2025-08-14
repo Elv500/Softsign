@@ -8,7 +8,7 @@
 
 ---
 
-**Grupo:** SoftSign  
+# Grupo: SoftSign  
 **Integrantes:**
 - Alvarez Cayo Elvis
 - Gutierrez Orellana Kevin
@@ -108,14 +108,6 @@ El submódulo Association Types permite administrar los tipos de asociación ent
 #### Groups
 El submódulo Customer Groups permite la gestión de grupos de clientes, lo cual es útil para segmentar usuarios según distintos criterios, como nivel de fidelidad, tipo de cliente (minorista, mayorista), o políticas comerciales específicas.
 
-Desde este módulo, los administradores pueden realizar las siguientes operaciones mediante endpoints RESTful:
-
-- **Listar grupos de clientes** - `GET /api/v2/admin/customer-groups`
-- **Consultar un grupo específico por código** - `GET /api/v2/admin/customer-groups/{code}`
-- **Crear un nuevo grupo de clientes** - `POST /api/v2/admin/customer-groups`
-- **Editar un grupo existente** - `PUT /api/v2/admin/customer-groups/{code}`
-- **Eliminar un grupo de clientes** - `DELETE /api/v2/admin/customer-groups/{code}`
-
 ### Módulo Configuration
 
 #### Tax Categories
@@ -123,68 +115,72 @@ Las Tax Categories en el sistema son grupos que clasifican los distintos tipos d
 
 ## Límites y Alcances
 
-### Login (Elvis)
+### Login/Autenticación (Elvis)
 | Método | Endpoint |
 |--------|----------|
-| POST* | `/api/v2/administrators/token` |
+| POST | `/api/v2/administrators/token` |
 
 ### Módulo Catalog
 
 #### Inventory (Elvis)
 | Método | Endpoint |
 |--------|----------|
-| GET* | `/api/v2/admin/inventory-sources` |
-| POST* | `/api/v2/admin/inventory-sources` |
-| PUT* | `/api/v2/admin/inventory-sources/{code}` |
-| DELETE* | `/api/v2/admin/inventory-sources/{code}` |
+| GET | `/api/v2/admin/inventory-sources` |
+| POST | `/api/v2/admin/inventory-sources` |
+| GET | `/api/v2/admin/inventory-sources/{code}` |
+| PUT | `/api/v2/admin/inventory-sources/{code}` |
+| DELETE | `/api/v2/admin/inventory-sources/{code}` |
 
 #### Attributes (Liliana)
 | Método | Endpoint |
 |--------|----------|
-| GET* | `/api/v2/admin/product-attributes` |
-| PUT* | `/api/v2/admin/product-attributes/{code}` |
-| DELETE* | `/api/v2/admin/product-attributes/{code}` |
-| POST* | `/api/v2/admin/product-attributes/` |
+| GET | `/api/v2/admin/product-attributes` |
+| POST | `/api/v2/admin/product-attributes/` |
+| GET | `/api/v2/admin/product-attributes/{code}` |
+| PUT | `/api/v2/admin/product-attributes/{code}` |
+| DELETE | `/api/v2/admin/product-attributes/{code}` |
 
 #### Options (Erika)
 | Método | Endpoint |
 |--------|----------|
-| GET* | `/api/v2/admin/product-options` |
-| PUT* | `/api/v2/admin/product-options/{code}` |
-| DELETE* | `/api/v2/admin/product-options/{code}` |
-| POST* | `/api/v2/admin/product-options` |
+| GET | `/api/v2/admin/product-options` |
+| POST | `/api/v2/admin/product-options` |
+| GET | `/api/v2/admin/product-options/{code}` |
+| PUT | `/api/v2/admin/product-options/{code}` |
+| DELETE | `/api/v2/admin/product-options/{code}` |
 
 #### Association Types (Edwin)
 | Método | Endpoint |
 |--------|----------|
-| GET* | `/api/v2/admin/product-association-types` |
-| PUT* | `/api/v2/admin/product-association-types` |
+| GET | `/api/v2/admin/product-association-types` |
+| POST | `/api/v2/admin/product-association-types` |
 | GET | `/api/v2/admin/product-association-types/{code}` |
-| POST* | `/api/v2/admin/product-association-types/{code}` |
-| DELETE* | `/api/v2/admin/product-association-types/{code}` |
+| PUT | `/api/v2/admin/product-association-types/{code}` |
+| DELETE | `/api/v2/admin/product-association-types/{code}` |
 
 ### Módulo Customer
 
 #### Groups (Pablo)
 | Método | Endpoint |
 |--------|----------|
-| GET* | `/api/v2/admin/customer-groups` |
-| PUT* | `/api/v2/admin/customer-groups/{code}` |
-| POST* | `/api/v2/admin/customer-groups` |
+| GET | `/api/v2/admin/customer-groups` |
+| POST | `/api/v2/admin/customer-groups` |
 | GET | `/api/v2/admin/customer-groups/{code}` |
-| DELETE* | `/api/v2/admin/customer-groups/{code}` |
+| PUT | `/api/v2/admin/customer-groups/{code}` |
+| DELETE | `/api/v2/admin/customer-groups/{code}` |
 
 ### Módulo Configuration
 
 #### Tax Categories (Kevin)
 | Método | Endpoint |
 |--------|----------|
-| GET* | `/api/v2/admin/tax-categories` |
-| POST* | `/api/v2/admin/tax-categories` |
-| PUT* | `/api/v2/admin/tax-categories/{code}` |
-| DELETE* | `/api/v2/admin/tax-categories/{code}` |
+| GET | `/api/v2/admin/tax-categories` |
+| POST | `/api/v2/admin/tax-categories` |
+| GET | `/api/v2/admin/tax-categories/{code}` |
+| PUT | `/api/v2/admin/tax-categories/{code}` |
+| DELETE | `/api/v2/admin/tax-categories/{code}` |
 
-> **Nota:** Todos los endpoints marcados con un asterisco (*) son los que se encuentran dentro del scope definido para el Sprint #1 y Sprint #2. Cualquier otra funcionalidad o endpoint que no esté mencionado y marcado con el asterisco (*), se encuentra fuera del scope definido.
+> **Nota:** Cualquier otra funcionalidad o endpoint que no esté mencionado en la anterior lista, se encuentra fuera del scope definido.
 
 ## Herramientas
 
@@ -192,10 +188,12 @@ Las Tax Categories en el sistema son grupos que clasifican los distintos tipos d
 Estas herramientas permitirán automatizar las pruebas funcionales, especialmente aquellas con múltiples combinaciones de datos o flujos repetitivos.
 
 ### Postman
-Nos permitirán automatizar las pruebas funcionales, especialmente aquellas con múltiples combinaciones de datos o flujos repetitivos.
+Nos permitirán realizar las pruebas exploratorias, especialmente aquellas con múltiples combinaciones de datos o flujos repetitivos.
 
 ### GitHub Actions
 Se integrará para ejecutar las pruebas automatizadas de forma continua al realizar cambios en el repositorio, asegurando así la calidad desde las primeras etapas.
+
+Aplicando CI/CD, donde CI será la ejecución automatica al hacer push a la rama development o manual desde la rama main y generar el reporte respectivo. Y CD en nuestros terminos, será el despliegue automático del reporte para su respectiva visualización en tiempo real al terminar la ejecución.
 
 ### VS Code / PyCharm
 Entorno de desarrollo (IDE) utilizado para escribir y organizar los scripts de pruebas en Python.
@@ -221,16 +219,34 @@ Verificación de que cada endpoint cumple con el comportamiento esperado ante en
 Evaluación del sistema frente a entradas incorrectas, formatos inválidos, parámetros faltantes o rutas erróneas. Permite identificar fallos de validación o manejo inadecuado de errores.
 
 ### Regression Testing
-Automatización de pruebas críticas para garantizar que las funcionalidades principales se mantengan estables frente a futuras ejecuciones, incluso si no se realizan cambios directos por parte del equipo.
+Verificación de todos los casos de pruebas para garantizar que las funcionalidades principales se mantengan estables frente a futuras ejecuciones, incluso si no se realizan cambios directos por parte del equipo.
 
 ### Security Testing
-Validación del acceso restringido a los recursos mediante autenticación y autorización. Se verifica que no se pueda acceder a endpoints protegidos sin token o con permisos insuficientes.
+Validación del acceso restringido a los recursos mediante autenticación y autorización. Se verifica que no se pueda acceder a endpoints protegidos sin token o con permisos insuficientes, también validando que ninguno rompa la URL con params incompletos o erróneos.
+
+### Domain Testing
+Pruebas enfocadas en evaluar el comportamiento del sistema frente a clases de equivalencia válidas e inválidas, incluyendo sus valores límite. Se busca cubrir un conjunto representativo de casos para asegurar que todas las categorías de entrada definidas en el dominio sean manejadas correctamente.
 
 ### Boundary Testing
-Pruebas enfocadas en evaluar el comportamiento del sistema ante valores límite (por ejemplo, itemsPerPage=0, strings muy largos, o números extremos en parámetros).
+Pruebas para validar el comportamiento de la aplicación ante entradas en los valores límite y en sus adyacentes, cubriendo tanto extremos válidos como inválidos.
 
-### Usability Testing (aplicable parcialmente a APIs)
-Aunque tradicionalmente orientada a interfaces gráficas, en este contexto se evalúa la consistencia de los mensajes de error, claridad de respuestas y estructura lógica de la API, para facilitar su comprensión por parte de desarrolladores o integradores.
+### Stress Testing
+Pruebas para validar el comportamiento y estabilidad de la aplicación bajo cargas muy altas o condiciones extremas, observando su capacidad de recuperación.
+
+### Performance Testing
+Pruebas para validar el rendimiento de la aplicación en términos de velocidad de respuesta, consumo de recursos y capacidad de procesamiento bajo diferentes cargas.
+
+### E2E
+Pruebas end-to-end para validar flujos completos del sistema, desde el inicio hasta el fin del proceso, abarcando la interacción de múltiples componentes.
+
+### Inventory
+Pruebas end-to-end para validar el flujo completo del módulo Catalog – Inventario, incluyendo creación, actualización, consulta y eliminación de registros.
+
+### Tax Category
+Pruebas end-to-end para validar el flujo completo del módulo Configuration – Tax Category, cubriendo todas sus operaciones principales.
+
+### Customer Group
+Pruebas end-to-end para validar el flujo completo del módulo Customer – Group, asegurando la correcta gestión de grupos de clientes.
 
 ## Metodología
 
@@ -240,23 +256,65 @@ Scrum promueve la colaboración continua entre los miembros del equipo, la adapt
 
 Su objetivo principal es mejorar la eficiencia del equipo, fomentar la transparencia y adaptarse rápidamente a las necesidades del cliente.
 
+### Endpoints para el Sprint 1
+
+| Método | Endopoint | Responsable |
+|----|--------|-------------|
+| POST | `/api/v2/administrators/token` | Elvis Alvarez |
+| GET | `/api/v2/admin/inventory-sources` | Elvis Alvarez |
+| POST | `/api/v2/admin/inventory-sources` | Elvis Alvarez |
+| GET | `/api/v2/admin/inventory-sources/{code}` | Elvis Alvarez |
+| GET | `/api/v2/admin/product-attributes` | Liliana Quiroga  |
+| POST | `/api/v2/admin/product-attributes/` | Liliana Quiroga  |
+| GET | `/api/v2/admin/product-attributes/{code}` | Liliana Quiroga  |
+| GET | `/api/v2/admin/product-options` | Erika Soto |
+| POST | `/api/v2/admin/product-options` | Erika Soto |
+| GET | `/api/v2/admin/product-options/{code}` | Erika Soto |
+| GET | `/api/v2/admin/product-association-types` | Edwin Navia |
+| POST | `/api/v2/admin/product-association-types` | Edwin Navia |
+| GET | `/api/v2/admin/product-association-types/{code}` | Edwin Navia |
+| GET | `/api/v2/admin/customer-groups` | Pablo Delgadillo |
+| POST | `/api/v2/admin/customer-groups` | Pablo Delgadillo |
+| GET | `/api/v2/admin/customer-groups/{code}` | Pablo Delgadillo |
+| GET | `/api/v2/admin/tax-categories` | Kevin Gutierrez |
+| POST | `/api/v2/admin/tax-categories` | Kevin Gutierrez |
+| GET | `/api/v2/admin/tax-categories/{code}` | Kevin Gutierrez |
+
+
 ### Historias de Usuario para el Sprint 1
 
 | ID | Título | Responsable |
 |----|--------|-------------|
 | 1 | HU-00: Inicio de sesión como administrador | Elvis Alvarez |
-| 2 | HU-01: Consultar lista de "Customer - Group" (GET) | Pablo Delgadillo |
-| 3 | HU-02: Crear un nuevo "Customer - Group" (POST) | Pablo Delgadillo |
+| 2 | HU-01: Consultar lista de "Customer - Group" | Pablo Delgadillo |
+| 3 | HU-02: Crear un nuevo "Customer - Group" | Pablo Delgadillo |
 | 4 | HU-07: Obtener la lista de todas las asociaciones del tipo de Productos | Edwin Navia |
 | 5 | HU-04: Consultar listado de grupo de inventario | Elvis Alvarez |
 | 6 | HU-05: Crear nueva fuente de inventario | Elvis Alvarez |
 | 7 | HU-17: Crear un nuevo tipo de Asociación de productos | Edwin Navia |
-| 8 | HU-09: Obtener la lista de attributes del módulo (GET) | Liliana Quiroga |
-| 9 | HU-10: Listado de opciones de producto (GET) | Erika Soto |
-| 10 | HU-11: Creación de una nueva opción de producto (POST) | Erika Soto |
-| 11 | HU-12: Actualizar la información de un attribute (PUT) | Liliana Quiroga |
-| 13 | HU-07: Configuración - Consultar listado de Tax Category (GET) | Kevin Gutierrez Orellana |
-| 14 | HU-14: Crear nuevo Tax Category | Kevin Gutierrez Orellana |
+| 8 | HU-09: Obtener la lista de attributes del módulo | Liliana Quiroga |
+| 9 | HU-10: Listado de opciones de producto | Erika Soto |
+| 10 | HU-11: Creación de una nueva opción de producto | Erika Soto |
+| 11 | HU-12: Actualizar la información de un attribute | Liliana Quiroga |
+| 13 | HU-07: Configuración - Consultar listado de Tax Category | Kevin Gutierrez |
+| 14 | HU-14: Crear nuevo Tax Category | Kevin Gutierrez |
+
+### Endpoints para el Sprint 2
+
+| Método | Endopoint | Responsable |
+|----|--------|-------------|
+| PUT | `/api/v2/admin/inventory-sources/{code}` | Elvis Alvarez |
+| DELETE | `/api/v2/admin/inventory-sources/{code}` | Elvis Alvarez |
+| PUT | `/api/v2/admin/product-attributes/{code}` | Liliana Quiroga  |
+| DELETE | `/api/v2/admin/product-attributes/{code}` | Liliana Quiroga  |
+| PUT | `/api/v2/admin/product-options/{code}` | Erika Soto |
+| DELETE | `/api/v2/admin/product-options/{code}` | Erika Soto |
+| PUT | `/api/v2/admin/product-association-types/{code}` | Edwin Navia |
+| DELETE | `/api/v2/admin/product-association-types/{code}` | Edwin Navia |
+| PUT | `/api/v2/admin/customer-groups/{code}` | Pablo Delgadillo |
+| DELETE | `/api/v2/admin/customer-groups/{code}` | Pablo Delgadillo |
+| PUT | `/api/v2/admin/tax-categories/{code}` | Kevin Gutierrez |
+| DELETE | `/api/v2/admin/tax-categories/{code}` | Kevin Gutierrez |
 
 ### Historias de Usuario para el Sprint 2
 
@@ -264,16 +322,16 @@ Su objetivo principal es mejorar la eficiencia del equipo, fomentar la transpare
 |----|--------|-------------|
 | 1 | HU-06: Eliminar una fuente de inventario existente | Elvis Alvarez |
 | 2 | HU-15: Actualizar fuente de inventario | Elvis Alvarez |
-| 3 | HU-13: Crear un nuevo attribute (POST) | Liliana Quiroga |
-| 4 | HU-23: Eliminar un attribute existente (DELETE) | Liliana Quiroga |
-| 5 | HU-03: Actualizar "Customer - Group" existente (PUT) | Pablo Delgadillo |
-| 6 | HU-16: Eliminar "Customer-Group" existente (DELETE) | Pablo Delgadillo |
-| 7 | HU25: Actualizar una opción de producto (PUT) | Erika Soto |
-| 8 | HU26: Eliminar una opción de producto (DELETE) | Erika Soto |
-| 9 | HU27: Actualizar un tipo de Asociación de productos existente (PUT) | Edwin Navia |
-| 10 | HU28: Eliminar un tipo de Asociación de productos existente (DELETE) | Edwin Navia |
-| 11 | HU-22: Eliminar tax Category (Delete) | Kevin Gutierrez Orellana |
-| 12 | HU-29: Editar Tax Category (Put) | Kevin Gutierrez Orellana |
+| 3 | HU-13: Crear un nuevo attribute | Liliana Quiroga |
+| 4 | HU-23: Eliminar un attribute existente | Liliana Quiroga |
+| 5 | HU-03: Actualizar "Customer - Group" existente | Pablo Delgadillo |
+| 6 | HU-16: Eliminar "Customer-Group" existente | Pablo Delgadillo |
+| 7 | HU25: Actualizar una opción de producto | Erika Soto |
+| 8 | HU26: Eliminar una opción de producto | Erika Soto |
+| 9 | HU27: Actualizar un tipo de Asociación de productos existente | Edwin Navia |
+| 10 | HU28: Eliminar un tipo de Asociación de productos existente | Edwin Navia |
+| 11 | HU-22: Eliminar tax Category | Kevin Gutierrez |
+| 12 | HU-29: Editar Tax Category | Kevin Gutierrez |
 
 ## Recursos
 
