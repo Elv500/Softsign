@@ -1,7 +1,10 @@
 import pytest
 import time
 
-from src.assertions.customergroup_assertions import AssertionCustomerGroup
+from src.assertions.customergroup_assertions.customer_group_errors_assertions import AssertionCustomerGroupErrors
+from src.assertions.customergroup_assertions.customer_group_post_content_assertions import AssertionCustomerGroupCreate
+from src.assertions.customergroup_assertions.customer_group_schema_assertions import AssertionCustomerGroup
+from src.assertions.customergroup_assertions.customer_group_performance_assertions import AssertionCustomerGroupPerformance
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
@@ -23,13 +26,12 @@ def test_TC153_crear_grupo_clientes_datos_validos(setup_customer_group_cleanup):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
-    AssertionCustomerGroup.assert_customer_group_post_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
     
-    assert response.json()["code"] == data["code"]
-    assert response.json()["name"] == data["name"]
+    AssertionCustomerGroupCreate.assert_customer_group_response(data, response.json())
 
 
 # Admin > Customer - Group > TC_154 Verificar estructura del JSON devuelto al crear
@@ -46,7 +48,7 @@ def test_TC154_verificar_estructura_json_respuesta_creacion(setup_customer_group
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
-    AssertionCustomerGroup.assert_customer_group_post_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
@@ -76,6 +78,7 @@ def test_TC155_crear_grupo_codigo_duplicado(setup_customer_group_cleanup):
     log_request_response(endpoint, response2, headers=auth_headers, payload=data2)
     
     AssertionStatusCode.assert_status_code_422(response2)
+    AssertionCustomerGroupErrors.assert_validation_error(response2)
 
 
 # Admin > Customer - Group > TC_156 Crear grupo sin campo obligatorio 'code'
@@ -92,6 +95,7 @@ def test_TC156_crear_grupo_sin_campo_code(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_422(response)
+    AssertionCustomerGroupErrors.assert_validation_error(response)
 
 
 # Admin > Customer - Group > TC_157 Crear grupo sin campo obligatorio 'name'
@@ -108,6 +112,7 @@ def test_TC157_crear_grupo_sin_campo_name(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_422(response)
+    AssertionCustomerGroupErrors.assert_validation_error(response)
 
 
 # Admin > Customer - Group > TC_158 Verificar que no permita crear grupo con código vacío
@@ -124,6 +129,7 @@ def test_TC158_crear_grupo_codigo_vacio(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_422(response)
+    AssertionCustomerGroupErrors.assert_validation_error(response)
 
 
 # Admin > Customer - Group > TC_159 Verificar que no permita crear grupo con nombre vacío
@@ -140,6 +146,7 @@ def test_TC159_crear_grupo_nombre_vacio(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_422(response)
+    AssertionCustomerGroupErrors.assert_validation_error(response)
 
 
 # Admin > Customer - Group > TC_160 Crear grupo con código invalido mas de 255 caracteres
@@ -156,6 +163,7 @@ def test_TC160_crear_grupo_codigo_muy_largo(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_422(response)
+    AssertionCustomerGroupErrors.assert_validation_error(response)
 
 
 # Admin > Customer - Group > TC_161 Crear grupo con nombre invalido mas de 255 caracteres
@@ -172,10 +180,11 @@ def test_TC161_crear_grupo_nombre_muy_largo(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_422(response)
+    AssertionCustomerGroupErrors.assert_validation_error(response)
 
 
 # Admin > Customer - Group > TC_162 Crear grupo con caracteres especiales no permitidos en código
-@pytest.mark.functional
+@pytest.mark.negative
 @pytest.mark.boundary
 @pytest.mark.regression
 def test_TC162_crear_grupo_caracteres_especiales_codigo(auth_headers):
@@ -188,6 +197,7 @@ def test_TC162_crear_grupo_caracteres_especiales_codigo(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_422(response)
+    AssertionCustomerGroupErrors.assert_validation_error(response)
 
 
 # Admin > Customer - Group > TC_163 Verificar que permita crear grupo con caracteres especiales en nombre
@@ -205,6 +215,8 @@ def test_TC163_crear_grupo_caracteres_especiales_nombre(setup_customer_group_cle
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
+    AssertionCustomerGroupCreate.assert_customer_group_response(data, response.json())
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
@@ -300,7 +312,8 @@ def test_TC168_verificar_tiempo_respuesta_creacion(setup_customer_group_cleanup)
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
-    assert elapsed < 3.0
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
+    AssertionCustomerGroupPerformance.assert_creation_response_time(elapsed)
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
@@ -324,12 +337,12 @@ def test_TC169_crear_multiples_grupos_simultaneos(setup_customer_group_cleanup):
         
         responses.append(response)
         AssertionStatusCode.assert_status_code_201(response)
+        AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
         
         customer_group_code = response.json()["code"]
         add_group_for_cleanup(customer_group_code)
         
-    codes = [resp.json()["code"] for resp in responses]
-    assert len(codes) == len(set(codes))
+    AssertionCustomerGroupPerformance.assert_multiple_creation_uniqueness(responses)
 
 
 # Admin > Customer - Group > TC_170 Verificar que permita crear grupo con código en límite superior (255 chars)
@@ -346,6 +359,8 @@ def test_TC170_crear_grupo_codigo_limite_superior(setup_customer_group_cleanup):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
+    AssertionCustomerGroupCreate.assert_customer_group_response(data, response.json())
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
@@ -365,6 +380,8 @@ def test_TC171_crear_grupo_nombre_limite_superior(setup_customer_group_cleanup):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
+    AssertionCustomerGroupCreate.assert_customer_group_response(data, response.json())
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
@@ -383,10 +400,8 @@ def test_TC172_verificar_headers_respuesta_creacion(setup_customer_group_cleanup
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
-    
-    headers = response.headers
-    content_type = headers.get("Content-Type", "")
-    assert content_type.startswith("application/ld+json"), f"Expected JSON-LD content type, got: {content_type}"
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
+    AssertionCustomerGroupPerformance.assert_creation_content_type_header(response.headers)
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
@@ -406,6 +421,8 @@ def test_TC173_crear_grupo_codigo_minimo(setup_customer_group_cleanup):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
+    AssertionCustomerGroupCreate.assert_customer_group_response(data, response.json())
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
@@ -425,6 +442,8 @@ def test_TC174_crear_grupo_nombre_minimo(setup_customer_group_cleanup):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
     
     AssertionStatusCode.assert_status_code_201(response)
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
+    AssertionCustomerGroupCreate.assert_customer_group_response(data, response.json())
     
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)
