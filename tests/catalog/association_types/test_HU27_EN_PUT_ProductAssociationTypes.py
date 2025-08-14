@@ -122,7 +122,11 @@ def test_TC368_enviar_body_sin_campo_translations_se_ignora_el_cambio(setup_tear
     url = EndpointAssociationTypes.code(association_type1['code'])
     response = SyliusRequest.get(url, headers)
     association_type1 = response.json()
-    payload = {"code": "new-code-ignored"}
+    en_us_id = association_type1["translations"]["en_US"]["@id"]
+    payload = generate_association_type_translations_data(
+        langs=["en_US", "es_ES"],
+        overrides={"en_US": {"@id": en_us_id}}, extra_fields={"code": "new-code-ignored"}
+    )
 
     response = SyliusRequest.put(url, headers_general, payload)
     response_data = response.json()
@@ -138,7 +142,6 @@ def test_TC368_enviar_body_sin_campo_translations_se_ignora_el_cambio(setup_tear
 # Catálogo > Association Types - TC_369 Modificar traducción existente sin pasar @id
 @pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.actual
 def test_TC369_modificar_traduccion_existente_sin_pasar_id(setup_teardown_association_types):
     headers, association_type1, _ = setup_teardown_association_types
     headers_general = build_auth_headers(headers.copy())
@@ -199,3 +202,26 @@ def test_TC371_enviar_solicitud_con_token_invalido(setup_teardown_association_ty
 
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAssociationTypes.assert_invalid_jwt_error(response_data)
+
+@pytest.mark.regression
+@pytest.mark.functional
+def test_TC372_validar_que_campos_no_modificados_permanecen_igual_exitoso(setup_teardown_association_types):
+    headers, association_type1, _ = setup_teardown_association_types
+    headers_general = build_auth_headers(headers.copy())
+    url = EndpointAssociationTypes.code(association_type1['code'])
+    response = SyliusRequest.get(url, headers)
+    association_type1 = response.json()
+    en_us_id = association_type1["translations"]["en_US"]["@id"]
+    payload = generate_association_type_translations_data(
+        langs=["en_US"],
+        overrides={"en_US": {"@id": en_us_id}},
+    )
+
+    response = SyliusRequest.put(url, headers_general, payload)
+    response_data = response.json()
+    log_request_response(url, response, headers_general, payload)
+
+    AssertionStatusCode.assert_status_code_200(response)
+    AssertionAssociationTypes.assert_association_type_edit_output_schema(response_data)
+    AssertionAssociationTypes.assert_code_matches(response_data, association_type1['code'])
+
