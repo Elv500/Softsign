@@ -162,6 +162,7 @@ def test_TC369_modificar_traduccion_existente_sin_pasar_id(setup_teardown_associ
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
 
 
+# Catálogo > Association Types - TC_370 Modificar recurso con code inexistente
 @pytest.mark.negative
 @pytest.mark.functional
 @pytest.mark.regression
@@ -183,6 +184,7 @@ def test_TC370_modificar_recurso_con_code_inexistente(setup_teardown_association
     AssertionAssociationTypes.assert_error_schema(response_data)
 
 
+# Catálogo > Association Types - TC_371 Enviar solicitud con token inválido
 @pytest.mark.security
 @pytest.mark.negative
 @pytest.mark.functional
@@ -207,6 +209,7 @@ def test_TC371_enviar_solicitud_con_token_invalido(setup_teardown_association_ty
     AssertionAssociationTypes.assert_invalid_jwt_error(response_data)
 
 
+# Catálogo > Association Types - TC_372 Validar que campos no modificados permanecen igual [Exitoso]
 @pytest.mark.regression
 @pytest.mark.functional
 def test_TC372_validar_que_campos_no_modificados_permanecen_igual_exitoso(setup_teardown_association_types):
@@ -229,6 +232,8 @@ def test_TC372_validar_que_campos_no_modificados_permanecen_igual_exitoso(setup_
     AssertionAssociationTypes.assert_association_type_edit_output_schema(response_data)
     AssertionAssociationTypes.assert_code_matches(response_data, association_type1['code'])
 
+
+# Catálogo > Association Types - TC_373 Enviar campo translations con tipo de dato incorrecto ("translations": "test")
 @pytest.mark.negative
 @pytest.mark.functional
 @pytest.mark.regression
@@ -245,6 +250,8 @@ def test_TC373_enviar_campo_translations_con_tipo_incorrecto(setup_teardown_asso
     AssertionStatusCode.assert_status_code_400(response)
     AssertionAssociationTypes.assert_error_schema(response_data)
 
+
+# Catálogo > Association Types - TC_374 Enviar body con campos extra no soportados [Exitoso, se ignoran los campos extra]
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC374_enviar_body_con_campos_extra_no_soportados_exitoso(setup_teardown_association_types):
@@ -269,6 +276,7 @@ def test_TC374_enviar_body_con_campos_extra_no_soportados_exitoso(setup_teardown
                                                               payload['translations']['en_US']['name'])
 
 
+# Catálogo > Association Types - TC_375 Agregar traducción para un idioma no habilitado en el canal
 @pytest.mark.regression
 @pytest.mark.negative
 def test_TC375_agregar_traduccion_idioma_no_habilitado_en_canal(setup_teardown_association_types):
@@ -289,6 +297,7 @@ def test_TC375_agregar_traduccion_idioma_no_habilitado_en_canal(setup_teardown_a
     AssertionAssociationTypes.assert_error_schema(response_data)
 
 
+# Catálogo > Association Types - TC_376 Agregar traducción para un idioma válido pero con nombre vacío ("name": "")
 @pytest.mark.regression
 @pytest.mark.negative
 def test_TC376_agregar_traduccion_idioma_valido_nombre_vacio(setup_teardown_association_types):
@@ -312,6 +321,7 @@ def test_TC376_agregar_traduccion_idioma_valido_nombre_vacio(setup_teardown_asso
     AssertionAssociationTypes.assert_error_schema(response_data)
 
 
+# Catálogo > Association Types - TC_377 Modificar traducción existente con un nombre muy largo
 @pytest.mark.negative
 @pytest.mark.boundary
 @pytest.mark.functional
@@ -335,6 +345,7 @@ def test_TC377_modificar_traduccion_nombre_muy_largo(setup_teardown_association_
     AssertionAssociationTypes.assert_association_type_add_error_schema(response_data)
 
 
+# Catálogo > Association Types - TC_378 Enviar campo `"name": 121313` (tipo de dato incorrecto)
 @pytest.mark.regression
 @pytest.mark.negative
 def test_TC378_enviar_campo_name_tipo_dato_incorrecto(setup_teardown_association_types):
