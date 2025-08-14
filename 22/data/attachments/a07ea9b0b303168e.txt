@@ -1,0 +1,84 @@
+2025-08-14 04:02:45 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:02:46 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 200 None
+2025-08-14 04:02:46 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:02:47 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-14 04:02:47 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:02:47 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-14 04:02:47 - INFO - STATUS CODE: 201
+2025-08-14 04:02:47 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQxNjYsImV4cCI6MTc1NTE0Nzc2Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IPFGePUTQovIJ6mNL9e2zAavWyYwRG1X5U3o8NDXzvMrx5nzbLO2rFnDoj9o7z9cgEh04aTTWXVyLtmhJbtvwfjrEHZuiUcNf90FBp27Uxt0DOKTUfaFAEjfkrQslP0fZ7eoDimoB34ovB-GorxfJLLrliKnfh00zH1xX1V9E7hDlKcqwkETRmwoBYhf5QwxznNo_cDH_MuwyLVSyFqLgunavA8ETYBB8fegi-h404BDPHsfQ9kkFMWJJIbJOpkbnn7aaVYII3mpAZ9jbLXZebg6-TjKyvyU6l1b1fPAMVRBQJOjRcwK58BqhJMzpLzSh6WOiuZnAIvqm_-DennGsx7CtnQs-3KtqAH-Bfr2ZA3IpmLSrQFYbV7CV7Bud5hSf-s-46Kgh5d7nm-BsiW3ALU6ChfbC3gOEesJ-Cnl7ZW18qQcSFEH_KB8bUWMdaAwlxFezPHKRl4nhhxMkFG1z6RsDfOFuM0OXLJpQSmwiSIOdUBxZsn-FS3wXOl1A8LP8HvBLpCOpyOztHAZzh1MDMlj4nk-j7paZWJbLofLiKyYI_te31giCpAnSSkDfZ9LC9vsbRryJqUPHqchgJSo1j0utOEirtnxg5EqbSB7BBDlPVQ_XTJ2QbhK8GUedgoDs-lCzrp-C-gQX5Fu0iiGC9wVh2fGTDkOG4FHneiilLM"
+}
+2025-08-14 04:02:47 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_144166_2482d865",
+    "@type": "CustomerGroup",
+    "id": 9527,
+    "code": "test_144166_2482d865",
+    "name": "Sutton, Morrison and Galloway - Fundamental needs-based policy"
+}
+2025-08-14 04:02:47 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:02:47 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/customer-groups/test_144166_2482d865 HTTP/1.1" 200 None
+2025-08-14 04:02:47 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:02:47 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_144166_2482d865
+2025-08-14 04:02:47 - INFO - STATUS CODE: 200
+2025-08-14 04:02:47 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQxNjYsImV4cCI6MTc1NTE0Nzc2Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IPFGePUTQovIJ6mNL9e2zAavWyYwRG1X5U3o8NDXzvMrx5nzbLO2rFnDoj9o7z9cgEh04aTTWXVyLtmhJbtvwfjrEHZuiUcNf90FBp27Uxt0DOKTUfaFAEjfkrQslP0fZ7eoDimoB34ovB-GorxfJLLrliKnfh00zH1xX1V9E7hDlKcqwkETRmwoBYhf5QwxznNo_cDH_MuwyLVSyFqLgunavA8ETYBB8fegi-h404BDPHsfQ9kkFMWJJIbJOpkbnn7aaVYII3mpAZ9jbLXZebg6-TjKyvyU6l1b1fPAMVRBQJOjRcwK58BqhJMzpLzSh6WOiuZnAIvqm_-DennGsx7CtnQs-3KtqAH-Bfr2ZA3IpmLSrQFYbV7CV7Bud5hSf-s-46Kgh5d7nm-BsiW3ALU6ChfbC3gOEesJ-Cnl7ZW18qQcSFEH_KB8bUWMdaAwlxFezPHKRl4nhhxMkFG1z6RsDfOFuM0OXLJpQSmwiSIOdUBxZsn-FS3wXOl1A8LP8HvBLpCOpyOztHAZzh1MDMlj4nk-j7paZWJbLofLiKyYI_te31giCpAnSSkDfZ9LC9vsbRryJqUPHqchgJSo1j0utOEirtnxg5EqbSB7BBDlPVQ_XTJ2QbhK8GUedgoDs-lCzrp-C-gQX5Fu0iiGC9wVh2fGTDkOG4FHneiilLM"
+}
+2025-08-14 04:02:47 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_144166_2482d865",
+    "@type": "CustomerGroup",
+    "id": 9527,
+    "code": "test_144166_2482d865",
+    "name": "Sutton, Morrison and Galloway - Fundamental needs-based policy"
+}
+2025-08-14 04:02:47 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:02:47 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/customer-groups/test_144166_2482d865 HTTP/1.1" 200 None
+2025-08-14 04:02:47 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:02:47 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_144166_2482d865
+2025-08-14 04:02:47 - INFO - STATUS CODE: 200
+2025-08-14 04:02:47 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQxNjYsImV4cCI6MTc1NTE0Nzc2Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IPFGePUTQovIJ6mNL9e2zAavWyYwRG1X5U3o8NDXzvMrx5nzbLO2rFnDoj9o7z9cgEh04aTTWXVyLtmhJbtvwfjrEHZuiUcNf90FBp27Uxt0DOKTUfaFAEjfkrQslP0fZ7eoDimoB34ovB-GorxfJLLrliKnfh00zH1xX1V9E7hDlKcqwkETRmwoBYhf5QwxznNo_cDH_MuwyLVSyFqLgunavA8ETYBB8fegi-h404BDPHsfQ9kkFMWJJIbJOpkbnn7aaVYII3mpAZ9jbLXZebg6-TjKyvyU6l1b1fPAMVRBQJOjRcwK58BqhJMzpLzSh6WOiuZnAIvqm_-DennGsx7CtnQs-3KtqAH-Bfr2ZA3IpmLSrQFYbV7CV7Bud5hSf-s-46Kgh5d7nm-BsiW3ALU6ChfbC3gOEesJ-Cnl7ZW18qQcSFEH_KB8bUWMdaAwlxFezPHKRl4nhhxMkFG1z6RsDfOFuM0OXLJpQSmwiSIOdUBxZsn-FS3wXOl1A8LP8HvBLpCOpyOztHAZzh1MDMlj4nk-j7paZWJbLofLiKyYI_te31giCpAnSSkDfZ9LC9vsbRryJqUPHqchgJSo1j0utOEirtnxg5EqbSB7BBDlPVQ_XTJ2QbhK8GUedgoDs-lCzrp-C-gQX5Fu0iiGC9wVh2fGTDkOG4FHneiilLM"
+}
+2025-08-14 04:02:47 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_144166_2482d865",
+    "@type": "CustomerGroup",
+    "id": 9527,
+    "code": "test_144166_2482d865",
+    "name": "UPDATED - Sutton, Morrison and Galloway - Fundamental needs-based policy - E2E Test"
+}
+2025-08-14 04:02:47 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:02:48 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/customer-groups/test_144166_2482d865 HTTP/1.1" 200 None
+2025-08-14 04:02:48 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:02:48 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_144166_2482d865
+2025-08-14 04:02:48 - INFO - STATUS CODE: 200
+2025-08-14 04:02:48 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQxNjYsImV4cCI6MTc1NTE0Nzc2Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IPFGePUTQovIJ6mNL9e2zAavWyYwRG1X5U3o8NDXzvMrx5nzbLO2rFnDoj9o7z9cgEh04aTTWXVyLtmhJbtvwfjrEHZuiUcNf90FBp27Uxt0DOKTUfaFAEjfkrQslP0fZ7eoDimoB34ovB-GorxfJLLrliKnfh00zH1xX1V9E7hDlKcqwkETRmwoBYhf5QwxznNo_cDH_MuwyLVSyFqLgunavA8ETYBB8fegi-h404BDPHsfQ9kkFMWJJIbJOpkbnn7aaVYII3mpAZ9jbLXZebg6-TjKyvyU6l1b1fPAMVRBQJOjRcwK58BqhJMzpLzSh6WOiuZnAIvqm_-DennGsx7CtnQs-3KtqAH-Bfr2ZA3IpmLSrQFYbV7CV7Bud5hSf-s-46Kgh5d7nm-BsiW3ALU6ChfbC3gOEesJ-Cnl7ZW18qQcSFEH_KB8bUWMdaAwlxFezPHKRl4nhhxMkFG1z6RsDfOFuM0OXLJpQSmwiSIOdUBxZsn-FS3wXOl1A8LP8HvBLpCOpyOztHAZzh1MDMlj4nk-j7paZWJbLofLiKyYI_te31giCpAnSSkDfZ9LC9vsbRryJqUPHqchgJSo1j0utOEirtnxg5EqbSB7BBDlPVQ_XTJ2QbhK8GUedgoDs-lCzrp-C-gQX5Fu0iiGC9wVh2fGTDkOG4FHneiilLM"
+}
+2025-08-14 04:02:48 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_144166_2482d865",
+    "@type": "CustomerGroup",
+    "id": 9527,
+    "code": "test_144166_2482d865",
+    "name": "UPDATED - Sutton, Morrison and Galloway - Fundamental needs-based policy - E2E Test"
+}
+2025-08-14 04:02:48 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-14 04:02:48 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_144166_2482d865 HTTP/1.1" 204 0
+2025-08-14 04:02:48 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-14 04:02:48 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_144166_2482d865
+2025-08-14 04:02:48 - INFO - STATUS CODE: 204
+2025-08-14 04:02:48 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUxNDQxNjYsImV4cCI6MTc1NTE0Nzc2Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IPFGePUTQovIJ6mNL9e2zAavWyYwRG1X5U3o8NDXzvMrx5nzbLO2rFnDoj9o7z9cgEh04aTTWXVyLtmhJbtvwfjrEHZuiUcNf90FBp27Uxt0DOKTUfaFAEjfkrQslP0fZ7eoDimoB34ovB-GorxfJLLrliKnfh00zH1xX1V9E7hDlKcqwkETRmwoBYhf5QwxznNo_cDH_MuwyLVSyFqLgunavA8ETYBB8fegi-h404BDPHsfQ9kkFMWJJIbJOpkbnn7aaVYII3mpAZ9jbLXZebg6-TjKyvyU6l1b1fPAMVRBQJOjRcwK58BqhJMzpLzSh6WOiuZnAIvqm_-DennGsx7CtnQs-3KtqAH-Bfr2ZA3IpmLSrQFYbV7CV7Bud5hSf-s-46Kgh5d7nm-BsiW3ALU6ChfbC3gOEesJ-Cnl7ZW18qQcSFEH_KB8bUWMdaAwlxFezPHKRl4nhhxMkFG1z6RsDfOFuM0OXLJpQSmwiSIOdUBxZsn-FS3wXOl1A8LP8HvBLpCOpyOztHAZzh1MDMlj4nk-j7paZWJbLofLiKyYI_te31giCpAnSSkDfZ9LC9vsbRryJqUPHqchgJSo1j0utOEirtnxg5EqbSB7BBDlPVQ_XTJ2QbhK8GUedgoDs-lCzrp-C-gQX5Fu0iiGC9wVh2fGTDkOG4FHneiilLM"
+}
+2025-08-14 04:02:48 - DEBUG - RESPONSE: No content (empty body)
