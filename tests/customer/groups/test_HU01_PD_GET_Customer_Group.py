@@ -1,7 +1,10 @@
 import pytest
 import time
 
-from src.assertions.customergroup_assertions import AssertionCustomerGroup
+from src.assertions.customergroup_assertions.customer_group_errors_assertions import AssertionCustomerGroupErrors
+from src.assertions.customergroup_assertions.customer_group_get_content_assertions import AssertionCustomerGroupFields
+from src.assertions.customergroup_assertions.customer_group_schema_assertions import AssertionCustomerGroup
+from src.assertions.customergroup_assertions.customer_group_performance_assertions import AssertionCustomerGroupPerformance
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
@@ -18,7 +21,7 @@ def test_TC176_obtener_lista_grupos_clientes_exitoso(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroup.assert_customer_group_get_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_list_schema(response.json())
     
 
 # Admin > Customer - Group > TC_177 Verificar estructura del JSON devuelto
@@ -32,14 +35,8 @@ def test_TC177_verificar_estructura_json_respuesta(auth_headers):
     
     log_request_response(endpoint, response, headers=auth_headers)
     
-    data = response.json()
-    
     AssertionStatusCode.assert_status_code_200(response)
-    
-    assert "hydra:member" in data
-    assert "hydra:totalItems" in data
-    assert isinstance(data["hydra:member"], list)
-    assert isinstance(data["hydra:totalItems"], int)
+    AssertionCustomerGroupFields.assert_customer_group_root_metadata(response.json())
     
 
 # Admin > Customer - Group > TC_178 Verificar que se puede obtener un grupo específico usando un código existente
@@ -55,7 +52,7 @@ def test_TC178_obtener_grupo_por_codigo_existente(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_200(response)
-    assert response.json()["code"] == group_code
+    AssertionCustomerGroupFields.assert_customer_group_item_content(response.json(), group_code)
     
 
 # Admin > Customer - Group > TC_179 Verificar campos obligatorios en cada grupo (id, code, name)
@@ -70,16 +67,9 @@ def test_TC179_verificar_campos_obligatorios_cada_grupo(auth_headers):
     
     AssertionStatusCode.assert_status_code_200(response)
     
-    grupos = response.json().get("hydra:member", [])
-    assert len(grupos) > 0, "Debe existir al menos un grupo"
-    
-    for i, grupo in enumerate(grupos):
-        assert "id" in grupo
-        assert "code" in grupo
-        assert "name" in grupo
-        assert grupo["id"] is not None
-        assert grupo["code"] is not None
-        assert grupo["name"] is not None
+    data = response.json()
+    AssertionCustomerGroupFields.assert_customer_group_root_metadata(data)
+    AssertionCustomerGroupFields.assert_customer_groups_exist(data)
     
 
 # Admin > Customer - Group > TC_180 Verificar que los campos code y name no sean nulos o vacíos
@@ -94,11 +84,13 @@ def test_TC180_verificar_campos_no_vacios(auth_headers):
     
     AssertionStatusCode.assert_status_code_200(response)
     
-    grupos = response.json().get("hydra:member", [])
+    data = response.json()
+    AssertionCustomerGroupFields.assert_customer_group_root_metadata(data)
     
-    for i, grupo in enumerate(grupos):
-        assert grupo["code"].strip() != "", f"El código no debe estar vacío para grupo {grupo['id']}"
-        assert grupo["name"].strip() != "", f"El nombre no debe estar vacío para grupo {grupo['id']}"
+    grupos = data.get("hydra:member", [])
+    
+    for grupo in grupos:
+        AssertionCustomerGroupFields.assert_customer_group_item_content(grupo)
     
 
 # Admin > Customer - Group > TC_181 Validar paginación básica con page y itemsPerPage
@@ -106,6 +98,7 @@ def test_TC180_verificar_campos_no_vacios(auth_headers):
 @pytest.mark.regression
 def test_TC181_validar_paginacion_basica(auth_headers):
     page, items_per_page = 1, 2
+    params = {"page": page, "itemsPerPage": items_per_page}
     
     endpoint = EndpointCustomerGroup.customer_group_with_params(page=page, itemsPerPage=items_per_page)
     response = SyliusRequest.get(endpoint, auth_headers)
@@ -113,12 +106,7 @@ def test_TC181_validar_paginacion_basica(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_200(response)
-    
-    data = response.json()
-    member_count = len(data["hydra:member"])
-    
-    assert isinstance(data.get("hydra:member", []), list)
-    assert member_count <= items_per_page
+    AssertionCustomerGroupFields.assert_customer_group_pagination(response.json(), params)
     
 
 # Admin > Customer - Group > TC_182 Verificar paginación con página fuera de rango (ej. page=9999)
@@ -133,17 +121,13 @@ def test_TC182_verificar_paginacion_fuera_rango(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_200(response)
-    
-    data = response.json()
-    member_count = len(data.get("hydra:member", []))
-    
-    assert isinstance(data.get("hydra:member", []), list)
+    AssertionCustomerGroupFields.assert_pagination_out_of_range(response.json())
     
 
 # Admin > Customer - Group > TC_183 Verificar paginación con itemsPerPage = 0
 @pytest.mark.boundary
 @pytest.mark.regression
-@pytest.mark.xfail(reason="Knwon issue BugId: CG-01 La apliacion permite que se devuelva 0 items por pagina", run=True)
+@pytest.mark.xfail(reason="Known issue BugId: CG-01 La aplicación permite que se devuelva 0 items por página", run=True)
 def test_TC183_verificar_paginacion_items_cero(auth_headers):
     items_per_page = 0
     
@@ -182,11 +166,7 @@ def test_TC185_verificar_paginacion_limite_maximo(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_200(response)
-    
-    data = response.json()
-    member_count = len(data["hydra:member"])
-    
-    assert member_count <= items_per_page
+    AssertionCustomerGroupPerformance.assert_pagination_item_limit(response.json(), items_per_page)
     
 
 # Admin > Customer - Group > TC_186 Verificar que no permita el acceso sin token de autenticación
@@ -276,6 +256,7 @@ def test_TC190_obtener_grupo_codigo_inexistente(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_404(response)
+    AssertionCustomerGroupErrors.assert_not_found_error(response)
     
 
 # Admin > Customer - Group > TC_191 Verificar que no acepte un método HTTP no permitido (POST)
@@ -337,13 +318,9 @@ def test_TC194_verificar_unicidad_ids_codigos(auth_headers):
     
     AssertionStatusCode.assert_status_code_200(response)
     
-    grupos = response.json().get("hydra:member", [])
-    
-    ids = [g["id"] for g in grupos]
-    codes = [g["code"] for g in grupos]
-    
-    assert len(ids) == len(set(ids)), "Los IDs deben ser únicos"
-    assert len(codes) == len(set(codes)), "Los códigos deben ser únicos"
+    data = response.json()
+    AssertionCustomerGroupFields.assert_customer_group_root_metadata(data)
+    AssertionCustomerGroupFields.assert_customer_groups_uniqueness(data)
     
 
 # Admin > Customer - Group > TC_195 Verificar formato de datos de cada campo
@@ -358,17 +335,13 @@ def test_TC195_verificar_formato_datos_campos(auth_headers):
     
     AssertionStatusCode.assert_status_code_200(response)
     
-    grupos = response.json().get("hydra:member", [])
+    data = response.json()
+    AssertionCustomerGroupFields.assert_customer_group_root_metadata(data)
     
-    for i, grupo in enumerate(grupos):
-        assert isinstance(grupo["id"], int)
-        assert grupo["id"] > 0
-        
-        assert isinstance(grupo["code"], str)
-        assert len(grupo["code"]) > 0
-        
-        assert isinstance(grupo["name"], str)
-        assert len(grupo["name"]) > 0
+    grupos = data.get("hydra:member", [])
+    
+    for grupo in grupos:
+        AssertionCustomerGroupFields.assert_customer_group_item_content(grupo)
     
 
 # Admin > Customer - Group > TC_196 Verificar límites de longitud de campos
@@ -384,22 +357,9 @@ def test_TC196_verificar_limites_longitud_campos(auth_headers):
     
     AssertionStatusCode.assert_status_code_200(response)
     
-    grupos = response.json().get("hydra:member", [])
-    
-    max_code_length = 0
-    max_name_length = 0
-    
-    for i, grupo in enumerate(grupos):
-        code_length = len(grupo["code"])
-        name_length = len(grupo["name"])
-        
-        if code_length > max_code_length:
-            max_code_length = code_length
-        if name_length > max_name_length:
-            max_name_length = name_length
-            
-        assert code_length <= 255, f"Código muy largo: {grupo['code']}"
-        assert name_length <= 255, f"Nombre muy largo: {grupo['name']}"
+    data = response.json()
+    AssertionCustomerGroupFields.assert_customer_group_root_metadata(data)
+    AssertionCustomerGroupFields.assert_customer_groups_field_length_limits(data)
 
 # Admin > Customer - Group > TC_197 Verificar tiempo de respuesta aceptable (2 seg)
 @pytest.mark.performance
@@ -415,7 +375,10 @@ def test_TC197_verificar_tiempo_respuesta(auth_headers):
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_200(response)
-    assert elapsed < 2.0, f"Tiempo de respuesta muy alto: {elapsed:.2f}s"
+    
+    data = response.json()
+    AssertionCustomerGroupFields.assert_customer_group_root_metadata(data)
+    AssertionCustomerGroupPerformance.assert_response_time(elapsed)
     
 
 # Admin > Customer - Group > TC_198 Verificar headers de respuesta HTTP
@@ -430,9 +393,7 @@ def test_TC198_verificar_headers_respuesta(auth_headers):
     
     AssertionStatusCode.assert_status_code_200(response)
     
-    headers = response.headers
-    
-    content_type = headers.get("Content-Type", "")
-    
-    assert content_type.startswith("application/ld+json"), f"Content-Type incorrecto: {content_type}"
+    data = response.json()
+    AssertionCustomerGroupFields.assert_customer_group_root_metadata(data)
+    AssertionCustomerGroupPerformance.assert_content_type_header(response.headers)
     

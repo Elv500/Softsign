@@ -1,6 +1,6 @@
 import pytest
 
-from src.assertions.customergroup_assertions import AssertionCustomerGroup
+from src.assertions.customergroup_assertions.customer_group_schema_assertions import AssertionCustomerGroup
 from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
