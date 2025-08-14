@@ -23,6 +23,13 @@ class SyliusRequest:
         return response
 
     @staticmethod
+    def put_with_custom_headers(url, headers, payload=None):
+        headers = headers.copy()
+        headers.update({'Content-Type': 'application/ld+json'})
+        response = requests.put(url, headers=headers, json=payload)
+        return response
+
+    @staticmethod
     def delete(url, headers, payload=None):
         headers = headers.copy()
         headers.update({'Content-Type': 'application/json'})

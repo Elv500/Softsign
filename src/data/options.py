@@ -1,5 +1,6 @@
 from faker import Faker
 import time
+import random
 fake = Faker()
 
 def generate_options_source_data():
@@ -37,6 +38,32 @@ def generate_options_source_data_with_values(num_values=1):
         "values": values,
         "translations": {
             "en_US": {
+                "name": fake.word().capitalize()
+            }
+        }
+    }
+
+def generate_updated_options_payload(code, translation_id):
+    fake_name = fake.word().capitalize() + " Option"
+    return {
+        "code": code,
+        "position": random.randint(0, 100),
+        "translations": {
+            "en_US": {
+                "@id": translation_id,
+                "name": fake_name
+            }
+        }
+    }
+
+def generate_updated_options_payload_with_values(code, values, translation_id=None):
+    return {
+        "code": code,
+        "position": fake.random_int(min=0, max=100),
+        "values": values,
+        "translations": {
+            "en_US": {
+                **({"@id": translation_id} if translation_id else {}),
                 "name": fake.word().capitalize()
             }
         }
