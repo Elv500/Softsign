@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "translations": {
+      "type": "object",
+      "properties": {
+        "en_US": {
+          "type": "object",
+          "properties": {
+            "@id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
