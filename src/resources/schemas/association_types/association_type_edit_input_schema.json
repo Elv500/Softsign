@@ -14,15 +14,15 @@
               "type": "string"
             }
           },
-          "required": [
-            "@id"
-          ],
           "additionalProperties": false
         }
       },
       "additionalProperties": {
         "type": "object",
         "properties": {
+          "@id": {
+            "type": "string"
+          },
           "name": {
             "type": "string"
           }

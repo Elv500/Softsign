@@ -34,22 +34,12 @@ def generate_association_type_translations_data(langs=None, overrides=None):
 
     for lang in langs:
         lang_data = overrides.get(lang, {})
+        translations[lang] = {
+            **({"@id": lang_data.get("@id")} if "@id" in lang_data else {}),
+            "name": lang_data.get("name") or fake.word()
+        }
 
-        if lang == "en_US":
-            translations[lang] = {
-                "@id": lang_data.get("@id"),
-                "name": lang_data.get("name") or fake.word()
-            }
-        else:
-            translations[lang] = {
-                "name": lang_data.get("name") or fake.word()
-            }
-
-    data = {
-        "translations": translations
-    }
-
-    return data
+    return {"translations": translations}
 
 
 def build_auth_headers(headers=None, accept=True, content_type=True):
