@@ -303,7 +303,7 @@ def test_TC98_Validar_autenticacion_invalida_error_401():
 
     response = SyliusRequest.get(url, invalid_headers)
     response_data = response.json()
-    log_request_response(url, response, auth_headers)
+    log_request_response(url, response, invalid_headers)
 
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAssociationTypes.assert_invalid_jwt_error(response_data)
