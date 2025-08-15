@@ -1,0 +1,65 @@
+2025-08-15 20:58:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:58:17 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-15 20:58:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:58:17 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/both-else-rate HTTP/1.1" 200 None
+2025-08-15 20:58:17 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-15 20:58:17 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/both-else-rate
+2025-08-15 20:58:17 - INFO - STATUS CODE: 200
+2025-08-15 20:58:17 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/both-else-rate",
+    "@type": "InventorySource",
+    "id": 9993,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/3771",
+        "@type": "InventorySourceAddress",
+        "countryCode": "NL",
+        "street": "380 Marks Shoal",
+        "city": "Port Stephen",
+        "postcode": "95090"
+    },
+    "code": "both-else-rate",
+    "name": "Mckinney, Ortiz and Scott",
+    "priority": 18,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-15 20:58:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:58:18 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/both-else-rate HTTP/1.1" 200 None
+2025-08-15 20:58:18 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-15 20:58:18 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/both-else-rate
+2025-08-15 20:58:18 - INFO - STATUS CODE: 200
+2025-08-15 20:58:18 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUyOTE0NDYsImV4cCI6MTc1NTI5NTA0Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.A1xYbVyekoPiqQG-YT2p2QkPq6SI8G8NwbVM3-QBdvxcksVBEFIfkcHpgsdKENK79_aT3qFZ5j9jjh6iaIA46IFtAVSGD-D5P3qkSmiHlDLQta1eLEvKxr5cayLf3QoI6CEoSNjCovSNnUu6TuS6IBt5GxgRQLeMcDZ9KBis1q_1iBzT_UO6I26ecRnF9MqxLZPA5zjPRAdzA2UijQVT0a5fhFabbGFgN9yclkf5wa0YFzBfFocjcCe6v2zAOP_K5S22wvep-dNuyNYpUAaOM3NJlJXNtCEGbpcDbFD5fSu1gCM-nsnHw4IjCn8wkfS67JNdZVbMbVZmzwYwavQ625r_RxCr6A-C3q1QNSjreYdDsU0L0l0XfkJJLcBb4RypNNE1nSmuhZ-zF68Kiq3DauAvfTawgrjuzK5IslN3lktciDa8GlSCTQYi_Vlx_gKpFuSI8GE3_ArfK3x0duhyDY0iaClx27KmPD6aUdNUAX--oJwej_7HBvUIu98V8O-8yxkcyD5ihRxKU-sjB4S5dlxEvPlZEsD19c69ijpYkc1wmZUTVD5YE8B-lL7jit-qQNRnbQgM67nh8cvLw1x6z4i9owBHa3GZ4kAYhysChwg7su4uaak_fu-MrGx0nVrsRgW6q7rqtcIBoUJaaoB364I4BlG73qzcFyXWO9wXpnU"
+}
+2025-08-15 20:58:18 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "radio-none-nor",
+    "name": "Anderson, Reeves and Carroll",
+    "priority": 19,
+    "address": {
+        "countryCode": "ER",
+        "street": "587 Jennifer Square",
+        "city": "Fishertown",
+        "postcode": "32511"
+    }
+}
+2025-08-15 20:58:18 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/both-else-rate",
+    "@type": "InventorySource",
+    "id": 9993,
+    "address": "/api/v2/admin/inventory-source-addresses/3772",
+    "code": "both-else-rate",
+    "name": "Anderson, Reeves and Carroll",
+    "priority": 19,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-15 20:58:18 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:58:18 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/both-else-rate HTTP/1.1" 204 0

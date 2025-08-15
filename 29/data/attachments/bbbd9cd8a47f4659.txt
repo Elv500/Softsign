@@ -1,0 +1,137 @@
+2025-08-15 20:58:39 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:58:39 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-15 20:58:39 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-15 20:58:39 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-15 20:58:39 - INFO - STATUS CODE: 200
+2025-08-15 20:58:39 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUyOTE0NDYsImV4cCI6MTc1NTI5NTA0Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.A1xYbVyekoPiqQG-YT2p2QkPq6SI8G8NwbVM3-QBdvxcksVBEFIfkcHpgsdKENK79_aT3qFZ5j9jjh6iaIA46IFtAVSGD-D5P3qkSmiHlDLQta1eLEvKxr5cayLf3QoI6CEoSNjCovSNnUu6TuS6IBt5GxgRQLeMcDZ9KBis1q_1iBzT_UO6I26ecRnF9MqxLZPA5zjPRAdzA2UijQVT0a5fhFabbGFgN9yclkf5wa0YFzBfFocjcCe6v2zAOP_K5S22wvep-dNuyNYpUAaOM3NJlJXNtCEGbpcDbFD5fSu1gCM-nsnHw4IjCn8wkfS67JNdZVbMbVZmzwYwavQ625r_RxCr6A-C3q1QNSjreYdDsU0L0l0XfkJJLcBb4RypNNE1nSmuhZ-zF68Kiq3DauAvfTawgrjuzK5IslN3lktciDa8GlSCTQYi_Vlx_gKpFuSI8GE3_ArfK3x0duhyDY0iaClx27KmPD6aUdNUAX--oJwej_7HBvUIu98V8O-8yxkcyD5ihRxKU-sjB4S5dlxEvPlZEsD19c69ijpYkc1wmZUTVD5YE8B-lL7jit-qQNRnbQgM67nh8cvLw1x6z4i9owBHa3GZ4kAYhysChwg7su4uaak_fu-MrGx0nVrsRgW6q7rqtcIBoUJaaoB364I4BlG73qzcFyXWO9wXpnU"
+}
+2025-08-15 20:58:39 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 10,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 8693,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Dignissimos possimus pariatur et. Pariatur odio eos quos sapiente incidunt. Sit eveniet quae aut minima rerum reprehenderit sapiente.",
+            "createdAt": "2025-08-15 20:00:51",
+            "updatedAt": "2025-08-15 20:00:51"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 8694,
+            "code": "other",
+            "name": "Other",
+            "description": "Excepturi eligendi rerum mollitia suscipit. Et aut delectus provident consequatur expedita nobis est. Vitae doloribus repellendus provident assumenda et quibusdam. Impedit nam enim quis et nisi enim. Asperiores repellat dolor voluptas fugit ut aut voluptatum.",
+            "createdAt": "2025-08-15 20:00:51",
+            "updatedAt": "2025-08-15 20:00:51"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-5e8360",
+            "@type": "TaxCategory",
+            "id": 8702,
+            "code": "TAX-5e8360",
+            "name": "Speech",
+            "description": "",
+            "createdAt": "2025-08-15 20:51:21",
+            "updatedAt": "2025-08-15 20:51:21"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-d5601b",
+            "@type": "TaxCategory",
+            "id": 8703,
+            "code": "TAX-d5601b",
+            "name": "   ",
+            "description": "Option statement son executive.",
+            "createdAt": "2025-08-15 20:51:24",
+            "updatedAt": "2025-08-15 20:51:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-0c77f2",
+            "@type": "TaxCategory",
+            "id": 8704,
+            "code": "TAX-0c77f2",
+            "name": "\n\n",
+            "description": "Less bar pretty word history.",
+            "createdAt": "2025-08-15 20:51:25",
+            "updatedAt": "2025-08-15 20:51:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-3d1659",
+            "@type": "TaxCategory",
+            "id": 8705,
+            "code": "TAX-3d1659",
+            "name": " \n ",
+            "description": "Hair air knowledge least full yes right.",
+            "createdAt": "2025-08-15 20:51:25",
+            "updatedAt": "2025-08-15 20:51:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-ebf93a",
+            "@type": "TaxCategory",
+            "id": 8706,
+            "code": "TAX-ebf93a",
+            "name": " \t \n ",
+            "description": "Stay big kid impact.",
+            "createdAt": "2025-08-15 20:51:26",
+            "updatedAt": "2025-08-15 20:51:26"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-2bd9a8",
+            "@type": "TaxCategory",
+            "id": 8718,
+            "code": "TAX-2bd9a8",
+            "name": "CategoriaB",
+            "description": "Management especially sister anything he.",
+            "createdAt": "2025-08-15 20:51:40",
+            "updatedAt": "2025-08-15 20:51:40"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-7c3ea0",
+            "@type": "TaxCategory",
+            "id": 8736,
+            "code": "TAX-7c3ea0",
+            "name": "Peace",
+            "description": "Seven something stage indeed sing.",
+            "createdAt": "2025-08-15 20:58:38",
+            "updatedAt": "2025-08-15 20:58:38"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-d7978d",
+            "@type": "TaxCategory",
+            "id": 8737,
+            "code": "TAX-d7978d",
+            "name": "Best",
+            "description": "Expect movement blood outside from part glass.",
+            "createdAt": "2025-08-15 20:58:38",
+            "updatedAt": "2025-08-15 20:58:38"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+2025-08-15 20:58:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:58:19 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-15 20:58:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:58:19 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/price-beyond-color HTTP/1.1" 200 None
+2025-08-15 20:58:19 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-15 20:58:19 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/price-beyond-color
+2025-08-15 20:58:19 - INFO - STATUS CODE: 200
+2025-08-15 20:58:19 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/price-beyond-color",
+    "@type": "InventorySource",
+    "id": 9995,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/3775",
+        "@type": "InventorySourceAddress",
+        "countryCode": "FM",
+        "street": "94437 Cabrera Burgs Suite 289",
+        "city": "Mcintyrebury",
+        "postcode": "41208"
+    },
+    "code": "price-beyond-color",
+    "name": "Stanton and Sons",
+    "priority": 52,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-15 20:58:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:58:19 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/price-beyond-color HTTP/1.1" 200 None
+2025-08-15 20:58:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:58:19 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/price-beyond-color HTTP/1.1" 204 0
