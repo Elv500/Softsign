@@ -12,7 +12,7 @@ from utils.logger_helpers import log_request_response
 
 #TC361 Admin > Configuration> Tax Category - Actualizacion completa de una categoria con campos validos
 @pytest.mark.smoke
-@pytest.mark.regression
+@pytest.mark.high
 @pytest.mark.functional
 def test_TC361_Editar_Actualizacion_completa_campos_validos(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
@@ -34,7 +34,7 @@ def test_TC361_Editar_Actualizacion_completa_campos_validos(setup_edit_tax_categ
 
 #TC362 Admin > Configuration> Tax Category - Actualizacion de categoria solo con campos obligatorios
 @pytest.mark.smoke
-@pytest.mark.regression
+@pytest.mark.high
 @pytest.mark.functional
 def test_TC362_Editar_campos_obligatorios_tax_category(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
@@ -57,8 +57,9 @@ def test_TC362_Editar_campos_obligatorios_tax_category(setup_edit_tax_category):
 
 #TC398 Admin > Configuration > Tax Category - Validar actualización de categoría con formato inválido en campo nombre
 #TC363 Admin > Configuration> Tax Category - validar que al actualizar categoria no permita guardar campos vacios
-@pytest.mark.regression
+@pytest.mark.high
 @pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.xfail(reason="known issue La app permite espacios vacios y campos invalidos BUG", run=True)
 @pytest.mark.parametrize("invalid_payload,expected_error,expected_status", [
     ({"name": ""}, "Please enter tax category name.", 422),
@@ -67,7 +68,7 @@ def test_TC362_Editar_campos_obligatorios_tax_category(setup_edit_tax_category):
     ({"name": "Válido", "description": ""}, None, 200),
     ({"name": "+"}, "solo dato invalido.", 400) #no ingresar con semantica incorrecta
 ])
-def test_TC363_338_No_permitir_campos_vacios(setup_edit_tax_category, invalid_payload, expected_error, expected_status):
+def test_TC363_398_No_permitir_campos_vacios(setup_edit_tax_category, invalid_payload, expected_error, expected_status):
     headers, tax_category_data = setup_edit_tax_category
     url = EndpointTaxCategory.code(tax_category_data["code"])
     initial_response = SyliusRequest.get(url, headers)
@@ -100,10 +101,11 @@ def test_TC363_338_No_permitir_campos_vacios(setup_edit_tax_category, invalid_pa
 
 
 # TC396 Admin > Configuration > Tax Category - Actualización de categoría sin campos obligatorios
-@pytest.mark.regression
+@pytest.mark.high
 @pytest.mark.negative
+@pytest.mark.functional
 @pytest.mark.xfail(reason="known issue La app permite espacios vacios BUG", run=True)
-def test_TC336_Actualizar_sin_campos_obligatorios_tax_category(setup_edit_tax_category):
+def test_TC396_Actualizar_sin_campos_obligatorios_tax_category(setup_edit_tax_category):
     headers, tax_category_data = setup_edit_tax_category
     url = EndpointTaxCategory.code(tax_category_data["code"])
     initial_response = SyliusRequest.get(url, headers)
@@ -122,7 +124,8 @@ def test_TC336_Actualizar_sin_campos_obligatorios_tax_category(setup_edit_tax_ca
 
 
 #TC397 Admin > Configuration > Tax Category - Validar actualización de categoría con formato inválido en campo nombre
-@pytest.mark.regression
+@pytest.mark.functional
+@pytest.mark.medium
 @pytest.mark.negative
 def test_TC397_Actualizar_nombre_caracter_especial_tax_category(setup_edit_tax_category):
     headers, tax_category_data = setup_edit_tax_category
@@ -143,7 +146,8 @@ def test_TC397_Actualizar_nombre_caracter_especial_tax_category(setup_edit_tax_c
 
 
 # TC398 Admin > Configuration > Tax Category - Intentar actualizar categorías inexistentes
-@pytest.mark.regression
+@pytest.mark.functional
+@pytest.mark.high
 @pytest.mark.negative
 def test_TC398_actualizacion_categoria_inexistente(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
@@ -156,7 +160,8 @@ def test_TC398_actualizacion_categoria_inexistente(setup_edit_tax_category):
 
 
 #TC400 Admin > Configuration> Tax Category - intentar Aztualizar categorias inexistentes
-@pytest.mark.regression
+@pytest.mark.functional
+@pytest.mark.high
 @pytest.mark.negative
 def test_TC400_actualizacion_tax_category_sin_permisos(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
@@ -172,7 +177,8 @@ def test_TC400_actualizacion_tax_category_sin_permisos(setup_edit_tax_category):
 
 
 #TC399 Admin > Configuration> Tax Category - intentar actualizar categoria sin autenticacion
-@pytest.mark.regression
+@pytest.mark.functional
+@pytest.mark.high
 @pytest.mark.negative
 def test_TC399_actualizacion_tax_category_sin_autenticacion(setup_edit_tax_category):
     _, tax_category = setup_edit_tax_category
@@ -187,7 +193,9 @@ def test_TC399_actualizacion_tax_category_sin_autenticacion(setup_edit_tax_categ
 
 
 #TC 401 Admin > Configuration> Tax Category - validar que permita actualizar categoria solo un campo sin que afecte a los demas
-@pytest.mark.regression
+@pytest.mark.functional
+@pytest.mark.high
+@pytest.mark.negative
 def test_TC401_actualizacion_campo_unico_tax_category(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
     url = EndpointTaxCategory.code(tax_category["code"])
@@ -206,7 +214,8 @@ def test_TC401_actualizacion_campo_unico_tax_category(setup_edit_tax_category):
 
 
 #TC417 Admin > Configuration > Tax Category -  validar que no permita editar codigo de categoria
-@pytest.mark.regression
+@pytest.mark.functional
+@pytest.mark.high
 @pytest.mark.negative
 def test_TC417_intento_actualizar_code_tax_category_insatisfactoriamente(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
@@ -225,8 +234,9 @@ def test_TC417_intento_actualizar_code_tax_category_insatisfactoriamente(setup_e
 
 
 
-#TC403A dmin > Configuration> Tax Category - Verificar que no permita actualizar con nombre muy largo sobrepasando los 255 caracteres
-@pytest.mark.regression
+#TC403 Admin > Configuration> Tax Category - Verificar que no permita actualizar con nombre muy largo sobrepasando los 255 caracteres
+@pytest.mark.functional
+@pytest.mark.medium
 @pytest.mark.negative
 def test_TC403_actualizacion_nombre_tax_category_demasiado_largo(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
@@ -240,10 +250,9 @@ def test_TC403_actualizacion_nombre_tax_category_demasiado_largo(setup_edit_tax_
 
 
 #TC404 Admin > Configuration> Tax Category - Validar que no permita actualizar con valores null
-@pytest.mark.regression
 @pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.negative
+@pytest.mark.functional
+@pytest.mark.high
 def test_TC404_actualizacion_tax_category_con_valores_null(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
     url = EndpointTaxCategory.code(tax_category["code"])

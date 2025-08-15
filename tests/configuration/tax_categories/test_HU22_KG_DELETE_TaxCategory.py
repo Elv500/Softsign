@@ -9,7 +9,7 @@ from src.routes.endpoint_tax_category import EndpointTaxCategory
 from utils.logger_helpers import log_request_response
 
 
-#Admin > Configuration  >Tax Category - Eliminar Tax Category exitosamente
+#TC75 Admin > Configuration  >Tax Category - Eliminar Tax Category exitosamente
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC75_eliminar_TaxCategory(auth_headers):
@@ -26,7 +26,7 @@ def test_TC75_eliminar_TaxCategory(auth_headers):
 
 
 
-
+#TC76 Admin > Configuration > Tax Categories  – Validar error al eliminar categoría inexistente
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC76_eliminar_TaxCategories_inexistente(auth_headers):
@@ -38,9 +38,8 @@ def test_TC76_eliminar_TaxCategories_inexistente(auth_headers):
 
 
 
-
+#TC80 Admin > Configuration > Tax Categories – Validar rechazo al eliminar con token inválido o sin permisos
 @pytest.mark.negative
-@pytest.mark.regression
 @pytest.mark.regression
 def test_TC80_eliminar_TaxCategory_sin_token():
     fake_code = "no existe"
@@ -51,7 +50,7 @@ def test_TC80_eliminar_TaxCategory_sin_token():
 
 
 
-
+#TC78 Admin > Configuration > Tax Categories – Validar respuesta sin cuerpo en eliminación exitosa
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC78_eliminar_TaxCategory_respuesta_sin_cuerpo(auth_headers):

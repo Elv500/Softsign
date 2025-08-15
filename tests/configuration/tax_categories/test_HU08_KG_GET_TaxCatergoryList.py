@@ -15,6 +15,7 @@ from utils.logger_helpers import log_request_response
 
 
 #TC_234: Iniciando test - Obtener listado de categoria del endpoit get
+@pytest.mark.high
 @pytest.mark.smoke
 @pytest.mark.functional
 def test_TC234_Ver_listado_de_categorías_de_impuestos_exitosamente(setup_teardown_view_tax_category):
@@ -29,6 +30,7 @@ def test_TC234_Ver_listado_de_categorías_de_impuestos_exitosamente(setup_teardo
 
 
 #C_235: Iniciando test - verificar el codigo de respuesta 200ok al hacer una peticion
+@pytest.mark.high
 @pytest.mark.functional
 @pytest.mark.smoke
 def test_TC235_verificar_codigo_respuesta_200_OK(auth_headers):
@@ -39,6 +41,7 @@ def test_TC235_verificar_codigo_respuesta_200_OK(auth_headers):
 
 
 #TC_237: Iniciando test - verficando la salida del edpoint tenga el formato json
+@pytest.mark.medium
 @pytest.mark.functional
 @pytest.mark.smoke
 def test_TC237_verificar_formato_jsonld(setup_teardown_view_tax_category,auth_headers):
@@ -59,6 +62,7 @@ def test_TC237_verificar_formato_jsonld(setup_teardown_view_tax_category,auth_he
 
 
 #TC_241: Iniciando test Validando la paginacion basica
+@pytest.mark.medium
 @pytest.mark.functional
 @pytest.mark.regression
 def test_TC241_validar_paginacion_basica_tax_category(auth_headers):
@@ -72,6 +76,7 @@ def test_TC241_validar_paginacion_basica_tax_category(auth_headers):
 
 
 #TC_236: Iniciando test - Validar que se puede obtener una categoría de impuesto filtrando por código
+@pytest.mark.high
 @pytest.mark.functional
 @pytest.mark.smoke
 def test_TC236_obtener_categoria_por_codigo(setup_add_tax_category, auth_headers):
@@ -95,6 +100,7 @@ def test_TC236_obtener_categoria_por_codigo(setup_add_tax_category, auth_headers
 
 
 #TC_242: Iniciando verificación de campos no vacíos en tax categories
+@pytest.mark.high
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.xfail(reason="known incumple con la validacion esperada del sistema BUG", run=True)
@@ -114,6 +120,7 @@ def test_TC242_get_tax_categories_valida_code_y_name_no_vacios(setup_teardown_vi
 
 
 #TC_240: Iniciando test obteniendo token invalido o sin autenticacion
+@pytest.mark.high
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.smoke
@@ -125,6 +132,7 @@ def test_TC240_verificar_respuesta_token_invalido_o_sin_autenticacion():
 
 
 #TC_239: Iniciando test funcional obteniendo categoria de impuesto con un codigo inexistente
+@pytest.mark.medium
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.smoke
@@ -139,7 +147,7 @@ def test_TC239_tax_category_no_existe(auth_headers):
 #TC_243: Iniciando test de seguridad para Tax Categories - token expirado
 @pytest.mark.security
 @pytest.mark.negative
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC243_verificar_acceso_token_expirado_tax_category():
     expired_headers = {
         "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTQyMzQzODksImV4cCI6MTc1NDIzNzk4OSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GmVMaimodyHNL8R9wToFg5RoOTwd9Rjf2WVqI_WoZJjAZJ1ykbaBlsbC4TWwPqZuaEpPhFJlRotqezn0_HF7MumgZBK1rvmfX4M7QqQBeeohmZmt8JB0eAjaqn-GtmmWeXrV1bCHxvqb-W1pbPsBQ1leKfnYeUnMPwrhPBsqdOAAEVK0ZWj_LAbgYWlViEZ8uw7qxDR5gzmd6GwKEawLDlMa9Lj5Hz8sG7NuYonU-b38U_mOkN57xr4SSL7DTkdk-q9rIOt-I056tzCKPR2Fx0CxCSO7MMP9pVN9sHMz53srPpHTvwtRCZSgzRB4PGU6mzsmfl4l7sLE72OouL-y_eVqgKJ-7YG5D_ZNp8vgaALqYDzbAySDb_ktFtCCWzhMxasoBOLoCzy3J1URprwxyPcYabntVyr8O42mkIjh1iGH-IASK9M614epkcBcSIbyB5cwkTwfBCAhMwqot6Ec6ozT8VKmfYAZdtisKpVarQrs25CRzdT1kZrRr57FsGgLQgf05K39QLM5wvjEd2i7NiRwCPVeqFVzJgBKN0DQBLK3a7zoN3a_mV7KCGmxoTk0RfYEhv00EpxVjMUWg40Cpg22YlFD1WZNxrN1r4Wt0LqkZfCfwPzD9Ci2X45oDjzPmIu6goaWDaaSgpaIeB6pxy-AuWi3ofhXlZkvlTgEm0"
@@ -151,6 +159,8 @@ def test_TC243_verificar_acceso_token_expirado_tax_category():
 
 
 # TC244 verficar headers de respuesta de tax category
+@pytest.mark.high
+@pytest.mark.negative
 @pytest.mark.functional
 def test_TC244_verificar_headers_respuesta_tax_category(setup_teardown_view_tax_category):
     auth_headers, tax_category1, tax_category2 = setup_teardown_view_tax_category
