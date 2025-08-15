@@ -9,6 +9,8 @@ from src.routes.request import SyliusRequest
 from src.data.inventory import generate_inventory_source_data, create_inventory_data
 from utils.logger_helpers import log_request_response
 
+#from src.routes.client import SyliusClient
+
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.functional
