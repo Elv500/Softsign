@@ -151,14 +151,15 @@ def test_TC254_crear_inventory_con_name_vacio(setup_add_inventory):
 @pytest.mark.negative
 @pytest.mark.xfail(reason="BUG255: Permite ingresar un valor negativo", run=True)
 def test_TC255_crear_inventory_con_prioridad_negativa(setup_add_inventory):
-    headers, _ = setup_add_inventory
+    headers, created_inventories = setup_add_inventory
     payload = generate_inventory_source_data()
     payload["priority"] = -5
     url = EndpointInventory.inventory()
     response = SyliusRequest.post(url, headers, payload)
     log_request_response(url, response, headers, payload)
-    AssertionStatusCode.assert_status_code_422(response)
     response_json = response.json()
+    created_inventories.append(response_json)
+    AssertionStatusCode.assert_status_code_422(response)
     AssertionInventoryErrors.assert_inventory_error_request(response_json, 422, "priority: Priority cannot be negative")
 
     
