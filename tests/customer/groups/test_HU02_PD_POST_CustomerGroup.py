@@ -26,7 +26,7 @@ def test_TC153_crear_grupo_clientes_datos_validos(setup_customer_group_cleanup):
     log_request_response(endpoint, response, headers=auth_headers, payload=data)
 
     AssertionStatusCode.assert_status_code_201(response)
-    AssertionCustomerGroup.assert_customer_group_post_output_schema(response.json())
+    AssertionCustomerGroup.assert_customer_group_output_schema(response.json())
 
     customer_group_code = response.json()["code"]
     add_group_for_cleanup(customer_group_code)

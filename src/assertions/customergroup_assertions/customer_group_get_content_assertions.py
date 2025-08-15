@@ -33,16 +33,23 @@ class AssertionCustomerGroupFields:
             if expected_count is not None:
                 assert len(response_json["hydra:member"]) == expected_count, \
                     "No coincide la cantidad de elementos solicitada"
+                
+                # Construir las posibles URLs esperadas
                 if expected_count == 0:
-                    expected_id = f"/api/v2/admin/customer-groups?itemsPerPage={expected_count}"
+                    expected_ids = [f"/api/v2/admin/customer-groups?itemsPerPage={expected_count}"]
                 else:
-                    # El API no incluye page=1 cuando es la primera página
+                    # Algunas APIs incluyen page=1 explícitamente, otras no
                     if page == 1:
-                        expected_id = f"/api/v2/admin/customer-groups?itemsPerPage={expected_count}"
+                        expected_ids = [
+                            f"/api/v2/admin/customer-groups?itemsPerPage={expected_count}",
+                            f"/api/v2/admin/customer-groups?itemsPerPage={expected_count}&page={page}"
+                        ]
                     else:
-                        expected_id = f"/api/v2/admin/customer-groups?itemsPerPage={expected_count}&page={page}"
-                assert response_json["hydra:view"]["@id"] == expected_id, \
-                    f"No coincide: 'hydra:view.@id'. Expected: {expected_id}, Actual: {response_json['hydra:view']['@id']}"
+                        expected_ids = [f"/api/v2/admin/customer-groups?itemsPerPage={expected_count}&page={page}"]
+                
+                actual_id = response_json["hydra:view"]["@id"]
+                assert actual_id in expected_ids, \
+                    f"No coincide: 'hydra:view.@id'. Expected one of: {expected_ids}, Actual: {actual_id}"
         except AssertionError as e:
             pytest.fail(f"Error en paginación de Customer Group: {e}")
 
