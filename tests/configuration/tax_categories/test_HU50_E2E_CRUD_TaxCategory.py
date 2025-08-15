@@ -7,7 +7,7 @@ from src.routes.endpoint_tax_category import EndpointTaxCategory
 from utils.logger_helpers import log_request_response
 
 @pytest.mark.e2e
-@pytest.mark.taxCategory
+@pytest.mark.tax_category
 def test_full_tax_category_crud_flow(setup_e2e_tax_category):
     auth_headers, created_tax_categories = setup_e2e_tax_category
 
