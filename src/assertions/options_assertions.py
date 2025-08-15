@@ -2,7 +2,7 @@ from src.assertions.schema_assertions import AssertionSchemas
 
 
 class AssertionOptions:
-    MODULE = "Options"
+    MODULE = "options"
 
     @staticmethod
     def assert_options_list_schema(response):
