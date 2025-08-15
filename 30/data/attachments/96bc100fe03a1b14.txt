@@ -1,0 +1,77 @@
+2025-08-15 21:04:21 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 21:04:21 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-15 21:04:21 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-15 21:04:21 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-15 21:04:21 - INFO - STATUS CODE: 200
+2025-08-15 21:04:21 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUyOTE3OTEsImV4cCI6MTc1NTI5NTM5MSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.MPb3iPtrbw2HKWtbk73T2Qu78X_bpSyjy7FnzkTCuVjXUUPAn8mjifPcGagziLwrQSKN6EZOJswEY7W-ozaqMPWKGRV46JAjLVCdR3SX9N-BSqfDzJ_L5mCeU1_M_kdepoIi7zSEbf7EKg7PMWbNcNSbjtqWsPgy_trtmmmWNHOH1Am-A5CJss0_DzKAQfOLHi01ZABIiZuK-pCl8j4exBK8Uw7QdhG4rzKX3t2EvsxE8_0bX2v7wVdIvCIryORGxM64Mz5j684KRiZxIu1UkFMP0GL-GRFoUgYMbybHjkFn4-BIvJ20d3ZGljp-81oqup7-pnff7sNKrxpGE6ljBXNw5n1AwljHuB04A11agFOxjQ1bqd9k8Ilf7cRuG_kS1J1G644Y31Dkl8Hg0sAlJbLmC9yueM0L8UVyOAxCO4swx1StZj0TFJ2ia0aKwczh1edI3h7cs4C9_DZmpvCyHgibJnRC5BeN0-CDUJ1Oh23gdOTRA9PBA1zZVABQk9WRunqqXDxmOcXdzDKVomTkq4a0z3WZw19fHCQ5z0IXVkK1n2Xww9z9D-diUkGcb3tm-VaGwtg697_GMRe8IRzvXH8aOoxoVptgFtz1q5bqmN1j7hOVB3HwybkhaCCQZyLni90w618CAE3QBlrx_evYpDQP9sd4tsrCP6oDPQhx870"
+}
+2025-08-15 21:04:21 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 4,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 8777,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Molestias id quaerat temporibus laborum. Non dicta molestiae quis expedita soluta vero illum magnam. Ut error ratione qui voluptas alias et suscipit.",
+            "createdAt": "2025-08-15 21:00:50",
+            "updatedAt": "2025-08-15 21:00:50"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 8778,
+            "code": "other",
+            "name": "Other",
+            "description": "Voluptas nam cupiditate rem rerum aliquam quibusdam. Ullam facilis amet et. Est vitae et eum veniam doloremque consequatur optio.",
+            "createdAt": "2025-08-15 21:00:50",
+            "updatedAt": "2025-08-15 21:00:50"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-f6133f",
+            "@type": "TaxCategory",
+            "id": 8779,
+            "code": "TAX-f6133f",
+            "name": "Recent",
+            "description": "Region rather tough chance.",
+            "createdAt": "2025-08-15 21:04:20",
+            "updatedAt": "2025-08-15 21:04:20"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-288923",
+            "@type": "TaxCategory",
+            "id": 8780,
+            "code": "TAX-288923",
+            "name": "Congress",
+            "description": "Lead energy voice main.",
+            "createdAt": "2025-08-15 21:04:20",
+            "updatedAt": "2025-08-15 21:04:20"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}
