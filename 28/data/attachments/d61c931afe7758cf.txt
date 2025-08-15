@@ -1,0 +1,2 @@
+2025-08-15 20:54:26 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:54:27 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/api/v2/admin/inventory-sources/hamburg_warehouse HTTP/1.1" 404 None

@@ -1,0 +1,2 @@
+2025-08-15 20:54:41 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-15 20:54:41 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/api/v2/admin/administrators/token HTTP/1.1" 404 None
