@@ -8,6 +8,8 @@ from src.assertions.inventory_assertions.inventory_errors_assertions import Asse
 from src.data.inventory import generate_inventory_source_data, create_inventory_data
 from utils.logger_helpers import log_request_response
 
+#from src.routes.client import SyliusClient
+
 def test_TC69_actualizacion_completa_campos_validos(setup_edit_inventory):
     headers, inventory = setup_edit_inventory
     url = EndpointInventory.code(inventory["code"])

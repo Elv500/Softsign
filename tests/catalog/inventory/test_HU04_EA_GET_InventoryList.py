@@ -8,6 +8,8 @@ from src.routes.endpoint_inventory import EndpointInventory
 from src.routes.request import SyliusRequest
 from utils.logger_helpers import log_request_response
 
+#from src.routes.client import SyliusClient
+
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.regression
@@ -134,7 +136,7 @@ def test_209_215_pagina_e_items_validas(setup_teardown_view_inventory, page, ite
     (-1, 1),
     pytest.param(1.5, 1, marks=pytest.mark.xfail(reason="BUG212: El parámetro page acepta decimales y rompe la URL", run=True)),
     ("uno", 1),
-    (' ', 1),
+    ('', 1),
     (1, -1),
     pytest.param(1, 1.5, marks=pytest.mark.xfail(reason="BUG217: El param itemsPerPage puede ser decimal rompiendo la URL", run=True)),
     pytest.param(1, "uno", marks=pytest.mark.xfail(reason="BUG218: El param itemsPerPage puede ser string rompiendo la URL", run=True)),
@@ -148,186 +150,4 @@ def test_210_219_pagina_e_items_invalidas(setup_teardown_view_inventory, page, i
     log_request_response(url, response, headers)
     AssertionStatusCode.assert_status_code_400(response)
 
-
-"""
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.smoke
-@pytest.mark.regression
-@pytest.mark.security
-def test_TC209_pagina_valida_y_items_validos(auth_headers):
-    params = {
-        'page': 1,
-        'itemsPerPage': 1
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_200(response)
-    response_json = response.json()
-    assert len(response_json["hydra:member"]) == params["itemsPerPage"]
-    expected_id = f"/api/v2/admin/inventory-sources?itemsPerPage={params['itemsPerPage']}&page={params['page']}"
-    assert response_json["hydra:view"]["@id"] == expected_id
-    log_request_response(url, response, auth_headers)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-def test_TC210_pagina_igual_cero_items_validos(auth_headers):
-    params = {'page': 0, 'itemsPerPage': 1}
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_400(response)
-    AssertionInventoryErrors.assert_inventory_error_request(response.json(), 400, "Page should not be less than 1")
-    log_request_response(url, response, auth_headers)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-def test_TC211_pagina_negativa_items_validos(auth_headers):
-    params = {
-        'page': -1,
-        'itemsPerPage': 1
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_400(response)
-    response_json = response.json()
-    assert response_json["@type"] == "hydra:Error"
-    assert response_json["detail"] == "Page should not be less than 1"
-    assert response_json["status"] == 400
-    log_request_response(url, response, auth_headers)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-@pytest.mark.xfail(reason="Knwon issue BUG212: El param page puede ser decimal rompiendo la URL", run=True)
-def test_TC212_pagina_decimal_items_validos(auth_headers):
-    params = {
-        'page': 1.5,
-        'itemsPerPage': 1
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_400(response)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-def test_TC213_pagina_string_items_validos(auth_headers):
-    params = {
-        'page': "uno",
-        'itemsPerPage': 1
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_400(response)
-    response_json = response.json()
-    assert response_json["@type"] == "hydra:Error"
-    assert response_json["detail"] == "Page should not be less than 1"
-    assert response_json["status"] == 400
-    log_request_response(url, response, auth_headers)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-def test_TC214_pagina_vacia_items_validos(auth_headers):
-    params = {
-        'page': '',
-        'itemsPerPage': 1
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_400(response)
-    response_json = response.json()
-    assert response_json["@type"] == "hydra:Error"
-    assert response_json["detail"] == "Page should not be less than 1"
-    assert response_json["status"] == 400
-    log_request_response(url, response, auth_headers)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-def test_TC215_items_igual_cero_pagina_valida(auth_headers):
-    params = {
-        'page': 1,
-        'itemsPerPage': 0
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_200(response)
-    response_json = response.json()
-    assert len(response_json["hydra:member"]) == params["itemsPerPage"]
-    expected_id = f"/api/v2/admin/inventory-sources?itemsPerPage={params['itemsPerPage']}"
-    assert response_json["hydra:view"]["@id"] == expected_id
-    log_request_response(url, response, auth_headers)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-def test_TC216_items_negativo_pagina_valida(auth_headers):
-    params = {
-        'page': 1,
-        'itemsPerPage': -1
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_400(response)
-    response_json = response.json()
-    assert response_json["@type"] == "hydra:Error"
-    assert response_json["detail"] == "Limit should not be less than 0"
-    assert response_json["status"] == 400
-    log_request_response(url, response, auth_headers)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-@pytest.mark.xfail(reason="Knwon issue BUG217: El param itemsPerPage puede ser decimal rompiendo la URL", run=True)
-def test_TC217_items_decimal_pagina_valida(auth_headers):
-    params = {
-        'page': 1,
-        'itemsPerPage': 1.5
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_400(response)
-    log_request_response(url, response, auth_headers)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-@pytest.mark.xfail(reason="Knwon issue BUG218: El param itemsPerPage puede ser string rompiendo la URL", run=True)
-def test_TC218_items_string_pagina_valida(auth_headers):
-    params = {
-        'page': 1,
-        'itemsPerPage': "uno"
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    AssertionStatusCode.assert_status_code_400(response)
-    log_request_response(url, response, auth_headers)
-
-@pytest.mark.functional
-@pytest.mark.negative
-@pytest.mark.regression
-@pytest.mark.security
-@pytest.mark.xfail(reason="Knwon issue BUG219: El param itemsPerPage puede ser vacio rompiendo la URL", run=True)
-def test_TC219_items_vacio_pagina_valida(auth_headers):
-    params = {
-        'page': 1,
-        'itemsPerPage': ''
-    }
-    url = EndpointInventory.inventory_with_params(**params)
-    response = SyliusRequest.get(url, auth_headers)
-    log_request_response(url, response, auth_headers)
-    AssertionStatusCode.assert_status_code_400(response)
-
-"""
+#Revisar linea 139

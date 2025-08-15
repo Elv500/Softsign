@@ -8,6 +8,7 @@ from src.assertions.inventory_assertions.inventory_errors_assertions import Asse
 from src.data.inventory import generate_inventory_source_data
 from utils.logger_helpers import log_request_response
 
+#from src.routes.client import SyliusClient
 
 @pytest.mark.smoke
 @pytest.mark.regression
@@ -112,6 +113,7 @@ def test_TC347_eliminar_inventory_codigo_formato_invalido(setup_create_inventory
     log_request_response(url, response, headers)
     AssertionInventoryErrors.assert_inventory_error_request(response.json(), 404, "Not Found")
 
+#Revisar linea 109
 
 @pytest.mark.security
 @pytest.mark.regression
