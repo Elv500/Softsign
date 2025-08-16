@@ -1,0 +1,166 @@
+2025-08-16 21:22:14 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:22:15 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 200 None
+2025-08-16 21:22:15 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:22:15 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources?itemsPerPage=2 HTTP/1.1" 200 None
+2025-08-16 21:22:15 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:22:15 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources?itemsPerPage=2
+2025-08-16 21:22:15 - INFO - STATUS CODE: 200
+2025-08-16 21:22:15 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkzMzUsImV4cCI6MTc1NTM4MjkzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.nTKx7Y4GJj6QYBUsFpt1MtjXnevS1pNd_qqAOFEH7jgBtOvGWFkCnNc4-hhP39YGeTu0m4NOZ-zr7VQgML3lPBX1fYBo1YpfgJKv9ffZDyCGVwqj9LJuhuBx4t7qHuJnlj6itbeKvZ4lW45NEORPvUAaPgYrk20Z7niqTWFC10aP1Hx7j8ggVgpLC4yrCsWEeiQNy-1_Ew2UqUWXOAob6Qsb8_r0ulyljG76xRls11rb1ErTQwOfgO4_hEIDWznpHbphp1cT2YHRkFI65q_NTfd_eMg9mm2xV0RHaowJcx9VQHSscR4u-Yl0mNX_-cxv_E36CeM97Q6ZNJwwVbhwL-eF6PcimW6psNNGyvGxXhLKUe7qhTuUdzRqSP9itMglIpsZYFb3I9iC7ZGCM76VoKp3FHmxLf-3DMkQS7HNBbJ5OeWAeOUHYM08nrgqfVJr96UIG1i_-wl4pt_lDdCgG8SB8BqviL7I4pnM04zORMz8YkZYoz7q8IqgQpj8sF7unRoOPUfJ8yYUBkV1wvCLEQ_GfcHNoVoiIq2J8K4jfKwqrkHRc-2nYph6AJydYs11-B-e7tiuycz4F8h1FMUPKENSipAhqwDvX3BEkJqEkOqQ9aUOUpi4C52pVK_x-g7A7D8RHZH7wQndTJgtKvtVQ0EpCJQCMWV3kqpHKTRvWvo"
+}
+2025-08-16 21:22:15 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 2,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/inventory-sources/hamburg_warehouse",
+            "@type": "InventorySource",
+            "id": 10479,
+            "address": null,
+            "code": "hamburg_warehouse",
+            "name": "Hamburg Warehouse",
+            "priority": 20,
+            "channels": [
+                "/api/v2/admin/channels/HOME_WEB",
+                "/api/v2/admin/channels/FASHION_WEB"
+            ]
+        },
+        {
+            "@id": "/api/v2/admin/inventory-sources/frankfurt_warehouse",
+            "@type": "InventorySource",
+            "id": 10480,
+            "address": null,
+            "code": "frankfurt_warehouse",
+            "name": "Frankfurt Warehouse",
+            "priority": 10,
+            "channels": [
+                "/api/v2/admin/channels/HOME_WEB",
+                "/api/v2/admin/channels/FASHION_WEB"
+            ]
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/inventory-sources?itemsPerPage=2",
+        "@type": "hydra:PartialCollectionView"
+    }
+}
+2025-08-16 21:22:15 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:22:16 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-16 21:22:16 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:22:16 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources
+2025-08-16 21:22:16 - INFO - STATUS CODE: 201
+2025-08-16 21:22:16 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkzMzUsImV4cCI6MTc1NTM4MjkzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.nTKx7Y4GJj6QYBUsFpt1MtjXnevS1pNd_qqAOFEH7jgBtOvGWFkCnNc4-hhP39YGeTu0m4NOZ-zr7VQgML3lPBX1fYBo1YpfgJKv9ffZDyCGVwqj9LJuhuBx4t7qHuJnlj6itbeKvZ4lW45NEORPvUAaPgYrk20Z7niqTWFC10aP1Hx7j8ggVgpLC4yrCsWEeiQNy-1_Ew2UqUWXOAob6Qsb8_r0ulyljG76xRls11rb1ErTQwOfgO4_hEIDWznpHbphp1cT2YHRkFI65q_NTfd_eMg9mm2xV0RHaowJcx9VQHSscR4u-Yl0mNX_-cxv_E36CeM97Q6ZNJwwVbhwL-eF6PcimW6psNNGyvGxXhLKUe7qhTuUdzRqSP9itMglIpsZYFb3I9iC7ZGCM76VoKp3FHmxLf-3DMkQS7HNBbJ5OeWAeOUHYM08nrgqfVJr96UIG1i_-wl4pt_lDdCgG8SB8BqviL7I4pnM04zORMz8YkZYoz7q8IqgQpj8sF7unRoOPUfJ8yYUBkV1wvCLEQ_GfcHNoVoiIq2J8K4jfKwqrkHRc-2nYph6AJydYs11-B-e7tiuycz4F8h1FMUPKENSipAhqwDvX3BEkJqEkOqQ9aUOUpi4C52pVK_x-g7A7D8RHZH7wQndTJgtKvtVQ0EpCJQCMWV3kqpHKTRvWvo"
+}
+2025-08-16 21:22:16 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "without-beat",
+    "name": "Olson LLC",
+    "priority": 33,
+    "address": {
+        "countryCode": "SG",
+        "street": "1001 Shelley Glen",
+        "city": "East Nicolasmouth",
+        "postcode": "54101"
+    },
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:22:16 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/without-beat",
+    "@type": "InventorySource",
+    "id": 10488,
+    "address": "/api/v2/admin/inventory-source-addresses/4206",
+    "code": "without-beat",
+    "name": "Olson LLC",
+    "priority": 33,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:22:16 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:22:16 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/without-beat HTTP/1.1" 200 None
+2025-08-16 21:22:16 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:22:16 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/without-beat
+2025-08-16 21:22:16 - INFO - STATUS CODE: 200
+2025-08-16 21:22:16 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkzMzUsImV4cCI6MTc1NTM4MjkzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.nTKx7Y4GJj6QYBUsFpt1MtjXnevS1pNd_qqAOFEH7jgBtOvGWFkCnNc4-hhP39YGeTu0m4NOZ-zr7VQgML3lPBX1fYBo1YpfgJKv9ffZDyCGVwqj9LJuhuBx4t7qHuJnlj6itbeKvZ4lW45NEORPvUAaPgYrk20Z7niqTWFC10aP1Hx7j8ggVgpLC4yrCsWEeiQNy-1_Ew2UqUWXOAob6Qsb8_r0ulyljG76xRls11rb1ErTQwOfgO4_hEIDWznpHbphp1cT2YHRkFI65q_NTfd_eMg9mm2xV0RHaowJcx9VQHSscR4u-Yl0mNX_-cxv_E36CeM97Q6ZNJwwVbhwL-eF6PcimW6psNNGyvGxXhLKUe7qhTuUdzRqSP9itMglIpsZYFb3I9iC7ZGCM76VoKp3FHmxLf-3DMkQS7HNBbJ5OeWAeOUHYM08nrgqfVJr96UIG1i_-wl4pt_lDdCgG8SB8BqviL7I4pnM04zORMz8YkZYoz7q8IqgQpj8sF7unRoOPUfJ8yYUBkV1wvCLEQ_GfcHNoVoiIq2J8K4jfKwqrkHRc-2nYph6AJydYs11-B-e7tiuycz4F8h1FMUPKENSipAhqwDvX3BEkJqEkOqQ9aUOUpi4C52pVK_x-g7A7D8RHZH7wQndTJgtKvtVQ0EpCJQCMWV3kqpHKTRvWvo"
+}
+2025-08-16 21:22:16 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/without-beat",
+    "@type": "InventorySource",
+    "id": 10488,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4206",
+        "@type": "InventorySourceAddress",
+        "countryCode": "SG",
+        "street": "1001 Shelley Glen",
+        "city": "East Nicolasmouth",
+        "postcode": "54101"
+    },
+    "code": "without-beat",
+    "name": "Olson LLC",
+    "priority": 33,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:22:16 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:22:16 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/without-beat HTTP/1.1" 200 None
+2025-08-16 21:22:16 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:22:16 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/without-beat
+2025-08-16 21:22:16 - INFO - STATUS CODE: 200
+2025-08-16 21:22:16 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkzMzUsImV4cCI6MTc1NTM4MjkzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.nTKx7Y4GJj6QYBUsFpt1MtjXnevS1pNd_qqAOFEH7jgBtOvGWFkCnNc4-hhP39YGeTu0m4NOZ-zr7VQgML3lPBX1fYBo1YpfgJKv9ffZDyCGVwqj9LJuhuBx4t7qHuJnlj6itbeKvZ4lW45NEORPvUAaPgYrk20Z7niqTWFC10aP1Hx7j8ggVgpLC4yrCsWEeiQNy-1_Ew2UqUWXOAob6Qsb8_r0ulyljG76xRls11rb1ErTQwOfgO4_hEIDWznpHbphp1cT2YHRkFI65q_NTfd_eMg9mm2xV0RHaowJcx9VQHSscR4u-Yl0mNX_-cxv_E36CeM97Q6ZNJwwVbhwL-eF6PcimW6psNNGyvGxXhLKUe7qhTuUdzRqSP9itMglIpsZYFb3I9iC7ZGCM76VoKp3FHmxLf-3DMkQS7HNBbJ5OeWAeOUHYM08nrgqfVJr96UIG1i_-wl4pt_lDdCgG8SB8BqviL7I4pnM04zORMz8YkZYoz7q8IqgQpj8sF7unRoOPUfJ8yYUBkV1wvCLEQ_GfcHNoVoiIq2J8K4jfKwqrkHRc-2nYph6AJydYs11-B-e7tiuycz4F8h1FMUPKENSipAhqwDvX3BEkJqEkOqQ9aUOUpi4C52pVK_x-g7A7D8RHZH7wQndTJgtKvtVQ0EpCJQCMWV3kqpHKTRvWvo"
+}
+2025-08-16 21:22:16 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "usually-various",
+    "name": "White and Sons",
+    "priority": 64,
+    "address": {
+        "countryCode": "SG",
+        "street": "851 Mallory Fork",
+        "city": "West Alyssa",
+        "postcode": "96288"
+    },
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:22:16 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/without-beat",
+    "@type": "InventorySource",
+    "id": 10488,
+    "address": "/api/v2/admin/inventory-source-addresses/4207",
+    "code": "without-beat",
+    "name": "White and Sons",
+    "priority": 33,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:22:16 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:22:17 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/without-beat HTTP/1.1" 204 0
+2025-08-16 21:22:17 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:22:17 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/without-beat
+2025-08-16 21:22:17 - INFO - STATUS CODE: 204
+2025-08-16 21:22:17 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkzMzUsImV4cCI6MTc1NTM4MjkzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.nTKx7Y4GJj6QYBUsFpt1MtjXnevS1pNd_qqAOFEH7jgBtOvGWFkCnNc4-hhP39YGeTu0m4NOZ-zr7VQgML3lPBX1fYBo1YpfgJKv9ffZDyCGVwqj9LJuhuBx4t7qHuJnlj6itbeKvZ4lW45NEORPvUAaPgYrk20Z7niqTWFC10aP1Hx7j8ggVgpLC4yrCsWEeiQNy-1_Ew2UqUWXOAob6Qsb8_r0ulyljG76xRls11rb1ErTQwOfgO4_hEIDWznpHbphp1cT2YHRkFI65q_NTfd_eMg9mm2xV0RHaowJcx9VQHSscR4u-Yl0mNX_-cxv_E36CeM97Q6ZNJwwVbhwL-eF6PcimW6psNNGyvGxXhLKUe7qhTuUdzRqSP9itMglIpsZYFb3I9iC7ZGCM76VoKp3FHmxLf-3DMkQS7HNBbJ5OeWAeOUHYM08nrgqfVJr96UIG1i_-wl4pt_lDdCgG8SB8BqviL7I4pnM04zORMz8YkZYoz7q8IqgQpj8sF7unRoOPUfJ8yYUBkV1wvCLEQ_GfcHNoVoiIq2J8K4jfKwqrkHRc-2nYph6AJydYs11-B-e7tiuycz4F8h1FMUPKENSipAhqwDvX3BEkJqEkOqQ9aUOUpi4C52pVK_x-g7A7D8RHZH7wQndTJgtKvtVQ0EpCJQCMWV3kqpHKTRvWvo"
+}
+2025-08-16 21:22:17 - DEBUG - RESPONSE: No content (empty body)
