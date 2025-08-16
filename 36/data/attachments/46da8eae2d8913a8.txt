@@ -1,0 +1,67 @@
+2025-08-16 20:17:10 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:17:10 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-16 20:17:10 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:17:10 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/reflect-its-mother HTTP/1.1" 200 None
+2025-08-16 20:17:10 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 20:17:10 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/reflect-its-mother
+2025-08-16 20:17:10 - INFO - STATUS CODE: 200
+2025-08-16 20:17:10 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/reflect-its-mother",
+    "@type": "InventorySource",
+    "id": 10420,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4137",
+        "@type": "InventorySourceAddress",
+        "countryCode": "PA",
+        "street": "4169 Jenna Mount",
+        "city": "New Elizabeth",
+        "postcode": "13950"
+    },
+    "code": "reflect-its-mother",
+    "name": "Chapman-Lane",
+    "priority": 75,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 20:17:10 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:17:11 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/reflect-its-mother HTTP/1.1" 200 None
+2025-08-16 20:17:11 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 20:17:11 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/reflect-its-mother
+2025-08-16 20:17:11 - INFO - STATUS CODE: 200
+2025-08-16 20:17:11 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzU0MTcsImV4cCI6MTc1NTM3OTAxNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.G7roe7BFu4zkx71jBBfatyKaIdM85XEv6m1WCp_8noK9fYBKmPxBR52wXwUpO83YT5KeC5qhI_hyyt7y_dCsWPynryosnRBphLb0D9E4dN0Wdxf9Uzk_54ZQpnhFve-LIS1Ix70Mpl95yDiobZ3Ypl8643ucmde5Jz3bROc0b1vGNWXNjix2OeVrmyQujU6rOuzaDVBfmPDeaMklaOJc19PyE8IVixqCfTKjJcQncjGPtpvEXAG49HlDkHe-N5J2ym4VIqZM3FaDItzGp1j3Ss2ZYoDn7UDR_6dEFcI6D-nQkZx0f44Z99mO07R-jXH4sLHyUW6jR4UHZD4nL_C-_Pzsi32U7Tfw0GP7FPKU9wzrw5E2oM7QkmoRgnAbGs2s8V2ks2LqrHd-6Tr3gjzXViDZRIf_aYVNuL9z8cxllRXV1GGcMcZ2DOwSxr-ij6-HfW8UWRB_RL92O6Z9leMhXqLodevLrVQAas_KvxBuRnwellY0DLUfjTWa0JzbYDTSM2qJntSZM9Bvvycy-lg364hFiH5R8BDWkDYCsEhQLLWhEVFBDwPbseopdQQRiFnVK-FVhosOyOrLhP_DFBQx1MDMSRRk9bpNIZqHZ3aeG5CAfEO6-KopmeHphWOwmAxLymMs8vjEzm7UVo5bnBKR8b-ikb41DxNbGItUKhHa7ow"
+}
+2025-08-16 20:17:11 - DEBUG - PAYLOAD REQUEST:
+{
+    "name": "Hopkins, Arellano and Price",
+    "priority": 12,
+    "address": {
+        "countryCode": "BI",
+        "street": "328 Sandra Ridges",
+        "city": "Lake James",
+        "postcode": "05642"
+    },
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 20:17:11 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/reflect-its-mother",
+    "@type": "InventorySource",
+    "id": 10420,
+    "address": "/api/v2/admin/inventory-source-addresses/4138",
+    "code": "reflect-its-mother",
+    "name": "Hopkins, Arellano and Price",
+    "priority": 12,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 20:17:11 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:17:11 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/reflect-its-mother HTTP/1.1" 204 0
