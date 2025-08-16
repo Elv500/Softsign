@@ -8,8 +8,7 @@ from utils.logger_helpers import log_request_response
 
 @pytest.mark.e2e
 @pytest.mark.functional
-@pytest.mark.smoke
-@pytest.mark.regression
+@pytest.mark.attributes
 # Admin> Catalog> Attributes> TC_416: Este  E2E flujo de creacion, listar, eliminar y validar que se elimine el atributo.
 def test_TC416_e2e_attributes(auth_headers):
     # Crear nuevo atributo (POST)
