@@ -1,0 +1,26 @@
+2025-08-16 20:30:31 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:30:32 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-16 20:30:32 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:30:32 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/codigo_inexistente HTTP/1.1" 404 None
+2025-08-16 20:30:32 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 20:30:32 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/codigo_inexistente
+2025-08-16 20:30:32 - INFO - STATUS CODE: 404
+2025-08-16 20:30:32 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzYyMjAsImV4cCI6MTc1NTM3OTgyMCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.FdaHAUVTvsDRlGyVMBa0yByVCZOOxZLxamfOF4H43QuFy4Qmrrl7jWs_SsjefGxQOf21cXps71iASiOElcs_Q2kQnDZDN3Q266LuKR1D1qroSO-lZrG41wWug3I5JPVdBWubASozJED-jBL1rRTdKsYjWCS6Kne-umFgZ55w0v-4ecvuFaICROOhCZn_u572op8i2dDCC6l_lfFR5cX-hcJmD3rt4gCmO5k26yjrpJ7pZgB32GMVUPjEPVCe_JVpxZxI9m-5EQfXqV28LwoRCRQtcWI9clG89JnR5BpSsGcznadsDGWRGoys5pocyg_trXvF7lxyeIqCgzZ2G3f6BKaY_EQg8II8JDMFsNZnQasTB8u1-TVbVJj5qksQlmoN6mI3QeOGDR4gTwTjLtZWCO5UB1T129N1oWxUIoFjLuiMXCA8EhXnEC1ZSV3Q76BB8tXazLdL8rJtTI2BMblWV5GASw1nZmHw1F5USzqhdivFgzbgvdkehTYRNAAuRfpJckzjjMrvQfuohPNvvTjQ0q3utp9zsoVlSiBLdXbeBZGfKwjX71av4EScSXJeH5ZgcTgJ3nf3XRc_bHaRFp-bXWwxKFtNsnIL_MsGhsmbArPfGMI7S6ZZjUym2W7UmBYh9XArWOS47x_HI99_12UT-YelD6TVm_V9_YORpag5_qk"
+}
+2025-08-16 20:30:32 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "description": "Not Found",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
+2025-08-16 20:30:32 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:30:32 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/plant-interest-six HTTP/1.1" 204 0
