@@ -1,0 +1,166 @@
+2025-08-16 21:21:01 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:21:01 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 200 None
+2025-08-16 21:21:01 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:21:02 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources?itemsPerPage=2 HTTP/1.1" 200 None
+2025-08-16 21:21:02 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:21:02 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources?itemsPerPage=2
+2025-08-16 21:21:02 - INFO - STATUS CODE: 200
+2025-08-16 21:21:02 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkyNjEsImV4cCI6MTc1NTM4Mjg2MSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IQXqxtODQJrw9GWYTMPaUBgWamcMUUT-pae6C5kgFO2IF8w9iGmsUN08g8spomW6Rc_5dwyhY6yQ3g9ivFV0arcwxIc0uU-ZJEVyUH0te87UDbCyStMG4dcT_kRO6XnKQjQQWiN2qgaiZifntStszWRFmZ6RDUR1bV4voQYNQ5i7aeBVDc31xQdvxMyYGAKZQ1qTnh74EDtYR4KZHkLgQbVWRDAgTkoQTTeBvkVCGgVnNujY8poUV-hYPU7H1JEU2M8JIrClmjCzZxtyGncsAbhf_GGeh39TkQKahcext1euhqAttEvsuppp86aIYtxwZ4BKJhwowMEyBNZ7yIebphwB00-rCudv46Lwv5AUWDou65Wv0Exh73D5gfntDh7yChIGlvIJr94oUCsunUY0MfTLhbaf-HEvAw-4AfrOiaD8AIInwCRNqtJiAClvCzos8t6HJlbyBd9XGp57TfOmqcDJ6afeRqMJfMvVPHaOyGEdgLPSSYd37YA7xVC255XBbdGq1c66dCyQstzm3k3R7dq4nqBF3vcuelk9oBmycGnyDJjqvsF_dObLbgBur5zmKZuxAsV3jgZvb2eVCkZHutkBge_IjT_PYd2kKZxJQQKqaUne3i4ei3ZS0WmwKgLthWMn1V8XP3fpuoFsV6g8mZ-g1ogsuD9GV6oZONaDLNc"
+}
+2025-08-16 21:21:02 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 2,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/inventory-sources/hamburg_warehouse",
+            "@type": "InventorySource",
+            "id": 10479,
+            "address": null,
+            "code": "hamburg_warehouse",
+            "name": "Hamburg Warehouse",
+            "priority": 20,
+            "channels": [
+                "/api/v2/admin/channels/HOME_WEB",
+                "/api/v2/admin/channels/FASHION_WEB"
+            ]
+        },
+        {
+            "@id": "/api/v2/admin/inventory-sources/frankfurt_warehouse",
+            "@type": "InventorySource",
+            "id": 10480,
+            "address": null,
+            "code": "frankfurt_warehouse",
+            "name": "Frankfurt Warehouse",
+            "priority": 10,
+            "channels": [
+                "/api/v2/admin/channels/HOME_WEB",
+                "/api/v2/admin/channels/FASHION_WEB"
+            ]
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/inventory-sources?itemsPerPage=2",
+        "@type": "hydra:PartialCollectionView"
+    }
+}
+2025-08-16 21:21:02 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:21:02 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-16 21:21:02 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:21:02 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources
+2025-08-16 21:21:02 - INFO - STATUS CODE: 201
+2025-08-16 21:21:02 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkyNjEsImV4cCI6MTc1NTM4Mjg2MSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IQXqxtODQJrw9GWYTMPaUBgWamcMUUT-pae6C5kgFO2IF8w9iGmsUN08g8spomW6Rc_5dwyhY6yQ3g9ivFV0arcwxIc0uU-ZJEVyUH0te87UDbCyStMG4dcT_kRO6XnKQjQQWiN2qgaiZifntStszWRFmZ6RDUR1bV4voQYNQ5i7aeBVDc31xQdvxMyYGAKZQ1qTnh74EDtYR4KZHkLgQbVWRDAgTkoQTTeBvkVCGgVnNujY8poUV-hYPU7H1JEU2M8JIrClmjCzZxtyGncsAbhf_GGeh39TkQKahcext1euhqAttEvsuppp86aIYtxwZ4BKJhwowMEyBNZ7yIebphwB00-rCudv46Lwv5AUWDou65Wv0Exh73D5gfntDh7yChIGlvIJr94oUCsunUY0MfTLhbaf-HEvAw-4AfrOiaD8AIInwCRNqtJiAClvCzos8t6HJlbyBd9XGp57TfOmqcDJ6afeRqMJfMvVPHaOyGEdgLPSSYd37YA7xVC255XBbdGq1c66dCyQstzm3k3R7dq4nqBF3vcuelk9oBmycGnyDJjqvsF_dObLbgBur5zmKZuxAsV3jgZvb2eVCkZHutkBge_IjT_PYd2kKZxJQQKqaUne3i4ei3ZS0WmwKgLthWMn1V8XP3fpuoFsV6g8mZ-g1ogsuD9GV6oZONaDLNc"
+}
+2025-08-16 21:21:02 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "democrat-part-bag",
+    "name": "Oconnor, Garcia and Bell",
+    "priority": 28,
+    "address": {
+        "countryCode": "GM",
+        "street": "17359 Mitchell Parks Apt. 133",
+        "city": "Davidmouth",
+        "postcode": "41979"
+    },
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:21:02 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/democrat-part-bag",
+    "@type": "InventorySource",
+    "id": 10487,
+    "address": "/api/v2/admin/inventory-source-addresses/4204",
+    "code": "democrat-part-bag",
+    "name": "Oconnor, Garcia and Bell",
+    "priority": 28,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:21:02 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:21:02 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/democrat-part-bag HTTP/1.1" 200 None
+2025-08-16 21:21:02 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:21:02 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/democrat-part-bag
+2025-08-16 21:21:02 - INFO - STATUS CODE: 200
+2025-08-16 21:21:02 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkyNjEsImV4cCI6MTc1NTM4Mjg2MSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IQXqxtODQJrw9GWYTMPaUBgWamcMUUT-pae6C5kgFO2IF8w9iGmsUN08g8spomW6Rc_5dwyhY6yQ3g9ivFV0arcwxIc0uU-ZJEVyUH0te87UDbCyStMG4dcT_kRO6XnKQjQQWiN2qgaiZifntStszWRFmZ6RDUR1bV4voQYNQ5i7aeBVDc31xQdvxMyYGAKZQ1qTnh74EDtYR4KZHkLgQbVWRDAgTkoQTTeBvkVCGgVnNujY8poUV-hYPU7H1JEU2M8JIrClmjCzZxtyGncsAbhf_GGeh39TkQKahcext1euhqAttEvsuppp86aIYtxwZ4BKJhwowMEyBNZ7yIebphwB00-rCudv46Lwv5AUWDou65Wv0Exh73D5gfntDh7yChIGlvIJr94oUCsunUY0MfTLhbaf-HEvAw-4AfrOiaD8AIInwCRNqtJiAClvCzos8t6HJlbyBd9XGp57TfOmqcDJ6afeRqMJfMvVPHaOyGEdgLPSSYd37YA7xVC255XBbdGq1c66dCyQstzm3k3R7dq4nqBF3vcuelk9oBmycGnyDJjqvsF_dObLbgBur5zmKZuxAsV3jgZvb2eVCkZHutkBge_IjT_PYd2kKZxJQQKqaUne3i4ei3ZS0WmwKgLthWMn1V8XP3fpuoFsV6g8mZ-g1ogsuD9GV6oZONaDLNc"
+}
+2025-08-16 21:21:02 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/democrat-part-bag",
+    "@type": "InventorySource",
+    "id": 10487,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4204",
+        "@type": "InventorySourceAddress",
+        "countryCode": "GM",
+        "street": "17359 Mitchell Parks Apt. 133",
+        "city": "Davidmouth",
+        "postcode": "41979"
+    },
+    "code": "democrat-part-bag",
+    "name": "Oconnor, Garcia and Bell",
+    "priority": 28,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:21:02 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:21:03 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/democrat-part-bag HTTP/1.1" 200 None
+2025-08-16 21:21:03 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:21:03 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/democrat-part-bag
+2025-08-16 21:21:03 - INFO - STATUS CODE: 200
+2025-08-16 21:21:03 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkyNjEsImV4cCI6MTc1NTM4Mjg2MSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IQXqxtODQJrw9GWYTMPaUBgWamcMUUT-pae6C5kgFO2IF8w9iGmsUN08g8spomW6Rc_5dwyhY6yQ3g9ivFV0arcwxIc0uU-ZJEVyUH0te87UDbCyStMG4dcT_kRO6XnKQjQQWiN2qgaiZifntStszWRFmZ6RDUR1bV4voQYNQ5i7aeBVDc31xQdvxMyYGAKZQ1qTnh74EDtYR4KZHkLgQbVWRDAgTkoQTTeBvkVCGgVnNujY8poUV-hYPU7H1JEU2M8JIrClmjCzZxtyGncsAbhf_GGeh39TkQKahcext1euhqAttEvsuppp86aIYtxwZ4BKJhwowMEyBNZ7yIebphwB00-rCudv46Lwv5AUWDou65Wv0Exh73D5gfntDh7yChIGlvIJr94oUCsunUY0MfTLhbaf-HEvAw-4AfrOiaD8AIInwCRNqtJiAClvCzos8t6HJlbyBd9XGp57TfOmqcDJ6afeRqMJfMvVPHaOyGEdgLPSSYd37YA7xVC255XBbdGq1c66dCyQstzm3k3R7dq4nqBF3vcuelk9oBmycGnyDJjqvsF_dObLbgBur5zmKZuxAsV3jgZvb2eVCkZHutkBge_IjT_PYd2kKZxJQQKqaUne3i4ei3ZS0WmwKgLthWMn1V8XP3fpuoFsV6g8mZ-g1ogsuD9GV6oZONaDLNc"
+}
+2025-08-16 21:21:03 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "throw-myself-then",
+    "name": "Dillon-Perry",
+    "priority": 20,
+    "address": {
+        "countryCode": "SC",
+        "street": "585 Williams Lake Apt. 741",
+        "city": "New Kimberlychester",
+        "postcode": "07425"
+    },
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:21:03 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/democrat-part-bag",
+    "@type": "InventorySource",
+    "id": 10487,
+    "address": "/api/v2/admin/inventory-source-addresses/4205",
+    "code": "democrat-part-bag",
+    "name": "Dillon-Perry",
+    "priority": 20,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:21:03 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:21:03 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/democrat-part-bag HTTP/1.1" 204 0
+2025-08-16 21:21:03 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:21:03 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/democrat-part-bag
+2025-08-16 21:21:03 - INFO - STATUS CODE: 204
+2025-08-16 21:21:03 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzkyNjEsImV4cCI6MTc1NTM4Mjg2MSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IQXqxtODQJrw9GWYTMPaUBgWamcMUUT-pae6C5kgFO2IF8w9iGmsUN08g8spomW6Rc_5dwyhY6yQ3g9ivFV0arcwxIc0uU-ZJEVyUH0te87UDbCyStMG4dcT_kRO6XnKQjQQWiN2qgaiZifntStszWRFmZ6RDUR1bV4voQYNQ5i7aeBVDc31xQdvxMyYGAKZQ1qTnh74EDtYR4KZHkLgQbVWRDAgTkoQTTeBvkVCGgVnNujY8poUV-hYPU7H1JEU2M8JIrClmjCzZxtyGncsAbhf_GGeh39TkQKahcext1euhqAttEvsuppp86aIYtxwZ4BKJhwowMEyBNZ7yIebphwB00-rCudv46Lwv5AUWDou65Wv0Exh73D5gfntDh7yChIGlvIJr94oUCsunUY0MfTLhbaf-HEvAw-4AfrOiaD8AIInwCRNqtJiAClvCzos8t6HJlbyBd9XGp57TfOmqcDJ6afeRqMJfMvVPHaOyGEdgLPSSYd37YA7xVC255XBbdGq1c66dCyQstzm3k3R7dq4nqBF3vcuelk9oBmycGnyDJjqvsF_dObLbgBur5zmKZuxAsV3jgZvb2eVCkZHutkBge_IjT_PYd2kKZxJQQKqaUne3i4ei3ZS0WmwKgLthWMn1V8XP3fpuoFsV6g8mZ-g1ogsuD9GV6oZONaDLNc"
+}
+2025-08-16 21:21:03 - DEBUG - RESPONSE: No content (empty body)
