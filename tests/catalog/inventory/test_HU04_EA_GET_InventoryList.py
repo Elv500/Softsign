@@ -116,6 +116,7 @@ def test_TC208_fuente_con_token_expirado(setup_teardown_view_inventory):
 # TC-215 – Admin > Catalog > Inventory - Verificar error al usar cantidad de elementos igual a 0 y página válida.
 @pytest.mark.functional
 @pytest.mark.smoke
+@pytest.mark.domain
 @pytest.mark.security
 @pytest.mark.high
 @pytest.mark.parametrize("page, itemsPerPage", [
@@ -148,6 +149,7 @@ def test_209_215_pagina_e_items_validas(setup_teardown_view_inventory, page, ite
 # TC-219 – Admin > Catalog > Inventory - Verificar error al usar valor vacío como cantidad de elementos y página válida.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.domain
 @pytest.mark.security
 @pytest.mark.medium
 @pytest.mark.parametrize("page, itemsPerPage", [

@@ -193,7 +193,7 @@ Nos permitirán realizar las pruebas exploratorias, especialmente aquellas con m
 ### GitHub Actions
 Se integrará para ejecutar las pruebas automatizadas de forma continua al realizar cambios en el repositorio, asegurando así la calidad desde las primeras etapas.
 
-Aplicando CI/CD, donde CI será la ejecución automatica al hacer push a la rama development o manual desde la rama main y generar el reporte respectivo. Y CD en nuestros terminos, será el despliegue automático del reporte para su respectiva visualización en tiempo real al terminar la ejecución.
+Aplicando CI, donde CI será la ejecución automatica al hacer push a la rama development o manual desde la rama main y generar el reporte respectivo. Seguidamente será el despliegue automático del reporte para su respectiva visualización en tiempo real al terminar la ejecución.
 
 ### VS Code / PyCharm
 Entorno de desarrollo (IDE) utilizado para escribir y organizar los scripts de pruebas en Python.
@@ -248,6 +248,12 @@ Pruebas end-to-end para validar el flujo completo del módulo Configuration – 
 ### Customer Group
 Pruebas end-to-end para validar el flujo completo del módulo Customer – Group, asegurando la correcta gestión de grupos de clientes.
 
+### Options E2E Testing
+Validación de extremo a extremo del flujo completo del módulo Catalog - Options, garantizando la correcta configuración e impacto en el sistema.
+
+### Attributes E2E Testing
+Validación de extremo a extremo del flujo completo del módulo Catalog - Attributes, garantizando la correcta configuración e impacto en el sistema.
+
 ## Metodología
 
 **Scrum** es un marco de trabajo (framework) ágil utilizado para gestionar y desarrollar proyectos, especialmente en el ámbito del desarrollo de software. Se basa en ciclos cortos e iterativos llamados sprints, que suelen durar de una a cuatro semanas, en los cuales se entrega una parte funcional del producto.
@@ -265,7 +271,7 @@ Su objetivo principal es mejorar la eficiencia del equipo, fomentar la transpare
 | POST | `/api/v2/admin/inventory-sources` | Elvis Alvarez |
 | GET | `/api/v2/admin/inventory-sources/{code}` | Elvis Alvarez |
 | GET | `/api/v2/admin/product-attributes` | Liliana Quiroga  |
-| POST | `/api/v2/admin/product-attributes/` | Liliana Quiroga  |
+| PUT | `/api/v2/admin/product-attributes/` | Liliana Quiroga  |
 | GET | `/api/v2/admin/product-attributes/{code}` | Liliana Quiroga  |
 | GET | `/api/v2/admin/product-options` | Erika Soto |
 | POST | `/api/v2/admin/product-options` | Erika Soto |
@@ -305,7 +311,7 @@ Su objetivo principal es mejorar la eficiencia del equipo, fomentar la transpare
 |----|--------|-------------|
 | PUT | `/api/v2/admin/inventory-sources/{code}` | Elvis Alvarez |
 | DELETE | `/api/v2/admin/inventory-sources/{code}` | Elvis Alvarez |
-| PUT | `/api/v2/admin/product-attributes/{code}` | Liliana Quiroga  |
+| POST | `/api/v2/admin/product-attributes/{code}` | Liliana Quiroga  |
 | DELETE | `/api/v2/admin/product-attributes/{code}` | Liliana Quiroga  |
 | PUT | `/api/v2/admin/product-options/{code}` | Erika Soto |
 | DELETE | `/api/v2/admin/product-options/{code}` | Erika Soto |
@@ -322,16 +328,20 @@ Su objetivo principal es mejorar la eficiencia del equipo, fomentar la transpare
 |----|--------|-------------|
 | 1 | HU-06: Eliminar una fuente de inventario existente | Elvis Alvarez |
 | 2 | HU-15: Actualizar fuente de inventario | Elvis Alvarez |
-| 3 | HU-13: Crear un nuevo attribute | Liliana Quiroga |
-| 4 | HU-23: Eliminar un attribute existente | Liliana Quiroga |
-| 5 | HU-03: Actualizar "Customer - Group" existente | Pablo Delgadillo |
-| 6 | HU-16: Eliminar "Customer-Group" existente | Pablo Delgadillo |
-| 7 | HU25: Actualizar una opción de producto | Erika Soto |
-| 8 | HU26: Eliminar una opción de producto | Erika Soto |
-| 9 | HU27: Actualizar un tipo de Asociación de productos existente | Edwin Navia |
-| 10 | HU28: Eliminar un tipo de Asociación de productos existente | Edwin Navia |
-| 11 | HU-22: Eliminar tax Category | Kevin Gutierrez |
-| 12 | HU-29: Editar Tax Category | Kevin Gutierrez |
+| 3 | HU-31: Feature Inventory (E2E) | Elvis Alvarez |
+| 4 | HU-12: Actualizar la información de un registro en Attribute | Liliana Quiroga (Carry Over) |
+| 5 | HU-13: Crear un nuevo attribute | Liliana Quiroga |
+| 6 | HU-23: Eliminar un attribute existente | Liliana Quiroga |
+| 7 | HU-03: Actualizar "Customer - Group" existente | Pablo Delgadillo |
+| 8 | HU-16: Eliminar "Customer-Group" existente | Pablo Delgadillo |
+| 9 | HU-30: E2E “Customer-Group”  | Pablo Delgadillo |
+| 10 | HU25: Actualizar una opción de producto | Erika Soto |
+| 11 | HU26: Eliminar una opción de producto | Erika Soto |
+| 12 | HU27: Actualizar un tipo de Asociación de productos existente | Edwin Navia |
+| 13 | HU28: Eliminar un tipo de Asociación de productos existente | Edwin Navia |
+| 14 | HU-22: Eliminar tax Category | Kevin Gutierrez |
+| 15 | HU-29: Editar Tax Category | Kevin Gutierrez |
+| 16 | HU-50 E2E Gestión completa de categoría de impuesto | Kevin Gutierrez |
 
 ## Recursos
 
