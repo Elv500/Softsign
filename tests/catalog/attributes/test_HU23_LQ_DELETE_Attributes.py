@@ -122,18 +122,16 @@ def test_TC408_verificar_el_tiempo_respuesta_despues_de_eliminar_atributo(auth_h
 @pytest.mark.high
 @pytest.mark.functional
 @pytest.mark.smoke
-#Admin> Catalog> Attributes TC_409: Validar los headers-response despues de eliminar un atributo.
-def test_TC409_Verificar_los_headers_respuesta_despues_de_eliminar_atributo(auth_headers):
-    data = generate_attributes_source_data()
-    url = EndpointAttributes.attributes()
-    create_response = SyliusRequest.post(url, auth_headers, data)
-    AssertionStatusCode.assert_status_code_201(create_response)
-
-    attributes_code = create_response.json()["code"]
-
-    endpoint = EndpointAttributes.code(attributes_code)
-    response = SyliusRequest.delete(endpoint, auth_headers)
-
-    log_request_response(endpoint, response, headers=auth_headers)
-    AssertionStatusCode.assert_status_code_204(response)
-    assert response.content == b"" or len(response.content) == 0
+#Admin> Catalog> Attributes TC_409: No se debe permitir eliminar un atributo por segunda.
+def test_TC409_Verificar_que_no_se_permita_eliminar_un_atributo_por_segunda_vez(auth_headers):
+        data = generate_attributes_source_data()
+        url = EndpointAttributes.attributes()
+        create_response = SyliusRequest.post(url, auth_headers, data)
+        AssertionStatusCode.assert_status_code_201(create_response)
+        attributes_code = create_response.json()["code"]
+        endpoint = EndpointAttributes.code(attributes_code)
+        first_delete_response = SyliusRequest.delete(endpoint, auth_headers)
+        AssertionStatusCode.assert_status_code_204(first_delete_response)
+        second_delete_response = SyliusRequest.delete(endpoint, auth_headers)
+        log_request_response(endpoint, second_delete_response, headers=auth_headers)
+        AssertionStatusCode.assert_status_code_404(second_delete_response)

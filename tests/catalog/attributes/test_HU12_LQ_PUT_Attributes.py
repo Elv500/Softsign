@@ -84,7 +84,7 @@ def test_TC44_Verificar_se_actualice_attributo_con_datos_validos(setup_attribute
 @pytest.mark.high
 @pytest.mark.smoke
 @pytest.mark.functional
-def test_TC46_Verificar_actualizar_grupo_sin_el_campo_name(setup_attributes_cleanup):
+def test_TC46_Verificar_actualizar_un_atributo_sin_el_campo_name(setup_attributes_cleanup):
     auth_headers, add_attributes_for_cleanup = setup_attributes_cleanup
 
     data = generate_attributes_source_data()

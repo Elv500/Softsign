@@ -24,8 +24,8 @@ def test_TC49_Verificar_que_se_permita_crear_nuevo_atributo(setup_add_attributes
 
 # Admin> Catalog> Attributes> TC_50: Despues de crear un atributo validar la estructura del JSON.
 @pytest.mark.high
-@pytest.mark.medium
 @pytest.mark.functional
+@pytest.mark.smoke
 def test_TC50_Verificar_la_estructura_json_response_despues_de_crear_atributp(setup_attributes_cleanup):
     auth_headers, add_attributes_for_cleanup = setup_attributes_cleanup
 
