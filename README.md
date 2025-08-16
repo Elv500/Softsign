@@ -179,7 +179,7 @@ Para generar el reporte de ejecución se tiene dos alternativas:
 ### Opción 1:
 Se puede optar por reporte rapido con `pytest-html` que ya viene instalado con `requirements.txt`:
 ```bash
-pytest --html=reports/reports_generalv2.html 
+pytest --html=reports/reports_general.html 
 ```
 ### Opción 2:
 Hay otra opción con la que se puede generar un reporte más detallado con `Allure`.

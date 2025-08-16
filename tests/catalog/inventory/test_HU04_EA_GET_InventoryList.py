@@ -155,7 +155,7 @@ def test_209_215_pagina_e_items_validas(setup_teardown_view_inventory, page, ite
     (-1, 1),
     pytest.param(1.5, 1, marks=pytest.mark.xfail(reason="BUG212: El parámetro page acepta decimales y rompe la URL", run=True)),
     ("uno", 1),
-    ('', 1),
+    ('_', 1),
     (1, -1),
     pytest.param(1, 1.5, marks=pytest.mark.xfail(reason="BUG217: El param itemsPerPage puede ser decimal rompiendo la URL", run=True)),
     pytest.param(1, "uno", marks=pytest.mark.xfail(reason="BUG218: El param itemsPerPage puede ser string rompiendo la URL", run=True)),
