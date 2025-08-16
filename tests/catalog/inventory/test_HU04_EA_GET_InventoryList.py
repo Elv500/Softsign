@@ -168,5 +168,3 @@ def test_210_219_pagina_e_items_invalidas(setup_teardown_view_inventory, page, i
     response = SyliusRequest.get(url, headers)
     log_request_response(url, response, headers)
     AssertionStatusCode.assert_status_code_400(response)
-
-#Revisar linea 139
