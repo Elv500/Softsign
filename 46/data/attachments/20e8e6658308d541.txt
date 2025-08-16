@@ -1,0 +1,68 @@
+2025-08-16 21:24:03 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:24:03 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-16 21:24:03 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:24:03 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/play-majority HTTP/1.1" 200 None
+2025-08-16 21:24:03 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:24:03 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/play-majority
+2025-08-16 21:24:03 - INFO - STATUS CODE: 200
+2025-08-16 21:24:03 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/play-majority",
+    "@type": "InventorySource",
+    "id": 10527,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4246",
+        "@type": "InventorySourceAddress",
+        "countryCode": "KW",
+        "street": "85273 Steven Burgs",
+        "city": "Port Danielle",
+        "postcode": "14033"
+    },
+    "code": "play-majority",
+    "name": "Wilkerson-Haney",
+    "priority": 26,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:24:03 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:24:04 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/play-majority HTTP/1.1" 200 None
+2025-08-16 21:24:04 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:24:04 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/play-majority
+2025-08-16 21:24:04 - INFO - STATUS CODE: 200
+2025-08-16 21:24:04 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzk0MjUsImV4cCI6MTc1NTM4MzAyNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.n0YpllSU7rZyr71bAyW37RVShKs2E7OoKLPeMOjcVkbG7MpZbKXpP503fvp-Q9H_9MWf6y5NQig047A92XtfMbPJISPBzcMRiX8IG2BdNoooyywzvQKVpTonT1MxpX-ZTezUQY9E4HkIX0MnXlKq1lWqALiZnFXZUvzoSTHZbdS1viKSXj8wV_r5HgKR62YWB6qGD4kLVxbqbUd7fvw57K-1ipUdz9G653jD8QevZoxjG3Foj2uiKe384ULJHCHLbsusrB05lhvw2YuTMyyLnVVSEqnfibC6E3E7NKrkRmen-ZS4xDk6Lvo-H7rZe3gKhv8Q-iWF_px4x8po_ZHGZ3-6mdGTvux-E3ttb2UOCYit_US83s0uLgjymj-rZELsakPuQE_Ff-IT2tBZQMYwZTs6uI22q_HXwZeXi_QGvtbRfb_Zw2gfzl7wupsuauFa9pkHZG18yyUcUK5jvnPzfGDSXx8e60KdwLKkDxLQhuy0J467O8Ba-7iUdUUGt479tm1mRYjY6a21I2dVo0U3GhF3iYMP8fn_fL0zmfWyVZhBvKKEiU9JzkzygX-5Ux_U0SAjO4kYXUOa9jZE0QaeJqkPnY9amMrrkaZKhemQHsuJOt5iX5HPYBkv5lYO4LP08rppPEUNnPn9jaod-E25N_WKQ2hMnXCyib2Hl6BQYAE"
+}
+2025-08-16 21:24:04 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "stand-mrs-personal",
+    "name": "Henderson, Jones and Torres",
+    "priority": 30,
+    "address": {
+        "countryCode": "CG",
+        "street": "75181 Courtney Manor",
+        "city": "Knightbury",
+        "postcode": "40689"
+    },
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:24:04 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/play-majority",
+    "@type": "InventorySource",
+    "id": 10527,
+    "address": "/api/v2/admin/inventory-source-addresses/4247",
+    "code": "play-majority",
+    "name": "Henderson, Jones and Torres",
+    "priority": 26,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 21:24:04 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:24:04 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/play-majority HTTP/1.1" 204 0

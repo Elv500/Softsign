@@ -1,0 +1,26 @@
+2025-08-16 21:23:56 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:23:56 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-16 21:23:56 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:23:57 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/%20%20%20 HTTP/1.1" 404 None
+2025-08-16 21:23:57 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 21:23:57 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/   
+2025-08-16 21:23:57 - INFO - STATUS CODE: 404
+2025-08-16 21:23:57 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzk0MjUsImV4cCI6MTc1NTM4MzAyNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.n0YpllSU7rZyr71bAyW37RVShKs2E7OoKLPeMOjcVkbG7MpZbKXpP503fvp-Q9H_9MWf6y5NQig047A92XtfMbPJISPBzcMRiX8IG2BdNoooyywzvQKVpTonT1MxpX-ZTezUQY9E4HkIX0MnXlKq1lWqALiZnFXZUvzoSTHZbdS1viKSXj8wV_r5HgKR62YWB6qGD4kLVxbqbUd7fvw57K-1ipUdz9G653jD8QevZoxjG3Foj2uiKe384ULJHCHLbsusrB05lhvw2YuTMyyLnVVSEqnfibC6E3E7NKrkRmen-ZS4xDk6Lvo-H7rZe3gKhv8Q-iWF_px4x8po_ZHGZ3-6mdGTvux-E3ttb2UOCYit_US83s0uLgjymj-rZELsakPuQE_Ff-IT2tBZQMYwZTs6uI22q_HXwZeXi_QGvtbRfb_Zw2gfzl7wupsuauFa9pkHZG18yyUcUK5jvnPzfGDSXx8e60KdwLKkDxLQhuy0J467O8Ba-7iUdUUGt479tm1mRYjY6a21I2dVo0U3GhF3iYMP8fn_fL0zmfWyVZhBvKKEiU9JzkzygX-5Ux_U0SAjO4kYXUOa9jZE0QaeJqkPnY9amMrrkaZKhemQHsuJOt5iX5HPYBkv5lYO4LP08rppPEUNnPn9jaod-E25N_WKQ2hMnXCyib2Hl6BQYAE"
+}
+2025-08-16 21:23:57 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "description": "Not Found",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
+2025-08-16 21:23:57 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 21:23:57 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/back-table-cause HTTP/1.1" 204 0
