@@ -14,7 +14,7 @@ from utils.logger_helpers import log_request_response
 # Admin > Customer - Group > TC_271 Actualizar grupo de clientes con datos válidos
 @pytest.mark.functional
 @pytest.mark.smoke
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC271_actualizar_grupo_clientes_datos_validos(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -49,7 +49,7 @@ def test_TC271_actualizar_grupo_clientes_datos_validos(setup_customer_group_clea
 # Admin > Customer - Group > TC_272 Verificar estructura del JSON devuelto al actualizar
 @pytest.mark.functional
 @pytest.mark.smoke
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC272_verificar_estructura_json_respuesta_actualizacion(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -78,7 +78,7 @@ def test_TC272_verificar_estructura_json_respuesta_actualizacion(setup_customer_
 
 # Admin > Customer - Group > TC_273 Verificar que no permita actualizar grupo con código inexistente
 @pytest.mark.negative
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC273_actualizar_grupo_codigo_inexistente(auth_headers):
     
     codigo_inexistente = "grupo_inexistente_12345"
@@ -95,8 +95,8 @@ def test_TC273_actualizar_grupo_codigo_inexistente(auth_headers):
 # Admin > Customer - Group > TC_274 Actualizar grupo sin campo obligatorio 'name'
 @pytest.mark.negative
 @pytest.mark.boundary
-@pytest.mark.regression
 @pytest.mark.xfail(reason="Permite actualizar el campo name vacio cuando es obligatorio", run=True)
+@pytest.mark.high
 def test_TC274_actualizar_grupo_sin_campo_name(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -118,7 +118,7 @@ def test_TC274_actualizar_grupo_sin_campo_name(setup_customer_group_cleanup):
 
 # Admin > Customer - Group > TC_275 Verificar que el campo code en el body es ignorado
 @pytest.mark.functional
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC275_actualizar_grupo_campo_code_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -151,7 +151,7 @@ def test_TC275_actualizar_grupo_campo_code_ignorado(setup_customer_group_cleanup
 # Admin > Customer - Group > TC_276 Verificar que code vacío en body es ignorado
 @pytest.mark.functional
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC276_actualizar_grupo_code_vacio_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -184,7 +184,7 @@ def test_TC276_actualizar_grupo_code_vacio_ignorado(setup_customer_group_cleanup
 # Admin > Customer - Group > TC_277 Verificar que code con caracteres especiales en body es ignorado
 @pytest.mark.functional
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC277_actualizar_grupo_code_caracteres_especiales_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -217,7 +217,7 @@ def test_TC277_actualizar_grupo_code_caracteres_especiales_ignorado(setup_custom
 # Admin > Customer - Group > TC_278 Verificar que code muy largo en body es ignorado
 @pytest.mark.functional
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC278_actualizar_grupo_code_muy_largo_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -250,7 +250,7 @@ def test_TC278_actualizar_grupo_code_muy_largo_ignorado(setup_customer_group_cle
 # Admin > Customer - Group > TC_280 Verificar que code null en body es ignorado
 @pytest.mark.functional
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC280_actualizar_grupo_code_null_ignorado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -283,7 +283,7 @@ def test_TC280_actualizar_grupo_code_null_ignorado(setup_customer_group_cleanup)
 # Admin > Customer - Group > TC_281 Verificar que no permita actualizar grupo con nombre vacío
 @pytest.mark.negative
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC281_actualizar_grupo_nombre_vacio(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -309,7 +309,7 @@ def test_TC281_actualizar_grupo_nombre_vacio(setup_customer_group_cleanup):
 # Admin > Customer - Group > TC_282 Verificar que no permita nombre muy largo
 @pytest.mark.negative
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC282_actualizar_grupo_nombre_muy_largo(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -335,7 +335,7 @@ def test_TC282_actualizar_grupo_nombre_muy_largo(setup_customer_group_cleanup):
 # Admin > Customer - Group > TC_283 Verificar que permita actualizar grupo con caracteres especiales en nombre
 @pytest.mark.functional
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC283_actualizar_grupo_nombre_caracteres_especiales(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -362,7 +362,7 @@ def test_TC283_actualizar_grupo_nombre_caracteres_especiales(setup_customer_grou
 # Admin > Customer - Group > TC_284 Verificar que no permita actualizar grupo sin token de autenticación
 @pytest.mark.negative
 @pytest.mark.security
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC284_actualizar_grupo_sin_token():
     
     codigo_existente = "retail"
@@ -380,7 +380,7 @@ def test_TC284_actualizar_grupo_sin_token():
 # Admin > Customer - Group > TC_285 Verificar que no permita actualizar grupo con token inválido
 @pytest.mark.negative
 @pytest.mark.security
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC285_actualizar_grupo_token_invalido():
     
     codigo_existente = "retail"
@@ -398,7 +398,7 @@ def test_TC285_actualizar_grupo_token_invalido():
 
 # Admin > Customer - Group > TC_286 Verificar que no permita actualizar grupo con body JSON malformado
 @pytest.mark.negative
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC286_actualizar_grupo_json_malformado(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -427,7 +427,7 @@ def test_TC286_actualizar_grupo_json_malformado(setup_customer_group_cleanup):
 
 # Admin > Customer - Group > TC_287 Verificar que no permita actualizar grupo con Content-Type incorrecto
 @pytest.mark.negative
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC287_actualizar_grupo_content_type_incorrecto(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -462,7 +462,7 @@ def test_TC287_actualizar_grupo_content_type_incorrecto(setup_customer_group_cle
 # Admin > Customer - Group > TC_288 Verificar que el tiempo de respuesta al actualizar sea menor a 3 segundos
 @pytest.mark.functional
 @pytest.mark.performance
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC288_verificar_tiempo_respuesta_actualizacion(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -493,7 +493,7 @@ def test_TC288_verificar_tiempo_respuesta_actualizacion(setup_customer_group_cle
 
 # Admin > Customer - Group > TC_289 Verificar que permita actualizar grupo con nombre en límite superior (255 chars)
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC289_actualizar_grupo_nombre_limite_superior(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -519,7 +519,7 @@ def test_TC289_actualizar_grupo_nombre_limite_superior(setup_customer_group_clea
 
 # Admin > Customer - Group > TC_290 Verificar headers de respuesta
 @pytest.mark.functional
-@pytest.mark.regression
+@pytest.mark.low
 def test_TC290_verificar_headers_respuesta_actualizacion(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -548,7 +548,7 @@ def test_TC290_verificar_headers_respuesta_actualizacion(setup_customer_group_cl
 
 # Admin > Customer - Group > TC_291 Verificar que permita actualizar grupo con nombre mínimo
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.low
 def test_TC291_actualizar_grupo_nombre_minimo(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
@@ -574,7 +574,7 @@ def test_TC291_actualizar_grupo_nombre_minimo(setup_customer_group_cleanup):
 
 # Admin > Customer - Group > TC_292 Verificar que no permita actualizar grupo con valores null
 @pytest.mark.negative
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC292_actualizar_grupo_valores_null(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     

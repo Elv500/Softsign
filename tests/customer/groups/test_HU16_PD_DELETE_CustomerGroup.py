@@ -14,7 +14,7 @@ from utils.logger_helpers import log_request_response
 # Admin > Customer - Group > TC_293 Eliminar grupo de clientes existente
 @pytest.mark.functional
 @pytest.mark.smoke
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC293_eliminar_grupo_clientes_existente(auth_headers):
     
     initial_data = generate_customer_group_source_data()
@@ -34,7 +34,7 @@ def test_TC293_eliminar_grupo_clientes_existente(auth_headers):
 
 # Admin > Customer - Group > TC_294 Verificar que no permita eliminar grupo con código inexistente
 @pytest.mark.negative
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC294_eliminar_grupo_codigo_inexistente(auth_headers):
     
     codigo_inexistente = "grupo_inexistente_12345"
@@ -50,7 +50,7 @@ def test_TC294_eliminar_grupo_codigo_inexistente(auth_headers):
 # Admin > Customer - Group > TC_295 Verificar que no permita eliminar grupo sin token de autenticación
 @pytest.mark.negative
 @pytest.mark.security
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC295_eliminar_grupo_sin_token():
     
     codigo_existente = "retail"
@@ -65,7 +65,7 @@ def test_TC295_eliminar_grupo_sin_token():
 # Admin > Customer - Group > TC_296 Verificar que no permita eliminar grupo con token inválido
 @pytest.mark.negative
 @pytest.mark.security
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC296_eliminar_grupo_token_invalido():
     
     codigo_existente = "retail"
@@ -81,7 +81,7 @@ def test_TC296_eliminar_grupo_token_invalido():
 # Admin > Customer - Group > TC_297 Verificar que el tiempo de respuesta al eliminar sea menor a 3 segundos
 @pytest.mark.functional
 @pytest.mark.performance
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC297_verificar_tiempo_respuesta_eliminacion(auth_headers):
     
     initial_data = generate_customer_group_source_data()
@@ -106,7 +106,7 @@ def test_TC297_verificar_tiempo_respuesta_eliminacion(auth_headers):
 
 # Admin > Customer - Group > TC_298 Verificar headers de respuesta al eliminar
 @pytest.mark.functional
-@pytest.mark.regression
+@pytest.mark.low
 def test_TC298_verificar_headers_respuesta_eliminacion(auth_headers):
     
     initial_data = generate_customer_group_source_data()
@@ -129,7 +129,7 @@ def test_TC298_verificar_headers_respuesta_eliminacion(auth_headers):
 
 # Admin > Customer - Group > TC_299 Verificar que el grupo eliminado no exista más
 @pytest.mark.functional
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC299_verificar_grupo_eliminado_no_existe(auth_headers):
     
     initial_data = generate_customer_group_source_data()
@@ -154,7 +154,7 @@ def test_TC299_verificar_grupo_eliminado_no_existe(auth_headers):
 
 # Admin > Customer - Group > TC_300 Verificar que no permita eliminar el mismo grupo dos veces
 @pytest.mark.negative
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC300_eliminar_mismo_grupo_dos_veces(auth_headers):
     
     initial_data = generate_customer_group_source_data()
@@ -179,7 +179,7 @@ def test_TC300_eliminar_mismo_grupo_dos_veces(auth_headers):
 # Admin > Customer - Group > TC_301 Verificar eliminación de grupo con caracteres especiales en el nombre
 @pytest.mark.functional
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC301_eliminar_grupo_codigo_caracteres_especiales(auth_headers):
     
     initial_data = generate_customer_group_source_data()
@@ -202,7 +202,7 @@ def test_TC301_eliminar_grupo_codigo_caracteres_especiales(auth_headers):
 # Admin > Customer - Group > TC_302 Verificar que no permita eliminar grupo con código muy largo
 @pytest.mark.negative
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC302_eliminar_grupo_codigo_muy_largo(auth_headers):
     
     codigo_muy_largo = "a" * 260 #el limite es 255
@@ -218,7 +218,7 @@ def test_TC302_eliminar_grupo_codigo_muy_largo(auth_headers):
 # Admin > Customer - Group > TC_303 Verificar que no permita eliminar grupo con código vacío
 @pytest.mark.negative
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC303_eliminar_grupo_codigo_vacio(auth_headers):
 
     codigo_vacio = ""
@@ -231,7 +231,7 @@ def test_TC303_eliminar_grupo_codigo_vacio(auth_headers):
     # Nota: Este test devuelve HTML en lugar de JSON, por lo que solo validamos el status code
 # Admin > Customer - Group > TC_305 Verificar eliminación de grupo con diferentes métodos HTTP incorrectos
 @pytest.mark.negative
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC305_eliminar_grupo_metodos_http_incorrectos(auth_headers):
     
     initial_data = generate_customer_group_source_data()
@@ -256,7 +256,7 @@ def test_TC305_eliminar_grupo_metodos_http_incorrectos(auth_headers):
 # Admin > Customer - Group > TC_306 Verificar que no se pueda eliminar grupo del sistema (retail)
 @pytest.mark.negative
 @pytest.mark.security
-@pytest.mark.regression
+@pytest.mark.high
 def test_TC306_no_eliminar_grupo_sistema(auth_headers):
 
     codigo_sistema = "retail"
@@ -273,7 +273,7 @@ def test_TC306_no_eliminar_grupo_sistema(auth_headers):
 # Admin > Customer - Group > TC_307 Verificar eliminación de múltiples grupos secuencialmente
 @pytest.mark.functional
 @pytest.mark.stress
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC307_eliminar_multiples_grupos_secuencialmente(auth_headers):
     
     created_groups = []
@@ -297,7 +297,7 @@ def test_TC307_eliminar_multiples_grupos_secuencialmente(auth_headers):
 # Admin > Customer - Group > TC_308 Verificar comportamiento con caracteres especiales en código
 @pytest.mark.negative
 @pytest.mark.boundary
-@pytest.mark.regression
+@pytest.mark.medium
 def test_TC308_eliminar_grupo_codigo_unicode(auth_headers):
     
     codigo_unicode = "grupo_测试_ñáéíóú"
@@ -312,7 +312,7 @@ def test_TC308_eliminar_grupo_codigo_unicode(auth_headers):
 
 # Admin > Customer - Group > TC_309 Verificar eliminación con Content-Type incorrecto (no debería afectar DELETE)
 @pytest.mark.functional
-@pytest.mark.regression
+@pytest.mark.low
 def test_TC309_eliminar_grupo_content_type_incorrecto(auth_headers):
     
     initial_data = generate_customer_group_source_data()
