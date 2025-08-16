@@ -14,7 +14,6 @@ from utils.logger_helpers import log_request_response
 # TC-23 – Admin > Catalog > Inventory - Obtener lista completa de fuentes de inventario.
 @pytest.mark.smoke
 @pytest.mark.functional
-@pytest.mark.regression
 def test_TC23_lista_completa_fuentes_inventario(setup_teardown_view_inventory):
     headers, _, _ = setup_teardown_view_inventory
     url = EndpointInventory.inventory()
@@ -29,7 +28,6 @@ def test_TC23_lista_completa_fuentes_inventario(setup_teardown_view_inventory):
 # TC-25 – Admin > Catalog > Inventory - Obtener fuente de inventario por CODE existente.
 @pytest.mark.smoke
 @pytest.mark.functional
-@pytest.mark.regression
 def test_TC25_fuente_inventario_por_code_existente(setup_teardown_view_inventory):
     headers, inventory1, _ = setup_teardown_view_inventory
     code = inventory1['code']
@@ -45,7 +43,6 @@ def test_TC25_fuente_inventario_por_code_existente(setup_teardown_view_inventory
 # TC-24 – Admin > Catalog > Inventory - Verificar error al obtener fuente de inventario con CODE inexistente.
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.regression
 def test_TC24_fuente_inventario_code_inexistente(setup_teardown_view_inventory):
     headers, _, _ = setup_teardown_view_inventory
     code = "code_inexistente"
@@ -59,7 +56,6 @@ def test_TC24_fuente_inventario_code_inexistente(setup_teardown_view_inventory):
 # TC-26 – Admin > Catalog > Inventory - Verificar error al acceder a lista sin autenticación.
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.regression
 @pytest.mark.security
 def test_TC26_lista_sin_autenticacion():
     url = EndpointInventory.inventory()
@@ -72,7 +68,6 @@ def test_TC26_lista_sin_autenticacion():
 # TC-206 – Admin > Catalog > Inventory - Verificar error al acceder a fuente específica sin autenticación.
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.regression
 @pytest.mark.security
 def test_TC206_fuente_sin_autenticacion():
     url = EndpointInventory.code("hamburg_warehouse")
@@ -85,7 +80,6 @@ def test_TC206_fuente_sin_autenticacion():
 # TC-207 – Admin > Catalog > Inventory - Verificar rechazo con token expirado al acceder a lista de inventario.
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.regression
 @pytest.mark.security
 def test_TC207_lista_con_token_expirado(setup_teardown_view_inventory):
     headers, _, _ = setup_teardown_view_inventory
@@ -100,7 +94,6 @@ def test_TC207_lista_con_token_expirado(setup_teardown_view_inventory):
 # TC-208 – Admin > Catalog > Inventory - Verificar rechazo con token expirado al acceder a fuente de inventario.
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.regression
 @pytest.mark.security
 def test_TC208_fuente_con_token_expirado(setup_teardown_view_inventory):
     headers, _, _ = setup_teardown_view_inventory
@@ -116,7 +109,6 @@ def test_TC208_fuente_con_token_expirado(setup_teardown_view_inventory):
 # TC-215 – Admin > Catalog > Inventory - Verificar error al usar cantidad de elementos igual a 0 y página válida.
 @pytest.mark.functional
 @pytest.mark.smoke
-@pytest.mark.regression
 @pytest.mark.security
 @pytest.mark.parametrize("page, itemsPerPage", [
     (None, 1),
@@ -148,7 +140,6 @@ def test_209_215_pagina_e_items_validas(setup_teardown_view_inventory, page, ite
 # TC-219 – Admin > Catalog > Inventory - Verificar error al usar valor vacío como cantidad de elementos y página válida.
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.regression
 @pytest.mark.security
 @pytest.mark.parametrize("page, itemsPerPage", [
     (0, 1),
