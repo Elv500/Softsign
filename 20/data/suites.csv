@@ -1,2 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Aug 14 03:51:19 GMT 2025","Thu Aug 14 03:51:21 GMT 2025","1671","tests.catalog.inventory","test_HU31_EA_E2E_Inventory","","","","test_TC355_a_TC360_End_To_End_Inventory",""
