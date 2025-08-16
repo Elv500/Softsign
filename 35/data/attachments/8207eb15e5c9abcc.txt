@@ -1,0 +1,67 @@
+2025-08-16 20:04:49 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:04:49 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-16 20:04:49 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:04:49 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/forward-police HTTP/1.1" 200 None
+2025-08-16 20:04:49 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 20:04:49 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/forward-police
+2025-08-16 20:04:49 - INFO - STATUS CODE: 200
+2025-08-16 20:04:49 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/forward-police",
+    "@type": "InventorySource",
+    "id": 10403,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4119",
+        "@type": "InventorySourceAddress",
+        "countryCode": "HN",
+        "street": "3156 Megan Street Apt. 649",
+        "city": "Sherrytown",
+        "postcode": "89084"
+    },
+    "code": "forward-police",
+    "name": "Graves and Sons",
+    "priority": 5,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 20:04:49 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:04:50 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/forward-police HTTP/1.1" 200 None
+2025-08-16 20:04:50 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 20:04:50 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/forward-police
+2025-08-16 20:04:50 - INFO - STATUS CODE: 200
+2025-08-16 20:04:50 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzQ2NTMsImV4cCI6MTc1NTM3ODI1Mywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.YnN0ZhwNkkzonLGj_7T0TQm3MxXw6_goT0H0k0zVXT1Tz8DihYbILrwY7er1nfazCl0IHff56Zeb0Ghk60cwQG65NrTDjQf8tp9o7FHWKT87ymxrafAf4VlEIAgg8x2QXKoPhH6BGVZsvz8EOaoxotgnYp_7W78-eN9NJfGjQQ3W30TiA4wrEvQ_P9dq3FeP0Nhxl-FHAiTmwkxVtSEWRMxTxJHFfiXEoP3_4zlw5toa0p0t9kvvUHgdhr5_uxgUC7ZeUtw25Wx8dLedsza64sPokmjl_GG52C06I8-z9gY1Gkv62RmeS02Q1kXXMLDm4ljo-FznqqGHFyDWnTPhmIx-PN14F750AZzlQQ5Wxg_H9AtmfYi8FNB0cWnzQ3qj76PGaJ7uiTyn85HL1GUyOncAW-DP_vQEQ86cdBhNFHC3S2HRE3MIp79Ut8-dJ93QGT5U4UfxK8IefS10hWpchI-K5isUtv1iBNr06V_BWlbP6ICcvIoWSLTW_o9lvH6EeJaYBKu4h_N9k6kmt06b9N6CUowM2SJr32yEFWxaMiviGh0wWVzCpXVMJE3brxzkM3C8Ef5VEsNBIOazZlnDfuivOeRgzoxD2nc9cuNR8n3guEozF-E44d59AC7SBn3nj8FVFfankZi-4mdz-JTMCxPCgCC6EE-pPhEa5W3GFA0"
+}
+2025-08-16 20:04:50 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "moment-among-may",
+    "priority": 3,
+    "address": {
+        "countryCode": "IS",
+        "street": "302 Jones Ridges",
+        "city": "West Donna",
+        "postcode": "49370"
+    },
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 20:04:50 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/forward-police",
+    "@type": "InventorySource",
+    "id": 10403,
+    "address": "/api/v2/admin/inventory-source-addresses/4120",
+    "code": "forward-police",
+    "name": "Graves and Sons",
+    "priority": 3,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 20:04:50 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:04:50 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/forward-police HTTP/1.1" 204 0

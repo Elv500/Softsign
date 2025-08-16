@@ -1,0 +1,68 @@
+2025-08-16 20:04:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:04:19 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources?page=1 HTTP/1.1" 200 None
+2025-08-16 20:04:19 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 20:04:19 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources?page=1
+2025-08-16 20:04:19 - INFO - STATUS CODE: 200
+2025-08-16 20:04:19 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTUzNzQ2NTMsImV4cCI6MTc1NTM3ODI1Mywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.YnN0ZhwNkkzonLGj_7T0TQm3MxXw6_goT0H0k0zVXT1Tz8DihYbILrwY7er1nfazCl0IHff56Zeb0Ghk60cwQG65NrTDjQf8tp9o7FHWKT87ymxrafAf4VlEIAgg8x2QXKoPhH6BGVZsvz8EOaoxotgnYp_7W78-eN9NJfGjQQ3W30TiA4wrEvQ_P9dq3FeP0Nhxl-FHAiTmwkxVtSEWRMxTxJHFfiXEoP3_4zlw5toa0p0t9kvvUHgdhr5_uxgUC7ZeUtw25Wx8dLedsza64sPokmjl_GG52C06I8-z9gY1Gkv62RmeS02Q1kXXMLDm4ljo-FznqqGHFyDWnTPhmIx-PN14F750AZzlQQ5Wxg_H9AtmfYi8FNB0cWnzQ3qj76PGaJ7uiTyn85HL1GUyOncAW-DP_vQEQ86cdBhNFHC3S2HRE3MIp79Ut8-dJ93QGT5U4UfxK8IefS10hWpchI-K5isUtv1iBNr06V_BWlbP6ICcvIoWSLTW_o9lvH6EeJaYBKu4h_N9k6kmt06b9N6CUowM2SJr32yEFWxaMiviGh0wWVzCpXVMJE3brxzkM3C8Ef5VEsNBIOazZlnDfuivOeRgzoxD2nc9cuNR8n3guEozF-E44d59AC7SBn3nj8FVFfankZi-4mdz-JTMCxPCgCC6EE-pPhEa5W3GFA0"
+}
+2025-08-16 20:04:19 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 4,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/inventory-sources/hamburg_warehouse",
+            "@type": "InventorySource",
+            "id": 10370,
+            "address": null,
+            "code": "hamburg_warehouse",
+            "name": "Hamburg Warehouse",
+            "priority": 20,
+            "channels": [
+                "/api/v2/admin/channels/HOME_WEB",
+                "/api/v2/admin/channels/FASHION_WEB"
+            ]
+        },
+        {
+            "@id": "/api/v2/admin/inventory-sources/frankfurt_warehouse",
+            "@type": "InventorySource",
+            "id": 10371,
+            "address": null,
+            "code": "frankfurt_warehouse",
+            "name": "Frankfurt Warehouse",
+            "priority": 10,
+            "channels": [
+                "/api/v2/admin/channels/HOME_WEB",
+                "/api/v2/admin/channels/FASHION_WEB"
+            ]
+        },
+        {
+            "@id": "/api/v2/admin/inventory-sources/understand-but-than",
+            "@type": "InventorySource",
+            "id": 10373,
+            "address": "/api/v2/admin/inventory-source-addresses/4092",
+            "code": "understand-but-than",
+            "name": "Smith Inc",
+            "priority": 74,
+            "channels": [
+                "/api/v2/admin/channels/HOME_WEB"
+            ]
+        },
+        {
+            "@id": "/api/v2/admin/inventory-sources/mission-site",
+            "@type": "InventorySource",
+            "id": 10374,
+            "address": "/api/v2/admin/inventory-source-addresses/4093",
+            "code": "mission-site",
+            "name": "Beck, Lopez and Molina",
+            "priority": 52,
+            "channels": [
+                "/api/v2/admin/channels/HOME_WEB"
+            ]
+        }
+    ]
+}

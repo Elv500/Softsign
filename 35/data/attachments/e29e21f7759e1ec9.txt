@@ -1,0 +1,32 @@
+2025-08-16 20:04:50 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:04:50 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-16 20:04:50 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:04:50 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/end-quite-hotel-day HTTP/1.1" 200 None
+2025-08-16 20:04:50 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-16 20:04:50 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/end-quite-hotel-day
+2025-08-16 20:04:50 - INFO - STATUS CODE: 200
+2025-08-16 20:04:50 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/end-quite-hotel-day",
+    "@type": "InventorySource",
+    "id": 10404,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4121",
+        "@type": "InventorySourceAddress",
+        "countryCode": "ET",
+        "street": "30004 Odonnell Inlet Suite 977",
+        "city": "Richardborough",
+        "postcode": "90089"
+    },
+    "code": "end-quite-hotel-day",
+    "name": "Prince, Ross and Robinson",
+    "priority": 37,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-16 20:04:50 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:04:50 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/end-quite-hotel-day HTTP/1.1" 200 None
+2025-08-16 20:04:50 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-16 20:04:51 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/end-quite-hotel-day HTTP/1.1" 204 0
