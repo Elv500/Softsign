@@ -14,6 +14,7 @@ from utils.logger_helpers import log_request_response
 # TC-32 – Admin > Catalog > Inventory - Eliminar Inventario existente con address y verificar eliminación del address asociado.
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC32_eliminar_inventory_existente_con_address(setup_create_inventory):
     headers, inventory = setup_create_inventory
     url = EndpointInventory.code(inventory["code"])
@@ -25,6 +26,7 @@ def test_TC32_eliminar_inventory_existente_con_address(setup_create_inventory):
 # TC-33 – Admin > Catalog > Inventory - Eliminar Inventario existente sin address.
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC33_eliminar_inventory_existente_sin_address(setup_create_inventory):
     headers, inventory = setup_create_inventory
     inventory["address"] = None
@@ -37,6 +39,7 @@ def test_TC33_eliminar_inventory_existente_sin_address(setup_create_inventory):
 # TC-34 – Admin > Catalog > Inventory - Verificar que Inventario eliminado no exista más.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC34_verificar_inventory_eliminado_no_exista(setup_create_inventory):
     headers, inventory = setup_create_inventory
     url = EndpointInventory.code(inventory["code"])
@@ -51,6 +54,7 @@ def test_TC34_verificar_inventory_eliminado_no_exista(setup_create_inventory):
 
 # TC-35 – Admin > Catalog > Inventory - Verificar que el address asociado no exista más después de eliminar el Inventario.
 @pytest.mark.functional
+@pytest.mark.high
 @pytest.mark.xfail(reason="BUG35: Problemas con la construccion URL de Address", run=True)
 def test_TC35_verificar_address_eliminado_despues_de_eliminar_inventory(setup_create_inventory):
     headers, inventory = setup_create_inventory
@@ -67,6 +71,7 @@ def test_TC35_verificar_address_eliminado_despues_de_eliminar_inventory(setup_cr
 # TC-344 – Admin > Catalog > Inventory - Eliminar Inventario con código inexistente.
 @pytest.mark.security
 @pytest.mark.negative
+@pytest.mark.medium
 def test_TC344_eliminar_inventory_codigo_inexistente(setup_create_inventory):
     headers, _ = setup_create_inventory
     codigo_inexistente = "codigo_inexistente"
@@ -80,6 +85,7 @@ def test_TC344_eliminar_inventory_codigo_inexistente(setup_create_inventory):
 # TC-345 – Admin > Catalog > Inventory - Eliminar Inventario sin token de autenticación.
 @pytest.mark.security
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC345_eliminar_inventory_sin_token_autenticacion(setup_create_inventory):
     _, inventory = setup_create_inventory
     url = EndpointInventory.code(inventory["code"])
@@ -92,6 +98,7 @@ def test_TC345_eliminar_inventory_sin_token_autenticacion(setup_create_inventory
 # TC-346 – Admin > Catalog > Inventory - Eliminar Inventario con token inválido.
 @pytest.mark.security
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC346_eliminar_inventory_con_token_invalido(setup_create_inventory):
     _, inventory = setup_create_inventory
     url = EndpointInventory.code(inventory["code"])
@@ -105,6 +112,7 @@ def test_TC346_eliminar_inventory_con_token_invalido(setup_create_inventory):
 # TC-347 – Admin > Catalog > Inventory - Eliminar Inventario con formato de código inválido.
 @pytest.mark.security
 @pytest.mark.negative
+@pytest.mark.medium
 def test_TC347_eliminar_inventory_codigo_formato_invalido(setup_create_inventory):
     headers, _ = setup_create_inventory
     codigo_invalido = "   "
@@ -120,6 +128,7 @@ def test_TC347_eliminar_inventory_codigo_formato_invalido(setup_create_inventory
 # TC-348 – Admin > Catalog > Inventory - Eliminar Inventario con método HTTP incorrecto.
 @pytest.mark.security
 @pytest.mark.negative
+@pytest.mark.medium
 @pytest.mark.parametrize("metodo", ["get", "post", "put"])
 def test_TC348_eliminar_inventory_metodo_http_incorrecto(setup_create_inventory, metodo):
     headers, inventory = setup_create_inventory
@@ -139,6 +148,7 @@ def test_TC348_eliminar_inventory_metodo_http_incorrecto(setup_create_inventory,
 
 # TC-349 – Admin > Catalog > Inventory - Eliminar Inventario dos veces consecutivamente.
 @pytest.mark.negative
+@pytest.mark.medium
 def test_TC349_eliminar_inventory_dos_veces(setup_create_inventory):
     headers, inventory = setup_create_inventory
     url = EndpointInventory.code(inventory["code"])
@@ -152,6 +162,7 @@ def test_TC349_eliminar_inventory_dos_veces(setup_create_inventory):
 
 # TC-350 – Admin > Catalog > Inventory - Eliminar Inventario y verificar que no afecte otros Inventarios existentes.
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC350_eliminar_inventory_no_afecte_otros_inventory(setup_create_inventory):
     headers, inventory1 = setup_create_inventory
     payload2 = generate_inventory_source_data()
@@ -169,11 +180,14 @@ def test_TC350_eliminar_inventory_no_afecte_otros_inventory(setup_create_invento
     AssertionStatusCode.assert_status_code_200(response_get)
     response_delete = SyliusRequest.delete(url2, headers)#Limpiando
 
+
+#@pytest.mark.medium
 # def test_TC351_eliminacion_concurrente_inventory(setup_create_inventory):
 
 
 # TC-352 – Admin > Catalog > Inventory - Verificar que el tiempo de eliminar un Inventario sea menor a 3 segundos.
 @pytest.mark.performance
+@pytest.mark.low
 def test_TC352_verificar_tiempo_respuesta_menor_3s_eliminar_inventory(setup_create_inventory):
     headers, inventory = setup_create_inventory
     url = EndpointInventory.code(inventory["code"])

@@ -16,6 +16,7 @@ from src.data.inventory import generate_inventory_source_data
 # TC-360: Admin > Inventory - Eliminar el inventario creado satisfactoriamente.
 @pytest.mark.e2e
 @pytest.mark.inventory
+@pytest.mark.high
 def test_TC355_a_TC360_End_To_End_Inventory(setup_e2e_inventory):
     
     #TC-355: Admin > Inventory - Autenticarse con credenciales válidas y obtener token.

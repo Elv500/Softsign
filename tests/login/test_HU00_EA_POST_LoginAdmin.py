@@ -11,6 +11,7 @@ from utils.logger_helpers import log_request_response
 #TC-55: Login > Admin - Autenticación exitosa usando email y contraseña válidos
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC55_Auth_exitoso_con_credenciales_validas():
     payload = Auth().get_valid_login_payload()
     url = Endpoint.login()
@@ -29,6 +30,7 @@ def test_TC55_Auth_exitoso_con_credenciales_validas():
 @pytest.mark.smoke
 @pytest.mark.negative
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC56_Auth_fallido_con_credenciales_invalidas():
     url = Endpoint.login()
     payload = Auth().get_invalid_login_payload()
@@ -45,6 +47,7 @@ def test_TC56_Auth_fallido_con_credenciales_invalidas():
 #TC-57: Login > Admin - Autenticación fallida con email inválido y contraseña válida
 @pytest.mark.negative
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC57_Auth_fallido_con_email_invalida():
     url = Endpoint.login()
     payload = Auth().get_invalid_email_payload()
@@ -61,6 +64,7 @@ def test_TC57_Auth_fallido_con_email_invalida():
 #TC-58: Login > Admin - Autenticación fallida con email válido y contraseña inválida
 @pytest.mark.negative
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC58_Auth_fallido_con_password_invalida():
     url = Endpoint.login()
     payload = Auth().get_invalid_password_payload()
@@ -77,6 +81,7 @@ def test_TC58_Auth_fallido_con_password_invalida():
 #TC-59: Login > Admin - Autenticación fallida con email y contraseña vacíos
 @pytest.mark.negative
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC59_Auth_fallido_con_crendenciales_vacias():
     url = Endpoint.login()
     payload = Auth().get_empty_credential_payload()
@@ -93,6 +98,7 @@ def test_TC59_Auth_fallido_con_crendenciales_vacias():
 #TC-151: Login > Admin - Autenticación fallida con email vacío y contraseña válida
 @pytest.mark.negative
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC151_Auth_fallido_con_email_vacia():
     url = Endpoint.login()
     payload = Auth().get_empty_email_payload()
@@ -109,6 +115,7 @@ def test_TC151_Auth_fallido_con_email_vacia():
 #TC-152: Login > Admin - Autenticación fallida con contraseña vacía y email válido
 @pytest.mark.negative
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC152_Auth_fallido_con_password_vacia():
     url = Endpoint.login()
     payload = Auth().get_empty_password_payload()

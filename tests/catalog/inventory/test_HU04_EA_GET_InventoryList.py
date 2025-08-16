@@ -14,6 +14,7 @@ from utils.logger_helpers import log_request_response
 # TC-23 – Admin > Catalog > Inventory - Obtener lista completa de fuentes de inventario.
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC23_lista_completa_fuentes_inventario(setup_teardown_view_inventory):
     headers, _, _ = setup_teardown_view_inventory
     url = EndpointInventory.inventory()
@@ -28,6 +29,7 @@ def test_TC23_lista_completa_fuentes_inventario(setup_teardown_view_inventory):
 # TC-25 – Admin > Catalog > Inventory - Obtener fuente de inventario por CODE existente.
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC25_fuente_inventario_por_code_existente(setup_teardown_view_inventory):
     headers, inventory1, _ = setup_teardown_view_inventory
     code = inventory1['code']
@@ -43,6 +45,7 @@ def test_TC25_fuente_inventario_por_code_existente(setup_teardown_view_inventory
 # TC-24 – Admin > Catalog > Inventory - Verificar error al obtener fuente de inventario con CODE inexistente.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC24_fuente_inventario_code_inexistente(setup_teardown_view_inventory):
     headers, _, _ = setup_teardown_view_inventory
     code = "code_inexistente"
@@ -57,6 +60,7 @@ def test_TC24_fuente_inventario_code_inexistente(setup_teardown_view_inventory):
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.security
+@pytest.mark.high
 def test_TC26_lista_sin_autenticacion():
     url = EndpointInventory.inventory()
     response = SyliusRequest.get(url, {})
@@ -69,6 +73,7 @@ def test_TC26_lista_sin_autenticacion():
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.security
+@pytest.mark.high
 def test_TC206_fuente_sin_autenticacion():
     url = EndpointInventory.code("hamburg_warehouse")
     response = SyliusRequest.get(url, {})
@@ -81,6 +86,7 @@ def test_TC206_fuente_sin_autenticacion():
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.security
+@pytest.mark.high
 def test_TC207_lista_con_token_expirado(setup_teardown_view_inventory):
     headers, _, _ = setup_teardown_view_inventory
     headers = {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTQzNjg3MTcsImV4cCI6MTc1NDM3MjMxNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.kCQgpWu-6UHG0hPiMacehDGUWBVf3L6R9MEkwujopo-lo6GkwEtXndnWgCyyzPQcZmoMuMAocDRT5NVaR1tU_YYPLi-haJ9dYuWe7-2vPz6wgPeOfuXWGnIbNKd-nrOZtLz8naX5xYRQAZdvkSVN6-tVfPHyKtQwcI-gii2mW1qQO2TwfVVQBHEwrrsRxuqKbkah4nPmICP4na8hM3svn2oYJA96knq6rfWcCEyCVAm3gRpyoFG-iyaYSJMPeRZvYa0Ua4HuWDaXnIYGGbAUuGOlyGpfOq5s1pAdSBSUPsOEYWRczQsCHwi6IEnKO9hNyNgKMfjW7B5ba3vmT6IZERhM_hjfNHW9s83Um0kLiMyMhkGW6PmsOTZdoIsyscUO1uhj6mHXi9fJ53lgyxIkbQSRadczj7cxCnHPtBrpCdiQrQgF8JW3wZJHe_GIDtWB67_0lf8Fs60ntPzIB2pVJIohC95OoqSzoVvLcKae9pGfmPJz0JLevtA9xXUwSkK8v9ixVEWSyJt89j8XVkZ6dqEFAR1qOAk9Uh9AZN9c3ImkLF7XHmlHHoJsFLuwpjEoGS5m4Ul7V0InPVHAI-ys_JVL3hPpVLBxlTr66l8j2wPTnCozNYS7w5-w-0pLtDy4ajMYjU2ICpci1VbJsCP-kzIrdIg2nz5PuO33v9SDyZg"}
@@ -95,6 +101,7 @@ def test_TC207_lista_con_token_expirado(setup_teardown_view_inventory):
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.security
+@pytest.mark.high
 def test_TC208_fuente_con_token_expirado(setup_teardown_view_inventory):
     headers, _, _ = setup_teardown_view_inventory
     headers = {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTQzNjg3MTcsImV4cCI6MTc1NDM3MjMxNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.kCQgpWu-6UHG0hPiMacehDGUWBVf3L6R9MEkwujopo-lo6GkwEtXndnWgCyyzPQcZmoMuMAocDRT5NVaR1tU_YYPLi-haJ9dYuWe7-2vPz6wgPeOfuXWGnIbNKd-nrOZtLz8naX5xYRQAZdvkSVN6-tVfPHyKtQwcI-gii2mW1qQO2TwfVVQBHEwrrsRxuqKbkah4nPmICP4na8hM3svn2oYJA96knq6rfWcCEyCVAm3gRpyoFG-iyaYSJMPeRZvYa0Ua4HuWDaXnIYGGbAUuGOlyGpfOq5s1pAdSBSUPsOEYWRczQsCHwi6IEnKO9hNyNgKMfjW7B5ba3vmT6IZERhM_hjfNHW9s83Um0kLiMyMhkGW6PmsOTZdoIsyscUO1uhj6mHXi9fJ53lgyxIkbQSRadczj7cxCnHPtBrpCdiQrQgF8JW3wZJHe_GIDtWB67_0lf8Fs60ntPzIB2pVJIohC95OoqSzoVvLcKae9pGfmPJz0JLevtA9xXUwSkK8v9ixVEWSyJt89j8XVkZ6dqEFAR1qOAk9Uh9AZN9c3ImkLF7XHmlHHoJsFLuwpjEoGS5m4Ul7V0InPVHAI-ys_JVL3hPpVLBxlTr66l8j2wPTnCozNYS7w5-w-0pLtDy4ajMYjU2ICpci1VbJsCP-kzIrdIg2nz5PuO33v9SDyZg"}
@@ -110,6 +117,7 @@ def test_TC208_fuente_con_token_expirado(setup_teardown_view_inventory):
 @pytest.mark.functional
 @pytest.mark.smoke
 @pytest.mark.security
+@pytest.mark.high
 @pytest.mark.parametrize("page, itemsPerPage", [
     (None, 1),
     (None, 0),
@@ -141,6 +149,7 @@ def test_209_215_pagina_e_items_validas(setup_teardown_view_inventory, page, ite
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.security
+@pytest.mark.medium
 @pytest.mark.parametrize("page, itemsPerPage", [
     (0, 1),
     (-1, 1),

@@ -15,6 +15,7 @@ from utils.logger_helpers import log_request_response
 # TC-27 – Admin > Catalog > Inventory - Crear inventory con todos los campos válidos.
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC27_crear_inventory_con_todos_los_campos_validos(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -33,6 +34,7 @@ def test_TC27_crear_inventory_con_todos_los_campos_validos(setup_add_inventory):
 # TC-28 – Admin > Catalog > Inventory - Crear inventory solo con campos requeridos.
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC28_crear_inventory_con_campos_requeridos(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
     payload = generate_inventory_source_data(required_only=True)
@@ -50,6 +52,7 @@ def test_TC28_crear_inventory_con_campos_requeridos(setup_add_inventory):
 
 # TC-29 – Admin > Catalog > Inventory - Crear inventory con valor de prioridad 0.
 @pytest.mark.functional
+@pytest.mark.medium
 def test_TC29_crear_inventory_con_prioridad_cero(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
     payload = create_inventory_data(priority=0)
@@ -69,6 +72,7 @@ def test_TC29_crear_inventory_con_prioridad_cero(setup_add_inventory):
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC30_crear_inventory_con_code_duplicado(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
     payload1 = create_inventory_data()
@@ -88,6 +92,7 @@ def test_TC30_crear_inventory_con_code_duplicado(setup_add_inventory):
 # TC-31 – Admin > Catalog > Inventory - Crear inventory sin campo code.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC31_crear_inventory_sin_campo_code(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = create_inventory_data()
@@ -104,6 +109,7 @@ def test_TC31_crear_inventory_sin_campo_code(setup_add_inventory):
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC252_crear_inventory_sin_campo_name(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = create_inventory_data()
@@ -120,6 +126,7 @@ def test_TC252_crear_inventory_sin_campo_name(setup_add_inventory):
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC253_crear_inventory_con_code_vacio(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = create_inventory_data()
@@ -136,6 +143,7 @@ def test_TC253_crear_inventory_con_code_vacio(setup_add_inventory):
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC254_crear_inventory_con_name_vacio(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = create_inventory_data()
@@ -151,6 +159,7 @@ def test_TC254_crear_inventory_con_name_vacio(setup_add_inventory):
 # TC-255 – Admin > Catalog > Inventory - Crear inventory con prioridad negativa.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.medium
 @pytest.mark.xfail(reason="BUG255: Permite ingresar un valor negativo", run=True)
 def test_TC255_crear_inventory_con_prioridad_negativa(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
@@ -168,6 +177,7 @@ def test_TC255_crear_inventory_con_prioridad_negativa(setup_add_inventory):
 # TC-256 – Admin > Catalog > Inventory - Crear inventory con priority como texto.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC256_crear_inventory_con_priority_como_texto(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = create_inventory_data()
@@ -183,6 +193,7 @@ def test_TC256_crear_inventory_con_priority_como_texto(setup_add_inventory):
 # TC-257 – Admin > Catalog > Inventory - Crear inventory con priority como decimal.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.medium
 def test_TC257_crear_inventory_con_priority_como_decimal(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = create_inventory_data()
@@ -197,6 +208,7 @@ def test_TC257_crear_inventory_con_priority_como_decimal(setup_add_inventory):
 
 # TC-258 – Admin > Catalog > Inventory - Crear inventory con address válido.
 @pytest.mark.functional
+@pytest.mark.medium
 def test_TC258_crear_inventory_con_address_valido(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -217,6 +229,7 @@ def test_TC258_crear_inventory_con_address_valido(setup_add_inventory):
 
 # TC-259 – Admin > Catalog > Inventory - Crear inventory sin address.
 @pytest.mark.functional
+@pytest.mark.medium
 def test_TC259_crear_inventory_sin_address(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -238,6 +251,7 @@ def test_TC259_crear_inventory_sin_address(setup_add_inventory):
 # TC-260 – Admin > Catalog > Inventory - Crear inventory sin campo countryCode en address.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC260_crear_inventory_sin_country_code_en_address(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -258,6 +272,7 @@ def test_TC260_crear_inventory_sin_country_code_en_address(setup_add_inventory):
 # TC-261 – Admin > Catalog > Inventory - Crear inventory con countryCode inválido.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC261_crear_inventory_con_country_code_invalido(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -275,6 +290,7 @@ def test_TC261_crear_inventory_con_country_code_invalido(setup_add_inventory):
 # TC-262 – Admin > Catalog > Inventory - Crear inventory con estructura inválida de address.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC262_crear_inventory_con_address_invalido(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -289,6 +305,7 @@ def test_TC262_crear_inventory_con_address_invalido(setup_add_inventory):
 
 # TC-263 – Admin > Catalog > Inventory - Crear inventory sin channels.
 @pytest.mark.functional
+@pytest.mark.medium
 def test_TC263_crear_inventory_sin_channels(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -308,6 +325,7 @@ def test_TC263_crear_inventory_sin_channels(setup_add_inventory):
 # TC-264 – Admin > Catalog > Inventory - Crear inventory con channels inválido (formato incorrecto).
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC264_crear_inventory_con_channels_invalidos(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = generate_inventory_source_data()
@@ -326,6 +344,7 @@ def test_TC264_crear_inventory_con_channels_invalidos(setup_add_inventory):
 # TC-265 – Admin > Catalog > Inventory - Crear inventory con código y nombre de longitud máxima válida.
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.high
 def test_TC265_crear_inventory_con_code_y_name_longitud_maxima(setup_add_inventory):
     headers, created_inventories = setup_add_inventory
     payload = create_inventory_data(code="X" * 255, name="X" * 255)
@@ -344,6 +363,7 @@ def test_TC265_crear_inventory_con_code_y_name_longitud_maxima(setup_add_invento
 # TC-266 – Admin > Catalog > Inventory - Crear inventory con name extremadamente largo.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 @pytest.mark.xfail(reason="BUG266: El backend responde status=500 en lugar de validar longitud de 'name'", run=True)
 def test_TC266_crear_inventory_con_name_extremadamente_largo(setup_add_inventory):
     headers, _ = setup_add_inventory
@@ -359,6 +379,7 @@ def test_TC266_crear_inventory_con_name_extremadamente_largo(setup_add_inventory
 # TC-267 – Admin > Catalog > Inventory - Crear inventory con code extremadamente largo.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 @pytest.mark.xfail(reason="BUG266: El backend responde 500 en lugar de validar longitud de 'code'", run=True)
 def test_TC267_crear_inventory_con_code_extremadamente_largo(setup_add_inventory):
     headers, _ = setup_add_inventory
@@ -375,6 +396,7 @@ def test_TC267_crear_inventory_con_code_extremadamente_largo(setup_add_inventory
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_TC268_crear_inventory_sin_payload(setup_add_inventory):
     headers, _ = setup_add_inventory
     payload = ""
