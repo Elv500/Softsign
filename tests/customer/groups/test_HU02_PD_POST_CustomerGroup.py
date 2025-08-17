@@ -428,10 +428,10 @@ def test_TC173_crear_grupo_codigo_minimo(setup_customer_group_cleanup):
     add_group_for_cleanup(customer_group_code)
 
 
-# Admin > Customer - Group > TC_174 Verificar que permita crear grupo con nombre de 1 carácter
+# Admin > Customer - Group > TC_430 Verificar que permita crear grupo con nombre de 2 carácter
 @pytest.mark.boundary
 @pytest.mark.low
-def test_TC174_crear_grupo_nombre_minimo(setup_customer_group_cleanup):
+def test_TC430_crear_grupo_nombre_minimo(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
     
     data = generate_customer_group_source_data()
@@ -450,11 +450,11 @@ def test_TC174_crear_grupo_nombre_minimo(setup_customer_group_cleanup):
 
 
 
-# Admin > Customer - Group > TC_175 Verificar que no permita crear grupo con valores null
+# Admin > Customer - Group > TC_270 Verificar que no permita crear grupo con valores null
 @pytest.mark.negative
 @pytest.mark.medium
-def test_TC175_crear_grupo_valores_null(auth_headers):
-    
+def test_TC270_crear_grupo_valores_null(auth_headers):
+
     data = {
         "code": None,
         "name": None
