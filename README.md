@@ -108,7 +108,7 @@ El proyecto usa un archivo `.env` para variables sensibles como tokens o URLs ba
 
 2. Abre `.env` con tu editor de texto y completa los valores requeridos:
    ```bash
-   BASE_URL = https://demo.sylius.com/api/v2
+   BASE_URL = https://demo.sylius.com
    ADMIN_USERNAME = api@example.com
    ADMIN_PASSWORD = sylius-api
    ```

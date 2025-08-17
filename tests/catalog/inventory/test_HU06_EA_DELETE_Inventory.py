@@ -55,7 +55,7 @@ def test_TC34_verificar_inventory_eliminado_no_exista(setup_create_inventory):
 # TC-35 – Admin > Catalog > Inventory - Verificar que el address asociado no exista más después de eliminar el Inventario.
 @pytest.mark.functional
 @pytest.mark.high
-@pytest.mark.xfail(reason="BUG35: Problemas con la construccion URL de Address", run=True)
+@pytest.mark.xfail(reason="BUG35: Problemas con la URL de Address obtenido a partir de un inventario eliminado", run=True)
 def test_TC35_verificar_address_eliminado_despues_de_eliminar_inventory(setup_create_inventory):
     headers, inventory = setup_create_inventory
     url_inventory = EndpointInventory.code(inventory["code"])
