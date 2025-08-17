@@ -1,0 +1,32 @@
+2025-08-17 21:50:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 21:50:19 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-17 21:50:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 21:50:19 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/message-every-me HTTP/1.1" 200 None
+2025-08-17 21:50:19 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-17 21:50:19 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/message-every-me
+2025-08-17 21:50:19 - INFO - STATUS CODE: 200
+2025-08-17 21:50:19 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/message-every-me",
+    "@type": "InventorySource",
+    "id": 10653,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4333",
+        "@type": "InventorySourceAddress",
+        "countryCode": "TD",
+        "street": "4180 Aguilar Trafficway",
+        "city": "Richardsonmouth",
+        "postcode": "13880"
+    },
+    "code": "message-every-me",
+    "name": "Marks-Lynn",
+    "priority": 65,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-17 21:50:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 21:50:19 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/message-every-me HTTP/1.1" 200 None
+2025-08-17 21:50:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 21:50:20 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/message-every-me HTTP/1.1" 204 0

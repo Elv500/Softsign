@@ -1,0 +1,27 @@
+2025-08-17 21:50:08 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 21:50:08 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 500 None
+2025-08-17 21:50:08 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-17 21:50:08 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources
+2025-08-17 21:50:08 - INFO - STATUS CODE: 500
+2025-08-17 21:50:08 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU0NjczNzAsImV4cCI6MTc1NTQ3MDk3MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.DzsfRml_P5GkJM6ZFoz5O6pvwkrjguw8Vb56LDDearMYr9jRzAj52XNCYkh5o9n2eq0yKhC21jv2jNSJ5OrlnXP4_74x3nexWIp_H8jhKa374VrXW8KCXulmk04P_6O5-xzANRjLkJyDToUDEq09XW5hOGvxSVoNa9aU1mAqzAKZ6K8YrE50May9XNtREMws2lbLKH5fetZTCvlYopuMn8em2k1Wg4QitBxRDg37pua9ksDxRnJFqDehD3glr7vfU7VqHorfip41MX3a66aWzFkuqPnte0Bv2RZvgQECsmvSerEySmqN2xXewF3GsooxeDclUmEJL93hUIraqQHLBjuGrUlrTBIk4ymwiUbJ8u9oRJfDI2GA_AgXhzBgmgY3fN1CsYvbR8bVxUlyDAa_4NowvvUgkWBnxvbZ578nhDKhkv6u2YQr-EfVoA39VlT-KOhfQkSZwTr4eL1ogEyZmozlXesPxPUXRKW4_pOkTSG8mdTH5hO1U6vCLFaTbv5_Sr_uoPs8ZHL6eMmNihcrsVMoAbXoiNBe9Qn4_1-v3b5MwtEEunMolbTzLcqhoV6i5jANuNmgvkWkcENYm6BfEqO_DBZZoQ7onruQ3z4X1x8eJp35FmlOffvMcgZywWXhKy0Foc10MT-l7iMeyKNSOFiM9xlQJClw0Q7U4Bf6uGI"
+}
+2025-08-17 21:50:08 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "KL859",
+    "name": "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+}
+2025-08-17 21:50:08 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/500",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "Internal Server Error",
+    "status": 500,
+    "type": "/errors/500",
+    "description": "Internal Server Error",
+    "hydra:description": "Internal Server Error",
+    "hydra:title": "An error occurred"
+}

@@ -1,0 +1,55 @@
+2025-08-17 21:51:20 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 21:51:20 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-17 21:51:20 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 21:51:20 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups/test_467480_fd095b7e HTTP/1.1" 405 None
+2025-08-17 21:51:20 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-17 21:51:20 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_467480_fd095b7e
+2025-08-17 21:51:20 - INFO - STATUS CODE: 405
+2025-08-17 21:51:20 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU0NjczNzAsImV4cCI6MTc1NTQ3MDk3MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.DzsfRml_P5GkJM6ZFoz5O6pvwkrjguw8Vb56LDDearMYr9jRzAj52XNCYkh5o9n2eq0yKhC21jv2jNSJ5OrlnXP4_74x3nexWIp_H8jhKa374VrXW8KCXulmk04P_6O5-xzANRjLkJyDToUDEq09XW5hOGvxSVoNa9aU1mAqzAKZ6K8YrE50May9XNtREMws2lbLKH5fetZTCvlYopuMn8em2k1Wg4QitBxRDg37pua9ksDxRnJFqDehD3glr7vfU7VqHorfip41MX3a66aWzFkuqPnte0Bv2RZvgQECsmvSerEySmqN2xXewF3GsooxeDclUmEJL93hUIraqQHLBjuGrUlrTBIk4ymwiUbJ8u9oRJfDI2GA_AgXhzBgmgY3fN1CsYvbR8bVxUlyDAa_4NowvvUgkWBnxvbZ578nhDKhkv6u2YQr-EfVoA39VlT-KOhfQkSZwTr4eL1ogEyZmozlXesPxPUXRKW4_pOkTSG8mdTH5hO1U6vCLFaTbv5_Sr_uoPs8ZHL6eMmNihcrsVMoAbXoiNBe9Qn4_1-v3b5MwtEEunMolbTzLcqhoV6i5jANuNmgvkWkcENYm6BfEqO_DBZZoQ7onruQ3z4X1x8eJp35FmlOffvMcgZywWXhKy0Foc10MT-l7iMeyKNSOFiM9xlQJClw0Q7U4Bf6uGI"
+}
+2025-08-17 21:51:20 - DEBUG - RESPONSE: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>An Error Occurred: Method Not Allowed</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>❌</text></svg>" />
+    <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; }
+.container { margin: 30px; max-width: 600px; }
+h1 { color: #dc3545; font-size: 24px; }
+h2 { font-size: 18px; }</style>
+</head>
+<body>
+<div class="container">
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "405 Method Not Allowed".</h2>
+
+    <p>
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+</div>
+</body>
+</html> (non-JSON content)
+2025-08-17 21:51:20 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 21:51:20 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/customer-groups/test_467480_fd095b7e HTTP/1.1" 200 None
+2025-08-17 21:51:20 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-17 21:51:20 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_467480_fd095b7e
+2025-08-17 21:51:20 - INFO - STATUS CODE: 200
+2025-08-17 21:51:20 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU0NjczNzAsImV4cCI6MTc1NTQ3MDk3MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.DzsfRml_P5GkJM6ZFoz5O6pvwkrjguw8Vb56LDDearMYr9jRzAj52XNCYkh5o9n2eq0yKhC21jv2jNSJ5OrlnXP4_74x3nexWIp_H8jhKa374VrXW8KCXulmk04P_6O5-xzANRjLkJyDToUDEq09XW5hOGvxSVoNa9aU1mAqzAKZ6K8YrE50May9XNtREMws2lbLKH5fetZTCvlYopuMn8em2k1Wg4QitBxRDg37pua9ksDxRnJFqDehD3glr7vfU7VqHorfip41MX3a66aWzFkuqPnte0Bv2RZvgQECsmvSerEySmqN2xXewF3GsooxeDclUmEJL93hUIraqQHLBjuGrUlrTBIk4ymwiUbJ8u9oRJfDI2GA_AgXhzBgmgY3fN1CsYvbR8bVxUlyDAa_4NowvvUgkWBnxvbZ578nhDKhkv6u2YQr-EfVoA39VlT-KOhfQkSZwTr4eL1ogEyZmozlXesPxPUXRKW4_pOkTSG8mdTH5hO1U6vCLFaTbv5_Sr_uoPs8ZHL6eMmNihcrsVMoAbXoiNBe9Qn4_1-v3b5MwtEEunMolbTzLcqhoV6i5jANuNmgvkWkcENYm6BfEqO_DBZZoQ7onruQ3z4X1x8eJp35FmlOffvMcgZywWXhKy0Foc10MT-l7iMeyKNSOFiM9xlQJClw0Q7U4Bf6uGI"
+}
+2025-08-17 21:51:20 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/test_467480_fd095b7e",
+    "@type": "CustomerGroup",
+    "id": 11257,
+    "code": "test_467480_fd095b7e",
+    "name": "Silva Ltd - Virtual logistical standardization"
+}
+2025-08-17 21:51:20 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 21:51:21 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_467480_fd095b7e HTTP/1.1" 204 0
