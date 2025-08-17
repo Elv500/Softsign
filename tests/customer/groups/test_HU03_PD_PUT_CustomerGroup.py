@@ -95,7 +95,7 @@ def test_TC273_actualizar_grupo_codigo_inexistente(auth_headers):
 # Admin > Customer - Group > TC_274 Actualizar grupo sin campo obligatorio 'name'
 @pytest.mark.negative
 @pytest.mark.boundary
-@pytest.mark.xfail(reason="Permite actualizar el campo name vacio cuando es obligatorio", run=True)
+@pytest.mark.xfail(reason="Known issue BugId: CG-03 Permite actualizar el campo name vacio cuando es obligatorio", run=True)
 @pytest.mark.high
 def test_TC274_actualizar_grupo_sin_campo_name(setup_customer_group_cleanup):
     auth_headers, add_group_for_cleanup = setup_customer_group_cleanup
