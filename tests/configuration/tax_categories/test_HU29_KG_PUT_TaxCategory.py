@@ -159,9 +159,10 @@ def test_TC398_actualizacion_categoria_inexistente(setup_edit_tax_category):
     AssertionTaxCategoryErrors.assert_not_found_error(response.json(), 404, "Not Found")
 
 
-#TC400 Admin > Configuration> Tax Category - intentar Aztualizar categorias inexistentes
+#TC400 Admin > Configuration> Tax Category - intentar Aztualizar categorias con token invalido
 @pytest.mark.functional
 @pytest.mark.high
+@pytest.mark.security
 @pytest.mark.negative
 def test_TC400_actualizacion_tax_category_sin_permisos(setup_edit_tax_category):
     headers, tax_category = setup_edit_tax_category
