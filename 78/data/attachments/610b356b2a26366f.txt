@@ -1,0 +1,25 @@
+2025-08-18 20:01:29 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:01:29 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-attributes/codigo_inexistente_123 HTTP/1.1" 401 None
+2025-08-18 20:01:29 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:01:29 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes/codigo_inexistente_123
+2025-08-18 20:01:29 - INFO - STATUS CODE: 401
+2025-08-18 20:01:29 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "big-congress-month",
+    "type": "text",
+    "translations": {
+        "en_US": {
+            "name": "Rice LLC"
+        }
+    },
+    "configuration": {
+        "maxCharacters": 111,
+        "minCharacters": 8
+    },
+    "storageType": "text"
+}
+2025-08-18 20:01:29 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}
