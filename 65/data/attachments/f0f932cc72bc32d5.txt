@@ -1,0 +1,18 @@
+2025-08-18 19:37:48 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:37:48 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/customer-groups/retail HTTP/1.1" 200 None
+2025-08-18 19:37:48 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:37:48 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/retail
+2025-08-18 19:37:48 - INFO - STATUS CODE: 200
+2025-08-18 19:37:48 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDU4NjYsImV4cCI6MTc1NTU0OTQ2Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.SGbyhwBrJAAgyFPbkfcNhAm8Z-0siuw4rFMXP2Tp8MRISJ7rlFvmRwhm-cYfPovhZSD-pdDz4Lo1vIELvRsIRwj5DecP2p8SWHzfDDbuWRBRO_zUoMxUkC0jQyoCWmC3WVU4Tu9QuccbBt1--L1lt9QvKztX1c20ikDYIzuMG4d41Q2Acgu5fbi7M4om0SkmTRlVdRJfNsTaVdWWQCjtd7scgiexOhlnwjHqxTFKxlRNiSlcgIJW5RuaGvaZQxxTPN34HY1UmQFg0QQvbVg4aqdLRciJnzXG48UMAqNS7svwk5tZr-MY3J404v7a8x3ZOVBvA_jBNHNbIOBpJIOZVtnEHDSoxjRp10yK9V4lVGxZ0yn1KAkD-LoydJd_SIEU8J4DoaiF86BKVJZI5VGeZ-7RhEgW7RwZlqUMPmilJvGwoujhfXIAG_aqcpGvNciJ_-T_A_sqspBeBNEStGF5aBRn8oyAmIvgHsPxqew23eA3Gn0fSsy6pTs52u2iLmSQmX84CmeiNJGC6h1_0Afx_FYncokdIxBnhJSzVyOqHFMy4X_xVRg9nPYnJGGLVkHVSd5TZItPvyjZ5pm3EG5ljI9urU-t2v1s0xeBpjKuMPEQ_ALFas61UGxwU3IQMIU1ik1ihh9fZldrmmiQzNz1moKUu8tfyvCsTZ6gJUl3cjY"
+}
+2025-08-18 19:37:48 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups/retail",
+    "@type": "CustomerGroup",
+    "id": 11502,
+    "code": "retail",
+    "name": "Retail"
+}
