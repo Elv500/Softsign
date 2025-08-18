@@ -1,0 +1,64 @@
+2025-08-18 22:21:09 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:21:09 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories?page=1&itemsPerPage=2 HTTP/1.1" 200 None
+2025-08-18 22:21:09 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:21:09 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 22:21:09 - INFO - STATUS CODE: 200
+2025-08-18 22:21:09 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU1OTgsImV4cCI6MTc1NTU1OTE5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.UsE3swQJ5rYGUoXEfzm8LkSZKHtMUxkS7JXzCX8lFVBoiw0OuYDj1a-Z-WV02A-Keo6paM8xevjBQ-F6FYYFkbepR_EoFBC1_hokdim2jW6J31kaEoCRxdeg5HijFswrU9tjlQN1ZkyQdBzz6d2k6q1AALIWB7jB2jpeJcDlwqvXq-dAryVC1Zq94SP1yf0pEgOYd9RLJU0WZhMm5RUdtNmo6yLl4AfqTlYnk7qNWedKYDnL5YeuuNIDWNKrBhiVttsGTv_LD0Yfl8xw4eLL6w0e809WhjHXqIUOrq9CACOJmG5s07c8x81cFcP5F66RdVNCWVeBr5Z57WUYJdnZmaPnoULNcNNXG1oZGPtbLaWZDuIN-GKCq77V1QN6FJTGypahx8p4IxITtHCP7s0r7ParkteVUb4jRL24x6EU_aIFJ2QFSJU555x6gAVF_hKs0EpwZvEoB6LPepIXoEz0cHMEV_WvulqsbW6w05yPhccKS_bgMVN7VRnrJ6l7O9AXS5b0iI7PSX71P58azhEhoSniGey0jtnQKSm_-Z-74gIFN2CjD-ItFzkeg6E-LAEOBviiVHIR5JVCa2lCQwAL_bUvPRTZ71KZYG7rriFSAAdQkcnuWCgsvDQ5LbdY56PWa6ghYcJKsbj58_g2tWM_TFZf2vrMRPvn5r1QgkH6FY0"
+}
+2025-08-18 22:21:09 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 10,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 9904,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Nulla odio voluptatem ut rerum asperiores. Voluptatibus non facere et eaque quia libero aliquid repellendus. Ullam harum perspiciatis vel quia voluptas. Impedit minus blanditiis reiciendis quis consequatur.",
+            "createdAt": "2025-08-18 22:01:32",
+            "updatedAt": "2025-08-18 22:01:32"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 9905,
+            "code": "other",
+            "name": "Other",
+            "description": "Molestiae laborum et consectetur fuga quia rerum vel. Ut similique sint laborum quas dolores assumenda. Eos ea est sed distinctio.",
+            "createdAt": "2025-08-18 22:01:32",
+            "updatedAt": "2025-08-18 22:01:32"
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/tax-categories?itemsPerPage=2&page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/tax-categories?itemsPerPage=2&page=1",
+        "hydra:last": "/api/v2/admin/tax-categories?itemsPerPage=2&page=5",
+        "hydra:next": "/api/v2/admin/tax-categories?itemsPerPage=2&page=2"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}

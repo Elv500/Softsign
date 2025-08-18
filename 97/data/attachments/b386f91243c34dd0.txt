@@ -1,0 +1,111 @@
+2025-08-18 22:21:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:21:17 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 22:21:17 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:21:17 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 22:21:17 - INFO - STATUS CODE: 201
+2025-08-18 22:21:17 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU1OTgsImV4cCI6MTc1NTU1OTE5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.UsE3swQJ5rYGUoXEfzm8LkSZKHtMUxkS7JXzCX8lFVBoiw0OuYDj1a-Z-WV02A-Keo6paM8xevjBQ-F6FYYFkbepR_EoFBC1_hokdim2jW6J31kaEoCRxdeg5HijFswrU9tjlQN1ZkyQdBzz6d2k6q1AALIWB7jB2jpeJcDlwqvXq-dAryVC1Zq94SP1yf0pEgOYd9RLJU0WZhMm5RUdtNmo6yLl4AfqTlYnk7qNWedKYDnL5YeuuNIDWNKrBhiVttsGTv_LD0Yfl8xw4eLL6w0e809WhjHXqIUOrq9CACOJmG5s07c8x81cFcP5F66RdVNCWVeBr5Z57WUYJdnZmaPnoULNcNNXG1oZGPtbLaWZDuIN-GKCq77V1QN6FJTGypahx8p4IxITtHCP7s0r7ParkteVUb4jRL24x6EU_aIFJ2QFSJU555x6gAVF_hKs0EpwZvEoB6LPepIXoEz0cHMEV_WvulqsbW6w05yPhccKS_bgMVN7VRnrJ6l7O9AXS5b0iI7PSX71P58azhEhoSniGey0jtnQKSm_-Z-74gIFN2CjD-ItFzkeg6E-LAEOBviiVHIR5JVCa2lCQwAL_bUvPRTZ71KZYG7rriFSAAdQkcnuWCgsvDQ5LbdY56PWa6ghYcJKsbj58_g2tWM_TFZf2vrMRPvn5r1QgkH6FY0"
+}
+2025-08-18 22:21:17 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "TAX-3d8d59",
+    "name": "CategoriaTest0",
+    "description": "Life serious nice deal government drug tend."
+}
+2025-08-18 22:21:17 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-3d8d59",
+    "@type": "TaxCategory",
+    "id": 9965,
+    "code": "TAX-3d8d59",
+    "name": "CategoriaTest0",
+    "description": "Life serious nice deal government drug tend.",
+    "createdAt": "2025-08-18 22:21:17",
+    "updatedAt": "2025-08-18 22:21:17"
+}
+2025-08-18 22:21:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:21:17 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 22:21:17 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:21:17 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 22:21:17 - INFO - STATUS CODE: 201
+2025-08-18 22:21:17 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU1OTgsImV4cCI6MTc1NTU1OTE5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.UsE3swQJ5rYGUoXEfzm8LkSZKHtMUxkS7JXzCX8lFVBoiw0OuYDj1a-Z-WV02A-Keo6paM8xevjBQ-F6FYYFkbepR_EoFBC1_hokdim2jW6J31kaEoCRxdeg5HijFswrU9tjlQN1ZkyQdBzz6d2k6q1AALIWB7jB2jpeJcDlwqvXq-dAryVC1Zq94SP1yf0pEgOYd9RLJU0WZhMm5RUdtNmo6yLl4AfqTlYnk7qNWedKYDnL5YeuuNIDWNKrBhiVttsGTv_LD0Yfl8xw4eLL6w0e809WhjHXqIUOrq9CACOJmG5s07c8x81cFcP5F66RdVNCWVeBr5Z57WUYJdnZmaPnoULNcNNXG1oZGPtbLaWZDuIN-GKCq77V1QN6FJTGypahx8p4IxITtHCP7s0r7ParkteVUb4jRL24x6EU_aIFJ2QFSJU555x6gAVF_hKs0EpwZvEoB6LPepIXoEz0cHMEV_WvulqsbW6w05yPhccKS_bgMVN7VRnrJ6l7O9AXS5b0iI7PSX71P58azhEhoSniGey0jtnQKSm_-Z-74gIFN2CjD-ItFzkeg6E-LAEOBviiVHIR5JVCa2lCQwAL_bUvPRTZ71KZYG7rriFSAAdQkcnuWCgsvDQ5LbdY56PWa6ghYcJKsbj58_g2tWM_TFZf2vrMRPvn5r1QgkH6FY0"
+}
+2025-08-18 22:21:17 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "TAX-15991e",
+    "name": "CategoriaTest1",
+    "description": "Part total control arrive short far open."
+}
+2025-08-18 22:21:17 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-15991e",
+    "@type": "TaxCategory",
+    "id": 9966,
+    "code": "TAX-15991e",
+    "name": "CategoriaTest1",
+    "description": "Part total control arrive short far open.",
+    "createdAt": "2025-08-18 22:21:17",
+    "updatedAt": "2025-08-18 22:21:17"
+}
+2025-08-18 22:21:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:21:17 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 22:21:17 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:21:17 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 22:21:17 - INFO - STATUS CODE: 201
+2025-08-18 22:21:17 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU1OTgsImV4cCI6MTc1NTU1OTE5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.UsE3swQJ5rYGUoXEfzm8LkSZKHtMUxkS7JXzCX8lFVBoiw0OuYDj1a-Z-WV02A-Keo6paM8xevjBQ-F6FYYFkbepR_EoFBC1_hokdim2jW6J31kaEoCRxdeg5HijFswrU9tjlQN1ZkyQdBzz6d2k6q1AALIWB7jB2jpeJcDlwqvXq-dAryVC1Zq94SP1yf0pEgOYd9RLJU0WZhMm5RUdtNmo6yLl4AfqTlYnk7qNWedKYDnL5YeuuNIDWNKrBhiVttsGTv_LD0Yfl8xw4eLL6w0e809WhjHXqIUOrq9CACOJmG5s07c8x81cFcP5F66RdVNCWVeBr5Z57WUYJdnZmaPnoULNcNNXG1oZGPtbLaWZDuIN-GKCq77V1QN6FJTGypahx8p4IxITtHCP7s0r7ParkteVUb4jRL24x6EU_aIFJ2QFSJU555x6gAVF_hKs0EpwZvEoB6LPepIXoEz0cHMEV_WvulqsbW6w05yPhccKS_bgMVN7VRnrJ6l7O9AXS5b0iI7PSX71P58azhEhoSniGey0jtnQKSm_-Z-74gIFN2CjD-ItFzkeg6E-LAEOBviiVHIR5JVCa2lCQwAL_bUvPRTZ71KZYG7rriFSAAdQkcnuWCgsvDQ5LbdY56PWa6ghYcJKsbj58_g2tWM_TFZf2vrMRPvn5r1QgkH6FY0"
+}
+2025-08-18 22:21:17 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "TAX-4d86cf",
+    "name": "CategoriaTest2",
+    "description": "Season laugh against protect."
+}
+2025-08-18 22:21:17 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-4d86cf",
+    "@type": "TaxCategory",
+    "id": 9967,
+    "code": "TAX-4d86cf",
+    "name": "CategoriaTest2",
+    "description": "Season laugh against protect.",
+    "createdAt": "2025-08-18 22:21:17",
+    "updatedAt": "2025-08-18 22:21:17"
+}
+2025-08-18 22:21:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:21:17 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-3d8d59 HTTP/1.1" 204 0
+2025-08-18 22:21:17 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:21:17 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-3d8d59
+2025-08-18 22:21:17 - INFO - STATUS CODE: 204
+2025-08-18 22:21:17 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU1OTgsImV4cCI6MTc1NTU1OTE5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.UsE3swQJ5rYGUoXEfzm8LkSZKHtMUxkS7JXzCX8lFVBoiw0OuYDj1a-Z-WV02A-Keo6paM8xevjBQ-F6FYYFkbepR_EoFBC1_hokdim2jW6J31kaEoCRxdeg5HijFswrU9tjlQN1ZkyQdBzz6d2k6q1AALIWB7jB2jpeJcDlwqvXq-dAryVC1Zq94SP1yf0pEgOYd9RLJU0WZhMm5RUdtNmo6yLl4AfqTlYnk7qNWedKYDnL5YeuuNIDWNKrBhiVttsGTv_LD0Yfl8xw4eLL6w0e809WhjHXqIUOrq9CACOJmG5s07c8x81cFcP5F66RdVNCWVeBr5Z57WUYJdnZmaPnoULNcNNXG1oZGPtbLaWZDuIN-GKCq77V1QN6FJTGypahx8p4IxITtHCP7s0r7ParkteVUb4jRL24x6EU_aIFJ2QFSJU555x6gAVF_hKs0EpwZvEoB6LPepIXoEz0cHMEV_WvulqsbW6w05yPhccKS_bgMVN7VRnrJ6l7O9AXS5b0iI7PSX71P58azhEhoSniGey0jtnQKSm_-Z-74gIFN2CjD-ItFzkeg6E-LAEOBviiVHIR5JVCa2lCQwAL_bUvPRTZ71KZYG7rriFSAAdQkcnuWCgsvDQ5LbdY56PWa6ghYcJKsbj58_g2tWM_TFZf2vrMRPvn5r1QgkH6FY0"
+}
+2025-08-18 22:21:17 - DEBUG - RESPONSE: No content (empty body)
+2025-08-18 22:21:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:21:17 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-15991e HTTP/1.1" 204 0
+2025-08-18 22:21:17 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:21:17 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-15991e
+2025-08-18 22:21:17 - INFO - STATUS CODE: 204
+2025-08-18 22:21:17 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU1OTgsImV4cCI6MTc1NTU1OTE5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.UsE3swQJ5rYGUoXEfzm8LkSZKHtMUxkS7JXzCX8lFVBoiw0OuYDj1a-Z-WV02A-Keo6paM8xevjBQ-F6FYYFkbepR_EoFBC1_hokdim2jW6J31kaEoCRxdeg5HijFswrU9tjlQN1ZkyQdBzz6d2k6q1AALIWB7jB2jpeJcDlwqvXq-dAryVC1Zq94SP1yf0pEgOYd9RLJU0WZhMm5RUdtNmo6yLl4AfqTlYnk7qNWedKYDnL5YeuuNIDWNKrBhiVttsGTv_LD0Yfl8xw4eLL6w0e809WhjHXqIUOrq9CACOJmG5s07c8x81cFcP5F66RdVNCWVeBr5Z57WUYJdnZmaPnoULNcNNXG1oZGPtbLaWZDuIN-GKCq77V1QN6FJTGypahx8p4IxITtHCP7s0r7ParkteVUb4jRL24x6EU_aIFJ2QFSJU555x6gAVF_hKs0EpwZvEoB6LPepIXoEz0cHMEV_WvulqsbW6w05yPhccKS_bgMVN7VRnrJ6l7O9AXS5b0iI7PSX71P58azhEhoSniGey0jtnQKSm_-Z-74gIFN2CjD-ItFzkeg6E-LAEOBviiVHIR5JVCa2lCQwAL_bUvPRTZ71KZYG7rriFSAAdQkcnuWCgsvDQ5LbdY56PWa6ghYcJKsbj58_g2tWM_TFZf2vrMRPvn5r1QgkH6FY0"
+}
+2025-08-18 22:21:17 - DEBUG - RESPONSE: No content (empty body)
+2025-08-18 22:21:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:21:18 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-4d86cf HTTP/1.1" 204 0
+2025-08-18 22:21:18 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:21:18 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-4d86cf
+2025-08-18 22:21:18 - INFO - STATUS CODE: 204
+2025-08-18 22:21:18 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU1OTgsImV4cCI6MTc1NTU1OTE5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.UsE3swQJ5rYGUoXEfzm8LkSZKHtMUxkS7JXzCX8lFVBoiw0OuYDj1a-Z-WV02A-Keo6paM8xevjBQ-F6FYYFkbepR_EoFBC1_hokdim2jW6J31kaEoCRxdeg5HijFswrU9tjlQN1ZkyQdBzz6d2k6q1AALIWB7jB2jpeJcDlwqvXq-dAryVC1Zq94SP1yf0pEgOYd9RLJU0WZhMm5RUdtNmo6yLl4AfqTlYnk7qNWedKYDnL5YeuuNIDWNKrBhiVttsGTv_LD0Yfl8xw4eLL6w0e809WhjHXqIUOrq9CACOJmG5s07c8x81cFcP5F66RdVNCWVeBr5Z57WUYJdnZmaPnoULNcNNXG1oZGPtbLaWZDuIN-GKCq77V1QN6FJTGypahx8p4IxITtHCP7s0r7ParkteVUb4jRL24x6EU_aIFJ2QFSJU555x6gAVF_hKs0EpwZvEoB6LPepIXoEz0cHMEV_WvulqsbW6w05yPhccKS_bgMVN7VRnrJ6l7O9AXS5b0iI7PSX71P58azhEhoSniGey0jtnQKSm_-Z-74gIFN2CjD-ItFzkeg6E-LAEOBviiVHIR5JVCa2lCQwAL_bUvPRTZ71KZYG7rriFSAAdQkcnuWCgsvDQ5LbdY56PWa6ghYcJKsbj58_g2tWM_TFZf2vrMRPvn5r1QgkH6FY0"
+}
+2025-08-18 22:21:18 - DEBUG - RESPONSE: No content (empty body)

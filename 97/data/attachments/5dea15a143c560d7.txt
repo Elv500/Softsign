@@ -1,0 +1,15 @@
+2025-08-18 22:21:35 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:21:35 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 401 None
+2025-08-18 22:21:35 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:21:35 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-18 22:21:35 - INFO - STATUS CODE: 401
+2025-08-18 22:21:35 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_555695_ecc95340",
+    "name": "Johnson, Green and Baker - Expanded heuristic throughput"
+}
+2025-08-18 22:21:35 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}

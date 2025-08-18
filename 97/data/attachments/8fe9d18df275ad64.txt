@@ -1,0 +1,67 @@
+2025-08-18 22:20:47 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:20:47 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-18 22:20:47 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:20:47 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/popular-turn HTTP/1.1" 200 None
+2025-08-18 22:20:47 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:20:47 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/popular-turn
+2025-08-18 22:20:47 - INFO - STATUS CODE: 200
+2025-08-18 22:20:47 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/popular-turn",
+    "@type": "InventorySource",
+    "id": 11198,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4835",
+        "@type": "InventorySourceAddress",
+        "countryCode": "GQ",
+        "street": "383 Hill Wells",
+        "city": "Port Bradleyton",
+        "postcode": "71273"
+    },
+    "code": "popular-turn",
+    "name": "Morris Ltd",
+    "priority": 72,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-18 22:20:47 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:20:47 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/popular-turn HTTP/1.1" 200 None
+2025-08-18 22:20:47 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:20:47 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/popular-turn
+2025-08-18 22:20:47 - INFO - STATUS CODE: 200
+2025-08-18 22:20:47 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU1OTgsImV4cCI6MTc1NTU1OTE5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.UsE3swQJ5rYGUoXEfzm8LkSZKHtMUxkS7JXzCX8lFVBoiw0OuYDj1a-Z-WV02A-Keo6paM8xevjBQ-F6FYYFkbepR_EoFBC1_hokdim2jW6J31kaEoCRxdeg5HijFswrU9tjlQN1ZkyQdBzz6d2k6q1AALIWB7jB2jpeJcDlwqvXq-dAryVC1Zq94SP1yf0pEgOYd9RLJU0WZhMm5RUdtNmo6yLl4AfqTlYnk7qNWedKYDnL5YeuuNIDWNKrBhiVttsGTv_LD0Yfl8xw4eLL6w0e809WhjHXqIUOrq9CACOJmG5s07c8x81cFcP5F66RdVNCWVeBr5Z57WUYJdnZmaPnoULNcNNXG1oZGPtbLaWZDuIN-GKCq77V1QN6FJTGypahx8p4IxITtHCP7s0r7ParkteVUb4jRL24x6EU_aIFJ2QFSJU555x6gAVF_hKs0EpwZvEoB6LPepIXoEz0cHMEV_WvulqsbW6w05yPhccKS_bgMVN7VRnrJ6l7O9AXS5b0iI7PSX71P58azhEhoSniGey0jtnQKSm_-Z-74gIFN2CjD-ItFzkeg6E-LAEOBviiVHIR5JVCa2lCQwAL_bUvPRTZ71KZYG7rriFSAAdQkcnuWCgsvDQ5LbdY56PWa6ghYcJKsbj58_g2tWM_TFZf2vrMRPvn5r1QgkH6FY0"
+}
+2025-08-18 22:20:47 - DEBUG - PAYLOAD REQUEST:
+{
+    "name": "Curtis and Sons",
+    "priority": 61,
+    "address": {
+        "countryCode": "LS",
+        "street": "931 Ray Forest Apt. 552",
+        "city": "Williamberg",
+        "postcode": "14447"
+    },
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-18 22:20:47 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/popular-turn",
+    "@type": "InventorySource",
+    "id": 11198,
+    "address": "/api/v2/admin/inventory-source-addresses/4836",
+    "code": "popular-turn",
+    "name": "Curtis and Sons",
+    "priority": 61,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-18 22:20:47 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:20:48 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/popular-turn HTTP/1.1" 204 0
