@@ -1,0 +1,14 @@
+2025-08-18 19:57:16 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:57:17 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 200 None
+2025-08-18 19:57:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:57:17 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 201 None
+2025-08-18 19:57:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:57:18 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-options/test_1755547037_fS92 HTTP/1.1" 204 0
+2025-08-18 19:57:18 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:57:18 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options/test_1755547037_fS92
+2025-08-18 19:57:18 - INFO - STATUS CODE: 204
+2025-08-18 19:57:18 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDcwMzcsImV4cCI6MTc1NTU1MDYzNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.NeV0LFPOEBomHjLOpcT4PzfCamOMQzQ_CK3DHZJf1U8CV4Iy0rd2VgUnulqdZ3973GwWnj8CpDoBNZVYic2eDmrGCh38L5eXFNIeTpyfltaRzuc-qycW0_dZ_aH4vHIfEgu59HQpjgUMq7cglZrNXuCk3_8yb99wr9T1TlMRoqS9y_1Y2vF-ogu1K8mImmcyLBVadu7O4djeZOSC_iQe0Zc4iYs3YwpLfpSBO4REXG9IcK-Kt2RxOw_4GZhNqM51ubxkY-aNvV5aNmgxaMb43TqBOV3OA7eO5SplPPOgaA31sikh4Vh1dqxkIxPdtJE6blbgz3BBN16XGhTEDgu8I_ktkV5n8y5i9ryNnwWSEhQZvE0idJxTPomkkpB6y3KactbiA4yHcWI5ugQpw4nwc7bkVBx6XFEmiTdxUK_IcUcTGPMghqVDNJ8Leq2YLCpjfdPsNZYiL6OpyoE3ypSTBKs0dKXZavR416SDvYkKAKG44IWUKRnd3KLSOEp_nh0ywZkIlgZBMtNSZFzdfSqNF_8YSAUjQXQZaulEHYuguojDheivV8_vlVlrxVAJscaz6RwsBYaR9cBlklnZml8ueEhnmdu4zl33y_KTRb56wbzdFGSIHYJ399STbdVFeBLal62Wk-7hFLoocjiyeXLRfzYsRZ7du6NQzIJNpkov2m8"
+}
+2025-08-18 19:57:18 - DEBUG - RESPONSE: No content (empty body)

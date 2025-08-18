@@ -1,2 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Aug 18 18:21:58 GMT 2025","Mon Aug 18 18:22:01 GMT 2025","2757","tests.configuration.tax_categories","test_HU50_E2E_CRUD_TaxCategory","","","","test_full_tax_category_crud_flow",""
