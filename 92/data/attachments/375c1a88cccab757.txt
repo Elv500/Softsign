@@ -1,0 +1,2 @@
+2025-08-18 21:24:12 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:25:28 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-association-types?page=1&itemsPerPage=10&order%5Bcode%5D=asc HTTP/1.1" 520 7341

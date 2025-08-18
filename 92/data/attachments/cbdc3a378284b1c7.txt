@@ -1,0 +1,16 @@
+2025-08-18 21:28:18 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:28:19 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 401 None
+2025-08-18 21:28:19 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:28:19 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 21:28:19 - INFO - STATUS CODE: 401
+2025-08-18 21:28:19 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "TAX-58667c",
+    "name": "Common",
+    "description": "Else that test movie marriage officer."
+}
+2025-08-18 21:28:19 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}

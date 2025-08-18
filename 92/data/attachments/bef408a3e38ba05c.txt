@@ -1,0 +1,22 @@
+2025-08-18 21:28:02 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:28:02 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-options/HOZLPdaJ HTTP/1.1" 404 None
+2025-08-18 21:28:02 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:28:02 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options/HOZLPdaJ
+2025-08-18 21:28:02 - INFO - STATUS CODE: 404
+2025-08-18 21:28:02 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTIyNDcsImV4cCI6MTc1NTU1NTg0Nywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.LCOZmsTInj8aEBVhDqGy7iBeMNkFW_ZnZQBrjj4CTITp3gTP71sxHdU0yOG29t6Y376C1zMBsR1919DWtSL6iOuqLBj4BxpIQutC0X0kd7MrNH-5gn46XPO2Rf6l-93ZaElfEBSUkdE6ox6aBvp5KkZwcpuVv8nV8DA7WCKvdJhVi7-UPuPLShVmmdQRpkcqrd4UHWgLxE5YjtKby68b2W3LsuMaOhFQ3PqBCnJHSUT3xhjBnIqB7DauRRQapuNCoFQltzKUBuSSR5rH8GOfgesbFWXERYfk57yRIknwW4ThmAdkAtKcurdtu9gejwMEecDk-BgMliy8QjuRpqK3msCHgMbVzxASnylJuDV8PNNYPtAgAcVQ_GC5uC6O0I2QkMBcRcc9LZ69aGgFvdMpZb1-X87hi6vzowxjXrutSZmx6f_mB6b1jSoA4I8TQCf5EnBAGARr09xs-Uacjw9swY1kTuZfpdm5wW8ff160R5SLVsvu_aWvmwKWFpeJNGOAhKXmPPmaOhZpZ6cR-2YINuw58Zd74Vg5huChPMBdbt0uMzRU6_2KlvsE4iVw6D3_Zq91reoEHfgzJm_DeHV9VG-CnJBLIBjIhIPWwfJnxD5mH7_7SYYOeRPGxUICsfYETBQ3qu7UQ-Ha-t5LZuBcFK0mmLGj4J1S6cHf7icsTtY"
+}
+2025-08-18 21:28:02 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "description": "Not Found",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
