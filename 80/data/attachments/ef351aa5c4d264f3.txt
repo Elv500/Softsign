@@ -1,0 +1,44 @@
+2025-08-18 20:04:53 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:04:54 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-attributes HTTP/1.1" 422 None
+2025-08-18 20:04:54 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:04:54 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes
+2025-08-18 20:04:54 - INFO - STATUS CODE: 422
+2025-08-18 20:04:54 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDc0OTMsImV4cCI6MTc1NTU1MTA5Mywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.jeuSbeoUjiPs8d2mZCG1u8r_dP8rhq7kwQHKsBpUav1__fM0cTrufU1JScee4MMfQwpcNCSesf4eqqgHqMwwfoeniLWR-ej7DG5zeBzcShVcSQjjrdPWO9Zq7oQWdTLxiYnz_ts8FhDKUfHexUJEDGJtyUr7aTLNN9ABBdRZGa5xYkPxjE7JXBe-bwGP_c8GcZ2xU4cPZM-smi-W62JSHqUIGptjUFQUPmnWas_3Ncb68hK-2fDltc2saIRh1Qc392j0m6plJkoQcP_GXgLFf3FRITa2q5PRUx3xpmojvZOzadmh4h1IW61ahARSApyvAA7vA9hyV_Yh0X548bNxoIrz_Lj2co9OMiSoFmnMQvgbTa1uVUH9JpdlUbmeImhV9Remgea3u7vcgWtBURLCY0Jz4TICMiyr6HpKU5SgxEFdUWThqzInHlbKBh4i6W7hXSCRkUAj2R-Rr-j2KdsY_OwNcGbqqmRBLb_iaj6tbhXZtQGF2B4Y2hlYM2z4OGqpYWYwAvIe_zkV9yE5DAml4owIY10aKbtkR7w2sDYVTe5jv13culIj3nMsX89Dw_eOvzT82zQM4gZhI0Br84WfcsdJaZLLn-bFcJKPayVBpD5LItRoz7xzzNcd190rF40EMANjB7NpMDBVradfX26iOecHpnNFbc57-a49JMHPX84"
+}
+2025-08-18 20:04:54 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "fly-section-town",
+    "type": "text",
+    "translations": {
+        "en_US": {
+            "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+    },
+    "configuration": {
+        "maxCharacters": 20,
+        "minCharacters": 8
+    },
+    "storageType": "text"
+}
+2025-08-18 20:04:54 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "translations[en_US].name",
+            "message": "Attribute name must not be longer than 255 characters.",
+            "code": "d94b19cc-114f-4f44-9cc4-4138e80a87b9"
+        }
+    ],
+    "detail": "translations[en_US].name: Attribute name must not be longer than 255 characters.",
+    "description": "translations[en_US].name: Attribute name must not be longer than 255 characters.",
+    "type": "/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "title": "An error occurred",
+    "hydra:description": "translations[en_US].name: Attribute name must not be longer than 255 characters.",
+    "hydra:title": "An error occurred"
+}

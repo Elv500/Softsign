@@ -1,0 +1,174 @@
+2025-08-18 20:04:52 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:04:53 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 200 None
+2025-08-18 20:04:53 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:04:53 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-attributes?page=1&itemsPerPage=2 HTTP/1.1" 200 None
+2025-08-18 20:04:53 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:04:53 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes?page=1&itemsPerPage=2
+2025-08-18 20:04:53 - INFO - STATUS CODE: 200
+2025-08-18 20:04:53 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDc0OTMsImV4cCI6MTc1NTU1MTA5Mywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.jeuSbeoUjiPs8d2mZCG1u8r_dP8rhq7kwQHKsBpUav1__fM0cTrufU1JScee4MMfQwpcNCSesf4eqqgHqMwwfoeniLWR-ej7DG5zeBzcShVcSQjjrdPWO9Zq7oQWdTLxiYnz_ts8FhDKUfHexUJEDGJtyUr7aTLNN9ABBdRZGa5xYkPxjE7JXBe-bwGP_c8GcZ2xU4cPZM-smi-W62JSHqUIGptjUFQUPmnWas_3Ncb68hK-2fDltc2saIRh1Qc392j0m6plJkoQcP_GXgLFf3FRITa2q5PRUx3xpmojvZOzadmh4h1IW61ahARSApyvAA7vA9hyV_Yh0X548bNxoIrz_Lj2co9OMiSoFmnMQvgbTa1uVUH9JpdlUbmeImhV9Remgea3u7vcgWtBURLCY0Jz4TICMiyr6HpKU5SgxEFdUWThqzInHlbKBh4i6W7hXSCRkUAj2R-Rr-j2KdsY_OwNcGbqqmRBLb_iaj6tbhXZtQGF2B4Y2hlYM2z4OGqpYWYwAvIe_zkV9yE5DAml4owIY10aKbtkR7w2sDYVTe5jv13culIj3nMsX89Dw_eOvzT82zQM4gZhI0Br84WfcsdJaZLLn-bFcJKPayVBpD5LItRoz7xzzNcd190rF40EMANjB7NpMDBVradfX26iOecHpnNFbc57-a49JMHPX84"
+}
+2025-08-18 20:04:53 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductAttribute",
+    "@id": "/api/v2/admin/product-attributes",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 26,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/product-attributes/t_shirt_brand",
+            "@type": "ProductAttribute",
+            "code": "t_shirt_brand",
+            "type": "text",
+            "configuration": [],
+            "storageType": "text",
+            "position": 0,
+            "translatable": true,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_brand/translations/en_US",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt brand"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_brand/translations/de_DE",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt brand"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_brand/translations/fr_FR",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt brand"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_brand/translations/pl_PL",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt brand"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_brand/translations/es_ES",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt brand"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_brand/translations/es_MX",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt brand"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_brand/translations/pt_PT",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt brand"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_brand/translations/zh_CN",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt brand"
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/product-attributes/t_shirt_collection",
+            "@type": "ProductAttribute",
+            "code": "t_shirt_collection",
+            "type": "text",
+            "configuration": [],
+            "storageType": "text",
+            "position": 1,
+            "translatable": true,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_collection/translations/en_US",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt collection"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_collection/translations/de_DE",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt collection"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_collection/translations/fr_FR",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt collection"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_collection/translations/pl_PL",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt collection"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_collection/translations/es_ES",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt collection"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_collection/translations/es_MX",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt collection"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_collection/translations/pt_PT",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt collection"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-attributes/t_shirt_collection/translations/zh_CN",
+                    "@type": "ProductAttributeTranslation",
+                    "name": "T-shirt collection"
+                }
+            }
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-attributes?itemsPerPage=2&page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/product-attributes?itemsPerPage=2&page=1",
+        "hydra:last": "/api/v2/admin/product-attributes?itemsPerPage=2&page=13",
+        "hydra:next": "/api/v2/admin/product-attributes?itemsPerPage=2&page=2"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-attributes{?translatable,order[position],code,type,type[],translations.name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "translatable",
+                "property": "translatable",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[position]",
+                "property": "position",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "type",
+                "property": "type",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "type[]",
+                "property": "type",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "translations.name",
+                "property": "translations.name",
+                "required": false
+            }
+        ]
+    }
+}
