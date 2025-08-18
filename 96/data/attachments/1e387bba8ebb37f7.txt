@@ -1,0 +1,20 @@
+2025-08-18 22:11:16 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:11:16 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 401 None
+2025-08-18 22:11:16 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:11:16 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 22:11:16 - INFO - STATUS CODE: 401
+2025-08-18 22:11:16 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer invalid_token"
+}
+2025-08-18 22:11:16 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "TAX-5e9fdb",
+    "name": "Into",
+    "description": "Buy soon woman allow."
+}
+2025-08-18 22:11:16 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "Invalid JWT Token"
+}

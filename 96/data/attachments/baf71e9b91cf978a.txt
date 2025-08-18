@@ -1,0 +1,35 @@
+2025-08-18 22:11:18 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:11:19 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 422 None
+2025-08-18 22:11:19 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:11:19 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 22:11:19 - INFO - STATUS CODE: 422
+2025-08-18 22:11:19 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTQ5MDIsImV4cCI6MTc1NTU1ODUwMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IJgePrmRKZCvZaVXRMNQkaR1cgvbaeBek7T_95enfLqE-uscU9M3ZmquyMFKRyAzMoB_GZrdswm_pW4oF0ADUWq0YeAfesfFwJLWhs7RPHhVQ7cipxtqCJJEL_rsdBTUsyD01dGZpMF1l5AA5M23PQG5g4NPCkQI13_hfaT46-xoOVT7hpPRukVQ4h2gfDsTGkW_BjKKe11Iso-FyAmUdI7Zpdy70ucfF0wDDwnpQtM2B7uOib2gQU2qtR3J2pn2rFr4blUxirkkNx7ZXHhgQ7iGiNFPZWWnIKZ2i0725KxoTL0Aup2cUKOy0PfPeFRrwBxolgumQcNIlL1Y54iGJ3hnMILFJy6YMACzrNSiPXfPnflNgXunrgwq9Woq6IdeDc7fkECzL4Sj5Af1uajPp5yXQcbZkFCfjgQlOoTEpYogcuVWWIR06p0UZV1SnLEi0j5Np55-UQygYFLjblBcBVrwC3t1_jax1LkJEjjkm8Uk7pYLDT2BW6a-cvZHbgqFKdQ8Whc0ePIrdAZ3GyoVl8DCqujYsQkkUpJNKR15A0_bofjpi_2utsNz6BKctS2K0CRWVinFU2BOuVn_x-diOmqsDGXAT4bgEBWA287OpBjnyfwCM9wRL_SEl_lhTNE1Ti6-URlvGq3jc_sZ48u6xjQEOXUAViA1bIAsja5kDqU"
+}
+2025-08-18 22:11:19 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "name": "Contain",
+    "description": "Them but white drive."
+}
+2025-08-18 22:11:19 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "code",
+            "message": "The code must not be longer than 255 characters.",
+            "code": "d94b19cc-114f-4f44-9cc4-4138e80a87b9"
+        }
+    ],
+    "detail": "code: The code must not be longer than 255 characters.",
+    "description": "code: The code must not be longer than 255 characters.",
+    "type": "/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "title": "An error occurred",
+    "hydra:description": "code: The code must not be longer than 255 characters.",
+    "hydra:title": "An error occurred"
+}

@@ -1,0 +1,15 @@
+2025-08-18 22:13:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:13:17 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 200 None
+2025-08-18 22:13:17 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:13:17 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/administrators/token
+2025-08-18 22:13:17 - INFO - STATUS CODE: 200
+2025-08-18 22:13:17 - DEBUG - PAYLOAD REQUEST:
+{
+    "email": "api@example.com",
+    "password": "sylius-api"
+}
+2025-08-18 22:13:17 - DEBUG - RESPONSE:
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTUxOTcsImV4cCI6MTc1NTU1ODc5Nywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Llq7Q5WCp_uW_o17QPPkP9Oa9xgFKuTwd9OlbsYXWEe6ahkZsVc32BOKH13bE9tm2THIBvyBJpBUDW3e3h4PnfEicjgJPyNYhst0FyVgVXPnSCqb39Baf5gwbR2dyUZ2qQUxW1XDZshWD6cB2FPvkGJphckWgsUx5oAGXGoaW1daGYlvzCiqR31LnBClM9BIluD4reH9rkO9EoY05mBAsEumlyvtPl3OYbyvyawKkp-cAsCtCQ_YO3Uz5umHZDB-oDu3NVb_KwvMKfGcPzjF_41l4yyxE18qrqBqENk4wasc9Rwq1KB4OxwamvffWvhsaUOpmxIhvCFLOnE0IFDHvdXhrEEpQni7B1sWzXaRpWWW8PFmwWhYvzHhRX-J3AAZlCGjmZMVA4ask_c2NECIew6Rqm9SoymSnS3CsJWPOtQxdaoUZ3XRv_-qXSZGRqbkCPIaLWAWUPjL0SB7U4a1roEcuBYo2L_UZy_vkSmwrFNq8HbIh1tNpMAZxMD6N889Bk4w8pQjc0qGZnTt4v13YhKgFOHQyma54CJtnfWeGy6ULPHF1fdWp253EHr3YGDMPPBxVCdUAyIzOmjLFDWBLxzeL2kddfrgIBuK3-7GYj_laNUBNMaxNV45rmORYr5-GR9FFbBqqKT7rnqUOdtdM5Je44iLG11SGoI4ELeUUEk",
+    "adminUser": "/api/v2/admin/administrators/12709"
+}

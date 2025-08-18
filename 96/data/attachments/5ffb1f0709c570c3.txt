@@ -1,0 +1,84 @@
+2025-08-18 22:12:18 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:12:19 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/customer-groups HTTP/1.1" 200 None
+2025-08-18 22:12:19 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:12:19 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-18 22:12:19 - INFO - STATUS CODE: 200
+2025-08-18 22:12:19 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTQ5MDIsImV4cCI6MTc1NTU1ODUwMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IJgePrmRKZCvZaVXRMNQkaR1cgvbaeBek7T_95enfLqE-uscU9M3ZmquyMFKRyAzMoB_GZrdswm_pW4oF0ADUWq0YeAfesfFwJLWhs7RPHhVQ7cipxtqCJJEL_rsdBTUsyD01dGZpMF1l5AA5M23PQG5g4NPCkQI13_hfaT46-xoOVT7hpPRukVQ4h2gfDsTGkW_BjKKe11Iso-FyAmUdI7Zpdy70ucfF0wDDwnpQtM2B7uOib2gQU2qtR3J2pn2rFr4blUxirkkNx7ZXHhgQ7iGiNFPZWWnIKZ2i0725KxoTL0Aup2cUKOy0PfPeFRrwBxolgumQcNIlL1Y54iGJ3hnMILFJy6YMACzrNSiPXfPnflNgXunrgwq9Woq6IdeDc7fkECzL4Sj5Af1uajPp5yXQcbZkFCfjgQlOoTEpYogcuVWWIR06p0UZV1SnLEi0j5Np55-UQygYFLjblBcBVrwC3t1_jax1LkJEjjkm8Uk7pYLDT2BW6a-cvZHbgqFKdQ8Whc0ePIrdAZ3GyoVl8DCqujYsQkkUpJNKR15A0_bofjpi_2utsNz6BKctS2K0CRWVinFU2BOuVn_x-diOmqsDGXAT4bgEBWA287OpBjnyfwCM9wRL_SEl_lhTNE1Ti6-URlvGq3jc_sZ48u6xjQEOXUAViA1bIAsja5kDqU"
+}
+2025-08-18 22:12:19 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 5,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/customer-groups/retail",
+            "@type": "CustomerGroup",
+            "id": 11974,
+            "code": "retail",
+            "name": "Retail"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/wholesale",
+            "@type": "CustomerGroup",
+            "id": 11975,
+            "code": "wholesale",
+            "name": "Wholesale"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_554579_bb22688b",
+            "@type": "CustomerGroup",
+            "id": 11976,
+            "code": "test_554579_bb22688b",
+            "name": "Delgado and Sons - Reactive 3rdgeneration moderator"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_555130_9845f724",
+            "@type": "CustomerGroup",
+            "id": 11980,
+            "code": "test_555130_9845f724",
+            "name": "Cobb-Johnson - Ameliorated contextually-based artificial intelligence"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_555132_d93b99e7",
+            "@type": "CustomerGroup",
+            "id": 11981,
+            "code": "test_555132_d93b99e7",
+            "name": "Norton PLC - Multi-channeled systemic toolset"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/customer-groups{?code,name,order[code],order[name]}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[code]",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[name]",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,35 @@
+2025-08-18 22:10:51 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:10:52 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 201 None
+2025-08-18 22:10:52 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:10:52 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-options/test_1755555051_Gg90 HTTP/1.1" 400 None
+2025-08-18 22:10:52 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:10:52 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options/test_1755555051_Gg90
+2025-08-18 22:10:52 - INFO - STATUS CODE: 400
+2025-08-18 22:10:52 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTQ5MDIsImV4cCI6MTc1NTU1ODUwMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.IJgePrmRKZCvZaVXRMNQkaR1cgvbaeBek7T_95enfLqE-uscU9M3ZmquyMFKRyAzMoB_GZrdswm_pW4oF0ADUWq0YeAfesfFwJLWhs7RPHhVQ7cipxtqCJJEL_rsdBTUsyD01dGZpMF1l5AA5M23PQG5g4NPCkQI13_hfaT46-xoOVT7hpPRukVQ4h2gfDsTGkW_BjKKe11Iso-FyAmUdI7Zpdy70ucfF0wDDwnpQtM2B7uOib2gQU2qtR3J2pn2rFr4blUxirkkNx7ZXHhgQ7iGiNFPZWWnIKZ2i0725KxoTL0Aup2cUKOy0PfPeFRrwBxolgumQcNIlL1Y54iGJ3hnMILFJy6YMACzrNSiPXfPnflNgXunrgwq9Woq6IdeDc7fkECzL4Sj5Af1uajPp5yXQcbZkFCfjgQlOoTEpYogcuVWWIR06p0UZV1SnLEi0j5Np55-UQygYFLjblBcBVrwC3t1_jax1LkJEjjkm8Uk7pYLDT2BW6a-cvZHbgqFKdQ8Whc0ePIrdAZ3GyoVl8DCqujYsQkkUpJNKR15A0_bofjpi_2utsNz6BKctS2K0CRWVinFU2BOuVn_x-diOmqsDGXAT4bgEBWA287OpBjnyfwCM9wRL_SEl_lhTNE1Ti6-URlvGq3jc_sZ48u6xjQEOXUAViA1bIAsja5kDqU"
+}
+2025-08-18 22:10:52 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755555051_Gg90",
+    "position": 12.01,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-options/test_1755555051_Gg90/translations/en_US",
+            "name": "Rock Option"
+        }
+    }
+}
+2025-08-18 22:10:52 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/400",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "The type of the \"position\" attribute must be \"int\", \"double\" given.",
+    "status": 400,
+    "type": "/errors/400",
+    "description": "The type of the \"position\" attribute must be \"int\", \"double\" given.",
+    "hydra:description": "The type of the \"position\" attribute must be \"int\", \"double\" given.",
+    "hydra:title": "An error occurred"
+}

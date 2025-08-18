@@ -1,2 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Aug 18 19:57:39 GMT 2025","Mon Aug 18 19:57:42 GMT 2025","3212","tests.catalog.options","test_HU33_ES_E2E_ProductOption","","","","test_HU33_E2E_ProductOption",""
