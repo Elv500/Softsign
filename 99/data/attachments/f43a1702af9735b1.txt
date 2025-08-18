@@ -1,0 +1,39 @@
+2025-08-18 22:28:11 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:28:11 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources?page=2&itemsPerPage=1 HTTP/1.1" 200 None
+2025-08-18 22:28:11 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:28:11 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources?page=2&itemsPerPage=1
+2025-08-18 22:28:11 - INFO - STATUS CODE: 200
+2025-08-18 22:28:11 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTYwNTYsImV4cCI6MTc1NTU1OTY1Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.hU1a_BhxhbwyE17X8LBgsa0C4_FoDzDzUql2Z0cN7-SAymkPQHjqC1UVZ0XiYeylmF5cNx0nRygtAc5rHiZHaqPQ1g30K69-0V24pWrmjWLAG1KoiR_og3VpAkiydTlc3VGyuH0okKwcAwe_yZlWaQfmS5sil7Iro9ZmXSnjvgf213b63azC6OHLXwhwtzmr2-UipX9AmtvgZ2vVewj9zyKd8GKpa928x2cOT_fP3yL7UIhrHaoRn9VRGDRToXDOnnbbGxvch_ppmNxgLtyyiDdIkQbX3cCbrSboeHTebcmtflywViQ4_926VXWdRW3K-RZZV4n4aKl-iOLDkvnRLppldQoFxZGmN1907a1Z-FVnxwA32pEzWLaKHXSqeowH4wjkIISCfAyh5ZYO4amBMfp3-4osV2AWn8nT9VJyWN6ZxGuHIEnQAnLGUEA8qKFudJtCOc966NdhiMTBl9lOyUFcfWyHQV1CAQPA8QhqP81xXt386HejC04w9P0xYR2AuS3_8WQIya3Tj00L5N6O3zobl-EIyR9TVb3gy9Du9c9-I8Tu5uF7ycvvUmgHFmpmxejGrkF3ELDQ6bKUkrcDzNsCs73YXpJy1CegVN86E3ZjF7cn7PFZaZgAF03y41qlZ5xDRIx1CDEavBTWE5nzeWHZu4JkQeVWpJQCyuPuyaY"
+}
+2025-08-18 22:28:11 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 4,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/inventory-sources/frankfurt_warehouse",
+            "@type": "InventorySource",
+            "id": 11132,
+            "address": null,
+            "code": "frankfurt_warehouse",
+            "name": "Frankfurt Warehouse",
+            "priority": 10,
+            "channels": [
+                "/api/v2/admin/channels/HOME_WEB",
+                "/api/v2/admin/channels/FASHION_WEB"
+            ]
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/inventory-sources?itemsPerPage=1&page=2",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/inventory-sources?itemsPerPage=1&page=1",
+        "hydra:last": "/api/v2/admin/inventory-sources?itemsPerPage=1&page=4",
+        "hydra:previous": "/api/v2/admin/inventory-sources?itemsPerPage=1&page=1",
+        "hydra:next": "/api/v2/admin/inventory-sources?itemsPerPage=1&page=3"
+    }
+}

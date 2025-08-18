@@ -1,0 +1,14 @@
+2025-08-18 22:28:45 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:28:46 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-options/dZnoNHjsGXj HTTP/1.1" 401 None
+2025-08-18 22:28:46 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:28:46 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options/dZnoNHjsGXj
+2025-08-18 22:28:46 - INFO - STATUS CODE: 401
+2025-08-18 22:28:46 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer invalid_token"
+}
+2025-08-18 22:28:46 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "Invalid JWT Token"
+}

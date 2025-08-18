@@ -1,0 +1,257 @@
+2025-08-18 22:28:48 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:28:48 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-18 22:28:48 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:28:48 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 22:28:48 - INFO - STATUS CODE: 200
+2025-08-18 22:28:48 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTYwNTYsImV4cCI6MTc1NTU1OTY1Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.hU1a_BhxhbwyE17X8LBgsa0C4_FoDzDzUql2Z0cN7-SAymkPQHjqC1UVZ0XiYeylmF5cNx0nRygtAc5rHiZHaqPQ1g30K69-0V24pWrmjWLAG1KoiR_og3VpAkiydTlc3VGyuH0okKwcAwe_yZlWaQfmS5sil7Iro9ZmXSnjvgf213b63azC6OHLXwhwtzmr2-UipX9AmtvgZ2vVewj9zyKd8GKpa928x2cOT_fP3yL7UIhrHaoRn9VRGDRToXDOnnbbGxvch_ppmNxgLtyyiDdIkQbX3cCbrSboeHTebcmtflywViQ4_926VXWdRW3K-RZZV4n4aKl-iOLDkvnRLppldQoFxZGmN1907a1Z-FVnxwA32pEzWLaKHXSqeowH4wjkIISCfAyh5ZYO4amBMfp3-4osV2AWn8nT9VJyWN6ZxGuHIEnQAnLGUEA8qKFudJtCOc966NdhiMTBl9lOyUFcfWyHQV1CAQPA8QhqP81xXt386HejC04w9P0xYR2AuS3_8WQIya3Tj00L5N6O3zobl-EIyR9TVb3gy9Du9c9-I8Tu5uF7ycvvUmgHFmpmxejGrkF3ELDQ6bKUkrcDzNsCs73YXpJy1CegVN86E3ZjF7cn7PFZaZgAF03y41qlZ5xDRIx1CDEavBTWE5nzeWHZu4JkQeVWpJQCyuPuyaY"
+}
+2025-08-18 22:28:48 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 22,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 9904,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Nulla odio voluptatem ut rerum asperiores. Voluptatibus non facere et eaque quia libero aliquid repellendus. Ullam harum perspiciatis vel quia voluptas. Impedit minus blanditiis reiciendis quis consequatur.",
+            "createdAt": "2025-08-18 22:01:32",
+            "updatedAt": "2025-08-18 22:01:32"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 9905,
+            "code": "other",
+            "name": "Other",
+            "description": "Molestiae laborum et consectetur fuga quia rerum vel. Ut similique sint laborum quas dolores assumenda. Eos ea est sed distinctio.",
+            "createdAt": "2025-08-18 22:01:32",
+            "updatedAt": "2025-08-18 22:01:32"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-07f35d",
+            "@type": "TaxCategory",
+            "id": 9913,
+            "code": "TAX-07f35d",
+            "name": "Figure",
+            "description": "",
+            "createdAt": "2025-08-18 22:11:20",
+            "updatedAt": "2025-08-18 22:11:20"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-ed82e5",
+            "@type": "TaxCategory",
+            "id": 9914,
+            "code": "TAX-ed82e5",
+            "name": "   ",
+            "description": "Way Congress least not let increase reveal.",
+            "createdAt": "2025-08-18 22:11:22",
+            "updatedAt": "2025-08-18 22:11:22"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-5b1ef6",
+            "@type": "TaxCategory",
+            "id": 9915,
+            "code": "TAX-5b1ef6",
+            "name": "\n\n",
+            "description": "City hope general.",
+            "createdAt": "2025-08-18 22:11:23",
+            "updatedAt": "2025-08-18 22:11:23"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-735e45",
+            "@type": "TaxCategory",
+            "id": 9916,
+            "code": "TAX-735e45",
+            "name": " \n ",
+            "description": "Town road attorney kind vote international.",
+            "createdAt": "2025-08-18 22:11:23",
+            "updatedAt": "2025-08-18 22:11:23"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-c79807",
+            "@type": "TaxCategory",
+            "id": 9917,
+            "code": "TAX-c79807",
+            "name": " \t \n ",
+            "description": "Contain how best inside.",
+            "createdAt": "2025-08-18 22:11:24",
+            "updatedAt": "2025-08-18 22:11:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-701771",
+            "@type": "TaxCategory",
+            "id": 9929,
+            "code": "TAX-701771",
+            "name": "CategoriaB",
+            "description": "Seem public training free along fight thought better.",
+            "createdAt": "2025-08-18 22:11:36",
+            "updatedAt": "2025-08-18 22:11:36"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-805d4e",
+            "@type": "TaxCategory",
+            "id": 9954,
+            "code": "TAX-805d4e",
+            "name": "Be",
+            "description": "",
+            "createdAt": "2025-08-18 22:21:12",
+            "updatedAt": "2025-08-18 22:21:12"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-6857c6",
+            "@type": "TaxCategory",
+            "id": 9955,
+            "code": "TAX-6857c6",
+            "name": "   ",
+            "description": "High according recently same thank.",
+            "createdAt": "2025-08-18 22:21:13",
+            "updatedAt": "2025-08-18 22:21:13"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-e777d4",
+            "@type": "TaxCategory",
+            "id": 9956,
+            "code": "TAX-e777d4",
+            "name": "\n\n",
+            "description": "Television here so summer mission.",
+            "createdAt": "2025-08-18 22:21:13",
+            "updatedAt": "2025-08-18 22:21:13"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-aca73d",
+            "@type": "TaxCategory",
+            "id": 9957,
+            "code": "TAX-aca73d",
+            "name": " \n ",
+            "description": "Over within agree task partner same ready.",
+            "createdAt": "2025-08-18 22:21:13",
+            "updatedAt": "2025-08-18 22:21:14"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-9a7169",
+            "@type": "TaxCategory",
+            "id": 9958,
+            "code": "TAX-9a7169",
+            "name": " \t \n ",
+            "description": "Field rich deep commercial story.",
+            "createdAt": "2025-08-18 22:21:14",
+            "updatedAt": "2025-08-18 22:21:14"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-7ee8f2",
+            "@type": "TaxCategory",
+            "id": 9970,
+            "code": "TAX-7ee8f2",
+            "name": "CategoriaB",
+            "description": "Couple defense no forget simply.",
+            "createdAt": "2025-08-18 22:21:18",
+            "updatedAt": "2025-08-18 22:21:18"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-545298",
+            "@type": "TaxCategory",
+            "id": 9995,
+            "code": "TAX-545298",
+            "name": "Standard",
+            "description": "",
+            "createdAt": "2025-08-18 22:25:08",
+            "updatedAt": "2025-08-18 22:25:08"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-65cbd9",
+            "@type": "TaxCategory",
+            "id": 9996,
+            "code": "TAX-65cbd9",
+            "name": "   ",
+            "description": "Camera cause senior eight hand pick.",
+            "createdAt": "2025-08-18 22:25:09",
+            "updatedAt": "2025-08-18 22:25:09"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-b37c98",
+            "@type": "TaxCategory",
+            "id": 9997,
+            "code": "TAX-b37c98",
+            "name": "\n\n",
+            "description": "Other explain public prevent long meeting phone office.",
+            "createdAt": "2025-08-18 22:25:10",
+            "updatedAt": "2025-08-18 22:25:10"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-c85044",
+            "@type": "TaxCategory",
+            "id": 9998,
+            "code": "TAX-c85044",
+            "name": " \n ",
+            "description": "Whether behavior learn identify no somebody remember your.",
+            "createdAt": "2025-08-18 22:25:10",
+            "updatedAt": "2025-08-18 22:25:10"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-cf329f",
+            "@type": "TaxCategory",
+            "id": 9999,
+            "code": "TAX-cf329f",
+            "name": " \t \n ",
+            "description": "What discover police month of particular.",
+            "createdAt": "2025-08-18 22:25:11",
+            "updatedAt": "2025-08-18 22:25:11"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-9adb0b",
+            "@type": "TaxCategory",
+            "id": 10011,
+            "code": "TAX-9adb0b",
+            "name": "CategoriaB",
+            "description": "Week ask shake research quickly couple treat.",
+            "createdAt": "2025-08-18 22:25:17",
+            "updatedAt": "2025-08-18 22:25:17"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-311928",
+            "@type": "TaxCategory",
+            "id": 10028,
+            "code": "TAX-311928",
+            "name": "Even",
+            "description": "Seek continue despite ever which.",
+            "createdAt": "2025-08-18 22:28:47",
+            "updatedAt": "2025-08-18 22:28:47"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-f5291f",
+            "@type": "TaxCategory",
+            "id": 10029,
+            "code": "TAX-f5291f",
+            "name": "If",
+            "description": "Benefit marriage affect common board.",
+            "createdAt": "2025-08-18 22:28:47",
+            "updatedAt": "2025-08-18 22:28:47"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}

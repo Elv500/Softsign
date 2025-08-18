@@ -1,0 +1,126 @@
+2025-08-18 22:29:12 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:29:13 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/customer-groups HTTP/1.1" 200 None
+2025-08-18 22:29:13 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:29:13 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-18 22:29:13 - INFO - STATUS CODE: 200
+2025-08-18 22:29:13 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTYwNTYsImV4cCI6MTc1NTU1OTY1Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.hU1a_BhxhbwyE17X8LBgsa0C4_FoDzDzUql2Z0cN7-SAymkPQHjqC1UVZ0XiYeylmF5cNx0nRygtAc5rHiZHaqPQ1g30K69-0V24pWrmjWLAG1KoiR_og3VpAkiydTlc3VGyuH0okKwcAwe_yZlWaQfmS5sil7Iro9ZmXSnjvgf213b63azC6OHLXwhwtzmr2-UipX9AmtvgZ2vVewj9zyKd8GKpa928x2cOT_fP3yL7UIhrHaoRn9VRGDRToXDOnnbbGxvch_ppmNxgLtyyiDdIkQbX3cCbrSboeHTebcmtflywViQ4_926VXWdRW3K-RZZV4n4aKl-iOLDkvnRLppldQoFxZGmN1907a1Z-FVnxwA32pEzWLaKHXSqeowH4wjkIISCfAyh5ZYO4amBMfp3-4osV2AWn8nT9VJyWN6ZxGuHIEnQAnLGUEA8qKFudJtCOc966NdhiMTBl9lOyUFcfWyHQV1CAQPA8QhqP81xXt386HejC04w9P0xYR2AuS3_8WQIya3Tj00L5N6O3zobl-EIyR9TVb3gy9Du9c9-I8Tu5uF7ycvvUmgHFmpmxejGrkF3ELDQ6bKUkrcDzNsCs73YXpJy1CegVN86E3ZjF7cn7PFZaZgAF03y41qlZ5xDRIx1CDEavBTWE5nzeWHZu4JkQeVWpJQCyuPuyaY"
+}
+2025-08-18 22:29:13 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/CustomerGroup",
+    "@id": "/api/v2/admin/customer-groups",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 11,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/customer-groups/retail",
+            "@type": "CustomerGroup",
+            "id": 11974,
+            "code": "retail",
+            "name": "Retail"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/wholesale",
+            "@type": "CustomerGroup",
+            "id": 11975,
+            "code": "wholesale",
+            "name": "Wholesale"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_554579_bb22688b",
+            "@type": "CustomerGroup",
+            "id": 11976,
+            "code": "test_554579_bb22688b",
+            "name": "Delgado and Sons - Reactive 3rdgeneration moderator"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_555130_9845f724",
+            "@type": "CustomerGroup",
+            "id": 11980,
+            "code": "test_555130_9845f724",
+            "name": "Cobb-Johnson - Ameliorated contextually-based artificial intelligence"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_555132_d93b99e7",
+            "@type": "CustomerGroup",
+            "id": 11981,
+            "code": "test_555132_d93b99e7",
+            "name": "Norton PLC - Multi-channeled systemic toolset"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_555689_dd9098ec",
+            "@type": "CustomerGroup",
+            "id": 12028,
+            "code": "test_555689_dd9098ec",
+            "name": "Hahn Ltd - Mandatory intermediate Graphical User Interface"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_555690_bed36ebc",
+            "@type": "CustomerGroup",
+            "id": 12029,
+            "code": "test_555690_bed36ebc",
+            "name": "Perez, White and Lopez - Multi-tiered responsive access"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_555933_a6993d34",
+            "@type": "CustomerGroup",
+            "id": 12076,
+            "code": "test_555933_a6993d34",
+            "name": "Miller-Moore - Up-sized hybrid circuit"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_555934_9bb5a0a8",
+            "@type": "CustomerGroup",
+            "id": 12077,
+            "code": "test_555934_9bb5a0a8",
+            "name": "Garcia Inc - Optional scalable help-desk"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_556149_524dd43a",
+            "@type": "CustomerGroup",
+            "id": 12124,
+            "code": "test_556149_524dd43a",
+            "name": "Ramirez, Nunez and Singh - Business-focused eco-centric encryption"
+        },
+        {
+            "@id": "/api/v2/admin/customer-groups/test_556150_e2a78605",
+            "@type": "CustomerGroup",
+            "id": 12125,
+            "code": "test_556150_e2a78605",
+            "name": "Allison-Diaz - Horizontal dedicated throughput"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/customer-groups{?code,name,order[code],order[name]}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[code]",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[name]",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}

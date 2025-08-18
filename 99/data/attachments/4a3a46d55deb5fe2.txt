@@ -1,0 +1,65 @@
+2025-08-18 22:28:28 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:28:28 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-18 22:28:28 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:28:28 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/million-from HTTP/1.1" 200 None
+2025-08-18 22:28:28 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:28:28 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/million-from
+2025-08-18 22:28:28 - INFO - STATUS CODE: 200
+2025-08-18 22:28:28 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/million-from",
+    "@type": "InventorySource",
+    "id": 11276,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4916",
+        "@type": "InventorySourceAddress",
+        "countryCode": "EC",
+        "street": "1001 Parker Park",
+        "city": "Spencerborough",
+        "postcode": "35083"
+    },
+    "code": "million-from",
+    "name": "Conley Group",
+    "priority": 14,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-18 22:28:28 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:28:29 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/million-from HTTP/1.1" 200 None
+2025-08-18 22:28:29 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:28:29 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/million-from
+2025-08-18 22:28:29 - INFO - STATUS CODE: 200
+2025-08-18 22:28:29 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTYwNTYsImV4cCI6MTc1NTU1OTY1Niwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.hU1a_BhxhbwyE17X8LBgsa0C4_FoDzDzUql2Z0cN7-SAymkPQHjqC1UVZ0XiYeylmF5cNx0nRygtAc5rHiZHaqPQ1g30K69-0V24pWrmjWLAG1KoiR_og3VpAkiydTlc3VGyuH0okKwcAwe_yZlWaQfmS5sil7Iro9ZmXSnjvgf213b63azC6OHLXwhwtzmr2-UipX9AmtvgZ2vVewj9zyKd8GKpa928x2cOT_fP3yL7UIhrHaoRn9VRGDRToXDOnnbbGxvch_ppmNxgLtyyiDdIkQbX3cCbrSboeHTebcmtflywViQ4_926VXWdRW3K-RZZV4n4aKl-iOLDkvnRLppldQoFxZGmN1907a1Z-FVnxwA32pEzWLaKHXSqeowH4wjkIISCfAyh5ZYO4amBMfp3-4osV2AWn8nT9VJyWN6ZxGuHIEnQAnLGUEA8qKFudJtCOc966NdhiMTBl9lOyUFcfWyHQV1CAQPA8QhqP81xXt386HejC04w9P0xYR2AuS3_8WQIya3Tj00L5N6O3zobl-EIyR9TVb3gy9Du9c9-I8Tu5uF7ycvvUmgHFmpmxejGrkF3ELDQ6bKUkrcDzNsCs73YXpJy1CegVN86E3ZjF7cn7PFZaZgAF03y41qlZ5xDRIx1CDEavBTWE5nzeWHZu4JkQeVWpJQCyuPuyaY"
+}
+2025-08-18 22:28:29 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "exist-return",
+    "name": "Martinez LLC",
+    "priority": 69,
+    "address": {
+        "countryCode": "AD",
+        "street": "3346 Griffith Harbor",
+        "city": "Port Scottmouth",
+        "postcode": "12898"
+    }
+}
+2025-08-18 22:28:29 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/million-from",
+    "@type": "InventorySource",
+    "id": 11276,
+    "address": "/api/v2/admin/inventory-source-addresses/4917",
+    "code": "million-from",
+    "name": "Martinez LLC",
+    "priority": 21,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-18 22:28:29 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:28:29 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/million-from HTTP/1.1" 204 0
