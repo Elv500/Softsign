@@ -1,0 +1,42 @@
+2025-08-18 20:50:29 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:50:30 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-association-types HTTP/1.1" 201 None
+2025-08-18 20:50:30 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:50:30 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-association-types HTTP/1.1" 201 None
+2025-08-18 20:50:30 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:50:31 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-association-types/SlLPryiwszkkGrIlvWJtKhENCcdDgdIVZoIrRD HTTP/1.1" 200 None
+2025-08-18 20:50:31 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:50:31 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-association-types/SlLPryiwszkkGrIlvWJtKhENCcdDgdIVZoIrRD
+2025-08-18 20:50:31 - INFO - STATUS CODE: 200
+2025-08-18 20:50:31 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTAyMjYsImV4cCI6MTc1NTU1MzgyNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.GmG2S9bqiOuhx1CozFW-MAgWo7RuB1bR34TY1qM_rFPSivhvze8ODWA0P7lM1_KDXYbfan9sDc1Kh1da0aLYXsX1pViS1ptMTIV_qTmNtV1ZMiF-u1tuDnQPycUWqq1n7EJfCnEak3MnzaUxtIYaS5H4o5txYE13KjWHuBwSDa8r0PQx0XzIfdbaz8q6qbYt_NLXnsC3bWFsrrRPhXDDBOPSInk1Cz9CSn8GzTkZyOnS_UrnI5jvyciCnXZ9qXd1A62m4sDrIvN1Fw8hKmLA9Psp9IJTl2xFJz-CTgMwpb9E8ft092gDNlvGzkcJO9jik9BS3CVerMgx3N91DDjN8ahj5pjA1ZcX-Vdl9xXo5DAta8LfvjuP6yx4Qv8oKmg_61PidqN9BG0RPlG6g2n23nGLRkI1xcBj1SC28FceeiP9yKA-Mon4sTY_MciFXNBfucF7y7tSfsNXrfMoSZERqVz3y-ZXT6mjEUVDw7EF0Jz7gvUdRQ3qG5Csh0lhqwXNbtUhOwnwJpy6M8XEQyZGbO30KBLSxITtQoj_-QDs5lrgJjE_vvd91pPqKcCuUAw1Mdrj0kxaZWNFzhtZ5m3DpKa4dSMPudyVvFMUrGwJ8juh8o9wab-f7YsZ77DmOGNF3PRCyvX3LvKTlSnf5PgalJSaFn42UvXBA3ubaKo7_bw",
+    "Accept": "application/ld+json",
+    "Content-Type": "application/ld+json"
+}
+2025-08-18 20:50:31 - DEBUG - PAYLOAD REQUEST:
+{
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-association-types/SlLPryiwszkkGrIlvWJtKhENCcdDgdIVZoIrRD/translations/en_US",
+            "name": "fine"
+        }
+    }
+}
+2025-08-18 20:50:31 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductAssociationType",
+    "@id": "/api/v2/admin/product-association-types/SlLPryiwszkkGrIlvWJtKhENCcdDgdIVZoIrRD",
+    "@type": "ProductAssociationType",
+    "id": 3931,
+    "code": "SlLPryiwszkkGrIlvWJtKhENCcdDgdIVZoIrRD",
+    "name": "fine",
+    "createdAt": "2025-08-18 20:50:30",
+    "updatedAt": "2025-08-18 20:50:30",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-association-types/SlLPryiwszkkGrIlvWJtKhENCcdDgdIVZoIrRD/translations/en_US",
+            "@type": "ProductAssociationTypeTranslation",
+            "name": "fine"
+        }
+    }
+}
