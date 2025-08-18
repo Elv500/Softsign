@@ -1,0 +1,35 @@
+2025-08-18 21:39:43 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:39:43 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 422 None
+2025-08-18 21:39:43 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:39:43 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 21:39:43 - INFO - STATUS CODE: 422
+2025-08-18 21:39:43 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTMwNzksImV4cCI6MTc1NTU1NjY3OSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.YmPO5F2T6_TQZ96sfxhmalAkXEWRde9Z_Sk7ZgjifB1rMcIWPCYjPZxqK0S7xlArqy_l78AWxZVrOrAan1xXWTUQfzpuOr9eXSL-MRi809HGkhucHnGhuCCbaXPU-pMeDCRP_iBFgJBQcUCsstniurIeCaL62OhsMsewcOHb02tlhsQXVjux1KGxE7nw5Psk4mfToHYe39IeyyXb_fdzhJn6Q2QW6Z3S8KWEFh3SqM32AcfGK36xx_7tmpJmYYryppqRRzmG6O05Sfi9Hq253Z7Ft0RvSK04K0EOCtTWbXTKikO6_VC-nZUfEct4uWXyva49UaPna4VhprAyH85hlG-oYDljwwj8WmHc2-epn9riGGwdrzhyYBoilqBNfp5K7qDrpqujTlRf2__A6SCIj2Wx0yws9YmT9GbUt3WNDv0S4FqkepQKgQAGUXtL4p5exceNY2ybGlfU8r0AOs9BXMOrSUr65aVsl9c-1bAe31zRKbFIrofuVw_z-PjCkg9TjlL3Iuw1Qaf76jizfmlginkvT58gh2LwmUXwFLeHLYcMEkhDNrBzxcoslHbToKSC6ZAgjaSa0SOxpHDRKC9ujG3HPDKlSIM7zZ_sLwxJ0BPoGZyCvUWsBUBGo0Gi7IDTuZ01U6uEASctJHzZ-iKxD_UeVYccQGSHfTd1_xQ6riU"
+}
+2025-08-18 21:39:43 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "name": "Trip",
+    "description": "Official moment enjoy medical go form young."
+}
+2025-08-18 21:39:43 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "code",
+            "message": "The code must not be longer than 255 characters.",
+            "code": "d94b19cc-114f-4f44-9cc4-4138e80a87b9"
+        }
+    ],
+    "detail": "code: The code must not be longer than 255 characters.",
+    "description": "code: The code must not be longer than 255 characters.",
+    "type": "/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "title": "An error occurred",
+    "hydra:description": "code: The code must not be longer than 255 characters.",
+    "hydra:title": "An error occurred"
+}

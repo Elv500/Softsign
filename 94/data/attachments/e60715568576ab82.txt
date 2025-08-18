@@ -1,0 +1,197 @@
+2025-08-18 21:39:37 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:39:38 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-18 21:39:38 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:39:38 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 21:39:38 - INFO - STATUS CODE: 200
+2025-08-18 21:39:38 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTMwNzksImV4cCI6MTc1NTU1NjY3OSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.YmPO5F2T6_TQZ96sfxhmalAkXEWRde9Z_Sk7ZgjifB1rMcIWPCYjPZxqK0S7xlArqy_l78AWxZVrOrAan1xXWTUQfzpuOr9eXSL-MRi809HGkhucHnGhuCCbaXPU-pMeDCRP_iBFgJBQcUCsstniurIeCaL62OhsMsewcOHb02tlhsQXVjux1KGxE7nw5Psk4mfToHYe39IeyyXb_fdzhJn6Q2QW6Z3S8KWEFh3SqM32AcfGK36xx_7tmpJmYYryppqRRzmG6O05Sfi9Hq253Z7Ft0RvSK04K0EOCtTWbXTKikO6_VC-nZUfEct4uWXyva49UaPna4VhprAyH85hlG-oYDljwwj8WmHc2-epn9riGGwdrzhyYBoilqBNfp5K7qDrpqujTlRf2__A6SCIj2Wx0yws9YmT9GbUt3WNDv0S4FqkepQKgQAGUXtL4p5exceNY2ybGlfU8r0AOs9BXMOrSUr65aVsl9c-1bAe31zRKbFIrofuVw_z-PjCkg9TjlL3Iuw1Qaf76jizfmlginkvT58gh2LwmUXwFLeHLYcMEkhDNrBzxcoslHbToKSC6ZAgjaSa0SOxpHDRKC9ujG3HPDKlSIM7zZ_sLwxJ0BPoGZyCvUWsBUBGo0Gi7IDTuZ01U6uEASctJHzZ-iKxD_UeVYccQGSHfTd1_xQ6riU"
+}
+2025-08-18 21:39:38 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 16,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 9739,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Et at nihil vel corporis quam voluptatibus adipisci. Nostrum sit et dolore deserunt sed non esse. Illo sapiente laudantium et. Nobis autem pariatur sed esse.",
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 9740,
+            "code": "other",
+            "name": "Other",
+            "description": "Est quis molestias laudantium et deserunt debitis. Eum nam tenetur amet reiciendis est dolor ut. Aut qui quam qui ad unde. Aut nemo ut tempore. Architecto amet eaque molestiae et consequatur suscipit.",
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-cef56b",
+            "@type": "TaxCategory",
+            "id": 9748,
+            "code": "TAX-cef56b",
+            "name": "Heart",
+            "description": "",
+            "createdAt": "2025-08-18 21:28:22",
+            "updatedAt": "2025-08-18 21:28:22"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-1abb50",
+            "@type": "TaxCategory",
+            "id": 9749,
+            "code": "TAX-1abb50",
+            "name": "   ",
+            "description": "Summer financial join.",
+            "createdAt": "2025-08-18 21:28:24",
+            "updatedAt": "2025-08-18 21:28:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-40e10c",
+            "@type": "TaxCategory",
+            "id": 9750,
+            "code": "TAX-40e10c",
+            "name": "\n\n",
+            "description": "First carry position lay.",
+            "createdAt": "2025-08-18 21:28:24",
+            "updatedAt": "2025-08-18 21:28:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-ec420b",
+            "@type": "TaxCategory",
+            "id": 9751,
+            "code": "TAX-ec420b",
+            "name": " \n ",
+            "description": "Wish talk green coach.",
+            "createdAt": "2025-08-18 21:28:25",
+            "updatedAt": "2025-08-18 21:28:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-26c826",
+            "@type": "TaxCategory",
+            "id": 9752,
+            "code": "TAX-26c826",
+            "name": " \t \n ",
+            "description": "New less throw as.",
+            "createdAt": "2025-08-18 21:28:26",
+            "updatedAt": "2025-08-18 21:28:26"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-456674",
+            "@type": "TaxCategory",
+            "id": 9764,
+            "code": "TAX-456674",
+            "name": "CategoriaB",
+            "description": "Environmental condition also.",
+            "createdAt": "2025-08-18 21:28:37",
+            "updatedAt": "2025-08-18 21:28:37"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-512aa4",
+            "@type": "TaxCategory",
+            "id": 9788,
+            "code": "TAX-512aa4",
+            "name": "Source",
+            "description": "",
+            "createdAt": "2025-08-18 21:33:07",
+            "updatedAt": "2025-08-18 21:33:07"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-c3e234",
+            "@type": "TaxCategory",
+            "id": 9789,
+            "code": "TAX-c3e234",
+            "name": "   ",
+            "description": "Note both seem ask risk.",
+            "createdAt": "2025-08-18 21:33:08",
+            "updatedAt": "2025-08-18 21:33:08"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-aaba5b",
+            "@type": "TaxCategory",
+            "id": 9790,
+            "code": "TAX-aaba5b",
+            "name": "\n\n",
+            "description": "Also management analysis positive just degree.",
+            "createdAt": "2025-08-18 21:33:08",
+            "updatedAt": "2025-08-18 21:33:09"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-72bfb9",
+            "@type": "TaxCategory",
+            "id": 9791,
+            "code": "TAX-72bfb9",
+            "name": " \n ",
+            "description": "Few threat environmental and approach generation.",
+            "createdAt": "2025-08-18 21:33:09",
+            "updatedAt": "2025-08-18 21:33:09"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-6bda45",
+            "@type": "TaxCategory",
+            "id": 9792,
+            "code": "TAX-6bda45",
+            "name": " \t \n ",
+            "description": "Question hold away trip wear agree student.",
+            "createdAt": "2025-08-18 21:33:09",
+            "updatedAt": "2025-08-18 21:33:09"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-75265e",
+            "@type": "TaxCategory",
+            "id": 9804,
+            "code": "TAX-75265e",
+            "name": "CategoriaB",
+            "description": "Guess decision different whether.",
+            "createdAt": "2025-08-18 21:33:14",
+            "updatedAt": "2025-08-18 21:33:14"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-f9a5d5",
+            "@type": "TaxCategory",
+            "id": 9822,
+            "code": "TAX-f9a5d5",
+            "name": "Understand",
+            "description": "History institution whether score with.",
+            "createdAt": "2025-08-18 21:39:37",
+            "updatedAt": "2025-08-18 21:39:37"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-ff7991",
+            "@type": "TaxCategory",
+            "id": 9823,
+            "code": "TAX-ff7991",
+            "name": "Director",
+            "description": "Difference physical picture at civil.",
+            "createdAt": "2025-08-18 21:39:37",
+            "updatedAt": "2025-08-18 21:39:37"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}

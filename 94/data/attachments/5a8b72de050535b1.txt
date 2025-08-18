@@ -1,0 +1,800 @@
+2025-08-18 21:39:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:39:18 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-options?name=Dress%20size HTTP/1.1" 200 None
+2025-08-18 21:39:18 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:39:18 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options?name=Dress size
+2025-08-18 21:39:18 - INFO - STATUS CODE: 200
+2025-08-18 21:39:18 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTMwNzksImV4cCI6MTc1NTU1NjY3OSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.YmPO5F2T6_TQZ96sfxhmalAkXEWRde9Z_Sk7ZgjifB1rMcIWPCYjPZxqK0S7xlArqy_l78AWxZVrOrAan1xXWTUQfzpuOr9eXSL-MRi809HGkhucHnGhuCCbaXPU-pMeDCRP_iBFgJBQcUCsstniurIeCaL62OhsMsewcOHb02tlhsQXVjux1KGxE7nw5Psk4mfToHYe39IeyyXb_fdzhJn6Q2QW6Z3S8KWEFh3SqM32AcfGK36xx_7tmpJmYYryppqRRzmG6O05Sfi9Hq253Z7Ft0RvSK04K0EOCtTWbXTKikO6_VC-nZUfEct4uWXyva49UaPna4VhprAyH85hlG-oYDljwwj8WmHc2-epn9riGGwdrzhyYBoilqBNfp5K7qDrpqujTlRf2__A6SCIj2Wx0yws9YmT9GbUt3WNDv0S4FqkepQKgQAGUXtL4p5exceNY2ybGlfU8r0AOs9BXMOrSUr65aVsl9c-1bAe31zRKbFIrofuVw_z-PjCkg9TjlL3Iuw1Qaf76jizfmlginkvT58gh2LwmUXwFLeHLYcMEkhDNrBzxcoslHbToKSC6ZAgjaSa0SOxpHDRKC9ujG3HPDKlSIM7zZ_sLwxJ0BPoGZyCvUWsBUBGo0Gi7IDTuZ01U6uEASctJHzZ-iKxD_UeVYccQGSHfTd1_xQ6riU"
+}
+2025-08-18 21:39:18 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductOption",
+    "@id": "/api/v2/admin/product-options",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 28,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552775_xt19",
+            "@type": "ProductOption",
+            "code": "test_1755552775_xt19",
+            "position": 0,
+            "values": [],
+            "createdAt": "2025-08-18 21:32:55",
+            "updatedAt": "2025-08-18 21:32:55",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552775_xt19/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Through Option"
+                }
+            },
+            "name": "Through Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552770_Cy31",
+            "@type": "ProductOption",
+            "code": "test_1755552770_Cy31",
+            "position": 1,
+            "values": [],
+            "createdAt": "2025-08-18 21:32:50",
+            "updatedAt": "2025-08-18 21:32:50",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552770_Cy31/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Scott Mason Option"
+                }
+            },
+            "name": "Scott Mason Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552474_tZ61",
+            "@type": "ProductOption",
+            "code": "test_1755552474_tZ61",
+            "position": 2,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:55",
+            "updatedAt": "2025-08-18 21:27:55",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552474_tZ61/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Attention Option"
+                }
+            },
+            "name": "Attention Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552465_Sw03",
+            "@type": "ProductOption",
+            "code": "test_1755552465_Sw03",
+            "position": 3,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:46",
+            "updatedAt": "2025-08-18 21:27:46",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552465_Sw03/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "David Hicks Option"
+                }
+            },
+            "name": "David Hicks Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/t_shirt_size",
+            "@type": "ProductOption",
+            "code": "t_shirt_size",
+            "position": 4,
+            "values": [
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_s",
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_m",
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_l",
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_xl",
+                "/api/v2/admin/product-options/t_shirt_size/values/t_shirt_size_xxl"
+            ],
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/t_shirt_size/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "T-shirt size"
+                }
+            },
+            "name": "T-shirt size"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/dress_size",
+            "@type": "ProductOption",
+            "code": "dress_size",
+            "position": 5,
+            "values": [
+                "/api/v2/admin/product-options/dress_size/values/dress_s",
+                "/api/v2/admin/product-options/dress_size/values/dress_m",
+                "/api/v2/admin/product-options/dress_size/values/dress_l",
+                "/api/v2/admin/product-options/dress_size/values/dress_xl",
+                "/api/v2/admin/product-options/dress_size/values/dress_xxl"
+            ],
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/dress_size/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress size"
+                }
+            },
+            "name": "Dress size"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/dress_height",
+            "@type": "ProductOption",
+            "code": "dress_height",
+            "position": 6,
+            "values": [
+                "/api/v2/admin/product-options/dress_height/values/dress_height_petite",
+                "/api/v2/admin/product-options/dress_height/values/dress_height_regular",
+                "/api/v2/admin/product-options/dress_height/values/dress_height_tall"
+            ],
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/dress_height/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Dress height"
+                }
+            },
+            "name": "Dress height"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/jeans_size",
+            "@type": "ProductOption",
+            "code": "jeans_size",
+            "position": 7,
+            "values": [
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_s",
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_m",
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_l",
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_xl",
+                "/api/v2/admin/product-options/jeans_size/values/jeans_size_xxl"
+            ],
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/jeans_size/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jeans size"
+                }
+            },
+            "name": "Jeans size"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/lamp_color",
+            "@type": "ProductOption",
+            "code": "lamp_color",
+            "position": 8,
+            "values": [
+                "/api/v2/admin/product-options/lamp_color/values/lamp_color_red",
+                "/api/v2/admin/product-options/lamp_color/values/lamp_color_black",
+                "/api/v2/admin/product-options/lamp_color/values/lamp_color_white"
+            ],
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/lamp_color/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lamp color"
+                }
+            },
+            "name": "Lamp color"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552773_EB82",
+            "@type": "ProductOption",
+            "code": "test_1755552773_EB82",
+            "position": 9,
+            "values": [],
+            "createdAt": "2025-08-18 21:32:53",
+            "updatedAt": "2025-08-18 21:32:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552773_EB82/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Michael Kelley Option"
+                }
+            },
+            "name": "Michael Kelley Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/mug_color",
+            "@type": "ProductOption",
+            "code": "mug_color",
+            "position": 10,
+            "values": [
+                "/api/v2/admin/product-options/mug_color/values/Mug_color_red",
+                "/api/v2/admin/product-options/mug_color/values/Mug_color_black",
+                "/api/v2/admin/product-options/mug_color/values/Mug_color_white"
+            ],
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/mug_color/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mug color"
+                }
+            },
+            "name": "Mug color"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/plant_size",
+            "@type": "ProductOption",
+            "code": "plant_size",
+            "position": 11,
+            "values": [
+                "/api/v2/admin/product-options/plant_size/values/plant_size_small",
+                "/api/v2/admin/product-options/plant_size/values/plant_size_medium",
+                "/api/v2/admin/product-options/plant_size/values/plant_size_big"
+            ],
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/de_DE",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/fr_FR",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/pl_PL",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/es_ES",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/es_MX",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/pt_PT",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-options/plant_size/translations/zh_CN",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Plant size"
+                }
+            },
+            "name": "Plant size"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552773_XB76",
+            "@type": "ProductOption",
+            "code": "test_1755552773_XB76",
+            "position": 14,
+            "values": [],
+            "createdAt": "2025-08-18 21:32:53",
+            "updatedAt": "2025-08-18 21:32:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552773_XB76/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Randy Lee Option"
+                }
+            },
+            "name": "Randy Lee Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552477_xr33",
+            "@type": "ProductOption",
+            "code": "test_1755552477_xr33",
+            "position": 31,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:57",
+            "updatedAt": "2025-08-18 21:27:57",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552477_xr33/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Wanda Dominguez Option"
+                }
+            },
+            "name": "Wanda Dominguez Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552473_RG00",
+            "@type": "ProductOption",
+            "code": "test_1755552473_RG00",
+            "position": 43,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:53",
+            "updatedAt": "2025-08-18 21:27:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552473_RG00/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Oscar Mccann Option"
+                }
+            },
+            "name": "Oscar Mccann Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552776_fB33",
+            "@type": "ProductOption",
+            "code": "test_1755552776_fB33",
+            "position": 51,
+            "values": [],
+            "createdAt": "2025-08-18 21:32:56",
+            "updatedAt": "2025-08-18 21:32:56",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552776_fB33/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Michael Larson Option"
+                }
+            },
+            "name": "Michael Larson Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552777_Um09",
+            "@type": "ProductOption",
+            "code": "test_1755552777_Um09",
+            "position": 53,
+            "values": [
+                "/api/v2/admin/product-options/test_1755552777_Um09/values/VAL_48Xj"
+            ],
+            "createdAt": "2025-08-18 21:32:57",
+            "updatedAt": "2025-08-18 21:32:57",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552777_Um09/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Do"
+                }
+            },
+            "name": "Do"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552473_ty99",
+            "@type": "ProductOption",
+            "code": "test_1755552473_ty99",
+            "position": 61,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:54",
+            "updatedAt": "2025-08-18 21:27:54",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552473_ty99/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Veronica Wise Option"
+                }
+            },
+            "name": "Veronica Wise Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552774_na82",
+            "@type": "ProductOption",
+            "code": "test_1755552774_na82",
+            "position": 63,
+            "values": [],
+            "createdAt": "2025-08-18 21:32:54",
+            "updatedAt": "2025-08-18 21:32:54",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552774_na82/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jennifer Castro Option"
+                }
+            },
+            "name": "Jennifer Castro Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/examplePosition",
+            "@type": "ProductOption",
+            "code": "examplePosition",
+            "position": 71,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:04",
+            "updatedAt": "2025-08-18 21:34:31",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/examplePosition/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "NuevoNombreEjemplo"
+                }
+            },
+            "name": "NuevoNombreEjemplo"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552479_eL42",
+            "@type": "ProductOption",
+            "code": "test_1755552479_eL42",
+            "position": 74,
+            "values": [
+                "/api/v2/admin/product-options/test_1755552479_eL42/values/VAL_02oy"
+            ],
+            "createdAt": "2025-08-18 21:27:59",
+            "updatedAt": "2025-08-18 21:27:59",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552479_eL42/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Rich"
+                }
+            },
+            "name": "Rich"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552470_ty48",
+            "@type": "ProductOption",
+            "code": "test_1755552470_ty48",
+            "position": 79,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:50",
+            "updatedAt": "2025-08-18 21:27:50",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552470_ty48/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jordan Odonnell Option"
+                }
+            },
+            "name": "Jordan Odonnell Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552774_aW01",
+            "@type": "ProductOption",
+            "code": "test_1755552774_aW01",
+            "position": 84,
+            "values": [],
+            "createdAt": "2025-08-18 21:32:54",
+            "updatedAt": "2025-08-18 21:32:54",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552774_aW01/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Sheila Hernandez Option"
+                }
+            },
+            "name": "Sheila Hernandez Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552471_AQ46",
+            "@type": "ProductOption",
+            "code": "test_1755552471_AQ46",
+            "position": 87,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:52",
+            "updatedAt": "2025-08-18 21:27:52",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552471_AQ46/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Jonathan Hale Option"
+                }
+            },
+            "name": "Jonathan Hale Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552472_qS32",
+            "@type": "ProductOption",
+            "code": "test_1755552472_qS32",
+            "position": 93,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:52",
+            "updatedAt": "2025-08-18 21:27:52",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552472_qS32/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "David Harris Option"
+                }
+            },
+            "name": "David Harris Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552475_xl84",
+            "@type": "ProductOption",
+            "code": "test_1755552475_xl84",
+            "position": 94,
+            "values": [],
+            "createdAt": "2025-08-18 21:27:55",
+            "updatedAt": "2025-08-18 21:27:56",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552475_xl84/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Improve Option"
+                }
+            },
+            "name": "Improve Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552774_ah24",
+            "@type": "ProductOption",
+            "code": "test_1755552774_ah24",
+            "position": 95,
+            "values": [],
+            "createdAt": "2025-08-18 21:32:54",
+            "updatedAt": "2025-08-18 21:32:54",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552774_ah24/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Kara Johnson Option"
+                }
+            },
+            "name": "Kara Johnson Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755552775_Fq20",
+            "@type": "ProductOption",
+            "code": "test_1755552775_Fq20",
+            "position": 96,
+            "values": [],
+            "createdAt": "2025-08-18 21:32:55",
+            "updatedAt": "2025-08-18 21:32:55",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755552775_Fq20/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Respond Option"
+                }
+            },
+            "name": "Respond Option"
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-options?name=Dress%20size",
+        "@type": "hydra:PartialCollectionView"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-options{?code,translations.name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "translations.name",
+                "property": "translations.name",
+                "required": false
+            }
+        ]
+    }
+}

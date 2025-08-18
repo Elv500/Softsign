@@ -1,0 +1,98 @@
+2025-08-18 21:38:05 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:38:05 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-association-types?page=1&itemsPerPage=10&order%5Bcode%5D=asc&code=similar_products HTTP/1.1" 200 None
+2025-08-18 21:38:05 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:38:05 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-association-types?page=1&itemsPerPage=10&order[code]=asc&code=similar_products
+2025-08-18 21:38:05 - INFO - STATUS CODE: 200
+2025-08-18 21:38:05 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTMwNzksImV4cCI6MTc1NTU1NjY3OSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.YmPO5F2T6_TQZ96sfxhmalAkXEWRde9Z_Sk7ZgjifB1rMcIWPCYjPZxqK0S7xlArqy_l78AWxZVrOrAan1xXWTUQfzpuOr9eXSL-MRi809HGkhucHnGhuCCbaXPU-pMeDCRP_iBFgJBQcUCsstniurIeCaL62OhsMsewcOHb02tlhsQXVjux1KGxE7nw5Psk4mfToHYe39IeyyXb_fdzhJn6Q2QW6Z3S8KWEFh3SqM32AcfGK36xx_7tmpJmYYryppqRRzmG6O05Sfi9Hq253Z7Ft0RvSK04K0EOCtTWbXTKikO6_VC-nZUfEct4uWXyva49UaPna4VhprAyH85hlG-oYDljwwj8WmHc2-epn9riGGwdrzhyYBoilqBNfp5K7qDrpqujTlRf2__A6SCIj2Wx0yws9YmT9GbUt3WNDv0S4FqkepQKgQAGUXtL4p5exceNY2ybGlfU8r0AOs9BXMOrSUr65aVsl9c-1bAe31zRKbFIrofuVw_z-PjCkg9TjlL3Iuw1Qaf76jizfmlginkvT58gh2LwmUXwFLeHLYcMEkhDNrBzxcoslHbToKSC6ZAgjaSa0SOxpHDRKC9ujG3HPDKlSIM7zZ_sLwxJ0BPoGZyCvUWsBUBGo0Gi7IDTuZ01U6uEASctJHzZ-iKxD_UeVYccQGSHfTd1_xQ6riU"
+}
+2025-08-18 21:38:05 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductAssociationType",
+    "@id": "/api/v2/admin/product-association-types",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 1,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/product-association-types/similar_products",
+            "@type": "ProductAssociationType",
+            "id": 3934,
+            "code": "similar_products",
+            "name": "Similar products",
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-association-types/similar_products/translations/en_US",
+                    "@type": "ProductAssociationTypeTranslation",
+                    "name": "Similar products"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/product-association-types/similar_products/translations/de_DE",
+                    "@type": "ProductAssociationTypeTranslation",
+                    "name": "Similar products"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/product-association-types/similar_products/translations/fr_FR",
+                    "@type": "ProductAssociationTypeTranslation",
+                    "name": "Similar products"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/product-association-types/similar_products/translations/pl_PL",
+                    "@type": "ProductAssociationTypeTranslation",
+                    "name": "Similar products"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/product-association-types/similar_products/translations/es_ES",
+                    "@type": "ProductAssociationTypeTranslation",
+                    "name": "Similar products"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/product-association-types/similar_products/translations/es_MX",
+                    "@type": "ProductAssociationTypeTranslation",
+                    "name": "Similar products"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/product-association-types/similar_products/translations/pt_PT",
+                    "@type": "ProductAssociationTypeTranslation",
+                    "name": "Similar products"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/product-association-types/similar_products/translations/zh_CN",
+                    "@type": "ProductAssociationTypeTranslation",
+                    "name": "Similar products"
+                }
+            }
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-association-types?code=similar_products&itemsPerPage=10&order%5Bcode%5D=asc",
+        "@type": "hydra:PartialCollectionView"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-association-types{?order[code],translations.name,code}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[code]",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "translations.name",
+                "property": "translations.name",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            }
+        ]
+    }
+}

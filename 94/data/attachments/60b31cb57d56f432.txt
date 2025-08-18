@@ -1,0 +1,3 @@
+ Customer group limpiado: test_553219_0bb5c6fb
+ Customer group limpiado: test_553219_03f6d0ed
+ Customer group limpiado: test_553220_32cdf5c4

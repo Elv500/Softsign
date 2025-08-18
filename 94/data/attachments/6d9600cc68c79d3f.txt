@@ -1,0 +1,25 @@
+2025-08-18 21:38:28 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:38:28 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-attributes/codigo_inexistente_123 HTTP/1.1" 401 None
+2025-08-18 21:38:28 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:38:28 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes/codigo_inexistente_123
+2025-08-18 21:38:28 - INFO - STATUS CODE: 401
+2025-08-18 21:38:28 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "data-break-throw",
+    "type": "text",
+    "translations": {
+        "en_US": {
+            "name": "Hayes, Leach and Rivera"
+        }
+    },
+    "configuration": {
+        "maxCharacters": 190,
+        "minCharacters": 10
+    },
+    "storageType": "text"
+}
+2025-08-18 21:38:28 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}
