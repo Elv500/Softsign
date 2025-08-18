@@ -1,0 +1,14 @@
+2025-08-18 21:43:47 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:43:50 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-18 21:43:50 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:43:50 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/four-environmental HTTP/1.1" 401 None
+2025-08-18 21:43:50 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:43:50 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/four-environmental
+2025-08-18 21:43:50 - INFO - STATUS CODE: 401
+2025-08-18 21:43:50 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}
+2025-08-18 21:43:50 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:43:51 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/four-environmental HTTP/1.1" 204 0

@@ -1,0 +1,96 @@
+2025-08-18 21:44:40 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:44:40 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 201 None
+2025-08-18 21:44:40 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:44:40 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options
+2025-08-18 21:44:40 - INFO - STATUS CODE: 201
+2025-08-18 21:44:40 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTMzMzcsImV4cCI6MTc1NTU1NjkzNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.FHbNMS7r_G4Bff4DAf9-Oi6rOP-NAD_CGz6Xf3UFqvZvm3U2TuqZRwWs0PkYqBthPvbWLHschR1V15_5LXoX30lOHpJfQzLmDVK8O8Ekcryvwp5_AXyS90Ma9a0umQ3oeTOoTtE3zPQ5UvICloeXQiShXljR7njOQP4ZIbDYQWUWp3Kfrf9Ps9kTa6u0obo75DPl3Efx9r2NcSuwbhZ-BAc5_0MDT-bELZ7tPg-Jyjw-b-6xgtiu7_V4V-mc8fJKpLM_GsShweSVAfjQdPTcfk4yL940rkMpd6IZ7nxj4pBVp6qzaZlwNNcY97Umb61EBiHzrsGm64sgNV46MpooNBlmp-c4FYnKRDPgyFkay9fVOF9I7dy3OFE9DQzqUbYUHFmTARamKDL3DCdLlH9QtnUk8InFYdfAszPQminsKSchJn2qfAtDxQYLgituOYdpwEs2KXLZEkWBcsthyYb1PkLDj64d0uJxl7TnPABObRV2HF-6KJl5reHZzKr_oJeUql6aGUsxZ8qGJOgrQZ4FSLVuuLF5DQMAkdSaz7w9kTSr6-Zv0k1gwurSjg-crxg7_O7edkgFlR3l2a-FNeg8qrXdsJ0WdqFBq6UugLJADBKl41Ow5HRrR34eWja3EdtQCg6DU_j9Fr_MUSNinSUT6vLOP8f-sFSrlR2Z_j2-YrI"
+}
+2025-08-18 21:44:40 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755553480_Su40",
+    "position": 50,
+    "values": [
+        {
+            "code": "VAL_80so",
+            "translations": {
+                "en_US": {
+                    "value": "organization"
+                }
+            }
+        }
+    ],
+    "translations": {
+        "en_US": {
+            "name": "Debate"
+        }
+    }
+}
+2025-08-18 21:44:40 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductOption",
+    "@id": "/api/v2/admin/product-options/test_1755553480_Su40",
+    "@type": "ProductOption",
+    "code": "test_1755553480_Su40",
+    "position": 50,
+    "values": [
+        "/api/v2/admin/product-options/test_1755553480_Su40/values/VAL_80so"
+    ],
+    "createdAt": "2025-08-18 21:44:40",
+    "updatedAt": "2025-08-18 21:44:40",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-options/test_1755553480_Su40/translations/en_US",
+            "@type": "ProductOptionTranslation",
+            "name": "Debate"
+        }
+    },
+    "name": "Debate"
+}
+2025-08-18 21:44:40 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:44:40 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-options/test_1755553480_Su40 HTTP/1.1" 200 None
+2025-08-18 21:44:40 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:44:40 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options/test_1755553480_Su40
+2025-08-18 21:44:40 - INFO - STATUS CODE: 200
+2025-08-18 21:44:40 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTMzMzcsImV4cCI6MTc1NTU1NjkzNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.FHbNMS7r_G4Bff4DAf9-Oi6rOP-NAD_CGz6Xf3UFqvZvm3U2TuqZRwWs0PkYqBthPvbWLHschR1V15_5LXoX30lOHpJfQzLmDVK8O8Ekcryvwp5_AXyS90Ma9a0umQ3oeTOoTtE3zPQ5UvICloeXQiShXljR7njOQP4ZIbDYQWUWp3Kfrf9Ps9kTa6u0obo75DPl3Efx9r2NcSuwbhZ-BAc5_0MDT-bELZ7tPg-Jyjw-b-6xgtiu7_V4V-mc8fJKpLM_GsShweSVAfjQdPTcfk4yL940rkMpd6IZ7nxj4pBVp6qzaZlwNNcY97Umb61EBiHzrsGm64sgNV46MpooNBlmp-c4FYnKRDPgyFkay9fVOF9I7dy3OFE9DQzqUbYUHFmTARamKDL3DCdLlH9QtnUk8InFYdfAszPQminsKSchJn2qfAtDxQYLgituOYdpwEs2KXLZEkWBcsthyYb1PkLDj64d0uJxl7TnPABObRV2HF-6KJl5reHZzKr_oJeUql6aGUsxZ8qGJOgrQZ4FSLVuuLF5DQMAkdSaz7w9kTSr6-Zv0k1gwurSjg-crxg7_O7edkgFlR3l2a-FNeg8qrXdsJ0WdqFBq6UugLJADBKl41Ow5HRrR34eWja3EdtQCg6DU_j9Fr_MUSNinSUT6vLOP8f-sFSrlR2Z_j2-YrI"
+}
+2025-08-18 21:44:40 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755553480_Su40",
+    "position": 70,
+    "values": [
+        "/api/v2/admin/product-options/test_1755553480_Su40/values/VAL_80so"
+    ],
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-options/test_1755553480_Su40/translations/en_US",
+            "name": "Economic"
+        }
+    }
+}
+2025-08-18 21:44:40 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductOption",
+    "@id": "/api/v2/admin/product-options/test_1755553480_Su40",
+    "@type": "ProductOption",
+    "code": "test_1755553480_Su40",
+    "position": 70,
+    "values": [
+        "/api/v2/admin/product-options/test_1755553480_Su40/values/VAL_80so"
+    ],
+    "createdAt": "2025-08-18 21:44:40",
+    "updatedAt": "2025-08-18 21:44:40",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-options/test_1755553480_Su40/translations/en_US",
+            "@type": "ProductOptionTranslation",
+            "name": "Economic"
+        }
+    },
+    "name": "Economic"
+}
+2025-08-18 21:44:40 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:44:41 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-options/test_1755553480_Su40 HTTP/1.1" 204 0

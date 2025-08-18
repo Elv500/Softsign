@@ -1,0 +1,37 @@
+2025-08-18 21:43:54 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:43:55 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-18 21:43:55 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:43:55 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources/not-several-care HTTP/1.1" 405 None
+2025-08-18 21:43:55 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:43:55 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/not-several-care
+2025-08-18 21:43:55 - INFO - STATUS CODE: 405
+2025-08-18 21:43:55 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTMzMzcsImV4cCI6MTc1NTU1NjkzNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.FHbNMS7r_G4Bff4DAf9-Oi6rOP-NAD_CGz6Xf3UFqvZvm3U2TuqZRwWs0PkYqBthPvbWLHschR1V15_5LXoX30lOHpJfQzLmDVK8O8Ekcryvwp5_AXyS90Ma9a0umQ3oeTOoTtE3zPQ5UvICloeXQiShXljR7njOQP4ZIbDYQWUWp3Kfrf9Ps9kTa6u0obo75DPl3Efx9r2NcSuwbhZ-BAc5_0MDT-bELZ7tPg-Jyjw-b-6xgtiu7_V4V-mc8fJKpLM_GsShweSVAfjQdPTcfk4yL940rkMpd6IZ7nxj4pBVp6qzaZlwNNcY97Umb61EBiHzrsGm64sgNV46MpooNBlmp-c4FYnKRDPgyFkay9fVOF9I7dy3OFE9DQzqUbYUHFmTARamKDL3DCdLlH9QtnUk8InFYdfAszPQminsKSchJn2qfAtDxQYLgituOYdpwEs2KXLZEkWBcsthyYb1PkLDj64d0uJxl7TnPABObRV2HF-6KJl5reHZzKr_oJeUql6aGUsxZ8qGJOgrQZ4FSLVuuLF5DQMAkdSaz7w9kTSr6-Zv0k1gwurSjg-crxg7_O7edkgFlR3l2a-FNeg8qrXdsJ0WdqFBq6UugLJADBKl41Ow5HRrR34eWja3EdtQCg6DU_j9Fr_MUSNinSUT6vLOP8f-sFSrlR2Z_j2-YrI"
+}
+2025-08-18 21:43:55 - DEBUG - RESPONSE: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>An Error Occurred: Method Not Allowed</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>❌</text></svg>" />
+    <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; }
+.container { margin: 30px; max-width: 600px; }
+h1 { color: #dc3545; font-size: 24px; }
+h2 { font-size: 18px; }</style>
+</head>
+<body>
+<div class="container">
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "405 Method Not Allowed".</h2>
+
+    <p>
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+</div>
+</body>
+</html> (non-JSON content)
+2025-08-18 21:43:55 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:43:55 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/not-several-care HTTP/1.1" 204 0

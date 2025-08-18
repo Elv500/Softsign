@@ -1,0 +1,261 @@
+2025-08-18 21:44:50 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:44:50 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 21:44:50 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:44:51 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 21:44:51 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:44:51 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-18 21:44:51 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:44:51 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 21:44:51 - INFO - STATUS CODE: 200
+2025-08-18 21:44:51 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTMzMzcsImV4cCI6MTc1NTU1NjkzNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.FHbNMS7r_G4Bff4DAf9-Oi6rOP-NAD_CGz6Xf3UFqvZvm3U2TuqZRwWs0PkYqBthPvbWLHschR1V15_5LXoX30lOHpJfQzLmDVK8O8Ekcryvwp5_AXyS90Ma9a0umQ3oeTOoTtE3zPQ5UvICloeXQiShXljR7njOQP4ZIbDYQWUWp3Kfrf9Ps9kTa6u0obo75DPl3Efx9r2NcSuwbhZ-BAc5_0MDT-bELZ7tPg-Jyjw-b-6xgtiu7_V4V-mc8fJKpLM_GsShweSVAfjQdPTcfk4yL940rkMpd6IZ7nxj4pBVp6qzaZlwNNcY97Umb61EBiHzrsGm64sgNV46MpooNBlmp-c4FYnKRDPgyFkay9fVOF9I7dy3OFE9DQzqUbYUHFmTARamKDL3DCdLlH9QtnUk8InFYdfAszPQminsKSchJn2qfAtDxQYLgituOYdpwEs2KXLZEkWBcsthyYb1PkLDj64d0uJxl7TnPABObRV2HF-6KJl5reHZzKr_oJeUql6aGUsxZ8qGJOgrQZ4FSLVuuLF5DQMAkdSaz7w9kTSr6-Zv0k1gwurSjg-crxg7_O7edkgFlR3l2a-FNeg8qrXdsJ0WdqFBq6UugLJADBKl41Ow5HRrR34eWja3EdtQCg6DU_j9Fr_MUSNinSUT6vLOP8f-sFSrlR2Z_j2-YrI"
+}
+2025-08-18 21:44:51 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 22,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 9739,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Et at nihil vel corporis quam voluptatibus adipisci. Nostrum sit et dolore deserunt sed non esse. Illo sapiente laudantium et. Nobis autem pariatur sed esse.",
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 9740,
+            "code": "other",
+            "name": "Other",
+            "description": "Est quis molestias laudantium et deserunt debitis. Eum nam tenetur amet reiciendis est dolor ut. Aut qui quam qui ad unde. Aut nemo ut tempore. Architecto amet eaque molestiae et consequatur suscipit.",
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-cef56b",
+            "@type": "TaxCategory",
+            "id": 9748,
+            "code": "TAX-cef56b",
+            "name": "Heart",
+            "description": "",
+            "createdAt": "2025-08-18 21:28:22",
+            "updatedAt": "2025-08-18 21:28:22"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-1abb50",
+            "@type": "TaxCategory",
+            "id": 9749,
+            "code": "TAX-1abb50",
+            "name": "   ",
+            "description": "Summer financial join.",
+            "createdAt": "2025-08-18 21:28:24",
+            "updatedAt": "2025-08-18 21:28:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-40e10c",
+            "@type": "TaxCategory",
+            "id": 9750,
+            "code": "TAX-40e10c",
+            "name": "\n\n",
+            "description": "First carry position lay.",
+            "createdAt": "2025-08-18 21:28:24",
+            "updatedAt": "2025-08-18 21:28:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-ec420b",
+            "@type": "TaxCategory",
+            "id": 9751,
+            "code": "TAX-ec420b",
+            "name": " \n ",
+            "description": "Wish talk green coach.",
+            "createdAt": "2025-08-18 21:28:25",
+            "updatedAt": "2025-08-18 21:28:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-26c826",
+            "@type": "TaxCategory",
+            "id": 9752,
+            "code": "TAX-26c826",
+            "name": " \t \n ",
+            "description": "New less throw as.",
+            "createdAt": "2025-08-18 21:28:26",
+            "updatedAt": "2025-08-18 21:28:26"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-456674",
+            "@type": "TaxCategory",
+            "id": 9764,
+            "code": "TAX-456674",
+            "name": "CategoriaB",
+            "description": "Environmental condition also.",
+            "createdAt": "2025-08-18 21:28:37",
+            "updatedAt": "2025-08-18 21:28:37"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-512aa4",
+            "@type": "TaxCategory",
+            "id": 9788,
+            "code": "TAX-512aa4",
+            "name": "Source",
+            "description": "",
+            "createdAt": "2025-08-18 21:33:07",
+            "updatedAt": "2025-08-18 21:33:07"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-c3e234",
+            "@type": "TaxCategory",
+            "id": 9789,
+            "code": "TAX-c3e234",
+            "name": "   ",
+            "description": "Note both seem ask risk.",
+            "createdAt": "2025-08-18 21:33:08",
+            "updatedAt": "2025-08-18 21:33:08"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-aaba5b",
+            "@type": "TaxCategory",
+            "id": 9790,
+            "code": "TAX-aaba5b",
+            "name": "\n\n",
+            "description": "Also management analysis positive just degree.",
+            "createdAt": "2025-08-18 21:33:08",
+            "updatedAt": "2025-08-18 21:33:09"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-72bfb9",
+            "@type": "TaxCategory",
+            "id": 9791,
+            "code": "TAX-72bfb9",
+            "name": " \n ",
+            "description": "Few threat environmental and approach generation.",
+            "createdAt": "2025-08-18 21:33:09",
+            "updatedAt": "2025-08-18 21:33:09"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-6bda45",
+            "@type": "TaxCategory",
+            "id": 9792,
+            "code": "TAX-6bda45",
+            "name": " \t \n ",
+            "description": "Question hold away trip wear agree student.",
+            "createdAt": "2025-08-18 21:33:09",
+            "updatedAt": "2025-08-18 21:33:09"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-75265e",
+            "@type": "TaxCategory",
+            "id": 9804,
+            "code": "TAX-75265e",
+            "name": "CategoriaB",
+            "description": "Guess decision different whether.",
+            "createdAt": "2025-08-18 21:33:14",
+            "updatedAt": "2025-08-18 21:33:14"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-2d522e",
+            "@type": "TaxCategory",
+            "id": 9829,
+            "code": "TAX-2d522e",
+            "name": "Wrong",
+            "description": "",
+            "createdAt": "2025-08-18 21:39:44",
+            "updatedAt": "2025-08-18 21:39:44"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-00c5d4",
+            "@type": "TaxCategory",
+            "id": 9830,
+            "code": "TAX-00c5d4",
+            "name": "   ",
+            "description": "Pattern travel run.",
+            "createdAt": "2025-08-18 21:39:45",
+            "updatedAt": "2025-08-18 21:39:45"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-d66f80",
+            "@type": "TaxCategory",
+            "id": 9831,
+            "code": "TAX-d66f80",
+            "name": "\n\n",
+            "description": "Speak seem security woman kind figure guess upon.",
+            "createdAt": "2025-08-18 21:39:45",
+            "updatedAt": "2025-08-18 21:39:45"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-248199",
+            "@type": "TaxCategory",
+            "id": 9832,
+            "code": "TAX-248199",
+            "name": " \n ",
+            "description": "Inside kitchen amount discover.",
+            "createdAt": "2025-08-18 21:39:46",
+            "updatedAt": "2025-08-18 21:39:46"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-429dfd",
+            "@type": "TaxCategory",
+            "id": 9833,
+            "code": "TAX-429dfd",
+            "name": " \t \n ",
+            "description": "Across bad society idea.",
+            "createdAt": "2025-08-18 21:39:46",
+            "updatedAt": "2025-08-18 21:39:46"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-8dafed",
+            "@type": "TaxCategory",
+            "id": 9845,
+            "code": "TAX-8dafed",
+            "name": "CategoriaB",
+            "description": "Spring force home chance write meet.",
+            "createdAt": "2025-08-18 21:39:53",
+            "updatedAt": "2025-08-18 21:39:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-230729",
+            "@type": "TaxCategory",
+            "id": 9863,
+            "code": "TAX-230729",
+            "name": "Hold",
+            "description": "Figure better student those.",
+            "createdAt": "2025-08-18 21:44:50",
+            "updatedAt": "2025-08-18 21:44:50"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-fcce76",
+            "@type": "TaxCategory",
+            "id": 9864,
+            "code": "TAX-fcce76",
+            "name": "Player",
+            "description": "Responsibility deal tonight reality or decade.",
+            "createdAt": "2025-08-18 21:44:51",
+            "updatedAt": "2025-08-18 21:44:51"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}
