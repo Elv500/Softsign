@@ -1,0 +1,32 @@
+2025-08-18 19:55:03 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:55:04 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 400 None
+2025-08-18 19:55:04 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:55:04 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options
+2025-08-18 19:55:04 - INFO - STATUS CODE: 400
+2025-08-18 19:55:04 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDY4OTksImV4cCI6MTc1NTU1MDQ5OSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.eQSYkjhbtYhb4WKtC9R7YVU4LAloaJ_44s_FQnWLJ8wRDT99oy6YXwHNxFNgK_dNsz7qE9uheHfwZk2FNQubLnlplvtLVko9dVD2aKOTQr7YHsaNKrs4nt3RcOOpTz_LzczKk45xlTCsiOYj-y4ch7_nw9g19-QpK1SpCX58EP6_4ygYoIjDI6xEhamuJ2yUCvy_BVUETpaNNx8_Y8YD7DIppT4S4ddM2WQHB8_eWAA_G0JFsfF2-g0SXdvuXW0npeSk3OBpsDothEL_in4s-K1oujUS4UfgyhRRs3JKGlpsGpNFXUrb-sTtgc7UP8nqisJPDzcN21iW9P8zjbTAyblG6i7R0VjvzMFWsWJwUb0DRYkRXXUJiPXx4V14RxtVqg3_NL3i94DvBCpYd9Nz90m2dmCG6t0jN0vlqBpU_5F2GVVkmcpOh5vKlz_l4Bh6GR8-dhdudTa1gUo_o65ouep6LSyOyHojOEu6QIXENfH5jHlJrOE6tUlDQzmHpYKN05QtXicvqdEUO8EDnzrGij5XisDWKLJaJyBBuBiBgcQqA9_9pO5HEZJD-lbe6kb5VsO2PZVeg6DG3pDSxrdczMdXg2SArLu0mN0anknvuQ_lkVpuHiWqcbxB-CUkjFr7S-DpKFJzZiXfe8ynHOkttCNoDh8GR1IMnprKnFHHuvQ"
+}
+2025-08-18 19:55:04 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755546903_Se24",
+    "position": "never",
+    "translations": {
+        "en_US": {
+            "name": "Catherine Wright Option"
+        }
+    }
+}
+2025-08-18 19:55:04 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/400",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "The type of the \"position\" attribute must be \"int\", \"string\" given.",
+    "status": 400,
+    "type": "/errors/400",
+    "description": "The type of the \"position\" attribute must be \"int\", \"string\" given.",
+    "hydra:description": "The type of the \"position\" attribute must be \"int\", \"string\" given.",
+    "hydra:title": "An error occurred"
+}
