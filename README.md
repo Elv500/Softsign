@@ -114,25 +114,28 @@ El proyecto usa un archivo `.env` para variables sensibles como tokens o URLs ba
    ```
 ---
 
-## ✅ Ejecución de pruebas
+## ✅ Ejecución de pruebas (Localmente)
 
 Con todo configurado, ya puedes correr las pruebas automatizadas de las siguientes maneras:
 
    > Si nota que su IDE ejecuta lento los tests, puede agregar el siguiente parametro a cualquier comando de ejecución:
 
-         --cache-clear
-
+   ```bash
+   --cache-clear
+   ```
    > Si desea ver con más detalles la ejecución, puede agregar el siguiente parametro a cualquier comando de ejecución:
 
-         -v
+   ```bash
+   -v
+   ```
 
 ### Ejecutar Regression
 
 Para ejecutar los tests de regresión, que incluyen todos:
 
-```bash
+   ```bash
    pytest
-```
+   ```
 
 ### Ejecutar por tipo de testing:
 
@@ -148,12 +151,18 @@ Ejm: pytest -m smoke
 | Negative | `pytest -m negative` |
 | Security | `pytest -m security` |
 | Boundary | `pytest -m boundary` |
+| Domain | `pytest -m domain` |
 | Stress | `pytest -m stress` |
 | Performance | `pytest -m performance` |
 | E2E | `pytest -m e2e` |
 | Inventory | `pytest -m inventory` |
 | Tax Category | `pytest -m tax_category` |
 | Customer Group | `pytest -m customer_group` |
+| Options | `pytest -m options` |
+| Attributes | `pytest -m attributes` |
+| High | `pytest -m high` |
+| Medium | `pytest -m medium` |
+| Low | `pytest -m low` |
 
 ### Ejecutar por sub-módulo:
 
@@ -200,6 +209,64 @@ allure open reports/allure-report-html
 > Se agrega el `--clean -o` para que no se acumule todos los reportes y se actualice a la última versión.
 
 Esto abrirá un navegador con el reporte visual de los resultados.
+
+---
+## ✅ Ejecución de pruebas (Github Actions)
+
+Tambien se puede ejecutar manualmente desde el Action del proyecto.
+> Desde la pestaña de Actions y la rama main, se muestra un botón desplegable **"Run Workflow"**
+
+Donde hay dos campos, uno es para seleccionar la rama (Main por defecto) y un campo de texto. Aquí se debe ingresar uno o más parametros de lo que se quiere ejecutar.
+
+### Ejecutar Regression
+
+Para ejecutar los tests de regresión, que incluyen simplemente **seleccionar la rama y darle a ejecutar.**
+
+### Ejecutar por tipo de testing:
+
+Para ejecutar por tipo de prueba, utilice la opción `-m` de pytest junto con la marca correspondiente:
+```bash
+Ejm: -m smoke
+```
+
+| Tipo Testing | Comando |
+|--------|----------|
+| Smoke | `-m smoke` |
+| Functional | `-m functional` |
+| Negative | `-m negative` |
+| Security | `-m security` |
+| Boundary | `-m boundary` |
+| Domain | `-m domain` |
+| Stress | `-m stress` |
+| Performance | `-m performance` |
+| E2E | `-m e2e` |
+| Inventory | `-m inventory` |
+| Tax Category | `-m tax_category` |
+| Customer Group | `-m customer_group` |
+| Options | `-m options` |
+| Attributes | `-m attributes` |
+| High | `-m high` |
+| Medium | `-m medium` |
+| Low | `-m low` |
+
+### Ejecutar por sub-módulo:
+
+Para ejecutar por sub-módulo se puede combinar con los demás parámetros, agregando el directorio del submodulo:
+```bash
+Ejm: pytest .\tests\ -m smoke -v
+```
+
+| Módulo| Sub-módulo | Comando |
+|-------|------------|---------|
+| Catálogo | Association Types | `tests/catalog/association_types` |
+|  | Attributes | `tests/catalog/attributes` |
+|  | Inventory | `tests/catalog/inventory` |
+|  | Options | `tests/catalog/options` |
+| Configuration | Tax Category | `tests/configuration/tax_categories` |
+| Customer | Group | `tests/customer/groups` |
+| Login | Autenticacion | `tests/login` |
+
+> **NOTA: Se puede combinar ambos parametros como marca y suite/submódulo**<br>Por ejemplo: **tests/catalog/inventory -m smoke**
 
 ---
 
