@@ -1,0 +1,15 @@
+2025-08-18 22:26:12 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:26:13 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 400 None
+2025-08-18 22:26:13 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:26:13 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/administrators/token
+2025-08-18 22:26:13 - INFO - STATUS CODE: 400
+2025-08-18 22:26:13 - DEBUG - PAYLOAD REQUEST:
+{
+    "email": "",
+    "password": ""
+}
+2025-08-18 22:26:13 - DEBUG - RESPONSE:
+{
+    "code": 400,
+    "message": "Bad Request"
+}

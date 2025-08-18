@@ -1,0 +1,32 @@
+2025-08-18 22:24:35 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:24:35 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-18 22:24:35 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:24:36 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/year-administration HTTP/1.1" 200 None
+2025-08-18 22:24:36 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:24:36 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/year-administration
+2025-08-18 22:24:36 - INFO - STATUS CODE: 200
+2025-08-18 22:24:36 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/year-administration",
+    "@type": "InventorySource",
+    "id": 11240,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4881",
+        "@type": "InventorySourceAddress",
+        "countryCode": "MD",
+        "street": "9792 Rogers Cliffs",
+        "city": "Tatetown",
+        "postcode": "08872"
+    },
+    "code": "year-administration",
+    "name": "Walker Ltd",
+    "priority": 35,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-18 22:24:36 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:24:36 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/year-administration HTTP/1.1" 200 None
+2025-08-18 22:24:36 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:24:36 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/year-administration HTTP/1.1" 204 0

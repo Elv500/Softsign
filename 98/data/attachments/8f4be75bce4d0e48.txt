@@ -1,0 +1,216 @@
+2025-08-18 22:24:43 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:24:43 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-options?page=1&itemsPerPage=10 HTTP/1.1" 200 None
+2025-08-18 22:24:43 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:24:43 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options?page=1&itemsPerPage=10
+2025-08-18 22:24:43 - INFO - STATUS CODE: 200
+2025-08-18 22:24:43 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU3OTgsImV4cCI6MTc1NTU1OTM5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.XpjouVJXSKxpSdDC1derMHFNfZDbOQmcZUd0JxryTcPezOnChzYRM7doVmV8O2usrzfZoYusNcEMImI8ZnyP0O7QY2cTun-vmA9yOXtjLrxFUa7p8LXZk-I20sLOVorn7TlaUcgMuDJzSPSxSCUhd0vTLubVFgRTlxKlV1Pw9xiUeNA-xAcJIR76XrLbRBLgoPjYFZsD6t6n0BlS-zy1zlnQUA235XmaXpjCBP1krWbtHFqMnGv9tvqwN9q8goqTRqfwsy6ZnGWnaYmDTwFLhT0d3y2_WFJbrPNmnYfCLNAfNamfKLACx4AHzADary2jo_6dnhxQI5xBY8CuF2Z0xOFTc6KfENbCaL5g51fuB3Gh_1cIVIL31t6Snf3XU6dvtbgz8kLIFmMwyu0Y5DHSPoOQ4tszFWMNpWQyTXyyHPVogX__GXBvmGFjMQ_scYE0Uo6iVe64tdPtyfRmEhdMm3guivM3OfX1mMuZszzvZf4N9U63o6YLi9EbdkaZDd7RhmFJXiYQqLbGvVS6Xnw2L78rvnu-RMCSMum1olsUcyFUqjzSrR7yXxBsOAFyd0ROj_20YSoFasfkDP65I7hy9AX-i4vzzQhWD2JQkMuXpHpLpRzc4UbS8WaUHzfX3BVEHUgolhcJOw3d5DsfKroQxS1xbhzWrVFL93NbqvXjIx8"
+}
+2025-08-18 22:24:43 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductOption",
+    "@id": "/api/v2/admin/product-options",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 60,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555662_Gs24",
+            "@type": "ProductOption",
+            "code": "test_1755555662_Gs24",
+            "position": 0,
+            "values": [],
+            "createdAt": "2025-08-18 22:21:02",
+            "updatedAt": "2025-08-18 22:21:02",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555662_Gs24/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Painting Option"
+                }
+            },
+            "name": "Painting Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555658_SW26",
+            "@type": "ProductOption",
+            "code": "test_1755555658_SW26",
+            "position": 1,
+            "values": [],
+            "createdAt": "2025-08-18 22:20:58",
+            "updatedAt": "2025-08-18 22:20:58",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555658_SW26/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Miguel Perkins Option"
+                }
+            },
+            "name": "Miguel Perkins Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555567_as95",
+            "@type": "ProductOption",
+            "code": "test_1755555567_as95",
+            "position": 2,
+            "values": [],
+            "createdAt": "2025-08-18 22:19:27",
+            "updatedAt": "2025-08-18 22:19:27",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555567_as95/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Deep Option"
+                }
+            },
+            "name": "Deep Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555559_Nq28",
+            "@type": "ProductOption",
+            "code": "test_1755555559_Nq28",
+            "position": 3,
+            "values": [],
+            "createdAt": "2025-08-18 22:19:19",
+            "updatedAt": "2025-08-18 22:19:19",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555559_Nq28/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "William Phillips Option"
+                }
+            },
+            "name": "William Phillips Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555081_rH67",
+            "@type": "ProductOption",
+            "code": "test_1755555081_rH67",
+            "position": 4,
+            "values": [],
+            "createdAt": "2025-08-18 22:11:21",
+            "updatedAt": "2025-08-18 22:11:22",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555081_rH67/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Test Option"
+                }
+            },
+            "name": "Test Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555571_HZ15",
+            "@type": "ProductOption",
+            "code": "test_1755555571_HZ15",
+            "position": 5,
+            "values": [
+                "/api/v2/admin/product-options/test_1755555571_HZ15/values/VAL_16rT"
+            ],
+            "createdAt": "2025-08-18 22:19:31",
+            "updatedAt": "2025-08-18 22:19:31",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555571_HZ15/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Three"
+                }
+            },
+            "name": "Three"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555071_Go38",
+            "@type": "ProductOption",
+            "code": "test_1755555071_Go38",
+            "position": 6,
+            "values": [],
+            "createdAt": "2025-08-18 22:11:11",
+            "updatedAt": "2025-08-18 22:11:11",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555071_Go38/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Mrs. Angela Acosta Option"
+                }
+            },
+            "name": "Mrs. Angela Acosta Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555662_JI97",
+            "@type": "ProductOption",
+            "code": "test_1755555662_JI97",
+            "position": 7,
+            "values": [],
+            "createdAt": "2025-08-18 22:21:02",
+            "updatedAt": "2025-08-18 22:21:02",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555662_JI97/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Lauren Mitchell Option"
+                }
+            },
+            "name": "Lauren Mitchell Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555660_Zh92",
+            "@type": "ProductOption",
+            "code": "test_1755555660_Zh92",
+            "position": 8,
+            "values": [],
+            "createdAt": "2025-08-18 22:21:00",
+            "updatedAt": "2025-08-18 22:21:00",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555660_Zh92/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Matthew Harrington Option"
+                }
+            },
+            "name": "Matthew Harrington Option"
+        },
+        {
+            "@id": "/api/v2/admin/product-options/test_1755555052_yM52",
+            "@type": "ProductOption",
+            "code": "test_1755555052_yM52",
+            "position": 9,
+            "values": [],
+            "createdAt": "2025-08-18 22:10:52",
+            "updatedAt": "2025-08-18 22:10:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/product-options/test_1755555052_yM52/translations/en_US",
+                    "@type": "ProductOptionTranslation",
+                    "name": "Red Option"
+                }
+            },
+            "name": "Red Option"
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-options?itemsPerPage=10&page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/product-options?itemsPerPage=10&page=1",
+        "hydra:last": "/api/v2/admin/product-options?itemsPerPage=10&page=6",
+        "hydra:next": "/api/v2/admin/product-options?itemsPerPage=10&page=2"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-options{?code,translations.name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "translations.name",
+                "property": "translations.name",
+                "required": false
+            }
+        ]
+    }
+}

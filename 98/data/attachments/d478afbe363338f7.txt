@@ -1,0 +1,40 @@
+2025-08-18 22:24:13 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:24:14 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-18 22:24:14 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:24:14 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources
+2025-08-18 22:24:14 - INFO - STATUS CODE: 201
+2025-08-18 22:24:14 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU3OTgsImV4cCI6MTc1NTU1OTM5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.XpjouVJXSKxpSdDC1derMHFNfZDbOQmcZUd0JxryTcPezOnChzYRM7doVmV8O2usrzfZoYusNcEMImI8ZnyP0O7QY2cTun-vmA9yOXtjLrxFUa7p8LXZk-I20sLOVorn7TlaUcgMuDJzSPSxSCUhd0vTLubVFgRTlxKlV1Pw9xiUeNA-xAcJIR76XrLbRBLgoPjYFZsD6t6n0BlS-zy1zlnQUA235XmaXpjCBP1krWbtHFqMnGv9tvqwN9q8goqTRqfwsy6ZnGWnaYmDTwFLhT0d3y2_WFJbrPNmnYfCLNAfNamfKLACx4AHzADary2jo_6dnhxQI5xBY8CuF2Z0xOFTc6KfENbCaL5g51fuB3Gh_1cIVIL31t6Snf3XU6dvtbgz8kLIFmMwyu0Y5DHSPoOQ4tszFWMNpWQyTXyyHPVogX__GXBvmGFjMQ_scYE0Uo6iVe64tdPtyfRmEhdMm3guivM3OfX1mMuZszzvZf4N9U63o6YLi9EbdkaZDd7RhmFJXiYQqLbGvVS6Xnw2L78rvnu-RMCSMum1olsUcyFUqjzSrR7yXxBsOAFyd0ROj_20YSoFasfkDP65I7hy9AX-i4vzzQhWD2JQkMuXpHpLpRzc4UbS8WaUHzfX3BVEHUgolhcJOw3d5DsfKroQxS1xbhzWrVFL93NbqvXjIx8"
+}
+2025-08-18 22:24:14 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "sound-just-lead",
+    "name": "Cantu, Carson and Williams",
+    "priority": -5,
+    "address": {
+        "countryCode": "BG",
+        "street": "10269 Jacob Cape Suite 895",
+        "city": "Davidside",
+        "postcode": "03788"
+    },
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-18 22:24:14 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/sound-just-lead",
+    "@type": "InventorySource",
+    "id": 11215,
+    "address": "/api/v2/admin/inventory-source-addresses/4855",
+    "code": "sound-just-lead",
+    "name": "Cantu, Carson and Williams",
+    "priority": 17,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-18 22:24:14 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:24:14 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/sound-just-lead HTTP/1.1" 204 0

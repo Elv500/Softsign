@@ -1,0 +1,33 @@
+2025-08-18 22:26:06 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:26:06 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/ HTTP/1.1" 404 None
+2025-08-18 22:26:06 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:26:06 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/
+2025-08-18 22:26:06 - INFO - STATUS CODE: 404
+2025-08-18 22:26:06 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU3OTgsImV4cCI6MTc1NTU1OTM5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.XpjouVJXSKxpSdDC1derMHFNfZDbOQmcZUd0JxryTcPezOnChzYRM7doVmV8O2usrzfZoYusNcEMImI8ZnyP0O7QY2cTun-vmA9yOXtjLrxFUa7p8LXZk-I20sLOVorn7TlaUcgMuDJzSPSxSCUhd0vTLubVFgRTlxKlV1Pw9xiUeNA-xAcJIR76XrLbRBLgoPjYFZsD6t6n0BlS-zy1zlnQUA235XmaXpjCBP1krWbtHFqMnGv9tvqwN9q8goqTRqfwsy6ZnGWnaYmDTwFLhT0d3y2_WFJbrPNmnYfCLNAfNamfKLACx4AHzADary2jo_6dnhxQI5xBY8CuF2Z0xOFTc6KfENbCaL5g51fuB3Gh_1cIVIL31t6Snf3XU6dvtbgz8kLIFmMwyu0Y5DHSPoOQ4tszFWMNpWQyTXyyHPVogX__GXBvmGFjMQ_scYE0Uo6iVe64tdPtyfRmEhdMm3guivM3OfX1mMuZszzvZf4N9U63o6YLi9EbdkaZDd7RhmFJXiYQqLbGvVS6Xnw2L78rvnu-RMCSMum1olsUcyFUqjzSrR7yXxBsOAFyd0ROj_20YSoFasfkDP65I7hy9AX-i4vzzQhWD2JQkMuXpHpLpRzc4UbS8WaUHzfX3BVEHUgolhcJOw3d5DsfKroQxS1xbhzWrVFL93NbqvXjIx8"
+}
+2025-08-18 22:26:06 - DEBUG - RESPONSE: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>An Error Occurred: Not Found</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>❌</text></svg>" />
+    <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; }
+.container { margin: 30px; max-width: 600px; }
+h1 { color: #dc3545; font-size: 24px; }
+h2 { font-size: 18px; }</style>
+</head>
+<body>
+<div class="container">
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "404 Not Found".</h2>
+
+    <p>
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+</div>
+</body>
+</html> (non-JSON content)

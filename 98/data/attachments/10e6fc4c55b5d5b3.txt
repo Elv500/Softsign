@@ -1,0 +1,15 @@
+2025-08-18 22:26:12 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:26:12 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 401 None
+2025-08-18 22:26:12 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:26:12 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/administrators/token
+2025-08-18 22:26:12 - INFO - STATUS CODE: 401
+2025-08-18 22:26:12 - DEBUG - PAYLOAD REQUEST:
+{
+    "email": "invalid@example.com",
+    "password": "invalid"
+}
+2025-08-18 22:26:12 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "Invalid credentials."
+}

@@ -1,0 +1,69 @@
+2025-08-18 22:24:42 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 22:24:43 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-options/dress_size HTTP/1.1" 200 None
+2025-08-18 22:24:43 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 22:24:43 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options/dress_size
+2025-08-18 22:24:43 - INFO - STATUS CODE: 200
+2025-08-18 22:24:43 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTU3OTgsImV4cCI6MTc1NTU1OTM5OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.XpjouVJXSKxpSdDC1derMHFNfZDbOQmcZUd0JxryTcPezOnChzYRM7doVmV8O2usrzfZoYusNcEMImI8ZnyP0O7QY2cTun-vmA9yOXtjLrxFUa7p8LXZk-I20sLOVorn7TlaUcgMuDJzSPSxSCUhd0vTLubVFgRTlxKlV1Pw9xiUeNA-xAcJIR76XrLbRBLgoPjYFZsD6t6n0BlS-zy1zlnQUA235XmaXpjCBP1krWbtHFqMnGv9tvqwN9q8goqTRqfwsy6ZnGWnaYmDTwFLhT0d3y2_WFJbrPNmnYfCLNAfNamfKLACx4AHzADary2jo_6dnhxQI5xBY8CuF2Z0xOFTc6KfENbCaL5g51fuB3Gh_1cIVIL31t6Snf3XU6dvtbgz8kLIFmMwyu0Y5DHSPoOQ4tszFWMNpWQyTXyyHPVogX__GXBvmGFjMQ_scYE0Uo6iVe64tdPtyfRmEhdMm3guivM3OfX1mMuZszzvZf4N9U63o6YLi9EbdkaZDd7RhmFJXiYQqLbGvVS6Xnw2L78rvnu-RMCSMum1olsUcyFUqjzSrR7yXxBsOAFyd0ROj_20YSoFasfkDP65I7hy9AX-i4vzzQhWD2JQkMuXpHpLpRzc4UbS8WaUHzfX3BVEHUgolhcJOw3d5DsfKroQxS1xbhzWrVFL93NbqvXjIx8"
+}
+2025-08-18 22:24:43 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductOption",
+    "@id": "/api/v2/admin/product-options/dress_size",
+    "@type": "ProductOption",
+    "code": "dress_size",
+    "position": 14,
+    "values": [
+        "/api/v2/admin/product-options/dress_size/values/dress_s",
+        "/api/v2/admin/product-options/dress_size/values/dress_m",
+        "/api/v2/admin/product-options/dress_size/values/dress_l",
+        "/api/v2/admin/product-options/dress_size/values/dress_xl",
+        "/api/v2/admin/product-options/dress_size/values/dress_xxl"
+    ],
+    "createdAt": "2025-08-18 22:01:32",
+    "updatedAt": "2025-08-18 22:01:32",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-options/dress_size/translations/en_US",
+            "@type": "ProductOptionTranslation",
+            "name": "Dress size"
+        },
+        "de_DE": {
+            "@id": "/api/v2/admin/product-options/dress_size/translations/de_DE",
+            "@type": "ProductOptionTranslation",
+            "name": "Dress size"
+        },
+        "fr_FR": {
+            "@id": "/api/v2/admin/product-options/dress_size/translations/fr_FR",
+            "@type": "ProductOptionTranslation",
+            "name": "Dress size"
+        },
+        "pl_PL": {
+            "@id": "/api/v2/admin/product-options/dress_size/translations/pl_PL",
+            "@type": "ProductOptionTranslation",
+            "name": "Dress size"
+        },
+        "es_ES": {
+            "@id": "/api/v2/admin/product-options/dress_size/translations/es_ES",
+            "@type": "ProductOptionTranslation",
+            "name": "Dress size"
+        },
+        "es_MX": {
+            "@id": "/api/v2/admin/product-options/dress_size/translations/es_MX",
+            "@type": "ProductOptionTranslation",
+            "name": "Dress size"
+        },
+        "pt_PT": {
+            "@id": "/api/v2/admin/product-options/dress_size/translations/pt_PT",
+            "@type": "ProductOptionTranslation",
+            "name": "Dress size"
+        },
+        "zh_CN": {
+            "@id": "/api/v2/admin/product-options/dress_size/translations/zh_CN",
+            "@type": "ProductOptionTranslation",
+            "name": "Dress size"
+        }
+    },
+    "name": "Dress size"
+}
