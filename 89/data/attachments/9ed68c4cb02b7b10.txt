@@ -1,0 +1,46 @@
+2025-08-18 20:45:36 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:45:36 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-association-types?page=1&itemsPerPage=10&order%5Bcode%5D=asc&code=xyzabc123 HTTP/1.1" 200 None
+2025-08-18 20:45:36 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:45:36 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-association-types?page=1&itemsPerPage=10&order[code]=asc&code=xyzabc123
+2025-08-18 20:45:36 - INFO - STATUS CODE: 200
+2025-08-18 20:45:36 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDk5MzEsImV4cCI6MTc1NTU1MzUzMSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Lemyy9xhJt51eGGXDQPUG3EGTX7vPCf6qN-waOq0cbhLVaRFc_KHCy52n1Qef1p5RdQ2lxQGBWNiN_Fc1SItuPSRzoJ0BwtI99Ke4aX4-cm7nI8SjL8WAYGowBwLpe-lzWNdK2UGIjoUu0TUMYzGRoFM6hHEgnqNwnqq6Iu8TxqAQApN_zmlP9VUyQ6YxhSQPY_0P9MEqyELUoSgB7n5ei2ObBr9ly3p9Cf-r7HR0vvGnSFUabaSdpBGaIsld1KpCwztOBhPby6oWDkTi-DWHx8svKc1-qgZWP5aKv3EVpgdPkGBU5RAM5cTbOCK4R657AD2mewEQXiICUsiBMNkv9RTJDDZsTQcoW6h_Yzv4HpKWJCbv2dDl12dqQa7_dCDRjaRfpJNXoX1Sk61RBJZ95HL1CpAJGDOxd5o0BOxegAndoXbXQz5JVKVoQWPq2OjhyiNlzjUfAd5ZOK29jskGfwpmox_X6C65weLyhq2ZCzbc62W09FQ4fvD13NsoGpIX6Y9n17lUqipfveeIDY1_2CuEL90_DmJD-Lz_D15OJr71bevnKALlPSMrqEO79d62cJgSa5LkJjW4x8xKusEkXQt7WRW_CUCmu9rNVWaiw_3y2T8K7J0JL_hJ_qNENxCGPFe8DiOdaQncpJs67MPj8ZvHCe6OwM8Ttl1rJXs1bs"
+}
+2025-08-18 20:45:36 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductAssociationType",
+    "@id": "/api/v2/admin/product-association-types",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 0,
+    "hydra:member": [],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-association-types?code=xyzabc123&itemsPerPage=10&order%5Bcode%5D=asc",
+        "@type": "hydra:PartialCollectionView"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-association-types{?order[code],translations.name,code}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[code]",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "translations.name",
+                "property": "translations.name",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            }
+        ]
+    }
+}
