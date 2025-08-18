@@ -1,0 +1,23 @@
+2025-08-18 19:30:07 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:30:07 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 415 None
+2025-08-18 19:30:07 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:30:07 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-18 19:30:07 - INFO - STATUS CODE: 415
+2025-08-18 19:30:07 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDUzODUsImV4cCI6MTc1NTU0ODk4NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Pc-fGjlWgDf1I8MbecWuxyZaJBZTTVx80kpLGcfzHV56r7w0jcIdax-z-m10w8G5BIo-LZ0yfpPNJPE2uf466zzDQl4Qfgdg0D_4ec2kriXQb1vEyPwQ_tLlZujnCuVMhn49rdE2ATU6UkuZoziLWvsXZWHa7A69TJhIgPtazUkDCUXpvjYM8Fy10fzbaTUuunwjbDYP79_CBjRapPzCWlQwtwIhkoMaJP6BcmT4wPt97dFJYtfMgLaGe-wOeGXGEsOEYvfcO5XGk1vLaAg2CWQ9UEb7idvT7kdKB9PMIQXgsnXc2weN9H2zbO669JpJREyEAHHvzaHQt8Eod_k_oYVtb2cJpNhMyXZmL9vfGvma0LxzQI9_sAg-HXwwpDtdw6WhI96-MkPsTHP40rygqDp9KQhmLyuMqhIEKp1Xr83v8T0ThEh1n5C4jixCsudzEDlkjberyqJ5PZXTe2332Q8wTUS_rVKFzb2BbwcKunAawFTxMyGVn50YXru3ifXNlnpL06JJrOyhAbj9jbBLPLyX5F7WNQmxgeQo19qTq2r8MrKyXgg3VXvun8HDQoiBypjWQHOyfYxDyVo6B5szWizp_z-phhNO7XlmwV8AKg3qsqGDO0WeEjJ5UMNPZguAupskXqSzYMvkSHRUFQJhXsWG8mC06O0Kvu7XNWBGSfc",
+    "Content-Type": "text/plain"
+}
+2025-08-18 19:30:07 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/415",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "The content-type \"text/plain\" is not supported. Supported MIME types are \"application/ld+json\", \"application/json\".",
+    "status": 415,
+    "type": "/errors/415",
+    "description": "The content-type \"text/plain\" is not supported. Supported MIME types are \"application/ld+json\", \"application/json\".",
+    "hydra:description": "The content-type \"text/plain\" is not supported. Supported MIME types are \"application/ld+json\", \"application/json\".",
+    "hydra:title": "An error occurred"
+}

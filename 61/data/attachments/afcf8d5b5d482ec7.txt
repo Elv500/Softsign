@@ -1,0 +1,42 @@
+2025-08-18 19:30:29 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:30:30 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 201 None
+2025-08-18 19:30:30 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:30:31 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/customer-groups/test_545429_1013bd46 HTTP/1.1" 422 None
+2025-08-18 19:30:31 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:30:31 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups/test_545429_1013bd46
+2025-08-18 19:30:31 - INFO - STATUS CODE: 422
+2025-08-18 19:30:31 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDUzODUsImV4cCI6MTc1NTU0ODk4NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Pc-fGjlWgDf1I8MbecWuxyZaJBZTTVx80kpLGcfzHV56r7w0jcIdax-z-m10w8G5BIo-LZ0yfpPNJPE2uf466zzDQl4Qfgdg0D_4ec2kriXQb1vEyPwQ_tLlZujnCuVMhn49rdE2ATU6UkuZoziLWvsXZWHa7A69TJhIgPtazUkDCUXpvjYM8Fy10fzbaTUuunwjbDYP79_CBjRapPzCWlQwtwIhkoMaJP6BcmT4wPt97dFJYtfMgLaGe-wOeGXGEsOEYvfcO5XGk1vLaAg2CWQ9UEb7idvT7kdKB9PMIQXgsnXc2weN9H2zbO669JpJREyEAHHvzaHQt8Eod_k_oYVtb2cJpNhMyXZmL9vfGvma0LxzQI9_sAg-HXwwpDtdw6WhI96-MkPsTHP40rygqDp9KQhmLyuMqhIEKp1Xr83v8T0ThEh1n5C4jixCsudzEDlkjberyqJ5PZXTe2332Q8wTUS_rVKFzb2BbwcKunAawFTxMyGVn50YXru3ifXNlnpL06JJrOyhAbj9jbBLPLyX5F7WNQmxgeQo19qTq2r8MrKyXgg3VXvun8HDQoiBypjWQHOyfYxDyVo6B5szWizp_z-phhNO7XlmwV8AKg3qsqGDO0WeEjJ5UMNPZguAupskXqSzYMvkSHRUFQJhXsWG8mC06O0Kvu7XNWBGSfc"
+}
+2025-08-18 19:30:31 - DEBUG - PAYLOAD REQUEST:
+{
+    "name": ""
+}
+2025-08-18 19:30:31 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/0=c1051bb4-d103-4f74-8988-acbcafc7fdc3;1=9ff3fdc4-b214-49db-8718-39c315e33d45",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "name",
+            "message": "Please enter a customer group name.",
+            "code": "c1051bb4-d103-4f74-8988-acbcafc7fdc3"
+        },
+        {
+            "propertyPath": "name",
+            "message": "Customer group name must be at least 2 characters long.",
+            "code": "9ff3fdc4-b214-49db-8718-39c315e33d45"
+        }
+    ],
+    "detail": "name: Please enter a customer group name.\nname: Customer group name must be at least 2 characters long.",
+    "description": "name: Please enter a customer group name.\nname: Customer group name must be at least 2 characters long.",
+    "type": "/validation_errors/0=c1051bb4-d103-4f74-8988-acbcafc7fdc3;1=9ff3fdc4-b214-49db-8718-39c315e33d45",
+    "title": "An error occurred",
+    "hydra:description": "name: Please enter a customer group name.\nname: Customer group name must be at least 2 characters long.",
+    "hydra:title": "An error occurred"
+}
+2025-08-18 19:30:31 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:30:31 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/customer-groups/test_545429_1013bd46 HTTP/1.1" 204 0
