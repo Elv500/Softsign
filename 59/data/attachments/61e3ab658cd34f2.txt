@@ -1,0 +1,39 @@
+2025-08-18 19:26:06 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:26:06 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 422 None
+2025-08-18 19:26:06 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:26:06 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-18 19:26:06 - INFO - STATUS CODE: 422
+2025-08-18 19:26:06 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDUxNTgsImV4cCI6MTc1NTU0ODc1OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.nXn_K-_0jPnwRr8rhZPwblq_-F3DXzx48sN_Q_awLmgnl3R09J1Uo7wVwjwy8rHs3neEPsogwTCY4fYBlU0mVOzXx6tJgsUUeWk_bYlpHjDdqbDZrH5IWaBCfnSVm8ngd7sGoYzL9U60dl4Dhunigc4QGBYAsIFeGRY4VK0fTWFXP4gTUcb6C4pOORoQ449o7ykVpqMHR57uRSqo-VsBit8wENidAEEKiOz-FgMwvAiBX2DguceLs_LLWLvnSK__MDObyNPBpyuN9PKtlGwW5Z5NxhCnHHDoresv-AJatCL0Soh1zuo2H1BND0dmir7Vnexv6JWzB2EPwhD1LmgWooC_FbMOiQM4mTKlJ6HbUJFnKETfvtNsEpHUPcHtYJsvZDbGYaMAuX7mQUC0f1N4SxlnIMJ5GofJq65kFEJQhWz4dF39dselLb23OpLSwNSsObYVMF-TWvrGjsFoE9LGRr6jaoJm5KrtRuJpEs_Xyy2Ousybkmo8qsn-dhCbELf4P6FdNcq7Aqj3QXNAlttJtf0SPLzh8iIv0Afba75-TRuTxHIVUUmEQGqpXDlJmeBUw5DIxiCKuqTAMakc8DHhpMl3EYgv99mOoioPqgdFzuTiu1WCbeTnqnPDqihx-SeTrznYY-LRrUaZU50lzJNvCN9Oy6TTOo9tYNB1f_49s-0",
+    "Content-Type": "application/json"
+}
+2025-08-18 19:26:06 - DEBUG - PAYLOAD REQUEST:
+{
+    "test": "data"
+}
+2025-08-18 19:26:06 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/0=c1051bb4-d103-4f74-8988-acbcafc7fdc3;1=c1051bb4-d103-4f74-8988-acbcafc7fdc3",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "code",
+            "message": "Please enter a customer group code.",
+            "code": "c1051bb4-d103-4f74-8988-acbcafc7fdc3"
+        },
+        {
+            "propertyPath": "name",
+            "message": "Please enter a customer group name.",
+            "code": "c1051bb4-d103-4f74-8988-acbcafc7fdc3"
+        }
+    ],
+    "detail": "code: Please enter a customer group code.\nname: Please enter a customer group name.",
+    "description": "code: Please enter a customer group code.\nname: Please enter a customer group name.",
+    "type": "/validation_errors/0=c1051bb4-d103-4f74-8988-acbcafc7fdc3;1=c1051bb4-d103-4f74-8988-acbcafc7fdc3",
+    "title": "An error occurred",
+    "hydra:description": "code: Please enter a customer group code.\nname: Please enter a customer group name.",
+    "hydra:title": "An error occurred"
+}
