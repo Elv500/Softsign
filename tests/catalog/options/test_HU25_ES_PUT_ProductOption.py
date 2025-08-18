@@ -10,10 +10,10 @@ from src.routes.endpoint_options import EndpointOptions
 from src.routes.request import SyliusRequest
 from utils.logger_helpers import log_request_response
 
-
 #Este test verifica que una opción existente se actualiza correctamente.
 @pytest.mark.functional
 @pytest.mark.smoke
+@pytest.mark.high
 def test_tc311_Verificar_que_una_opción_existente_se_actualiza_correctamente(setup_options_cleanup):
     headers, add_option_for_cleanup = setup_options_cleanup
     payload = generate_options_source_data()
@@ -32,6 +32,7 @@ def test_tc311_Verificar_que_una_opción_existente_se_actualiza_correctamente(se
 #Este test verifica que al intentar actualizar una opción con un código inexistente, se recibe un error 404.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_tc312_Verificar_error_al_actualizar_opción_con_codigo_inexistente(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     code = "test_code_inexistente"
@@ -43,6 +44,7 @@ def test_tc312_Verificar_error_al_actualizar_opción_con_codigo_inexistente(setu
 #Este test verificar que al intentar actualizar una opcion con un code vacío se recibe un error 404
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_tc313_Verificar_error_al_actualizar_opción_con_code_vacío(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     code = ""
@@ -54,6 +56,7 @@ def test_tc313_Verificar_error_al_actualizar_opción_con_code_vacío(setup_optio
 #Este test verifica que no se pueda actualizar una opcion sun el campo obligatorio "name" en el payload.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_tc314_Verificar_error_al_actualizar_opción_sin_el_campo_obligatorio_nombre(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     payload = generate_options_source_data()
@@ -72,6 +75,7 @@ def test_tc314_Verificar_error_al_actualizar_opción_sin_el_campo_obligatorio_no
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.boundary
+@pytest.mark.medium
 def test_tc318_Verificar_error_al_actualizar_opción_con_nombre_menor_a_2_caracteres(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     payload = generate_options_source_data()
@@ -90,6 +94,7 @@ def test_tc318_Verificar_error_al_actualizar_opción_con_nombre_menor_a_2_caract
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.boundary
+@pytest.mark.medium
 def test_tc319_Verificar_error_al_actualizar_opción_con_nombre_mayor_a_255_caracteres(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     payload = generate_options_source_data()
@@ -107,6 +112,7 @@ def test_tc319_Verificar_error_al_actualizar_opción_con_nombre_mayor_a_255_cara
 #Este test verifica que al actualizar una opción con position de tipo string se recibe un error 400.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.medium
 def test_tc320_Verificar_error_al_actualizar_opción_con_position_de_tipo_string(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     payload = generate_options_source_data()
@@ -124,6 +130,7 @@ def test_tc320_Verificar_error_al_actualizar_opción_con_position_de_tipo_string
 #Este test verifica que al actualizar una opción con position de tipo decimal se recibe un error 400.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.medium
 def test_tc321_Verificar_error_al_actualizar_opción_con_position_de_tipo_decimal(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     payload = generate_options_source_data()
@@ -141,6 +148,7 @@ def test_tc321_Verificar_error_al_actualizar_opción_con_position_de_tipo_decima
 #Este test verifica que al actualizar una opción con position de tipo negativo se recibe un error 400.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.low
 @pytest.mark.xfail(reason="Known issue BUG: Validación faltante para valores negativos en campo 'position' - Comportamiento inconsistente al normalizar", run=True)
 def test_tc322_Verificar_error_al_actualizar_opción_con_position_de_tipo_negativo(setup_options_cleanup):
     headers, _ = setup_options_cleanup
@@ -160,6 +168,7 @@ def test_tc322_Verificar_error_al_actualizar_opción_con_position_de_tipo_negati
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.boundary
+@pytest.mark.medium
 @pytest.mark.xfail(reason="Known issue BUG: Normalización inconsistente al actualizar 'position' con valores >999,999,999 - Sin validación y comportamiento impredecible", run=True)
 def test_tc323_Verificar_error_al_actualizar_opción_con_position_mayor_a_9999999999(setup_options_cleanup):
     headers, _ = setup_options_cleanup
@@ -179,6 +188,7 @@ def test_tc323_Verificar_error_al_actualizar_opción_con_position_mayor_a_999999
 #Este test verifica error al intentar actualizar una opción sin autenticación.
 @pytest.mark.security
 @pytest.mark.negative
+@pytest.mark.high
 def test_tc324_Verificar_error_al_intentar_actualizar_opción_sin_autenticación():
     code = "test_code_inexistente"
     updated_payload = generate_updated_options_payload(code, "test_translation_id_inexistente")
@@ -190,6 +200,7 @@ def test_tc324_Verificar_error_al_intentar_actualizar_opción_sin_autenticación
 #Este test verifica error al intentar actualizar una opción con token inválido.
 @pytest.mark.security
 @pytest.mark.negative
+@pytest.mark.high
 def test_tc325_Verificar_error_al_intentar_actualizar_opción_con_token_inválido():
     code = "test_code_inexistente"
     updated_payload = generate_updated_options_payload(code, "test_translation_id_inexistente")
@@ -202,6 +213,7 @@ def test_tc325_Verificar_error_al_intentar_actualizar_opción_con_token_inválid
 #Este test verifica error al intentar actualizar una opción con un idioma no soportado.
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.medium
 def test_tc326_Verificar_error_al_intentar_actualizar_opción_con_idioma_no_soportado(setup_options_cleanup):
     headers, _ = setup_options_cleanup
     payload = generate_options_source_data()
@@ -219,6 +231,7 @@ def test_tc326_Verificar_error_al_intentar_actualizar_opción_con_idioma_no_sopo
 #Este test verifica que se pueda actualizar una opción con values
 @pytest.mark.functional
 @pytest.mark.smoke
+@pytest.mark.high
 def test_tc327_Verificar_que_se_puede_actualizar_opción_con_values(setup_options_cleanup):
     headers, add_option_for_cleanup = setup_options_cleanup
     payload = generate_options_source_data_with_values()
@@ -239,6 +252,7 @@ def test_tc327_Verificar_que_se_puede_actualizar_opción_con_values(setup_option
 #Este test verifica que al intentar actualizar una opción con values sin el campo obligatorio “English (United States)”
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.high
 def test_tc328_Verificar_error_al_intentar_actualizar_opción_con_values_sin_campo_obligatorio_English_US(setup_options_cleanup):
     headers, add_option_for_cleanup = setup_options_cleanup
     payload = generate_options_source_data_with_values()

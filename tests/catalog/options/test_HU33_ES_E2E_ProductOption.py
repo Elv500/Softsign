@@ -9,6 +9,7 @@ from utils.logger_helpers import log_request_response
 
 @pytest.mark.e2e
 @pytest.mark.options
+@pytest.mark.high
 def test_HU33_E2E_ProductOption(setup_options_cleanup):
     headers, _ = setup_options_cleanup
 
