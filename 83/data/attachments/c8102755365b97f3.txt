@@ -1,0 +1,39 @@
+2025-08-18 20:09:16 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:09:17 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-attributes HTTP/1.1" 201 None
+2025-08-18 20:09:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:09:17 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-attributes/artist-carry HTTP/1.1" 200 None
+2025-08-18 20:09:17 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:09:17 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes/artist-carry
+2025-08-18 20:09:17 - INFO - STATUS CODE: 200
+2025-08-18 20:09:17 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDc3NTQsImV4cCI6MTc1NTU1MTM1NCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.gX1GIUeCyGtMpkkENmqrOIAfETjuNtggz1zxSb1rRISBNk27zXR7tR1s7KzCwMYjtNlK_zdbTCanxS_jXgg5dYnpcozQ7CLcv6Es2HL4AV2tHqgiMKC9cELHSWoA9oE3nOevQvGiEqVNtBXIWPGLpgmybF53S8dUe_7zRGQ514d7JvDpL4nU1MX7oH-h6pN8k9PYlFeH68vMgMbNglofIbP7-0jW_vGID7eYdSK1qJS8btAK-s5bIffcaeEubPI4p1EVqm4cgVNSECQVlXWnNPdHOC6Jn4_wcfGzgFI4EnOkYwTSaBKMt8uE4nPGuXrSSKz3Og2cIovpBtuYiPpEOUnOdgt7ZjSNZ8RB5irkqGSlbBOrjODARr8Js8EBK27MpizYASYrQaDfgrNlcn7vlgpmLXesnk0sMaBOrPt_kDayy490SO5lYgXw-2vhQIQg47kdpwFD8-XeDyP41FbiR1hZsQhVKdVP5cblVH6GAfqpY15f5EZy4KlRDBFT2LcYE_yGjZqJhvW9CnrhtEbkBJcYNHi5ioQQV9jOc5_FCj-hzQ2EyejOKyQ9gPJsImNUS0uy4e_QYcO8z_dgAAn5GbW2WwY7ANzYQgKql8vVkgSf4aqqit24NPHw1OU3Pg3Dk4IVOssGDQVcHtzwY1-wrVhYaqi0VPriXhpmBvTzcLM"
+}
+2025-08-18 20:09:17 - DEBUG - PAYLOAD REQUEST:
+{
+    "name": "updateName66$@$@#"
+}
+2025-08-18 20:09:17 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductAttribute",
+    "@id": "/api/v2/admin/product-attributes/artist-carry",
+    "@type": "ProductAttribute",
+    "code": "artist-carry",
+    "type": "text",
+    "configuration": {
+        "maxCharacters": 37,
+        "minCharacters": 5
+    },
+    "storageType": "text",
+    "position": 30,
+    "translatable": true,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-attributes/artist-carry/translations/en_US",
+            "@type": "ProductAttributeTranslation",
+            "name": "Peters-Lam"
+        }
+    }
+}
+2025-08-18 20:09:17 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:09:18 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-attributes/artist-carry HTTP/1.1" 204 0
