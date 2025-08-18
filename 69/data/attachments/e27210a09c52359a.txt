@@ -1,0 +1,46 @@
+2025-08-18 19:49:06 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:49:07 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 19:49:07 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:49:07 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories/TAX-e06179 HTTP/1.1" 200 None
+2025-08-18 19:49:07 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:49:07 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-e06179
+2025-08-18 19:49:07 - INFO - STATUS CODE: 200
+2025-08-18 19:49:07 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-e06179",
+    "@type": "TaxCategory",
+    "id": 9736,
+    "code": "TAX-e06179",
+    "name": "Much",
+    "description": "Letter share peace attorney end east have.",
+    "createdAt": "2025-08-18 19:49:07",
+    "updatedAt": "2025-08-18 19:49:07"
+}
+2025-08-18 19:49:07 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:49:08 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/tax-categories/TAX-e06179 HTTP/1.1" 200 None
+2025-08-18 19:49:08 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:49:08 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories/TAX-e06179
+2025-08-18 19:49:08 - INFO - STATUS CODE: 200
+2025-08-18 19:49:08 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDY1MjMsImV4cCI6MTc1NTU1MDEyMywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.b2Bp616vgoNy6hnfd5PlOnMBVFi6by9xUnFTUJp46I2eqxwJnYAkezj5g-_DrgvlIqa8QfwnIPuKkk35AjT4U2iuLmUWEC1oCPPstm4_CJgvlN0zGzr9C7yHzav5f9ypDoiH1O6O4GmlTLSdx8s3_6G49LeWA8HN8JR1Bnhi0G0GY2oZbEPeYW8_17O0tNgtwDeonOf5hXiI1j9_OEBHByYIqMwTYfmfWSzs8AenA73DzS8zcvl4yzoghrEfnPnukroq-9lVhMTI7tKDsUBX0JEl5Y3-zDD0IpoD1ANDDcxUr0oxIIjazCysRTCfWZa-Cpy6Cs8g9l2Ugu2Ej3VkqY_N0ttF4qvesrXBkcXD8tVOWXWeRCZT6SflbS293y-mqAYhMsvny1FtzTBuEMSBYzX11m00AopjoAR6a7mq82eVZ9xuc1_Vds6y1jebBCt8Hj8GViGeS5c8ubskSDK0JsRdhu3ZmFWcfVpQuU6HtNoc3cY6Hh4nYyj9IS_FPPKTceoakkxwtAmPke9QJkC5tKlKAm_-2J2DsXWetL6XtXkdShRxy-ENsp-UxsRulDMHV1dJbjBh8pV5nYExGS9Y7rzvQWyr25kYuYXjcDu0Vph3QpIrKMlKS4AZ2y_xWsXVSKUZ_8nIADyGPVVozQzWvWMsFleh6KjYsrxRGVSwG6o"
+}
+2025-08-18 19:49:08 - DEBUG - PAYLOAD REQUEST:
+{
+    "name": "Nice"
+}
+2025-08-18 19:49:08 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-e06179",
+    "@type": "TaxCategory",
+    "id": 9736,
+    "code": "TAX-e06179",
+    "name": "Nice",
+    "description": "Letter share peace attorney end east have.",
+    "createdAt": "2025-08-18 19:49:07",
+    "updatedAt": "2025-08-18 19:49:08"
+}
+2025-08-18 19:49:08 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:49:09 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-e06179 HTTP/1.1" 204 0

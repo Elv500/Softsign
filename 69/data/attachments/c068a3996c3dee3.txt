@@ -1,0 +1,273 @@
+2025-08-18 19:48:42 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:48:43 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 200 None
+2025-08-18 19:48:43 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:48:43 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 19:48:43 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:48:44 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 19:48:44 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:48:45 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-18 19:48:45 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:48:45 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 19:48:45 - INFO - STATUS CODE: 200
+2025-08-18 19:48:45 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDY1MjMsImV4cCI6MTc1NTU1MDEyMywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.b2Bp616vgoNy6hnfd5PlOnMBVFi6by9xUnFTUJp46I2eqxwJnYAkezj5g-_DrgvlIqa8QfwnIPuKkk35AjT4U2iuLmUWEC1oCPPstm4_CJgvlN0zGzr9C7yHzav5f9ypDoiH1O6O4GmlTLSdx8s3_6G49LeWA8HN8JR1Bnhi0G0GY2oZbEPeYW8_17O0tNgtwDeonOf5hXiI1j9_OEBHByYIqMwTYfmfWSzs8AenA73DzS8zcvl4yzoghrEfnPnukroq-9lVhMTI7tKDsUBX0JEl5Y3-zDD0IpoD1ANDDcxUr0oxIIjazCysRTCfWZa-Cpy6Cs8g9l2Ugu2Ej3VkqY_N0ttF4qvesrXBkcXD8tVOWXWeRCZT6SflbS293y-mqAYhMsvny1FtzTBuEMSBYzX11m00AopjoAR6a7mq82eVZ9xuc1_Vds6y1jebBCt8Hj8GViGeS5c8ubskSDK0JsRdhu3ZmFWcfVpQuU6HtNoc3cY6Hh4nYyj9IS_FPPKTceoakkxwtAmPke9QJkC5tKlKAm_-2J2DsXWetL6XtXkdShRxy-ENsp-UxsRulDMHV1dJbjBh8pV5nYExGS9Y7rzvQWyr25kYuYXjcDu0Vph3QpIrKMlKS4AZ2y_xWsXVSKUZ_8nIADyGPVVozQzWvWMsFleh6KjYsrxRGVSwG6o"
+}
+2025-08-18 19:48:45 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 23,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 9597,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Nostrum provident voluptatem eos illum in. Ipsum qui sit quis et. Quia possimus quis voluptas deserunt. Velit quo voluptatem quam itaque incidunt a quasi. Quo saepe laudantium qui cum.",
+            "createdAt": "2025-08-18 19:00:49",
+            "updatedAt": "2025-08-18 19:00:49"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 9598,
+            "code": "other",
+            "name": "Other",
+            "description": "Voluptatem sit omnis neque reiciendis. Iure fugiat tempore amet qui. Ullam aliquam quidem et ad repellendus earum dolores. Facilis et aut rerum et.",
+            "createdAt": "2025-08-18 19:00:49",
+            "updatedAt": "2025-08-18 19:00:49"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-b6d395",
+            "@type": "TaxCategory",
+            "id": 9606,
+            "code": "TAX-b6d395",
+            "name": "Special",
+            "description": "",
+            "createdAt": "2025-08-18 19:02:58",
+            "updatedAt": "2025-08-18 19:02:58"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-1e655a",
+            "@type": "TaxCategory",
+            "id": 9607,
+            "code": "TAX-1e655a",
+            "name": "   ",
+            "description": "Likely matter future coach leave police.",
+            "createdAt": "2025-08-18 19:03:01",
+            "updatedAt": "2025-08-18 19:03:01"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-3da750",
+            "@type": "TaxCategory",
+            "id": 9608,
+            "code": "TAX-3da750",
+            "name": "\n\n",
+            "description": "Understand concern room most rock into lead.",
+            "createdAt": "2025-08-18 19:03:02",
+            "updatedAt": "2025-08-18 19:03:02"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-18d6c2",
+            "@type": "TaxCategory",
+            "id": 9609,
+            "code": "TAX-18d6c2",
+            "name": " \n ",
+            "description": "Most chair name who with this site.",
+            "createdAt": "2025-08-18 19:03:02",
+            "updatedAt": "2025-08-18 19:03:02"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-5336f7",
+            "@type": "TaxCategory",
+            "id": 9610,
+            "code": "TAX-5336f7",
+            "name": " \t \n ",
+            "description": "To perform environment news market ready.",
+            "createdAt": "2025-08-18 19:03:03",
+            "updatedAt": "2025-08-18 19:03:03"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-2de61c",
+            "@type": "TaxCategory",
+            "id": 9622,
+            "code": "TAX-2de61c",
+            "name": "CategoriaB",
+            "description": "Bed future support cost reality between.",
+            "createdAt": "2025-08-18 19:03:17",
+            "updatedAt": "2025-08-18 19:03:17"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-ae7521",
+            "@type": "TaxCategory",
+            "id": 9647,
+            "code": "TAX-ae7521",
+            "name": "Foreign",
+            "description": "",
+            "createdAt": "2025-08-18 19:11:35",
+            "updatedAt": "2025-08-18 19:11:35"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-77c3c6",
+            "@type": "TaxCategory",
+            "id": 9648,
+            "code": "TAX-77c3c6",
+            "name": "   ",
+            "description": "Peace director partner per state reality.",
+            "createdAt": "2025-08-18 19:11:39",
+            "updatedAt": "2025-08-18 19:11:39"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-37cff1",
+            "@type": "TaxCategory",
+            "id": 9649,
+            "code": "TAX-37cff1",
+            "name": "\n\n",
+            "description": "Letter serve goal price building painting sport.",
+            "createdAt": "2025-08-18 19:11:40",
+            "updatedAt": "2025-08-18 19:11:40"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-3c1122",
+            "@type": "TaxCategory",
+            "id": 9650,
+            "code": "TAX-3c1122",
+            "name": " \n ",
+            "description": "Catch front particularly growth figure.",
+            "createdAt": "2025-08-18 19:11:41",
+            "updatedAt": "2025-08-18 19:11:41"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-83bd41",
+            "@type": "TaxCategory",
+            "id": 9651,
+            "code": "TAX-83bd41",
+            "name": " \t \n ",
+            "description": "Thought effort page account nation these those I.",
+            "createdAt": "2025-08-18 19:11:43",
+            "updatedAt": "2025-08-18 19:11:43"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-5c3726",
+            "@type": "TaxCategory",
+            "id": 9663,
+            "code": "TAX-5c3726",
+            "name": "CategoriaB",
+            "description": "Position ago task eye.",
+            "createdAt": "2025-08-18 19:12:03",
+            "updatedAt": "2025-08-18 19:12:03"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-b82c4b",
+            "@type": "TaxCategory",
+            "id": 9688,
+            "code": "TAX-b82c4b",
+            "name": "Trouble",
+            "description": "",
+            "createdAt": "2025-08-18 19:43:22",
+            "updatedAt": "2025-08-18 19:43:22"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-ec9939",
+            "@type": "TaxCategory",
+            "id": 9689,
+            "code": "TAX-ec9939",
+            "name": "   ",
+            "description": "Pm name authority almost daughter open know.",
+            "createdAt": "2025-08-18 19:43:24",
+            "updatedAt": "2025-08-18 19:43:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-b5536d",
+            "@type": "TaxCategory",
+            "id": 9690,
+            "code": "TAX-b5536d",
+            "name": "\n\n",
+            "description": "Arm choose evening others up.",
+            "createdAt": "2025-08-18 19:43:25",
+            "updatedAt": "2025-08-18 19:43:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-6e61b0",
+            "@type": "TaxCategory",
+            "id": 9691,
+            "code": "TAX-6e61b0",
+            "name": " \n ",
+            "description": "As under his million special test.",
+            "createdAt": "2025-08-18 19:43:25",
+            "updatedAt": "2025-08-18 19:43:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-48fac4",
+            "@type": "TaxCategory",
+            "id": 9692,
+            "code": "TAX-48fac4",
+            "name": " \t \n ",
+            "description": "Painting form act bring.",
+            "createdAt": "2025-08-18 19:43:26",
+            "updatedAt": "2025-08-18 19:43:26"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-1659ce",
+            "@type": "TaxCategory",
+            "id": 9704,
+            "code": "TAX-1659ce",
+            "name": "CategoriaB",
+            "description": "Out soon area.",
+            "createdAt": "2025-08-18 19:43:36",
+            "updatedAt": "2025-08-18 19:43:36"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/1234",
+            "@type": "TaxCategory",
+            "id": 9722,
+            "code": "1234",
+            "name": "kevin gutierrez",
+            "description": "",
+            "createdAt": "2025-08-18 19:45:47",
+            "updatedAt": "2025-08-18 19:45:47"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-b20b6e",
+            "@type": "TaxCategory",
+            "id": 9723,
+            "code": "TAX-b20b6e",
+            "name": "Serve",
+            "description": "Region within wife professional.",
+            "createdAt": "2025-08-18 19:48:43",
+            "updatedAt": "2025-08-18 19:48:43"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-76d1df",
+            "@type": "TaxCategory",
+            "id": 9724,
+            "code": "TAX-76d1df",
+            "name": "Girl",
+            "description": "Rather about I force alone.",
+            "createdAt": "2025-08-18 19:48:44",
+            "updatedAt": "2025-08-18 19:48:44"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}
