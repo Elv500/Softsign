@@ -1,2 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sat Aug 16 21:19:44 GMT 2025","Sat Aug 16 21:19:44 GMT 2025","327","tests.catalog.inventory","test_HU06_EA_DELETE_Inventory","","","","test_TC352_verificar_tiempo_respuesta_menor_3s_eliminar_inventory",""
