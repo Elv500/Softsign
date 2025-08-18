@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string"
+    },
+    "@id": {
+      "type": "string"
+    },
+    "@type": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "configuration": {
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "maxCharacters": { "type": "integer" },
+        "minCharacters": { "type": "integer" }
+      },
+      "required": ["maxCharacters", "minCharacters"]
+     },
+    {
+      "type": "array",
+      "maxItems": 0
+    }
+  ]
+ },
+    "storageType": {
+      "type": "string"
+    },
+    "position": {
+      "type": "integer"
+    },
+    "translatable": {
+      "type": "boolean"
+    },
+    "translations": {
+      "type": "object",
+      "properties": {
+        "en_US": {
+          "type": "object",
+          "properties": {
+            "@id": {
+              "type": "string"
+            },
+            "@type": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id",
+            "@type",
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "en_US"
+      ]
+    }
+  },
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "code",
+    "type",
+    "configuration",
+    "storageType",
+    "position",
+    "translatable",
+    "translations"
+  ]
+}

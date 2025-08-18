@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "required": [
+        "code",
+        "name"
+    ],
+    "properties": {
+        "address": {
+            "type": "object",
+            "properties": {
+                "countryCode": {
+                    "type": "string"
+                },
+                "street": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "postcode": {
+                    "type": "string"
+                }
+            }
+        },
+        "code": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "priority": {
+            "type": "integer"
+        },
+        "channels": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}

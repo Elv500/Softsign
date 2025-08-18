@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "required": [
+        "@context",
+        "@id",
+        "@type",
+        "address",
+        "channels",
+        "code",
+        "id",
+        "name",
+        "priority"
+    ],
+    "properties": {
+        "@context": {
+            "type": "string"
+        },
+        "@id": {
+            "type": "string"
+        },
+        "@type": {
+            "type": "string"
+        },
+        "id": {
+            "type": "integer"
+        },
+        "address": {
+            "type": ["string", "object", "null"]
+        },
+        "code": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "priority": {
+            "type": "integer"
+        },
+        "channels": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}

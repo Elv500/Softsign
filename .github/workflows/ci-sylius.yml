@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       marker:
-        description: 'Marker de pytest: -m <mark>'
+        description: 'Insert Marker or Suite'
         required: false
         default: ''
 

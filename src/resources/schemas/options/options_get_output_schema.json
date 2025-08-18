@@ -1,0 +1,279 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string"
+    },
+    "@id": {
+      "type": "string"
+    },
+    "@type": {
+      "type": "string"
+    },
+    "hydra:totalItems": {
+      "type": "number"
+    },
+    "hydra:member": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "@id": {
+            "type": "string"
+          },
+          "@type": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "position": {
+            "type": "number"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "translations": {
+            "type": "object",
+            "properties": {
+              "en_US": {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string"
+                  },
+                  "@type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@id",
+                  "@type",
+                  "name"
+                ]
+              },
+              "de_DE": {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string"
+                  },
+                  "@type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@id",
+                  "@type",
+                  "name"
+                ]
+              },
+              "fr_FR": {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string"
+                  },
+                  "@type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@id",
+                  "@type",
+                  "name"
+                ]
+              },
+              "pl_PL": {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string"
+                  },
+                  "@type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@id",
+                  "@type",
+                  "name"
+                ]
+              },
+              "es_ES": {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string"
+                  },
+                  "@type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@id",
+                  "@type",
+                  "name"
+                ]
+              },
+              "es_MX": {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string"
+                  },
+                  "@type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@id",
+                  "@type",
+                  "name"
+                ]
+              },
+              "pt_PT": {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string"
+                  },
+                  "@type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@id",
+                  "@type",
+                  "name"
+                ]
+              },
+              "zh_CN": {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string"
+                  },
+                  "@type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@id",
+                  "@type",
+                  "name"
+                ]
+              }
+            },
+            "required": [
+              "en_US"
+            ]
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id",
+          "@type",
+          "code",
+          "position",
+          "values",
+          "createdAt",
+          "updatedAt",
+          "translations",
+          "name"
+        ]
+      }
+    },
+    "hydra:search": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "hydra:template": {
+          "type": "string"
+        },
+        "hydra:variableRepresentation": {
+          "type": "string"
+        },
+        "hydra:mapping": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "@type": {
+                "type": "string"
+              },
+              "variable": {
+                "type": "string"
+              },
+              "property": {
+                "type": "string"
+              },
+              "required": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "@type",
+              "variable",
+              "property",
+              "required"
+            ]
+          }
+        }
+      },
+      "required": [
+        "@type",
+        "hydra:template",
+        "hydra:variableRepresentation",
+        "hydra:mapping"
+      ]
+    }
+  },
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "hydra:totalItems",
+    "hydra:member",
+    "hydra:search"
+  ]
+}
