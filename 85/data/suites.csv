@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Aug 18 20:11:25 GMT 2025","Mon Aug 18 20:11:25 GMT 2025","536","tests.catalog.attributes","test_HU13_LQ_POST_Attributes","","","","test_TC413_Verificar_tiempo_respuesta_creacion_de_un_atributo",""
+"passed","Mon Aug 18 20:11:26 GMT 2025","Mon Aug 18 20:11:27 GMT 2025","1210","tests.catalog.attributes","test_HU23_LQ_DELETE_Attributes","","","","test_TC408_verificar_el_tiempo_respuesta_despues_de_eliminar_atributo",""

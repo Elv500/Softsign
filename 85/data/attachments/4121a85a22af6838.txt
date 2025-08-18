@@ -1,0 +1,50 @@
+2025-08-18 20:11:24 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:11:25 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/administrators/token HTTP/1.1" 200 None
+2025-08-18 20:11:25 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:11:25 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-attributes HTTP/1.1" 201 None
+2025-08-18 20:11:25 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:11:25 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes
+2025-08-18 20:11:25 - INFO - STATUS CODE: 201
+2025-08-18 20:11:25 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDc4ODUsImV4cCI6MTc1NTU1MTQ4NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.d-rSIIb3f6e-ErCxhRvpeF_-6wz1tEdg2X8rQKKA3SGqX3iL38uLOBQYhQ_XsQbcw0Gt6EB7XIGdBc8pstF0QDjbq8ndKlZVOEpbS1jzdHoyG8kVtT7jgXMcdsozcokFMxJuRdL_AgncJy7ZrysQUfSUrm-dtpO0fOkCVgdlAI8rTydWBpKYWJ9w_vqCaGZ_LUCKlIO7tYhTFEeUf6_s39b2Yv32lRhvLQL92z-1bdk-2yWF4UBb6SMsQ0PUwuIYwcNIZfM1_If4c0IDnio7lRY7-TzEmboRLNLIPtSDQNjPcBEMg1bR8CiRWASW79LmzwaSVcTZ6qjKzZSrEVp5XZoU44yTAgZ91MFntn6jdkAwQO4sz0dM9kDKtfkfxasyJzURFJ-Mwv0GnKkgspVAMnZjW2W_o7ae6QnlaMbE2znIK3h4xoAP9wTScxC-jVceCjDmaeMbqFsbfS4D7540OC-8Cpxy3PSLpLD56I50DA3HS6SAz3gSu03hYsHmVoDiHcLzFtrXuRe_i4UnQCfXPypRyVqjfydUn_DjO3KkF8Je9i2WIHO-ztArZc0mzj2fnsP53caYy5qVwxan-Xpfk_alhPE0JLRX6LYDwigZgluC8-x4MiMyx4QEUND6OOp0r-Q730vqCWZn5cL9N8612r7uMpvAmjEte-XpmUTE-kE"
+}
+2025-08-18 20:11:25 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "writer-black",
+    "type": "text",
+    "translations": {
+        "en_US": {
+            "name": "Hanson and Sons"
+        }
+    },
+    "configuration": {
+        "maxCharacters": 77,
+        "minCharacters": 9
+    },
+    "storageType": "text"
+}
+2025-08-18 20:11:25 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductAttribute",
+    "@id": "/api/v2/admin/product-attributes/writer-black",
+    "@type": "ProductAttribute",
+    "code": "writer-black",
+    "type": "text",
+    "configuration": {
+        "maxCharacters": 77,
+        "minCharacters": 9
+    },
+    "storageType": "text",
+    "position": 30,
+    "translatable": true,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-attributes/writer-black/translations/en_US",
+            "@type": "ProductAttributeTranslation",
+            "name": "Hanson and Sons"
+        }
+    }
+}
+2025-08-18 20:11:25 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:11:26 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-attributes/writer-black HTTP/1.1" 204 0
