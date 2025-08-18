@@ -55,7 +55,7 @@ def test_TC34_verificar_inventory_eliminado_no_exista(setup_create_inventory):
 # TC-35 – Admin > Catalog > Inventory - Verificar que el address asociado no exista más después de eliminar el Inventario.
 @pytest.mark.functional
 @pytest.mark.high
-@pytest.mark.xfail(reason="BUG35: Problemas con la construccion URL de Address", run=True)
+@pytest.mark.xfail(reason="BUG35: Problemas con la URL de Address obtenido a partir de un inventario eliminado", run=True)
 def test_TC35_verificar_address_eliminado_despues_de_eliminar_inventory(setup_create_inventory):
     headers, inventory = setup_create_inventory
     url_inventory = EndpointInventory.code(inventory["code"])
@@ -122,8 +122,6 @@ def test_TC347_eliminar_inventory_codigo_formato_invalido(setup_create_inventory
     log_request_response(url, response, headers)
     AssertionInventoryErrors.assert_inventory_error_request(response.json(), 404, "Not Found")
 
-#Revisar linea 109
-
 
 # TC-348 – Admin > Catalog > Inventory - Eliminar Inventario con método HTTP incorrecto.
 @pytest.mark.security
@@ -178,11 +176,7 @@ def test_TC350_eliminar_inventory_no_afecte_otros_inventory(setup_create_invento
     url2 = EndpointInventory.code(inventario2["code"])
     response_get = SyliusRequest.get(url2, headers)
     AssertionStatusCode.assert_status_code_200(response_get)
-    response_delete = SyliusRequest.delete(url2, headers)#Limpiando
-
-
-#@pytest.mark.medium
-# def test_TC351_eliminacion_concurrente_inventory(setup_create_inventory):
+    response_delete = SyliusRequest.delete(url2, headers)#Limpiando<
 
 
 # TC-352 – Admin > Catalog > Inventory - Verificar que el tiempo de eliminar un Inventario sea menor a 3 segundos.

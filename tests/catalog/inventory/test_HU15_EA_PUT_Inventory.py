@@ -88,7 +88,7 @@ def test_TC72_actualizacion_sin_campo_name(setup_edit_inventory):
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.high
-@pytest.mark.xfail(reason="BUG73: Permite ingresar un valor negativo", run=True)
+@pytest.mark.xfail(reason="BUG73: Permite editar un inventario con prioridad negativa", run=True)
 def test_TC73_actualizacion_formato_invalido_priority(setup_edit_inventory):
     headers, inventory = setup_edit_inventory
     url = EndpointInventory.code(inventory["code"])
@@ -167,7 +167,7 @@ def test_TC335_intento_actualizar_code_insatisfactoriamente(setup_edit_inventory
 # TC-336: Admin > Catalog > Inventory - Actualización parcial de inventario con solo un campo priority
 @pytest.mark.functional
 @pytest.mark.medium
-@pytest.mark.xfail(reason="BUG336: Permite actualizar con campos faltantes como si fuera patch", run=True)
+@pytest.mark.xfail(reason="BUG336: Permite actualizar inventario con campos faltantes como si fuera patch", run=True)
 def test_TC336_actualizacion_un_campo_priority_verificar_borrado_campos(setup_edit_inventory):
     headers, inventory = setup_edit_inventory
     url = EndpointInventory.code(inventory["code"])

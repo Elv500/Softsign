@@ -590,4 +590,277 @@ Los test cases para este proyecto se encuentran detallados en el siguiente link:
 
 ---
 
+## Lista de Test Cases Sprint #2
+
+### Test Cases - SoftSign
+
+#### HU-03: Actualizar “Customer - Group” (PUT)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 271 | Admin > Customer - Group > Actualizar grupo de clientes con datos válidos | High |
+| 272 | Admin > Customer - Group > Verificar estructura del JSON devuelto al actualizar | High |
+| 273 | Admin > Customer - Group > Verificar que no permita actualizar grupo con código inexistente | High |
+| 274 | Admin > Customer - Group > Actualizar grupo sin campo obligatorio 'name' | High |
+| 275 | Admin > Customer - Group > Verificar que el campo code en el body es ignorado | Medium |
+| 276 | Admin > Customer - Group > Verificar que code vacío en body es ignorado | Medium |
+| 277 | Admin > Customer - Group > Verificar que code con caracteres especiales en body es ignorado | Medium |
+| 278 | Admin > Customer - Group > Verificar que code muy largo en body es ignorado | Medium |
+| 280 | Admin > Customer - Group > Verificar que code null en body es ignorado | Medium |
+| 281 | Admin > Customer - Group > Verificar que no permita actualizar grupo con nombre vacío | High |
+| 282 | Admin > Customer - Group > Verificar que no permita nombre muy largo | High |
+| 283 | Admin > Customer - Group > Verificar que permita actualizar grupo con caracteres especiales en nombre | Medium |
+| 284 | Admin > Customer - Group > Verificar que no permita actualizar grupo sin token de autenticación | High |
+| 285 | Admin > Customer - Group > Verificar que no permita actualizar grupo con token inválido | High |
+| 286 | Admin > Customer - Group > Verificar que no permita actualizar grupo con body JSON malformado | High |
+| 287 | Admin > Customer - Group > Verificar que no permita actualizar grupo con Content-Type incorrecto | Medium |
+| 288 | Admin > Customer - Group > Verificar que el tiempo de respuesta al actualizar sea menor a 3 segundos | Medium |
+| 289 | Admin > Customer - Group > Verificar que permita actualizar grupo con nombre en límite superior (255 chars) | Medium |
+| 290 | Admin > Customer - Group > Verificar headers de respuesta | Medium |
+| 291 | Admin > Customer - Group > Verificar que permita actualizar grupo con nombre mínimo | Medium |
+| 292 | Admin > Customer - Group > Verificar que no permita actualizar grupo con valores null | Medium |
+
+#### HU-16: Eliminar “Customer - Group” existente (DELETE)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 293 | Admin > Customer - Group > Eliminar grupo de clientes existente | High |
+| 294 | Admin > Customer - Group > Verificar que no permita eliminar grupo con código inexistente | High |
+| 295 | Admin > Customer - Group > Verificar que no permita eliminar grupo sin token de autenticación | High |
+| 296 | Admin > Customer - Group > Verificar que no permita eliminar grupo con token inválido | High |
+| 297 | Admin > Customer - Group > Verificar que el tiempo de respuesta al eliminar sea menor a 3 segundos | Medium |
+| 298 | Admin > Customer - Group > Verificar headers de respuesta al eliminar | Medium |
+| 299 | Admin > Customer - Group > Verificar que el grupo eliminado no exista más | High |
+| 300 | Admin > Customer - Group > Verificar que no permita eliminar el mismo grupo dos veces | High |
+| 301 | Admin > Customer - Group > Verificar eliminación de grupo con caracteres especiales en el nombre | Medium |
+| 302 | Admin > Customer - Group > Verificar que no permita eliminar grupo con código muy largo | Medium |
+| 303 | Admin > Customer - Group > Verificar que no permita eliminar grupo con código vacío | Medium |
+| 305 | Admin > Customer - Group > Verificar eliminación de grupo con diferentes métodos HTTP incorrectos | Medium |
+| 306 | Admin > Customer - Group > Verificar que se pueda eliminar grupo del sistema (retail) | High |
+| 307 | Admin > Customer - Group > Verificar eliminación de múltiples grupos secuencialmente | Medium |
+| 308 | Admin > Customer - Group > Verificar comportamiento con caracteres especiales en código | Medium |
+| 309 | Admin > Customer - Group > Verificar eliminación con Content-Type incorrecto (no debería afectar DELETE) | Low |
+
+#### HU-30: E2E "Customer - Group"
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 334 | Admin > Customer - Group > E2E: Flujo completo CRUD de grupo de clientes | High |
+
+
+#### HU-25: Actualizar una opción de producto (PUT)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 311 | Admin > Catalog > Options > Verificar que una opción existente se actualiza correctamente | High |
+| 312 | Admin > Catalog > Options > Verificar error al actualizar opción con code inexistente | High |
+| 313 | Admin > Catalog > Options > Verificar error al actualizar opción con code vacío | High |
+| 314 | Admin > Catalog > Options > Verificar que no se pueda actualizar una opción sin el campo obligatorio name | High |
+| 318 | Admin > Catalog > Options > Verificar error al actualizar el campo name con menos de 2 caracteres | Medium |
+| 319 | Admin > Catalog > Options > Verificar error al actualizar el campo name con mas de 255 caracteres | Medium |
+| 320 | Admin > Catalog > Options > Verificar error al actualizar el campo position con un string | Medium |
+| 321 | Admin > Catalog > Options > Verificar error al actualizar el campo position con decimales | Medium |
+| 322 | Admin > Catalog > Options > Verificar error al actualizar position con un numero negativo | Low |
+| 323 | Admin > Catalog > Options > Verificar error al actualizar una position con un numero mayor a 999999999 | Medium |
+| 324 | Admin > Catalog > Options > Verificar error al actualizar una opción sin autenticación | High |
+| 325 | Admin > Catalog > Options > Verificar error al actualizar una opción con token invalido | High |
+| 326 | Admin > Catalog > Options > Verificar error al actualizar una opcion con un idioma no soportado | Medium |
+| 327 | Admin > Catalog > Options > Verificar actualizacion de una opcion con values | High |
+| 328 | Admin > Catalog > Options > Verificar actualización de los values de una opción sin el campo obligatorio “English (United States)” | High |
+
+#### HU-26: Eliminar una opción de producto (DELETE)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 386 | Admin > Catalog > Options > Verificar eliminar una opción con code válido | High |
+| 387 | Admin > Catalog > Options > Verificar que la opción eliminada desaparezca del listado de opciones | Medium |
+| 388 | Admin > Catalog > Options > Verificar error al intentar eliminar una opción con un code que no existe | High |
+| 389 | Admin > Catalog > Options > Verificar error al intentar eliminar una opción con un code en formato incorrecto | Medium |
+| 390 | Admin > Catalog > Options > Verificar error al intentar eliminar una opción con code vacío | Medium |
+| 391 | Admin > Catalog > Options > Verificar error al intentar eliminar una opción que ya fue eliminada | Medium |
+| 392 | Admin > Catalog > Options > Verificar error al eliminar una opción sin token de autenticación | High |
+| 393 | Admin > Catalog > Options > Verificar error al eliminar una opción con token inválido | High |
+| 394 | Admin > Catalog > Options > Verificar error al eliminar una opción con token expirado | High |
+| 395 | Admin > Catalog > Options > Validar que el tiempo de respuesta al eliminar una opción sea menor a 2 segundos | Low |
+
+#### HU-33: Product Options E2E
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 424 | Admin > Catalog > Options - Autenticarse con credenciales válidas y obtener token. (E2E) | High |
+| 425 | Admin > Catalog > Options - Listar opciones con autenticación válida. (E2E) | High |
+| 426 | Admin > Catalog > Options - Crear una opción válida satisfactoriamente. (E2E) | High |
+| 427 | Admin > Catalog > Options - Obtener la opción recién creada. (E2E) | High |
+| 428 | Admin > Catalog > Options - Editar la opción creada satisfactoriamente. (E2E) | High |
+| 429 | Admin > Catalog > Options - Eliminar la opción creada satisfactoriamente. (E2E) | High |
+
+#### HU-29: Tax Category (PUT)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 361 | Admin > Configuration > Tax Category - Actualizacion completa de una categoria con campos validos | High |
+| 362 | Admin > Configuration > Tax Category - Actualizacion de categoria solo con campos obligatorios | High |
+| 363 | Admin > Configuration > Tax Category - validar que al actualizar categoria no permita guardar campos vacios | High |
+| 396 | Admin > Configuration > Tax Category - Actualizacion de categoria sin campos obligatorios | High |
+| 397 | Admin > Configuration > Tax Category - validar la actualizacion de categoria con formato invalido en campo nombre | Medium |
+| 398 | Admin > Configuration > Tax Category - intentar actualizar categorias inexistentes | High |
+| 399 | Admin > Configuration > Tax Category - intentar actualizar categoria sin autenticacion | High |
+| 400 | Admin > Configuration > Tax Category - Intento de actualizacion de categoria sin permisos suficientes | High |
+| 401 | Admin > Configuration > Tax Category - validar que permita actualizar categoria solo un campo sin que afecte a los demas | Medium |
+| 403 | Admin > Configuration > Tax Category - Verificar que no permita actualizar con nombre muy largo sobrepasando los 255 caracteres | Medium |
+| 404 | Admin > Configuration > Tax Category - Validar que no permita actualizar con valores null | High |
+| 417 | Admin > Configuration > Tax Category - validar que no permita editar codigo de categoria | High |
+
+#### HU-22: Tax Category (DELETE)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 75  | Admin > Configuration > Tax Category - TC_00 Eliminar Tax Category exitosamente | High |
+| 76  | Admin > Configuration > Tax Categories – Validar error al eliminar categoría inexistente | High |
+| 77  | Admin > Configuration > Tax Categories – Validar error al eliminar categoría en uso | Not set |
+| 78  | Admin > Configuration > Tax Categories – Validar respuesta sin cuerpo en eliminación exitosa | Medium |
+| 79  | Admin > Configuration > Tax Categories – Validar requerimiento de autenticación para eliminar categoría | High |
+| 80  | Admin > Configuration > Tax Categories – Validar rechazo al eliminar con token inválido o sin permisos | High |
+| 337 | Admin > Configuration > Tax Category - Verificar que el tiempo de respuesta al eliminar sea menor a 3 segundos | Medium |
+| 338 | Admin > Configuration > Tax Category - Verificar headers de respuesta al eliminar | Medium |
+| 339 | Admin > Configuration > Tax Category - Verificar que el grupo eliminado no exista más | High |
+| 340 | Admin > Configuration > Tax Category - Verificar que no permita eliminar la misma categoría dos veces | Medium |
+| 341 | Admin > Configuration > Tax Category - Verificar eliminación de múltiples grupos secuencialmente | High |
+| 342 | Admin > Configuration > Tax Category - Verificar eliminación concurrente de la misma categoría | Medium |
+| 343 | Admin > Configuration > Tax Category - TC_10 Verificar que la eliminación de un tax category no impacta otros existentes | High |
+
+#### HU-50: E2E Tax Category
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 419 | Admin > Configuration > Tax Category – Crear categoría de impuesto válida | High |
+| 420 | Admin > Configuration > Tax Category – Listar categoría filtrada por código | High |
+| 421 | Admin > Configuration > Tax Category – Editar nombre y descripción de categoría | High |
+| 422 | Admin > Configuration > Tax Category – Eliminar categoría de impuesto | High |
+| 423 | Admin > Configuration > Tax Category – Verificar eliminación de categoría | High |
+
+#### HU-15: Actualizar fuente de inventario (PUT)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 69  | Admin > Catalog > Inventory - Actualización completa de un inventario con campos válidos | High |
+| 70  | Admin > Catalog > Inventory - Actualización de inventario con solo campo obligatorio name | Medium |
+| 71  | Admin > Catalog > Inventory - Actualización de inventario con campo channels vacío | Medium |
+| 72  | Admin > Catalog > Inventory - Actualización de inventario sin el campo obligatorio name | High |
+| 73  | Admin > Catalog > Inventory - Actualización de inventario con formato inválido en campo priority | High |
+| 331 | Admin > Catalog > Inventory - Intento de actualización de inventario inexistente | High |
+| 332 | Admin > Catalog > Inventory - Intento de actualización de inventario sin autenticación válida | High |
+| 333 | Admin > Catalog > Inventory - Intento de actualización de inventario con usuario sin permisos suficientes | High |
+| 335 | Admin > Catalog > Inventory - Intento de actualizar un inventario con el campo inmutable code | Medium |
+| 336 | Admin > Catalog > Inventory - Actualización parcial de inventario con solo un campo priority | Medium |
+
+#### HU-06: Eliminar una fuente de inventario existente (DELETE)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 32  | Admin > Catalog > Inventory - Eliminar Inventario existente con address y verificar eliminación del address asociado. | High |
+| 33  | Admin > Catalog > Inventory - Eliminar Inventario existente sin address. | High |
+| 34  | Admin > Catalog > Inventory - Verificar que Inventario eliminado no exista más. | High |
+| 35  | Admin > Catalog > Inventory - Verificar que el address asociado no exista más después de eliminar el Inventario. | High |
+| 344 | Admin > Catalog > Inventory - Eliminar Inventario con código inexistente. | Medium |
+| 345 | Admin > Catalog > Inventory - Eliminar Inventario sin token de autenticación. | High |
+| 346 | Admin > Catalog > Inventory - Eliminar Inventario con token inválido. | High |
+| 347 | Admin > Catalog > Inventory - Eliminar Inventario con formato de código inválido. | Medium |
+| 348 | Admin > Catalog > Inventory - Eliminar Inventario con método HTTP incorrecto. | Medium |
+| 349 | Admin > Catalog > Inventory - Eliminar Inventario dos veces consecutivamente. | Medium |
+| 350 | Admin > Catalog > Inventory - Eliminar Inventario y verificar que no afecte otros Inventarios existentes. | High |
+| 351 | Admin > Catalog > Inventory - Eliminación concurrente del mismo Inventario. | Medium |
+| 352 | Admin > Catalog > Inventory - Verificar que el tiempo de eliminar un Inventario sea menor a 3 segundos. | Low |
+
+#### HU-31: Feature Inventory (E2E)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 355 | Admin > Inventory - Autenticarse con credenciales válidas y obtener token. | High |
+| 356 | Admin > Inventory - Listar inventarios con autenticación válida. | High |
+| 357 | Admin > Inventory - Crear un inventario válido satisfactoriamente | High |
+| 358 | Admin > Inventory - Obtener el inventario recién creado. | High |
+| 359 | Admin > Inventory - Editar el inventario creado satisfactoriamente | High |
+| 360 | Admin > Inventory - Eliminar el inventario creado satisfactoriamente | High |
+
+#### HU-12: Actualizar atributo (PUT)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 44  | Admin > Catalogo > Attributes > Verificar que se actualice un atributo con datos validos (Carry over) | High |
+| 46  | Admin > Catalogo > Attributes > Verificar que no se permita actualizar un atributo sin el campo name (Carry over) | High |
+| 249 | Admin > Catalogo > Attributes > Verificar que se permita actualizar el campo name con caracteres especiales (Carry over) | High |
+| 250 | Admin > Catalogo > Attributes > Verificar que no se permita actualizar un atributo con token invalidos (Carry over) | High |
+| 251 | Admin > Catalogo > Attributes > Verificar que no se debe actualizar el atributo si el json-body esta incompleto (Carry over) | High |
+| 353 | Admin > Catalogo > Attributes > Verificar los headers de respuesta despues de actualizar un atributo (Carry over) | High |
+| 354 | Admin > Catalogo > Attributes > Verificar que no se debe actualizar el atributo si el content type "text/plain" (Carry over) | High |
+
+#### HU-13: Crear nuevo atributo (POST)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 49  | Admin > Catálogo > Attributes > Verficar que se permita crear un nuevo atributo | High |
+| 50  | Admin > Catálogo > Attributes > Verificar la estructura del JSON-response despues de crear un atributo | High |
+| 51  | Admin > Catálogo > Attributes > Verificar que no se crea un atributo sin el campo requerido name | High |
+| 52  | Admin > Catálogo > Attributes > Verificar que no se crea un atributo sin el campo requerido code | High |
+| 410 | Admin > Catálogo > Attributes > Verificar que no se cree un atributo con un name de mas de 255 caracteres | Medium |
+| 411 | Admin > Catálogo > Attributes > Verificar que no se cree un atributo sin token de autenticacion | High |
+| 412 | Admin > Catálogo > Attributes > Verificar que no se cree un atributo con token invalido | High |
+| 413 | Admin > Catálogo > Attributes > Verificar el tiempo de respuesta de creacion de un atributo | Medium |
+| 414 | Admin > Catálogo > Attributes > Verificar los headers-response despues de crear un atributo | High |
+| 415 | Admin > Catálogo > Attributes > Verificar que no se permita crear un atributo con JSON-body incorrecto | High |
+
+#### HU-23: Eliminar un atributo (DELETE)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 138 | Admin > Catálogo > Attributes > Verificar que se permita eliminar un atributo existente | High |
+| 139 | Admin > Catálogo > Attributes > Verificar que no se permita eliminar un atribute con code inexistente | High |
+| 140 | Admin > Catálogo > Attributes > Verificar que no se permita eliminar un atribute sin token | High |
+| 405 | Admin > Catálogo > Attributes > Verificar los headers-response despues de eliminar un atributo | High |
+| 406 | Admin > Catálogo > Attributes > Verificar que el atributo eliminado no se obtenga con el metodo GET | High |
+| 407 | Admin > Catálogo > Attributes > Verificar que no se permita eliminar un atributo con token invalido | High |
+| 408 | Admin > Catálogo > Attributes > Verificar el tiempo de respuesta de eliminar un atributo | Medium |
+| 409 | Admin > Catálogo > Attributes > Verifica que no se permita eliminar un archivo por segunda vez | High |
+
+#### HU-32: E2E "Attributes"
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 371 | Admin > Catalogo > Attributes > E2E: Flujo que valida la creacion, obtencion y eliminacion de un atributo | High |
+
+#### HU-27: Actualizar un tipo de Asociación de productos existente (PUT)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 364 | Catálogo > Association Types > Modificar traducción existente en inglés (en_US), pasando el campo `@id` [Exitoso] | High |
+| 365 | Catálogo > Association Types > Agregar traducción nueva en español (es_ES) [Exitoso] | High |
+| 366 | Catálogo > Association Types > Modificar simultáneamente traducciones en en_US y es_ES [Exitoso] | High |
+| 367 | Catálogo > Association Types > Intentar modificar el campo code en el body [Se ignora, el código no cambia] | High |
+| 368 | Catálogo > Association Types > Enviar body sin campo translations [200 OK, se ignora el cambio] | Medium |
+| 369 | Catálogo > Association Types > Modificar traducción existente sin pasar `@id` | Medium |
+| 370 | Catálogo > Association Types > Modificar recurso con code inexistente | Medium |
+| 371 | Catálogo > Association Types > Enviar solicitud con token inválido | Medium |
+| 372 | Catálogo > Association Types > Validar que campos no modificados permanecen igual [Exitoso] | Medium |
+| 373 | Catálogo > Association Types > Enviar campo translations con tipo de dato incorrecto (`"translations": "test"`) | Medium |
+| 374 | Catálogo > Association Types > Enviar body con campos extra no soportados [Exitoso, se ignoran los campos extra] | Medium |
+| 375 | Catálogo > Association Types > Agregar traducción para un idioma no habilitado en el canal | Medium |
+| 376 | Catálogo > Association Types > Agregar traducción para un idioma válido pero con nombre vacío (`"name": ""`) | Medium |
+| 377 | Catálogo > Association Types > Modificar traducción existente con un nombre muy largo | Medium |
+| 378 | Catálogo > Association Types > Enviar campo `"name": 121313` (tipo de dato incorrecto) | Medium |
+
+#### HU-28: Eliminar un tipo de Asociación de productos existente (DELETE)
+
+| ID  | Título | Prioridad |
+|-----|--------|-----------|
+| 379 | Catálogo > Association Types > Eliminar tipo de asociación existente por código [Exitoso, 204] | High |
+| 380 | Catálogo > Association Types > Eliminar tipo de asociación con código inexistente [Error 404] | High |
+| 381 | Catálogo > Association Types > Enviar solicitud sin token de autorización [Error 401] | Medium |
+| 382 | Catálogo > Association Types > Enviar solicitud con token inválido [Error 401] | Medium |
+| 383 | Catálogo > Association Types > Eliminar un tipo de asociación ya eliminado | Medium |
+| 384 | Catálogo > Association Types > Enviar solicitud sin header Accept | Medium |
+| 385 | Catálogo > Association Types > Eliminar tipo de asociación usando el campo `id` en vez de `code` [Error 404] | Medium |
+
+---
+
 *Documento generado para el proyecto SoftSign - Diplomado en Ingeniería de Calidad de Software Comercial*

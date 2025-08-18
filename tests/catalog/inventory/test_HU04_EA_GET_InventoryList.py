@@ -155,13 +155,13 @@ def test_209_215_pagina_e_items_validas(setup_teardown_view_inventory, page, ite
 @pytest.mark.parametrize("page, itemsPerPage", [
     (0, 1),
     (-1, 1),
-    pytest.param(1.5, 1, marks=pytest.mark.xfail(reason="BUG212: El parámetro page acepta decimales y rompe la URL", run=True)),
+    pytest.param(1.5, 1, marks=pytest.mark.xfail(reason="BUG212: Al listar inventarios con parámetro page acepta decimales y rompe la URL", run=True)),
     ("uno", 1),
     ('_', 1),
     (1, -1),
-    pytest.param(1, 1.5, marks=pytest.mark.xfail(reason="BUG217: El param itemsPerPage puede ser decimal rompiendo la URL", run=True)),
-    pytest.param(1, "uno", marks=pytest.mark.xfail(reason="BUG218: El param itemsPerPage puede ser string rompiendo la URL", run=True)),
-    pytest.param(1, '', marks=pytest.mark.xfail(reason="BUG219: El param itemsPerPage puede ser vacio rompiendo la URL", run=True))
+    pytest.param(1, 1.5, marks=pytest.mark.xfail(reason="BUG217: Al listar inventarios con parámetro itemsPerPage puede ser decimal rompiendo la URL", run=True)),
+    pytest.param(1, "uno", marks=pytest.mark.xfail(reason="BUG218: Al listar inventarios con parámetro itemsPerPage puede ser string rompiendo la URL", run=True)),
+    pytest.param(1, '', marks=pytest.mark.xfail(reason="BUG219: Al listar inventarios con parámetro itemsPerPage puede ser vacío rompiendo la URL", run=True))
 ])
 def test_210_219_pagina_e_items_invalidas(setup_teardown_view_inventory, page, itemsPerPage):
     headers, _, _ = setup_teardown_view_inventory
