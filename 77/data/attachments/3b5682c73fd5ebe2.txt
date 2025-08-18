@@ -1,0 +1,25 @@
+2025-08-18 19:58:28 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:58:28 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 401 None
+2025-08-18 19:58:28 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:58:28 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options
+2025-08-18 19:58:28 - INFO - STATUS CODE: 401
+2025-08-18 19:58:28 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer invalid_token",
+    "Content-Type": "application/json"
+}
+2025-08-18 19:58:28 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755547108_wF90",
+    "position": 11,
+    "translations": {
+        "en_US": {
+            "name": "Stephanie Mitchell Option"
+        }
+    }
+}
+2025-08-18 19:58:28 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "Invalid JWT Token"
+}

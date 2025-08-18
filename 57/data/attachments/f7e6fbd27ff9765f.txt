@@ -1,6 +1,0 @@
-2025-08-18 19:09:30 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
-2025-08-18 19:09:31 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
-2025-08-18 19:09:31 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
-2025-08-18 19:09:31 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/rate-stock-skill HTTP/1.1" 204 0
-2025-08-18 19:09:31 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
-2025-08-18 19:09:32 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/rate-stock-skill HTTP/1.1" 404 None
