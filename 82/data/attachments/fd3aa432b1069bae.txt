@@ -1,0 +1,42 @@
+2025-08-18 20:07:55 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:07:56 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-attributes HTTP/1.1" 422 None
+2025-08-18 20:07:56 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:07:56 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes
+2025-08-18 20:07:56 - INFO - STATUS CODE: 422
+2025-08-18 20:07:56 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDc2NjAsImV4cCI6MTc1NTU1MTI2MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.hf5vrCZtQspEFkqnPFUkMXXfEbcfRIv7HtSWxp4aR0o-E30XU-wfYa_zX0DRppcTRtnO0H192Br4Yz1iYh1DyW9KMIOedMef5-tls0QKEvu6ta2TGB5skSiQdXF8l-NJhvZ4zINda5ovXOp3poWAGht1UBnFl4CSX00c0w36c6cXKJi_Mwta4ptYTGFMzsqTzfWOMHz32Q3IOhU2jx6-k1yjPPVJ_vj31DOZT6VhicTJLIsCN4bosJOKN_lfvNLvUkELZ2loK6hgbghVBV5mdfzFT7sUE-oZOQvXfzwOHLSadKNg3dioCcbVfJ0O3a7BwLG_OYJvKkioLEE6l8S9-Gu5XlhRCoaI07KUEQsn0fJheZRfwKMjTYV_iN0TUba3L339__OOxuTlJ60V78tTRSE0FMxcy365Y7vp1TqtMP9yGKzaInftZi3JtkItpzU-QKBERWKRAT5Rux7SaLh7VkIqeKmW9-uEX0YrjLTubUj0N2Zu8TGyy3RYE-vTl6pBKydZ75GHI5mtfMLj8EQ24-TWbyNJRbm8Nniwcc1hp92wMr-9zNOtJmd6_M26aDrhRQv6SoUgpWeEGQwJP8enTrYawEmQhdERS6YgAnsyWYcrLhYEPxuC2DYLXuVE9qTInP4I05ZCNb_g8GdUVlce4ogvNasc3wxk9PRncuFBk7U"
+}
+2025-08-18 20:07:56 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "help-throughout",
+    "type": "text",
+    "translations": {
+        "en_US": {}
+    },
+    "configuration": {
+        "maxCharacters": 57,
+        "minCharacters": 1
+    },
+    "storageType": "text"
+}
+2025-08-18 20:07:56 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/c1051bb4-d103-4f74-8988-acbcafc7fdc3",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "translations[en_US].name",
+            "message": "Please enter attribute name.",
+            "code": "c1051bb4-d103-4f74-8988-acbcafc7fdc3"
+        }
+    ],
+    "detail": "translations[en_US].name: Please enter attribute name.",
+    "description": "translations[en_US].name: Please enter attribute name.",
+    "type": "/validation_errors/c1051bb4-d103-4f74-8988-acbcafc7fdc3",
+    "title": "An error occurred",
+    "hydra:description": "translations[en_US].name: Please enter attribute name.",
+    "hydra:title": "An error occurred"
+}
