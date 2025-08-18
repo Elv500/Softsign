@@ -1,0 +1,48 @@
+2025-08-18 20:03:41 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:03:41 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-attributes HTTP/1.1" 201 None
+2025-08-18 20:03:41 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:03:41 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes
+2025-08-18 20:03:41 - INFO - STATUS CODE: 201
+2025-08-18 20:03:41 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDc0MTAsImV4cCI6MTc1NTU1MTAxMCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.idsSNMK93CtUS_ZLxijFKZxRxEC2Gdrmo6Fu-heUbDZYLXTv1EhdAEk2eJgeiORdV5nixttcfejybTXA2ZvSGyuzYZk28aWncLtYC-8oUSQRnOL0awHb2I7iR3E6y1fRCh5S_xAWcaLks_Y5ufutLjO3qMza1Zp65Rn4u5FpnVkzPCOShJRCLNWuUq6k4x9rqt5lZZrF5QRMVyNtzhdwgOrBd6yFLKEa7ZYdXu_g7vyiefP4VNvwA2KBdEFJqIx_6TW89uXpkNoDXMeIiRelN07bL7YLn4mR4zz1kXD5J4k9I2iVn6WX9k9z0Wcvb-BpOJWYRFjRhLxEd3DjDmErv_E_fbNNQZVRaassoNuZC4AC4DwNMuu9S_VDtX_vQai5PydqoAYtp5ccjmBCXlAMEGYGU2c-7NSRWstrSV6Kv1SLZ5tDaRqkF-m2iJKQU8L37AO1u9jt88g0FoV_vCpDcUsgh5wI_GbRMp1YkoiEbz2daB4WPd3_klovbCYc6W8caOeru3bSJ-Yl99kUBYhS9r8ia0okpDYlLeAfLsmMFx8szJpS-ZQySES1Twdk4K5Ag5kmpfqp0p0LIuVB-9CU7UmzccsUkfDCzRfT41c21GpVJcukDQ_FgPGVdP45iqjBUO6XIEMEidVYOcHLbujf8QVKGyFgrkfHjWbNN68PoPE"
+}
+2025-08-18 20:03:41 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "service-level-grow",
+    "type": "text",
+    "translations": {
+        "en_US": {
+            "name": "Reilly, Wilson and Bentley"
+        }
+    },
+    "configuration": {
+        "maxCharacters": 145,
+        "minCharacters": 10
+    },
+    "storageType": "text"
+}
+2025-08-18 20:03:41 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductAttribute",
+    "@id": "/api/v2/admin/product-attributes/service-level-grow",
+    "@type": "ProductAttribute",
+    "code": "service-level-grow",
+    "type": "text",
+    "configuration": {
+        "maxCharacters": 145,
+        "minCharacters": 10
+    },
+    "storageType": "text",
+    "position": 26,
+    "translatable": true,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-attributes/service-level-grow/translations/en_US",
+            "@type": "ProductAttributeTranslation",
+            "name": "Reilly, Wilson and Bentley"
+        }
+    }
+}
+2025-08-18 20:03:41 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:03:41 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-attributes/service-level-grow HTTP/1.1" 204 0
