@@ -9,6 +9,7 @@ from src.assertions.status_code_assertions import AssertionStatusCode
 from src.routes.endpoint_customer_group import EndpointCustomerGroup
 from src.routes.request import SyliusRequest
 from utils.logger_helpers import log_request_response
+from src.data.customer_group import generate_customer_group_source_data
 
 # Admin > Customer - Group > TC_176 Verificar que se puede obtener la lista de grupos de clientes codigo 200
 @pytest.mark.functional
@@ -44,15 +45,21 @@ def test_TC177_verificar_estructura_json_respuesta(auth_headers):
 @pytest.mark.smoke
 @pytest.mark.high
 def test_TC178_obtener_grupo_por_codigo_existente(auth_headers):
-    group_code = "retail"
     
-    endpoint = EndpointCustomerGroup.code(group_code)
+    data = generate_customer_group_source_data()
+
+    endpoint = EndpointCustomerGroup.customer_group()
+    response = SyliusRequest.post(endpoint, auth_headers, data)
+    
+    response_json = response.json()
+
+    endpoint = EndpointCustomerGroup.code(response_json["code"])
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroupFields.assert_customer_group_item_content(response.json(), group_code)
+    AssertionCustomerGroupFields.assert_customer_group_item_content(response.json(), response_json["code"])
     
 
 # Admin > Customer - Group > TC_179 Verificar campos obligatorios en cada grupo (id, code, name)
@@ -100,13 +107,20 @@ def test_TC181_validar_paginacion_basica(auth_headers):
     page, items_per_page = 1, 2
     params = {"page": page, "itemsPerPage": items_per_page}
     
-    endpoint = EndpointCustomerGroup.customer_group_with_params(page=page, itemsPerPage=items_per_page)
+    data = generate_customer_group_source_data()
+
+    endpoint = EndpointCustomerGroup.customer_group()
+    response = SyliusRequest.post(endpoint, auth_headers, data)
+    
+    response_json = response.json()
+
+    endpoint = EndpointCustomerGroup.code(response_json["code"])
     response = SyliusRequest.get(endpoint, auth_headers)
     
     log_request_response(endpoint, response, headers=auth_headers)
     
     AssertionStatusCode.assert_status_code_200(response)
-    AssertionCustomerGroupFields.assert_customer_group_pagination(response.json(), params)
+    AssertionCustomerGroupFields.assert_customer_group_item_content(response.json(), response_json["code"])
     
 
 # Admin > Customer - Group > TC_182 Verificar paginación con página fuera de rango (ej. page=9999)

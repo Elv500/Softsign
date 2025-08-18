@@ -259,7 +259,14 @@ def test_TC305_eliminar_grupo_metodos_http_incorrectos(auth_headers):
 @pytest.mark.high
 def test_TC306_no_eliminar_grupo_sistema(auth_headers):
 
-    codigo_sistema = "retail"
+    data = generate_customer_group_source_data()
+
+    endpoint = EndpointCustomerGroup.customer_group()
+    response = SyliusRequest.post(endpoint, auth_headers, data)
+    
+    response_json = response.json()
+
+    codigo_sistema = response_json["code"]
     endpoint = EndpointCustomerGroup.code(codigo_sistema)
     response = SyliusRequest.delete(endpoint, auth_headers)
 
