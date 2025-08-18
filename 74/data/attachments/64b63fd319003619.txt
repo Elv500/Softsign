@@ -1,0 +1,42 @@
+2025-08-18 19:56:33 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:56:33 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 201 None
+2025-08-18 19:56:33 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:56:34 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-options/test_1755546993_Ei33 HTTP/1.1" 422 None
+2025-08-18 19:56:34 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:56:34 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options/test_1755546993_Ei33
+2025-08-18 19:56:34 - INFO - STATUS CODE: 422
+2025-08-18 19:56:34 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDY5OTAsImV4cCI6MTc1NTU1MDU5MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.WY3dJrridzR45txEO5DMrNn3C6LiGUGBGHaf-pj5HCN1vX9w_NdK5S96ga9BA006uZIDc9gMbUY6_Ub56-VmPGhDEL65UNXihI1RN8daTuST1-q3-E6LMjVLD6uV0msZYIcenK3pbUnBtnXFa7lAiAdfPJlhdOVxP6B4DMMT74h9mwi0a60jy5Mqb93yJ5H0fvJKx84sNa6wusoRxsMGb8PcwYWWSZCBgdNYe6CmU5UflUZhHXllkelb7pxgWX_1wyJVo6r66XqdVqfrTDrOB5K7Mqw067nNpSGaITEXMSW_wqF3jBA87r5yj9TO5XgWwIKc0leIDzsZRwA1rPoKS6Dfo6r_lBBW_TI-_mKmyxoD3QvyA77BIkvQND-T7dwwB4ydUU6OwfZWG4hR8u0pp3UHaoZmK7dA7bVBaluWHnV8JPxAHtFe_Io8q828DFfpW1tkw64uRldyBg_pHpWrvVeGeBg553ehmi90T8YDmcTK1BL-lAs3D1Z5eKb8clgBRRUqbPF0Ip_2VwIST-8vlbPsTzgJrkK3yqeUC3aFnvblTCJMA5FFRnGopNLJwIUvtzMzg0D5uoU64-yjQOb5p7opGqvBvfxEXNO7C7UWQLQ9-ORNLLNgCQu6dMlxehpf8jiZ-0QM4JYc63wMcHCGz3BlGz9XYWPUGVeSs-H_vbE"
+}
+2025-08-18 19:56:34 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755546993_Ei33",
+    "position": 82,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-options/test_1755546993_Ei33/translations/en_US",
+            "name": "S"
+        }
+    }
+}
+2025-08-18 19:56:34 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/9ff3fdc4-b214-49db-8718-39c315e33d45",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "translations[en_US].name",
+            "message": "Option name must be at least 2 characters long.",
+            "code": "9ff3fdc4-b214-49db-8718-39c315e33d45"
+        }
+    ],
+    "detail": "translations[en_US].name: Option name must be at least 2 characters long.",
+    "description": "translations[en_US].name: Option name must be at least 2 characters long.",
+    "type": "/validation_errors/9ff3fdc4-b214-49db-8718-39c315e33d45",
+    "title": "An error occurred",
+    "hydra:description": "translations[en_US].name: Option name must be at least 2 characters long.",
+    "hydra:title": "An error occurred"
+}

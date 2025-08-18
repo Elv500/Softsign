@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Mon Aug 18 19:56:32 GMT 2025","Mon Aug 18 19:56:33 GMT 2025","727","tests.catalog.options","test_HU11_ES_POST_ProductOption","","","","test_TC227_Verificar_error_al_crear_opcion_con_position_mayor_a_999999999",""
+"passed","Mon Aug 18 19:56:31 GMT 2025","Mon Aug 18 19:56:31 GMT 2025","520","tests.catalog.options","test_HU11_ES_POST_ProductOption","","","","test_TC223_Verificar_error_al_crear_option_name_con_menos_de_2_caracteres",""
+"skipped","Mon Aug 18 19:56:35 GMT 2025","Mon Aug 18 19:56:36 GMT 2025","1172","tests.catalog.options","test_HU25_ES_PUT_ProductOption","","","","test_tc323_Verificar_error_al_actualizar_opción_con_position_mayor_a_9999999999",""
+"passed","Mon Aug 18 19:56:31 GMT 2025","Mon Aug 18 19:56:32 GMT 2025","530","tests.catalog.options","test_HU11_ES_POST_ProductOption","","","","test_TC224_Verificar_error_al_crear_option_name_con_mas_de_255_caracteres",""
+"passed","Mon Aug 18 19:56:30 GMT 2025","Mon Aug 18 19:56:31 GMT 2025","522","tests.catalog.options","test_HU11_ES_POST_ProductOption","","","","test_TC222_Verificar_que_el_campo_code_acepte_maximo_255_caracteres",""
+"passed","Mon Aug 18 19:56:34 GMT 2025","Mon Aug 18 19:56:35 GMT 2025","1240","tests.catalog.options","test_HU25_ES_PUT_ProductOption","","","","test_tc319_Verificar_error_al_actualizar_opción_con_nombre_mayor_a_255_caracteres",""
+"passed","Mon Aug 18 19:56:33 GMT 2025","Mon Aug 18 19:56:34 GMT 2025","1042","tests.catalog.options","test_HU25_ES_PUT_ProductOption","","","","test_tc318_Verificar_error_al_actualizar_opción_con_nombre_menor_a_2_caracteres",""
