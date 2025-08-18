@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Aug 18 20:43:34 GMT 2025","Mon Aug 18 20:43:34 GMT 2025","293","tests.catalog.association_types","test_HU17_EN_POST_ProductAssociationTypes","","","","test_TC132_enviar_solicitud_sin_token_autenticacion",""
+"passed","Mon Aug 18 20:43:34 GMT 2025","Mon Aug 18 20:43:34 GMT 2025","287","tests.catalog.association_types","test_HU17_EN_POST_ProductAssociationTypes","","","","test_TC133_enviar_solicitud_token_invalido",""
+"passed","Mon Aug 18 20:43:38 GMT 2025","Mon Aug 18 20:43:38 GMT 2025","305","tests.catalog.association_types","test_HU28_EN_DELETE_ProductAssociationTypes","","","","test_TC382_enviar_solicitud_con_token_invalido_error_401",""
+"passed","Mon Aug 18 20:43:35 GMT 2025","Mon Aug 18 20:43:36 GMT 2025","306","tests.catalog.association_types","test_HU27_EN_PUT_ProductAssociationTypes","","","","test_TC371_enviar_solicitud_con_token_invalido",""
+"passed","Mon Aug 18 20:43:37 GMT 2025","Mon Aug 18 20:43:37 GMT 2025","301","tests.catalog.association_types","test_HU28_EN_DELETE_ProductAssociationTypes","","","","test_TC381_enviar_solicitud_sin_token_autorizacion_error_401",""
+"passed","Mon Aug 18 20:43:33 GMT 2025","Mon Aug 18 20:43:34 GMT 2025","345","tests.catalog.association_types","test_HU07_EN_GET_ProductAssociationTypesList","","","","test_TC98_Validar_autenticacion_invalida_error_401",""
