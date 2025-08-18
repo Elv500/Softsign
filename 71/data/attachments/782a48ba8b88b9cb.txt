@@ -1,0 +1,43 @@
+2025-08-18 19:54:36 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:54:37 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 201 None
+2025-08-18 19:54:37 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:54:37 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-options/test_1755546876_hk11 HTTP/1.1" 200 None
+2025-08-18 19:54:37 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:54:37 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options/test_1755546876_hk11
+2025-08-18 19:54:37 - INFO - STATUS CODE: 200
+2025-08-18 19:54:37 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDY4NjksImV4cCI6MTc1NTU1MDQ2OSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.SIVONqFia1xcNo71CUeNOr7r8zV4TDbERN6WHOo8HwNocBr67aeGigGYOkJvseuwaHjhKaS_BIV-NoZjAxR-USLVnzc0vAqo-yG6OsolPYi_PTkD-j7lRihGkThk8xBTtVu4SZ4KF1_j_r_LX3x7q2WyuaIkBQLQyBMoxCr9yqD5YvMPIfbIxaIMYbfgGfGzjoOPuh2BkprX1B4X3hHrLdktMG4YvmYg60SGKv-KG1ue6ZZy8Rp_M5sKVXxK-4J3QONYIfJyuFhSKgTlpy5JW0r4Mgf5VGpH6OJE80zAl1QDzmdpoA8tu93ty3-z40OnxGNnWPmIyneVyelRCAG_HhssDpcR-pOnj3MQs0I6lnFgT0fy7RahVBEoXG-fz0J_auXPi2aQ6z4Pm2l5cvkBwEogQFqXzR1WRWGDkr4zC7I8yczKuPLNkpjgor35B7r6z_2gEW5CuW6wPg3pnXmWEC5IsmzCRMRD0qDhOfSHScdFstJU1VfkEohr5pc4xkBBRvfxGGlC1HsITd4ZguZ2Dfa8hi3D6-ju4PDGIVmSfnD0PfYhbuqNpxLQQ_OiERnxIGuQG1OLqrNlRWxTsVDJZiO5ZZXLXpRZXWTlHrHDr6EVPCu81nOV_mh128UDQ_221UKqb9fi43q7_g6XZKcxtaLDWXOQ_0icprCOpu1sbuk"
+}
+2025-08-18 19:54:37 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755546876_hk11",
+    "position": 33,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-options/test_1755546876_hk11/translations/en_US",
+            "name": "Top Option"
+        }
+    }
+}
+2025-08-18 19:54:37 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductOption",
+    "@id": "/api/v2/admin/product-options/test_1755546876_hk11",
+    "@type": "ProductOption",
+    "code": "test_1755546876_hk11",
+    "position": 33,
+    "values": [],
+    "createdAt": "2025-08-18 19:54:37",
+    "updatedAt": "2025-08-18 19:54:37",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-options/test_1755546876_hk11/translations/en_US",
+            "@type": "ProductOptionTranslation",
+            "name": "Top Option"
+        }
+    },
+    "name": "Top Option"
+}
+2025-08-18 19:54:37 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:54:38 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-options/test_1755546876_hk11 HTTP/1.1" 204 0
