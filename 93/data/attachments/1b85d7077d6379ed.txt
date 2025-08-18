@@ -1,0 +1,50 @@
+2025-08-18 21:32:56 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:32:56 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 201 None
+2025-08-18 21:32:56 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:32:56 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-options/test_1755552776_fB33 HTTP/1.1" 422 None
+2025-08-18 21:32:56 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:32:56 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options/test_1755552776_fB33
+2025-08-18 21:32:56 - INFO - STATUS CODE: 422
+2025-08-18 21:32:56 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTI3MDUsImV4cCI6MTc1NTU1NjMwNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.VUC5zruprzibSnXZVHVdPXkD-yhElV2IzrVCJHrHkgMqBIpXIXTmRHVyqgAVfxLK85hGWTnzKlP2tF2mJvsFfm_v3aK2qHOfLbygAMwxGSDrxOKMkd_4Sryhajev3EF27TllH3e1c8ilxDxoALPYsLfOLYVNs09ngtsyMe0mrkq-QSHPm1ME--r5-7sSKcQm8T5hHX0CGPgLyAuDse0JhwjVPM_jbX5jq4xaq_55QxXDj2vJsSZlZKXOKfl9F4nr0P0zaSMbHxHRCYOyZ0h_LdQfSm1klZu30E2N7c5lQJki-v4j784ToPvo2CRoZPkvT02FPH3W1red0ZctPcUKwkHLLtrMnS0rktoTQiOX_Ppji0LVsFfvsO1AJuVe1OPJofcexOSYwa_FxwYYTkC9mOPs1XDSI32TsrGnidF-BgjzHQC4aQ7k347V31jkNnaFI8fsvEoKToia08hKSrjz0z8kPJmQkvmunp-5jo-NShKqcUnt7g7irAbFY3MnaM-rHTiBIdH_tHgNKsA9ppAzMRTVn1KlC9eCv_rajRa3YW05ARC4Fxfz1OhKopZV93CHmh1TwQZL17kVQ1XLPrPNlkgV5jLQrQB1ubX60mDCaTzkiZfWsPyYXoDjCkN3LxyWtx37uD6mG0IRTwDGtFTCtgg3W3NqEuFrMM8oPciKiIQ"
+}
+2025-08-18 21:32:56 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755552776_fB33",
+    "position": 28,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-options/test_1755552776_fB33/translations/en_US",
+            "name": "Cover Option"
+        },
+        "xx_XX": {
+            "name": "West"
+        }
+    }
+}
+2025-08-18 21:32:56 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/0=;1=a0af4293-1f1a-4a1c-a328-979cba6182a2",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "translations[xx_XX]",
+            "message": "Please choose one of the available locales: en_US, de_DE, fr_FR, pl_PL, es_ES, es_MX, pt_PT, zh_CN",
+            "code": null
+        },
+        {
+            "propertyPath": "translations[xx_XX].locale",
+            "message": "This value is not a valid locale.",
+            "code": "a0af4293-1f1a-4a1c-a328-979cba6182a2"
+        }
+    ],
+    "detail": "translations[xx_XX]: Please choose one of the available locales: en_US, de_DE, fr_FR, pl_PL, es_ES, es_MX, pt_PT, zh_CN\ntranslations[xx_XX].locale: This value is not a valid locale.",
+    "description": "translations[xx_XX]: Please choose one of the available locales: en_US, de_DE, fr_FR, pl_PL, es_ES, es_MX, pt_PT, zh_CN\ntranslations[xx_XX].locale: This value is not a valid locale.",
+    "type": "/validation_errors/0=;1=a0af4293-1f1a-4a1c-a328-979cba6182a2",
+    "title": "An error occurred",
+    "hydra:description": "translations[xx_XX]: Please choose one of the available locales: en_US, de_DE, fr_FR, pl_PL, es_ES, es_MX, pt_PT, zh_CN\ntranslations[xx_XX].locale: This value is not a valid locale.",
+    "hydra:title": "An error occurred"
+}

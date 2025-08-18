@@ -1,0 +1,32 @@
+2025-08-18 21:32:41 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:32:41 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/inventory-sources HTTP/1.1" 201 None
+2025-08-18 21:32:41 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:32:42 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/inventory-sources/value-war HTTP/1.1" 200 None
+2025-08-18 21:32:42 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:32:42 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/inventory-sources/value-war
+2025-08-18 21:32:42 - INFO - STATUS CODE: 200
+2025-08-18 21:32:42 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/InventorySource",
+    "@id": "/api/v2/admin/inventory-sources/value-war",
+    "@type": "InventorySource",
+    "id": 11048,
+    "address": {
+        "@id": "/api/v2/admin/inventory-source-addresses/4686",
+        "@type": "InventorySourceAddress",
+        "countryCode": "IE",
+        "street": "040 Williams Village Suite 175",
+        "city": "Port Andrea",
+        "postcode": "69464"
+    },
+    "code": "value-war",
+    "name": "Adams-Knight",
+    "priority": 9,
+    "channels": [
+        "/api/v2/admin/channels/HOME_WEB"
+    ]
+}
+2025-08-18 21:32:42 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:32:42 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/inventory-sources/value-war HTTP/1.1" 200 None
+2025-08-18 21:32:42 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:32:42 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/inventory-sources/value-war HTTP/1.1" 204 0

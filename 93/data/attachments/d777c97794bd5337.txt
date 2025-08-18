@@ -1,0 +1,23 @@
+2025-08-18 21:33:34 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:33:34 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/customer-groups HTTP/1.1" 400 None
+2025-08-18 21:33:34 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:33:34 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/customer-groups
+2025-08-18 21:33:34 - INFO - STATUS CODE: 400
+2025-08-18 21:33:34 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTI3MDUsImV4cCI6MTc1NTU1NjMwNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.VUC5zruprzibSnXZVHVdPXkD-yhElV2IzrVCJHrHkgMqBIpXIXTmRHVyqgAVfxLK85hGWTnzKlP2tF2mJvsFfm_v3aK2qHOfLbygAMwxGSDrxOKMkd_4Sryhajev3EF27TllH3e1c8ilxDxoALPYsLfOLYVNs09ngtsyMe0mrkq-QSHPm1ME--r5-7sSKcQm8T5hHX0CGPgLyAuDse0JhwjVPM_jbX5jq4xaq_55QxXDj2vJsSZlZKXOKfl9F4nr0P0zaSMbHxHRCYOyZ0h_LdQfSm1klZu30E2N7c5lQJki-v4j784ToPvo2CRoZPkvT02FPH3W1red0ZctPcUKwkHLLtrMnS0rktoTQiOX_Ppji0LVsFfvsO1AJuVe1OPJofcexOSYwa_FxwYYTkC9mOPs1XDSI32TsrGnidF-BgjzHQC4aQ7k347V31jkNnaFI8fsvEoKToia08hKSrjz0z8kPJmQkvmunp-5jo-NShKqcUnt7g7irAbFY3MnaM-rHTiBIdH_tHgNKsA9ppAzMRTVn1KlC9eCv_rajRa3YW05ARC4Fxfz1OhKopZV93CHmh1TwQZL17kVQ1XLPrPNlkgV5jLQrQB1ubX60mDCaTzkiZfWsPyYXoDjCkN3LxyWtx37uD6mG0IRTwDGtFTCtgg3W3NqEuFrMM8oPciKiIQ",
+    "Content-Type": "application/json"
+}
+2025-08-18 21:33:34 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/400",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "Invalid json message received",
+    "status": 400,
+    "type": "/errors/400",
+    "description": "Invalid json message received",
+    "hydra:description": "Invalid json message received",
+    "hydra:title": "An error occurred"
+}

@@ -1,0 +1,141 @@
+2025-08-18 21:33:02 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:33:02 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 21:33:02 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:33:02 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-18 21:33:02 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 21:33:02 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-18 21:33:02 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 21:33:02 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/tax-categories
+2025-08-18 21:33:02 - INFO - STATUS CODE: 200
+2025-08-18 21:33:02 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NTI3MDUsImV4cCI6MTc1NTU1NjMwNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.VUC5zruprzibSnXZVHVdPXkD-yhElV2IzrVCJHrHkgMqBIpXIXTmRHVyqgAVfxLK85hGWTnzKlP2tF2mJvsFfm_v3aK2qHOfLbygAMwxGSDrxOKMkd_4Sryhajev3EF27TllH3e1c8ilxDxoALPYsLfOLYVNs09ngtsyMe0mrkq-QSHPm1ME--r5-7sSKcQm8T5hHX0CGPgLyAuDse0JhwjVPM_jbX5jq4xaq_55QxXDj2vJsSZlZKXOKfl9F4nr0P0zaSMbHxHRCYOyZ0h_LdQfSm1klZu30E2N7c5lQJki-v4j784ToPvo2CRoZPkvT02FPH3W1red0ZctPcUKwkHLLtrMnS0rktoTQiOX_Ppji0LVsFfvsO1AJuVe1OPJofcexOSYwa_FxwYYTkC9mOPs1XDSI32TsrGnidF-BgjzHQC4aQ7k347V31jkNnaFI8fsvEoKToia08hKSrjz0z8kPJmQkvmunp-5jo-NShKqcUnt7g7irAbFY3MnaM-rHTiBIdH_tHgNKsA9ppAzMRTVn1KlC9eCv_rajRa3YW05ARC4Fxfz1OhKopZV93CHmh1TwQZL17kVQ1XLPrPNlkgV5jLQrQB1ubX60mDCaTzkiZfWsPyYXoDjCkN3LxyWtx37uD6mG0IRTwDGtFTCtgg3W3NqEuFrMM8oPciKiIQ"
+}
+2025-08-18 21:33:02 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 10,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 9739,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Et at nihil vel corporis quam voluptatibus adipisci. Nostrum sit et dolore deserunt sed non esse. Illo sapiente laudantium et. Nobis autem pariatur sed esse.",
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 9740,
+            "code": "other",
+            "name": "Other",
+            "description": "Est quis molestias laudantium et deserunt debitis. Eum nam tenetur amet reiciendis est dolor ut. Aut qui quam qui ad unde. Aut nemo ut tempore. Architecto amet eaque molestiae et consequatur suscipit.",
+            "createdAt": "2025-08-18 21:00:53",
+            "updatedAt": "2025-08-18 21:00:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-cef56b",
+            "@type": "TaxCategory",
+            "id": 9748,
+            "code": "TAX-cef56b",
+            "name": "Heart",
+            "description": "",
+            "createdAt": "2025-08-18 21:28:22",
+            "updatedAt": "2025-08-18 21:28:22"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-1abb50",
+            "@type": "TaxCategory",
+            "id": 9749,
+            "code": "TAX-1abb50",
+            "name": "   ",
+            "description": "Summer financial join.",
+            "createdAt": "2025-08-18 21:28:24",
+            "updatedAt": "2025-08-18 21:28:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-40e10c",
+            "@type": "TaxCategory",
+            "id": 9750,
+            "code": "TAX-40e10c",
+            "name": "\n\n",
+            "description": "First carry position lay.",
+            "createdAt": "2025-08-18 21:28:24",
+            "updatedAt": "2025-08-18 21:28:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-ec420b",
+            "@type": "TaxCategory",
+            "id": 9751,
+            "code": "TAX-ec420b",
+            "name": " \n ",
+            "description": "Wish talk green coach.",
+            "createdAt": "2025-08-18 21:28:25",
+            "updatedAt": "2025-08-18 21:28:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-26c826",
+            "@type": "TaxCategory",
+            "id": 9752,
+            "code": "TAX-26c826",
+            "name": " \t \n ",
+            "description": "New less throw as.",
+            "createdAt": "2025-08-18 21:28:26",
+            "updatedAt": "2025-08-18 21:28:26"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-456674",
+            "@type": "TaxCategory",
+            "id": 9764,
+            "code": "TAX-456674",
+            "name": "CategoriaB",
+            "description": "Environmental condition also.",
+            "createdAt": "2025-08-18 21:28:37",
+            "updatedAt": "2025-08-18 21:28:37"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-14947a",
+            "@type": "TaxCategory",
+            "id": 9781,
+            "code": "TAX-14947a",
+            "name": "Since",
+            "description": "Prevent up style wear political government apply.",
+            "createdAt": "2025-08-18 21:33:02",
+            "updatedAt": "2025-08-18 21:33:02"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-20ab48",
+            "@type": "TaxCategory",
+            "id": 9782,
+            "code": "TAX-20ab48",
+            "name": "Remain",
+            "description": "Reality difference nature.",
+            "createdAt": "2025-08-18 21:33:02",
+            "updatedAt": "2025-08-18 21:33:02"
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}
