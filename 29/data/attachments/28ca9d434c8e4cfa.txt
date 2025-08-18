@@ -1,3 +1,0 @@
- Customer group limpiado: test_291550_b422b7da
- Customer group limpiado: test_291550_0608ca13
- Customer group limpiado: test_291550_94f8a0b5
