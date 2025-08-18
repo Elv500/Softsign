@@ -1,0 +1,37 @@
+2025-08-18 20:06:14 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:06:15 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-attributes HTTP/1.1" 201 None
+2025-08-18 20:06:15 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:06:15 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-attributes/well-road-deal HTTP/1.1" 200 None
+2025-08-18 20:06:15 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:06:15 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes/well-road-deal
+2025-08-18 20:06:15 - INFO - STATUS CODE: 200
+2025-08-18 20:06:15 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDc1NzAsImV4cCI6MTc1NTU1MTE3MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.TuIUe4VQjFpf_kfssWb0EClbyLfvoHfBLF9xGjMRawAFMYLb-HvLoAARkg8BmtbppbBKLqOPCQ298l3KCKZaVyiHjJ6dq_htflmqaVzEJgEIEz7oocd9zUGIvAuzxvIXlTwAXEiHHTFvVKki85aIBZC-mR2iTL1LKsjdtpPC4nzRL3iECKBaOt-FEzdkC19xKErO5d8Fp7XosnnrN3sk_t4AZMur0u4Hl6KW26RXgtIXWSspiDmDzwdgZiiq7X_zHnji2sTEfrzxulvpJfGBIzlwx1kFwyB8SAvDHhq38lcLS3BH0WMQjq3eWonsd40eUex5S9Zmovtagc32AnzqRbosuP8av_nVgNFhmXLkq2uLUsoIftTe3s6QLRrFsGWWLHv0ETnUlIRTN_qTU79d9chd_6r3T-bXwQtFOUzegO-B4QZOCzxZEA7-LYUrq1wFHwFk_eBONrR1f724JLU3EW1TLwjfHiZho8ZMCRhDq7tuupQx_vxjfQDvrDHOGdEwJL6XMR8GhTBsNp_4nQx1r0E1jNQLy6Tc3QNadCyVYMqR-YjQzyOUi607opUcXmfZl7lF2F30a5BXoeVVyoil9R0TBYbBo2n01s1aga1M39yALGao8EVpEtElixPdYZHoq44SKGFkSzvsd9Fuz2IUvvpSdvKiH9NXpM1EwgBsqXc"
+}
+2025-08-18 20:06:15 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductAttribute",
+    "@id": "/api/v2/admin/product-attributes/well-road-deal",
+    "@type": "ProductAttribute",
+    "code": "well-road-deal",
+    "type": "text",
+    "configuration": {
+        "maxCharacters": 45,
+        "minCharacters": 5
+    },
+    "storageType": "text",
+    "position": 27,
+    "translatable": true,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-attributes/well-road-deal/translations/en_US",
+            "@type": "ProductAttributeTranslation",
+            "name": "Nguyen, Allen and Henson"
+        }
+    }
+}
+2025-08-18 20:06:15 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:06:16 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-attributes/well-road-deal HTTP/1.1" 200 None
+2025-08-18 20:06:16 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:06:16 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-attributes/well-road-deal HTTP/1.1" 204 0

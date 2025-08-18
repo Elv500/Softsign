@@ -1,0 +1,26 @@
+2025-08-18 20:06:30 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:06:31 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-attributes HTTP/1.1" 201 None
+2025-08-18 20:06:31 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:06:31 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-attributes/movie-meeting-home HTTP/1.1" 204 0
+2025-08-18 20:06:31 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:06:32 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-attributes/movie-meeting-home HTTP/1.1" 404 None
+2025-08-18 20:06:32 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:06:32 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes/movie-meeting-home
+2025-08-18 20:06:32 - INFO - STATUS CODE: 404
+2025-08-18 20:06:32 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDc1NzAsImV4cCI6MTc1NTU1MTE3MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.TuIUe4VQjFpf_kfssWb0EClbyLfvoHfBLF9xGjMRawAFMYLb-HvLoAARkg8BmtbppbBKLqOPCQ298l3KCKZaVyiHjJ6dq_htflmqaVzEJgEIEz7oocd9zUGIvAuzxvIXlTwAXEiHHTFvVKki85aIBZC-mR2iTL1LKsjdtpPC4nzRL3iECKBaOt-FEzdkC19xKErO5d8Fp7XosnnrN3sk_t4AZMur0u4Hl6KW26RXgtIXWSspiDmDzwdgZiiq7X_zHnji2sTEfrzxulvpJfGBIzlwx1kFwyB8SAvDHhq38lcLS3BH0WMQjq3eWonsd40eUex5S9Zmovtagc32AnzqRbosuP8av_nVgNFhmXLkq2uLUsoIftTe3s6QLRrFsGWWLHv0ETnUlIRTN_qTU79d9chd_6r3T-bXwQtFOUzegO-B4QZOCzxZEA7-LYUrq1wFHwFk_eBONrR1f724JLU3EW1TLwjfHiZho8ZMCRhDq7tuupQx_vxjfQDvrDHOGdEwJL6XMR8GhTBsNp_4nQx1r0E1jNQLy6Tc3QNadCyVYMqR-YjQzyOUi607opUcXmfZl7lF2F30a5BXoeVVyoil9R0TBYbBo2n01s1aga1M39yALGao8EVpEtElixPdYZHoq44SKGFkSzvsd9Fuz2IUvvpSdvKiH9NXpM1EwgBsqXc"
+}
+2025-08-18 20:06:32 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "description": "Not Found",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
