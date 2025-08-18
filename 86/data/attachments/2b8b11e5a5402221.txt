@@ -1,0 +1,22 @@
+2025-08-18 20:40:33 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:40:34 - DEBUG - https://demo.sylius.com:443 "GET /api/v2/admin/product-association-types?page=-1&itemsPerPage=10&order%5Bcode%5D=asc HTTP/1.1" 400 None
+2025-08-18 20:40:34 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:40:34 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-association-types?page=-1&itemsPerPage=10&order[code]=asc
+2025-08-18 20:40:34 - INFO - STATUS CODE: 400
+2025-08-18 20:40:34 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDk2MjcsImV4cCI6MTc1NTU1MzIyNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.KN53JLq-E43vVxMBH5AJ4XMuZwXFt_Bjl6lYDSHOu_dgLWd_FRGaZPnS_zhUh7qpNfOQnAL9JohZKT7CYjn-cWLAt1NlTnlZB1KSzcFpamL0yq9C3UDJgKcdaXWoj-zagpOadpnjXTt5-35QouxcFqj754uxcoHTScbBBAfsN19lV_0z5SXdza8sNfGztCr_gAA4C0RiHisfylURHCPwRuHbrSYZ0N3moLH8lqu0UeZvswt48J8y8W7zOxgecMIrJPbO4rN9B3LHNodW3KMpqIjBc87BqGOmuu8yryO75pybiywkzoYtoJZHMAsL-8AaO-07sZnrV4BptjrUSdz3WiCBpNJtqa4LnfS73wt1ixKFXH67rbwycbF0cF3Rl60KViq_Gb7oVcZ_KS4mSJ_MgAIsEVfvt7pOwljJkLYISd2CpUg7mpYmryva4O45gtRMXsJaxTDOklzSE4H1wJu7J17XGstNr5yJsLjY9AxxV4Ws7Lmd-xxRkCQf9pMyT1b-kT6tCnp_YkibzK_f_jkYd2q8STLIZj-pRRGPq8ncrE-FKI34S-Hu6OPwyYY9jRHmZEYTlCRu8tQqEKcA8mmflJ5G2xLDDYkXll3OGFQDpGvkZzEnYu91V5ljJZ2b6W9l-GY0yn4IwCSp9wkLNkrqO1bD_z4YwFNs9lEbZqBkUio"
+}
+2025-08-18 20:40:34 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/400",
+    "@type": "hydra:Error",
+    "title": "An error occurred",
+    "detail": "Page should not be less than 1",
+    "status": 400,
+    "type": "/errors/400",
+    "description": "Page should not be less than 1",
+    "hydra:description": "Page should not be less than 1",
+    "hydra:title": "An error occurred"
+}

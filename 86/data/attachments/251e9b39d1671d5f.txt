@@ -1,0 +1,54 @@
+2025-08-18 20:40:34 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:40:34 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-association-types HTTP/1.1" 201 None
+2025-08-18 20:40:34 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:40:34 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-association-types
+2025-08-18 20:40:34 - INFO - STATUS CODE: 201
+2025-08-18 20:40:34 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDk2MjcsImV4cCI6MTc1NTU1MzIyNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.KN53JLq-E43vVxMBH5AJ4XMuZwXFt_Bjl6lYDSHOu_dgLWd_FRGaZPnS_zhUh7qpNfOQnAL9JohZKT7CYjn-cWLAt1NlTnlZB1KSzcFpamL0yq9C3UDJgKcdaXWoj-zagpOadpnjXTt5-35QouxcFqj754uxcoHTScbBBAfsN19lV_0z5SXdza8sNfGztCr_gAA4C0RiHisfylURHCPwRuHbrSYZ0N3moLH8lqu0UeZvswt48J8y8W7zOxgecMIrJPbO4rN9B3LHNodW3KMpqIjBc87BqGOmuu8yryO75pybiywkzoYtoJZHMAsL-8AaO-07sZnrV4BptjrUSdz3WiCBpNJtqa4LnfS73wt1ixKFXH67rbwycbF0cF3Rl60KViq_Gb7oVcZ_KS4mSJ_MgAIsEVfvt7pOwljJkLYISd2CpUg7mpYmryva4O45gtRMXsJaxTDOklzSE4H1wJu7J17XGstNr5yJsLjY9AxxV4Ws7Lmd-xxRkCQf9pMyT1b-kT6tCnp_YkibzK_f_jkYd2q8STLIZj-pRRGPq8ncrE-FKI34S-Hu6OPwyYY9jRHmZEYTlCRu8tQqEKcA8mmflJ5G2xLDDYkXll3OGFQDpGvkZzEnYu91V5ljJZ2b6W9l-GY0yn4IwCSp9wkLNkrqO1bD_z4YwFNs9lEbZqBkUio"
+}
+2025-08-18 20:40:34 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "lHmxTTnAIUUSppCKhYnnRavxvtTJtrPDUwlWqn",
+    "translations": {
+        "en_US": {
+            "name": "deal"
+        },
+        "es_ES": {
+            "name": "point"
+        },
+        "es_MX": {
+            "name": "control"
+        }
+    }
+}
+2025-08-18 20:40:34 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductAssociationType",
+    "@id": "/api/v2/admin/product-association-types/lHmxTTnAIUUSppCKhYnnRavxvtTJtrPDUwlWqn",
+    "@type": "ProductAssociationType",
+    "id": 3892,
+    "code": "lHmxTTnAIUUSppCKhYnnRavxvtTJtrPDUwlWqn",
+    "name": "deal",
+    "createdAt": "2025-08-18 20:40:34",
+    "updatedAt": "2025-08-18 20:40:34",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/product-association-types/lHmxTTnAIUUSppCKhYnnRavxvtTJtrPDUwlWqn/translations/en_US",
+            "@type": "ProductAssociationTypeTranslation",
+            "name": "deal"
+        },
+        "es_ES": {
+            "@id": "/api/v2/admin/product-association-types/lHmxTTnAIUUSppCKhYnnRavxvtTJtrPDUwlWqn/translations/es_ES",
+            "@type": "ProductAssociationTypeTranslation",
+            "name": "point"
+        },
+        "es_MX": {
+            "@id": "/api/v2/admin/product-association-types/lHmxTTnAIUUSppCKhYnnRavxvtTJtrPDUwlWqn/translations/es_MX",
+            "@type": "ProductAssociationTypeTranslation",
+            "name": "control"
+        }
+    }
+}
+2025-08-18 20:40:34 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:40:35 - DEBUG - https://demo.sylius.com:443 "DELETE /api/v2/admin/product-association-types/lHmxTTnAIUUSppCKhYnnRavxvtTJtrPDUwlWqn HTTP/1.1" 204 0
