@@ -137,6 +137,7 @@ TC65 - Negativo: No debe permitirse crear una categoría de impuesto con un cód
 @pytest.mark.medium
 @pytest.mark.functional
 @pytest.mark.smoke
+@pytest.mark.domain
 def test_TC65_validar_limite_longitud_code(auth_headers):
     data = generate_tax_category_data()
     data["code"] = "A" * 256
@@ -168,6 +169,7 @@ con el campo 'description' vacío.
 @pytest.mark.medium
 @pytest.mark.functional
 @pytest.mark.smoke
+@pytest.mark.domain
 def test_TC67_description_vacio(auth_headers):
     data = generate_tax_category_data()
     data["description"] = ""
@@ -200,6 +202,7 @@ No debe permitir crear una categoría con nombre menor a 2 caracteres (Sylius de
 @pytest.mark.functional
 @pytest.mark.smoke
 @pytest.mark.negative
+@pytest.mark.domain
 @pytest.mark.parametrize("invalid_name", [
     "",    # vacío
     "A",   # un solo carácter
@@ -243,6 +246,7 @@ espacios en blanco, saltos de línea u otros caracteres invisibles. Sylius debe 
 @pytest.mark.smoke
 @pytest.mark.high
 @pytest.mark.negative
+@pytest.mark.domain
 @pytest.mark.xfail(reason="known issue La app permite espacios vacios BUG", run=True)
 @pytest.mark.parametrize("invalid_name", [
     "   ",

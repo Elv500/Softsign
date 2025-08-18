@@ -1,0 +1,344 @@
+2025-08-17 00:13:45 - [35mDEBUG[0m - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 00:13:46 - [35mDEBUG[0m - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories HTTP/1.1" 200 None
+2025-08-17 00:13:46 - [32mINFO[0m - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-17 00:13:46 - [35mDEBUG[0m - REQUEST URL: https://demo.sylius.com//api/v2/admin/tax-categories
+2025-08-17 00:13:46 - [32mINFO[0m - STATUS CODE: 200
+2025-08-17 00:13:46 - [35mDEBUG[0m - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU0MDQwMjIsImV4cCI6MTc1NTQwNzYyMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.olBvrwMS4t9d_IZ-E_VUhVYIoULBVLC0zd7D_oKoANnHKbRRRUsebUljIzsFdLnBwG1-OUf6VZYJtEP25A1jsEGlDbNbhJLtcrPjYwKJXNF0PPuGyStkKgpzO95UblzD-4zvzRxmnwvdJHwmumHHVQVZ954TwgOO9H6CmUsXPsr8i4mUFAW7iTF4DquZ-4zqZbMNFrbEjmyvgnD4lJFdrG0JLfTG4ya7_J_yosJMJh9dLsExMp6XhddwLyMipjfLBtzsHzShzES46nuAQG6XNpzZiQ0fwbaKJTlpbxxrtWqJ5sOEJke4PUmAvs5bMS5G1_dprT8fTaWLN7xLBF7-MYpmLLvvz7WL16Kr9vQnRRdXIIZooJTqsoOhc_Wonea8edU5CSv5SancUufnLQBXw12w6wilR7-sNNIlFwtD04Ik1P4UaRG6zV0Tc3vDs0APwhUObf92LIE5WQChgT2rN6exOpDwrxsOEFQ0rOtKBkglDBsQyfx40oTAEQQdUfvKHdbMGb0p5N8tHJ5qav0dXEMDOAk_nqu36eM8BMKnQrk1WRb7RqLUzq1BhB4W6nVJFQCFdeI9hboZjhwfeYkneLheQdFe9GWuEDeXCaWakEoNRpe7nxeFJDt8s4OlXqAEjnDTAvypDnAIfn1m0fe-IZEZHq34BYYlPDri7yX76yc"
+}
+2025-08-17 00:13:46 - [35mDEBUG[0m - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 44,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/tax-categories/clothing",
+            "@type": "TaxCategory",
+            "id": 9019,
+            "code": "clothing",
+            "name": "Clothing",
+            "description": "Voluptatem velit beatae voluptates laudantium dolorem facere eaque. Temporibus vel sit inventore est esse molestiae officia. Magnam quo odit reiciendis iste blanditiis ut.",
+            "createdAt": "2025-08-17 02:00:53",
+            "updatedAt": "2025-08-17 02:00:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/other",
+            "@type": "TaxCategory",
+            "id": 9020,
+            "code": "other",
+            "name": "Other",
+            "description": "Delectus dolorum vitae temporibus autem sed assumenda. Tenetur ullam nihil vitae aliquam sequi. Corrupti voluptatibus omnis dolorem possimus optio suscipit quod.",
+            "createdAt": "2025-08-17 02:00:53",
+            "updatedAt": "2025-08-17 02:00:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-482a8e",
+            "@type": "TaxCategory",
+            "id": 9026,
+            "code": "TAX-482a8e",
+            "name": "   ",
+            "description": "Always theory professional attack.",
+            "createdAt": "2025-08-17 02:09:36",
+            "updatedAt": "2025-08-17 02:09:36"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-5280ad",
+            "@type": "TaxCategory",
+            "id": 9027,
+            "code": "TAX-5280ad",
+            "name": "\n\n",
+            "description": "If fine affect.",
+            "createdAt": "2025-08-17 02:09:37",
+            "updatedAt": "2025-08-17 02:09:37"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-cbd894",
+            "@type": "TaxCategory",
+            "id": 9028,
+            "code": "TAX-cbd894",
+            "name": " \n ",
+            "description": "Value bring morning I hundred agreement.",
+            "createdAt": "2025-08-17 02:09:37",
+            "updatedAt": "2025-08-17 02:09:37"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-6a14c3",
+            "@type": "TaxCategory",
+            "id": 9029,
+            "code": "TAX-6a14c3",
+            "name": " \t \n ",
+            "description": "Cut ball accept total.",
+            "createdAt": "2025-08-17 02:09:38",
+            "updatedAt": "2025-08-17 02:09:39"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-66ca36",
+            "@type": "TaxCategory",
+            "id": 9049,
+            "code": "TAX-66ca36",
+            "name": "   ",
+            "description": "Thought before if clearly.",
+            "createdAt": "2025-08-17 02:22:33",
+            "updatedAt": "2025-08-17 02:22:33"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-8b1169",
+            "@type": "TaxCategory",
+            "id": 9050,
+            "code": "TAX-8b1169",
+            "name": "\n\n",
+            "description": "Agreement whether fund leave discuss.",
+            "createdAt": "2025-08-17 02:22:34",
+            "updatedAt": "2025-08-17 02:22:34"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-3bf860",
+            "@type": "TaxCategory",
+            "id": 9051,
+            "code": "TAX-3bf860",
+            "name": " \n ",
+            "description": "Day bank since audience.",
+            "createdAt": "2025-08-17 02:22:34",
+            "updatedAt": "2025-08-17 02:22:34"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-3a575a",
+            "@type": "TaxCategory",
+            "id": 9052,
+            "code": "TAX-3a575a",
+            "name": " \t \n ",
+            "description": "Subject everybody arm catch major control television.",
+            "createdAt": "2025-08-17 02:22:36",
+            "updatedAt": "2025-08-17 02:22:36"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-a22aa5",
+            "@type": "TaxCategory",
+            "id": 9067,
+            "code": "TAX-a22aa5",
+            "name": "Option",
+            "description": "Nice their enter federal everyone question president.",
+            "createdAt": "2025-08-17 02:56:43",
+            "updatedAt": "2025-08-17 02:56:43"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-19c121",
+            "@type": "TaxCategory",
+            "id": 9068,
+            "code": "TAX-19c121",
+            "name": "Involve",
+            "description": "Soldier stuff ability season read.",
+            "createdAt": "2025-08-17 02:56:44",
+            "updatedAt": "2025-08-17 02:56:44"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-171260",
+            "@type": "TaxCategory",
+            "id": 9069,
+            "code": "TAX-171260",
+            "name": "Letter",
+            "description": "Quite without either its order.",
+            "createdAt": "2025-08-17 02:56:47",
+            "updatedAt": "2025-08-17 02:56:47"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-e2f38c",
+            "@type": "TaxCategory",
+            "id": 9071,
+            "code": "TAX-e2f38c",
+            "name": "Far",
+            "description": "Check student star thus would card system Mr.",
+            "createdAt": "2025-08-17 02:56:51",
+            "updatedAt": "2025-08-17 02:56:51"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-4d4baf",
+            "@type": "TaxCategory",
+            "id": 9072,
+            "code": "TAX-4d4baf",
+            "name": "Executive",
+            "description": "Claim glass spring woman wind medical here.",
+            "createdAt": "2025-08-17 02:56:53",
+            "updatedAt": "2025-08-17 02:56:53"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-232191",
+            "@type": "TaxCategory",
+            "id": 9073,
+            "code": "TAX-232191",
+            "name": "Form",
+            "description": "Couple character moment natural phone work.",
+            "createdAt": "2025-08-17 02:56:54",
+            "updatedAt": "2025-08-17 02:56:54"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-866dfc",
+            "@type": "TaxCategory",
+            "id": 9074,
+            "code": "TAX-866dfc",
+            "name": "Participant",
+            "description": "",
+            "createdAt": "2025-08-17 02:56:56",
+            "updatedAt": "2025-08-17 02:56:56"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-85fecf",
+            "@type": "TaxCategory",
+            "id": 9075,
+            "code": "TAX-85fecf",
+            "name": "   ",
+            "description": "Goal discuss whatever discuss example.",
+            "createdAt": "2025-08-17 02:57:00",
+            "updatedAt": "2025-08-17 02:57:00"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-ce6d10",
+            "@type": "TaxCategory",
+            "id": 9076,
+            "code": "TAX-ce6d10",
+            "name": "\n\n",
+            "description": "Career theory especially clear air career ahead travel.",
+            "createdAt": "2025-08-17 02:57:01",
+            "updatedAt": "2025-08-17 02:57:01"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-605370",
+            "@type": "TaxCategory",
+            "id": 9077,
+            "code": "TAX-605370",
+            "name": " \n ",
+            "description": "Natural mean test reveal seem feeling.",
+            "createdAt": "2025-08-17 02:57:02",
+            "updatedAt": "2025-08-17 02:57:02"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-7e9d51",
+            "@type": "TaxCategory",
+            "id": 9078,
+            "code": "TAX-7e9d51",
+            "name": "Middle",
+            "description": "Type boy never home writer.",
+            "createdAt": "2025-08-17 03:00:42",
+            "updatedAt": "2025-08-17 03:00:42"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-32ce8e",
+            "@type": "TaxCategory",
+            "id": 9079,
+            "code": "TAX-32ce8e",
+            "name": "Scientist",
+            "description": "Affect ahead actually half last.",
+            "createdAt": "2025-08-17 03:00:43",
+            "updatedAt": "2025-08-17 03:00:43"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-57de03",
+            "@type": "TaxCategory",
+            "id": 9080,
+            "code": "TAX-57de03",
+            "name": "Factor",
+            "description": "Southern another win believe three.",
+            "createdAt": "2025-08-17 03:00:44",
+            "updatedAt": "2025-08-17 03:00:44"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-be8185",
+            "@type": "TaxCategory",
+            "id": 9081,
+            "code": "TAX-be8185",
+            "name": "Southern",
+            "description": "Oil modern job never program small until dinner.",
+            "createdAt": "2025-08-17 03:00:44",
+            "updatedAt": "2025-08-17 03:00:44"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-1eff35",
+            "@type": "TaxCategory",
+            "id": 9082,
+            "code": "TAX-1eff35",
+            "name": "Reduce",
+            "description": "Culture receive item American although attack.",
+            "createdAt": "2025-08-17 03:00:45",
+            "updatedAt": "2025-08-17 03:00:45"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-22acde",
+            "@type": "TaxCategory",
+            "id": 9085,
+            "code": "TAX-22acde",
+            "name": "Across",
+            "description": "Skin operation work financial certainly him.",
+            "createdAt": "2025-08-17 03:01:23",
+            "updatedAt": "2025-08-17 03:01:23"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-2e415b",
+            "@type": "TaxCategory",
+            "id": 9086,
+            "code": "TAX-2e415b",
+            "name": "Work",
+            "description": "Reach store week night others least right better.",
+            "createdAt": "2025-08-17 03:01:24",
+            "updatedAt": "2025-08-17 03:01:24"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-53769e",
+            "@type": "TaxCategory",
+            "id": 9087,
+            "code": "TAX-53769e",
+            "name": "Administration",
+            "description": "Their range development despite spend animal play.",
+            "createdAt": "2025-08-17 03:01:25",
+            "updatedAt": "2025-08-17 03:01:25"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-5d4958",
+            "@type": "TaxCategory",
+            "id": 9088,
+            "code": "TAX-5d4958",
+            "name": "What",
+            "description": "",
+            "createdAt": "2025-08-17 03:01:27",
+            "updatedAt": "2025-08-17 03:01:27"
+        },
+        {
+            "@id": "/api/v2/admin/tax-categories/TAX-1bce19",
+            "@type": "TaxCategory",
+            "id": 9089,
+            "code": "TAX-1bce19",
+            "name": "   ",
+            "description": "Expert book seek four have.",
+            "createdAt": "2025-08-17 03:01:30",
+            "updatedAt": "2025-08-17 03:01:30"
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/tax-categories?page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/tax-categories?page=1",
+        "hydra:last": "/api/v2/admin/tax-categories?page=2",
+        "hydra:next": "/api/v2/admin/tax-categories?page=2"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/tax-categories{?code,name}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "code",
+                "property": "code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "name",
+                "property": "name",
+                "required": false
+            }
+        ]
+    }
+}

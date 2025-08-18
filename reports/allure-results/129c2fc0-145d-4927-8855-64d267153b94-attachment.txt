@@ -1,0 +1,35 @@
+2025-08-17 00:14:22 - [35mDEBUG[0m - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 00:14:23 - [35mDEBUG[0m - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-17 00:14:23 - [35mDEBUG[0m - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 00:14:23 - [35mDEBUG[0m - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-17 00:14:23 - [35mDEBUG[0m - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 00:14:24 - [35mDEBUG[0m - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-dd817d HTTP/1.1" 204 0
+2025-08-17 00:14:24 - [32mINFO[0m - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-17 00:14:24 - [35mDEBUG[0m - REQUEST URL: https://demo.sylius.com//api/v2/admin/tax-categories/TAX-dd817d
+2025-08-17 00:14:24 - [32mINFO[0m - STATUS CODE: 204
+2025-08-17 00:14:24 - [35mDEBUG[0m - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU0MDQwMjIsImV4cCI6MTc1NTQwNzYyMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.olBvrwMS4t9d_IZ-E_VUhVYIoULBVLC0zd7D_oKoANnHKbRRRUsebUljIzsFdLnBwG1-OUf6VZYJtEP25A1jsEGlDbNbhJLtcrPjYwKJXNF0PPuGyStkKgpzO95UblzD-4zvzRxmnwvdJHwmumHHVQVZ954TwgOO9H6CmUsXPsr8i4mUFAW7iTF4DquZ-4zqZbMNFrbEjmyvgnD4lJFdrG0JLfTG4ya7_J_yosJMJh9dLsExMp6XhddwLyMipjfLBtzsHzShzES46nuAQG6XNpzZiQ0fwbaKJTlpbxxrtWqJ5sOEJke4PUmAvs5bMS5G1_dprT8fTaWLN7xLBF7-MYpmLLvvz7WL16Kr9vQnRRdXIIZooJTqsoOhc_Wonea8edU5CSv5SancUufnLQBXw12w6wilR7-sNNIlFwtD04Ik1P4UaRG6zV0Tc3vDs0APwhUObf92LIE5WQChgT2rN6exOpDwrxsOEFQ0rOtKBkglDBsQyfx40oTAEQQdUfvKHdbMGb0p5N8tHJ5qav0dXEMDOAk_nqu36eM8BMKnQrk1WRb7RqLUzq1BhB4W6nVJFQCFdeI9hboZjhwfeYkneLheQdFe9GWuEDeXCaWakEoNRpe7nxeFJDt8s4OlXqAEjnDTAvypDnAIfn1m0fe-IZEZHq34BYYlPDri7yX76yc"
+}
+2025-08-17 00:14:24 - [35mDEBUG[0m - RESPONSE: No content (empty body)
+2025-08-17 00:14:24 - [35mDEBUG[0m - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 00:14:24 - [35mDEBUG[0m - https://demo.sylius.com:443 "GET /api/v2/admin/tax-categories/TAX-7e1a3a HTTP/1.1" 200 None
+2025-08-17 00:14:24 - [32mINFO[0m - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-17 00:14:24 - [35mDEBUG[0m - REQUEST URL: https://demo.sylius.com//api/v2/admin/tax-categories/TAX-7e1a3a
+2025-08-17 00:14:24 - [32mINFO[0m - STATUS CODE: 200
+2025-08-17 00:14:24 - [35mDEBUG[0m - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU0MDQwMjIsImV4cCI6MTc1NTQwNzYyMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.olBvrwMS4t9d_IZ-E_VUhVYIoULBVLC0zd7D_oKoANnHKbRRRUsebUljIzsFdLnBwG1-OUf6VZYJtEP25A1jsEGlDbNbhJLtcrPjYwKJXNF0PPuGyStkKgpzO95UblzD-4zvzRxmnwvdJHwmumHHVQVZ954TwgOO9H6CmUsXPsr8i4mUFAW7iTF4DquZ-4zqZbMNFrbEjmyvgnD4lJFdrG0JLfTG4ya7_J_yosJMJh9dLsExMp6XhddwLyMipjfLBtzsHzShzES46nuAQG6XNpzZiQ0fwbaKJTlpbxxrtWqJ5sOEJke4PUmAvs5bMS5G1_dprT8fTaWLN7xLBF7-MYpmLLvvz7WL16Kr9vQnRRdXIIZooJTqsoOhc_Wonea8edU5CSv5SancUufnLQBXw12w6wilR7-sNNIlFwtD04Ik1P4UaRG6zV0Tc3vDs0APwhUObf92LIE5WQChgT2rN6exOpDwrxsOEFQ0rOtKBkglDBsQyfx40oTAEQQdUfvKHdbMGb0p5N8tHJ5qav0dXEMDOAk_nqu36eM8BMKnQrk1WRb7RqLUzq1BhB4W6nVJFQCFdeI9hboZjhwfeYkneLheQdFe9GWuEDeXCaWakEoNRpe7nxeFJDt8s4OlXqAEjnDTAvypDnAIfn1m0fe-IZEZHq34BYYlPDri7yX76yc"
+}
+2025-08-17 00:14:24 - [35mDEBUG[0m - RESPONSE:
+{
+    "@context": "/api/v2/contexts/TaxCategory",
+    "@id": "/api/v2/admin/tax-categories/TAX-7e1a3a",
+    "@type": "TaxCategory",
+    "id": 9164,
+    "code": "TAX-7e1a3a",
+    "name": "CategoriaB",
+    "description": "Wife toward past sit oil per official nor.",
+    "createdAt": "2025-08-17 04:14:23",
+    "updatedAt": "2025-08-17 04:14:23"
+}

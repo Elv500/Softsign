@@ -1,0 +1,19 @@
+2025-08-17 00:14:54 - [35mDEBUG[0m - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 00:14:55 - [35mDEBUG[0m - https://demo.sylius.com:443 "POST /api/v2/admin/tax-categories HTTP/1.1" 201 None
+2025-08-17 00:14:55 - [35mDEBUG[0m - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 00:14:55 - [35mDEBUG[0m - https://demo.sylius.com:443 "PUT /api/v2/admin/tax-categories/TAX-e39311 HTTP/1.1" 401 None
+2025-08-17 00:14:55 - [32mINFO[0m - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-17 00:14:55 - [35mDEBUG[0m - REQUEST URL: https://demo.sylius.com//api/v2/admin/tax-categories/TAX-e39311
+2025-08-17 00:14:55 - [32mINFO[0m - STATUS CODE: 401
+2025-08-17 00:14:55 - [35mDEBUG[0m - PAYLOAD REQUEST:
+{
+    "name": "Intento sin auth",
+    "description": "No debería permitir"
+}
+2025-08-17 00:14:55 - [35mDEBUG[0m - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}
+2025-08-17 00:14:55 - [35mDEBUG[0m - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-17 00:14:56 - [35mDEBUG[0m - https://demo.sylius.com:443 "DELETE /api/v2/admin/tax-categories/TAX-e39311 HTTP/1.1" 204 0
