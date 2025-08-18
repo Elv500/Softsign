@@ -1,0 +1,43 @@
+2025-08-18 20:44:32 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:44:33 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-association-types HTTP/1.1" 201 None
+2025-08-18 20:44:33 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:44:33 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-association-types HTTP/1.1" 201 None
+2025-08-18 20:44:33 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 20:44:33 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-association-types/eCvAIMdDrFkTLAApTYlwFpdwLEvzfeitkDhJwV HTTP/1.1" 422 None
+2025-08-18 20:44:33 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 20:44:33 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-association-types/eCvAIMdDrFkTLAApTYlwFpdwLEvzfeitkDhJwV
+2025-08-18 20:44:33 - INFO - STATUS CODE: 422
+2025-08-18 20:44:33 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDk4NjcsImV4cCI6MTc1NTU1MzQ2Nywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.hYOxpsK0krtaF8TmKsDfx0IqB7dVqDvgydB-yjS5WWXo9Uj6ZE8zR7y0KATbHSLp5fOeX9VpTynMuD9v_6_KozaAn0sKSZIPAilqTHW9cIygPrpfR32eoC2xlCfpAS9V-8xZdx4v0jpwcCe673NYPxzCOA4-Utbjm7h3XzYOU_zmuyXYQvg7AhsE9flojlv2uWwrhfG9pkcpSFfudEUKjvwlPptJVI6Hk-Y84cZtqGuGj_EWMJWhXHO7y2YyGnkuAjFXsVQsH7TcXWyfaXcODcRnB3sco88zETupg42CBX7Was7E-vcDmjPb-8vciRfnAKSRRHiYn0K36Ot7Iex3T_iUK7u4T9Y2mYfbLu0_I2J18xOsnkhakQulSjjnoBlbf2O_XZiV-92_jkzLnE56dyo9WgLmy6u89GjaCSG8IJYKrVDcd9SuCwryNL3x59xdamJOJ8rp95WLnPa--yGu53R0fy_X07o0Wex018OqJRo828rucTj_ZZQ6p4eFyIawPdbbpwPHs0fAeFmdN9qSvE8es8WRDZWCobyoMwdIWTl6kIjniilxNVI9-uxIO9RONkosrFUPfjOak1YsoOHiFDKPXRktADJ54fWBnP5Jr-wqrc9voFYJ_NFlTemT_onb3ljHwN2USsax08NM_W8eP5WkmmJdI9YCS33IyoPKbls",
+    "Accept": "application/ld+json",
+    "Content-Type": "application/ld+json"
+}
+2025-08-18 20:44:33 - DEBUG - PAYLOAD REQUEST:
+{
+    "translations": {
+        "en_US": {
+            "name": "nuevo-nombre-sin-id"
+        }
+    }
+}
+2025-08-18 20:44:33 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/23bd9dbf-6b9b-41cd-a99e-4844bcf3077f",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "translations[en_US].locale",
+            "message": "A translation for the \"en_US\" locale code already exists.",
+            "code": "23bd9dbf-6b9b-41cd-a99e-4844bcf3077f"
+        }
+    ],
+    "detail": "translations[en_US].locale: A translation for the \"en_US\" locale code already exists.",
+    "description": "translations[en_US].locale: A translation for the \"en_US\" locale code already exists.",
+    "type": "/validation_errors/23bd9dbf-6b9b-41cd-a99e-4844bcf3077f",
+    "title": "An error occurred",
+    "hydra:description": "translations[en_US].locale: A translation for the \"en_US\" locale code already exists.",
+    "hydra:title": "An error occurred"
+}
