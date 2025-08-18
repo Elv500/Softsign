@@ -1,0 +1,25 @@
+2025-08-18 19:07:19 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:07:20 - DEBUG - https://demo.sylius.com:443 "PUT /api/v2/admin/product-attributes/codigo_inexistente_123 HTTP/1.1" 401 None
+2025-08-18 19:07:20 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:07:20 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-attributes/codigo_inexistente_123
+2025-08-18 19:07:20 - INFO - STATUS CODE: 401
+2025-08-18 19:07:20 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "hair-yourself-such",
+    "type": "text",
+    "translations": {
+        "en_US": {
+            "name": "Hart, Maldonado and Mckinney"
+        }
+    },
+    "configuration": {
+        "maxCharacters": 84,
+        "minCharacters": 10
+    },
+    "storageType": "text"
+}
+2025-08-18 19:07:20 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}

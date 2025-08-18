@@ -1,0 +1,47 @@
+2025-08-18 19:10:29 - DEBUG - Starting new HTTPS connection (1): demo.sylius.com:443
+2025-08-18 19:10:30 - DEBUG - https://demo.sylius.com:443 "POST /api/v2/admin/product-options HTTP/1.1" 422 None
+2025-08-18 19:10:30 - INFO - IP ADDRESS OR DOMAIN: demo.sylius.com
+2025-08-18 19:10:30 - DEBUG - REQUEST URL: https://demo.sylius.com/api/v2/admin/product-options
+2025-08-18 19:10:30 - INFO - STATUS CODE: 422
+2025-08-18 19:10:30 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NTU1NDM5NTUsImV4cCI6MTc1NTU0NzU1NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.h3iIqgq3GtY1jXjLBWW8MJlYoEcGNHoC6Xe0DrqE9j9QtSy-ZBDDMdUsJTsDzO1BkVdfsb-NKanV85AhfBcuEGZydn2kiWd5umkTtVmr8sXOjkwFdg9DEnNSDIA1LxtgNt3NqeKCwSFhmLh_XlRVnRz3PbTVoI2aL_Zoi__njDKwDoEVpyStNu0l4wgvt-z0vF0o-WU6iUuC0WCYm4Lvzt-1MMKnyQDdwE-C_7OrK9xzr3UJ0bcYNjNydIMarccNKG-sPNx1-7uenZmMU2kTe-2cCCLqdX4Ih3Eus3pmEIbEHNpSu3iSmWs-uc7mHJsw8jXBmngDjBBcjQS9JBfPuyGQ_DwgwE3nk0ruerdCVuWPxy18qGayhwUQ5KB1KZfPD6bMxIRmA4i9VwCzJXdSgjj5rvNRJMqmaEKzq_ab7PTdyFu7iaoMDvwmbKdTTJ_i2cgddMGNS0Iz2VI4dpWA5RVm4a11IZ-AKFc_k8_ePkhzInNkZmFw9BwvQS4Yj4Upk-QhEOPIijlw50Fcggq_fOuhgjvcbxNroHCtrsrnwPHBeoq8dzoMu-ZurlTMoXXV_pqSUStd2aWF01HHdQEbAg9mOihi6J2QILYyA4m45ho_z3kDnFQzjq1YotTqqiieb2f4Pz_sa4KhDJzMgrPVKiwQTkepKI2qZmuSeq4WJf4"
+}
+2025-08-18 19:10:30 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "test_1755544229_NL00",
+    "position": 97,
+    "translations": {
+        "en_US": {
+            "name": "Brandy Nelson Option"
+        },
+        "xx_XX": {
+            "name": "Test Option in Unsupported Language"
+        }
+    }
+}
+2025-08-18 19:10:30 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/0=;1=a0af4293-1f1a-4a1c-a328-979cba6182a2",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "translations[xx_XX]",
+            "message": "Please choose one of the available locales: en_US, de_DE, fr_FR, pl_PL, es_ES, es_MX, pt_PT, zh_CN",
+            "code": null
+        },
+        {
+            "propertyPath": "translations[xx_XX].locale",
+            "message": "This value is not a valid locale.",
+            "code": "a0af4293-1f1a-4a1c-a328-979cba6182a2"
+        }
+    ],
+    "detail": "translations[xx_XX]: Please choose one of the available locales: en_US, de_DE, fr_FR, pl_PL, es_ES, es_MX, pt_PT, zh_CN\ntranslations[xx_XX].locale: This value is not a valid locale.",
+    "description": "translations[xx_XX]: Please choose one of the available locales: en_US, de_DE, fr_FR, pl_PL, es_ES, es_MX, pt_PT, zh_CN\ntranslations[xx_XX].locale: This value is not a valid locale.",
+    "type": "/validation_errors/0=;1=a0af4293-1f1a-4a1c-a328-979cba6182a2",
+    "title": "An error occurred",
+    "hydra:description": "translations[xx_XX]: Please choose one of the available locales: en_US, de_DE, fr_FR, pl_PL, es_ES, es_MX, pt_PT, zh_CN\ntranslations[xx_XX].locale: This value is not a valid locale.",
+    "hydra:title": "An error occurred"
+}
