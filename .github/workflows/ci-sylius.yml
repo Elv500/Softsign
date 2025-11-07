@@ -50,12 +50,12 @@ jobs:
 
       # Generar reporte HTML usando la acción oficial de Allure
       - name: Build test report
-        uses: simple-elf/allure-report-action@v1.7
+        uses: allure-framework/allure2-action@v1
         if: always()
         with:
-          gh_pages: gh-pages
-          allure_results: reports/allure-results
-          allure_history: allure-history
+          results: reports/allure-results
+          history: allure-history
+          output: allure-report
 
       # Publicar en GitHub Pages
       - name: Publish test report
@@ -64,4 +64,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-history
+          publish_dir: allure-report
